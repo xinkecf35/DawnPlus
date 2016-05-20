@@ -510,6 +510,7 @@
 				D06E09F21CDD148B004D51C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D06E09F31CDD148B004D51C0 /* Build configuration list for PBXNativeTarget "TrafficAlarmClockTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +519,7 @@
 				D06E09F51CDD148B004D51C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D06E09F61CDD148B004D51C0 /* Build configuration list for PBXNativeTarget "TrafficAlarmClockUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +528,7 @@
 				D06E09F81CDD148B004D51C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
