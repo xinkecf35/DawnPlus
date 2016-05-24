@@ -421,6 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -432,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -500,6 +502,7 @@
 				D0EDA1831CF3CA3C0036293B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0EDA1841CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "TrafficAlarmClockTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +511,7 @@
 				D0EDA1861CF3CA3C0036293B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0EDA1871CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "TrafficAlarmClockUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +520,7 @@
 				D0EDA1891CF3CA3C0036293B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
