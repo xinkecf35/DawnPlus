@@ -13,12 +13,24 @@
 @end
 
 @implementation ViewController
-@synthesize clockLabel;
+
+@synthesize clockLabel, testLocation, currentLatitude,currentLongitude, currentLocation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self updateClockLabel];
+    
+
+    
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self updateTestLocation: self.currentLongitude : self.currentLatitude];
+    WeatherFetch *weatherManager = [[WeatherFetch alloc]initWithLocation:currentLongitude :currentLatitude];
+    [weatherManager sendWeatherRequest];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -29,6 +41,11 @@
     [clockFormat setDateFormat:@"hh:mm a"];
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
+}
+-(void)updateTestLocation : (double) longitude : (double) latitude {
+    
+    self.testLocation.text = [NSString stringWithFormat:@"%.6f",longitude];
+    
 }
 
 @end
