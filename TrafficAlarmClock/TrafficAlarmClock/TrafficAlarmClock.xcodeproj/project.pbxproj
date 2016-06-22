@@ -13,7 +13,7 @@
 		D0C8168F1D01EFC600B4754E /* AlarmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8168E1D01EFC600B4754E /* AlarmObject.m */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
 		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
-		D0EDA15C1CF3CA3C0036293B /* TACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA15B1CF3CA3C0036293B /* TACViewController.m */; };
+		D0EDA15C1CF3CA3C0036293B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA15B1CF3CA3C0036293B /* ViewController.m */; };
 		D0EDA15F1CF3CA3C0036293B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA15D1CF3CA3C0036293B /* Main.storyboard */; };
 		D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld */; };
 		D0EDA1641CF3CA3C0036293B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1631CF3CA3C0036293B /* Assets.xcassets */; };
@@ -51,8 +51,8 @@
 		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0EDA1581CF3CA3C0036293B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0EDA15A1CF3CA3C0036293B /* TACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TACViewController.h; sourceTree = "<group>"; };
-		D0EDA15B1CF3CA3C0036293B /* TACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TACViewController.m; sourceTree = "<group>"; };
+		D0EDA15A1CF3CA3C0036293B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D0EDA15B1CF3CA3C0036293B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D0EDA15E1CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0EDA1611CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrafficAlarmClock.xcdatamodel; sourceTree = "<group>"; };
 		D0EDA1631CF3CA3C0036293B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 				D0EDA1571CF3CA3C0036293B /* AppDelegate.h */,
 				D0EDA1581CF3CA3C0036293B /* AppDelegate.m */,
 				D059AB661D0B918D002CA6D1 /* Model */,
-				D0EDA15A1CF3CA3C0036293B /* TACViewController.h */,
-				D0EDA15B1CF3CA3C0036293B /* TACViewController.m */,
+				D0EDA15A1CF3CA3C0036293B /* ViewController.h */,
+				D0EDA15B1CF3CA3C0036293B /* ViewController.m */,
 				D0EDA15D1CF3CA3C0036293B /* Main.storyboard */,
 				D0EDA1631CF3CA3C0036293B /* Assets.xcassets */,
 				D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */,
@@ -300,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0EDA15C1CF3CA3C0036293B /* TACViewController.m in Sources */,
+				D0EDA15C1CF3CA3C0036293B /* ViewController.m in Sources */,
 				D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,

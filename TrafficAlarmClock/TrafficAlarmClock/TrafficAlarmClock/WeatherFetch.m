@@ -11,7 +11,7 @@
 static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
 
 @implementation WeatherFetch : NSObject
-
+/*
 -(id)initWithLocation:(double)longitude :(double)latitude
 {
     if(self = [super init])
@@ -21,29 +21,34 @@ static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //S
     }
     return self;
 }
-
--(void)setWeatherLocation: (NSString *)longitude : (NSString *) latitude
+*/
+-(void)setWeatherLocation
 {
-    currentLocationLat = latitude;
-    currentLocationLong = longitude;
+    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options: NSKeyValueObservingOptionNew context:nil];
 }
 -(void)sendWeatherRequest
 {
     NSError *weatherError;
     //Setting forecast.io url
-    NSLog(@"Longitude %@, Latitude %@",currentLocationLong,currentLocationLat);
-    NSString *weatherURL = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%@,%@",forecastAPIKey,currentLocationLat,currentLocationLong];
+    NSLog(@"Longitude %0.6f, Latitude %0.6f",currentLocationLong,currentLocationLat);
+    NSString *weatherURL = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%0.6f,%0.6f",forecastAPIKey,currentLocationLat,currentLocationLong];
     //JSON GET request
     NSData *weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
     NSMutableArray *weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
     NSLog(@"Weather Request Sent; json: %@", weatherData);
     
 }
+//Trigger Location Update for WeatherFetch via Key Value Observation
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object  change:(NSDictionary *)change context:(void *)context
 {
     if([keyPath isEqualToString:@"currentLocation"]) {
+        currentLocationLat = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
+        currentLocationLong = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+        NSLog(@"currentLocation is updated for WeatherFetch with Longitude: %0.6f, Latitude: %0.6f",currentLocationLong, currentLocationLat);
+        
     }
 }
+
 
 @end
 

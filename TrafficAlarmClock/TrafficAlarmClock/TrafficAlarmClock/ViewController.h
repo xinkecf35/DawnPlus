@@ -15,7 +15,6 @@
 @property (weak,nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak,nonatomic) IBOutlet UILabel *testLocation;
 -(void)updateClockLabel;
--(void)updateTestLocation: (double)longitude : (double)latitude;
 
 @end
 

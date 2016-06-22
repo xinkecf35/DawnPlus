@@ -14,21 +14,14 @@
 
 @implementation ViewController
 
-@synthesize clockLabel, testLocation, currentLatitude,currentLongitude, currentLocation;
+@synthesize clockLabel, testLocation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self updateClockLabel];
+    WeatherFetch *weatherUpdate = [[WeatherFetch alloc]init];
+    [weatherUpdate setWeatherLocation];
     
-
-    
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [self updateTestLocation: self.currentLongitude : self.currentLatitude];
-    WeatherFetch *weatherManager = [[WeatherFetch alloc]initWithLocation:currentLongitude :currentLatitude];
-    [weatherManager sendWeatherRequest];
 }
 
 
@@ -47,5 +40,15 @@
     self.testLocation.text = [NSString stringWithFormat:@"%.6f",longitude];
     
 }
+//LocationFetch Test
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object  change:(NSDictionary *)change context:(void *)context
+{
+    if([keyPath isEqualToString:@"currentLocation"]) {
+        NSLog(@"Test Successful");
+        
+    }
+}
+
 
 @end

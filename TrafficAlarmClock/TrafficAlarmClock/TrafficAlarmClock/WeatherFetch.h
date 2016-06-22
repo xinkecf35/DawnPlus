@@ -9,8 +9,9 @@
 
 @interface WeatherFetch : NSObject {
     double currentTemp;
-    NSString *currentLocationLong;
-    NSString *currentLocationLat;
+    double currentLocationLong;
+    double currentLocationLat;
+    CLLocation *weatherLocation;
     NSData *weatherJSON;
     NSMutableArray *weatherData;
 }
@@ -18,9 +19,8 @@
 @property NSString *currentTemperature;
 @property NSString *currentConditions;
 
--(id) initWithLocation:(double)longitude : (double)latitude;
 
--(void)setWeatherLocation:(NSString *) longitude : (NSString *) latitude;
+-(void)setWeatherLocation;
 -(void)sendWeatherRequest;
 
 

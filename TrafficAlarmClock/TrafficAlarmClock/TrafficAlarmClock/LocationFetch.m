@@ -30,6 +30,10 @@
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter = 100;
         self.locationManager.delegate = self;
+        //Request Authorization
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
     }
     return self;
 }
@@ -54,6 +58,7 @@
     self.currentLocation = location;
     
 }
+
 
 
 @end
