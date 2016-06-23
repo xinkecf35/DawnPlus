@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
+#import "LocationFetch.h"
 #import "WeatherFetch.h"
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
