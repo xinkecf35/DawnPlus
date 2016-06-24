@@ -21,7 +21,6 @@
     [self updateClockLabel];
     WeatherFetch *weatherUpdate = [[WeatherFetch alloc]init];
     NSLog(@"Instantiating weatherUpdate ");
-    [weatherUpdate setWeatherLocation];
     
 }
 

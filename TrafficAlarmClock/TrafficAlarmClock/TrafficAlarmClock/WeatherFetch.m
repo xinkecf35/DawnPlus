@@ -10,7 +10,18 @@
 #import "WeatherFetch.h"
 static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
 
-@implementation WeatherFetch : NSObject
+@implementation WeatherFetch
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        [[LocationFetch sharedInstance] startingUpdatingLocation];
+        [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+
 /*
 -(id)initWithLocation:(double)longitude :(double)latitude
 {
@@ -24,10 +35,13 @@ static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //S
 */
 -(void)setWeatherLocation
 {
+    /*
     [[LocationFetch sharedInstance]startingUpdatingLocation];
     [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
-
-    NSLog(@"weatherUpdate %0.6f, %0.6f",currentLocationLat,currentLocationLong);
+     */
+    currentLocationLat = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
+    currentLocationLong = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+    NSLog(@"weatherUpdate Lat: %0.6f, Long: %0.6f",currentLocationLat,currentLocationLong);
 }
 -(void)sendWeatherRequest
 {
@@ -45,7 +59,7 @@ static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //S
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object  change:(NSDictionary *)change context:(void *)context
 {
     if([keyPath isEqualToString:@"currentLocation"]) {
-        NSLog(@"Observer has recieved message");
+        NSLog(@"Observer has received message");
         currentLocationLat = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
         currentLocationLong = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
     }
