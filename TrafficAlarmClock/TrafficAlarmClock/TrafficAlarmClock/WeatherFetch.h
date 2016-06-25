@@ -8,15 +8,15 @@
 #import "LocationFetch.h"
 
 @interface WeatherFetch : NSObject {
-    double currentTemp;
-    double currentLocationLong;
-    double currentLocationLat;
+    double currentLongitude;
+    double currentLatitude;
     NSData *weatherJSON;
     NSMutableArray *weatherData;
 }
 
 @property NSString *currentTemperature;
-@property NSString *currentConditions;
+@property NSString *currentCondition;
+@property NSString *precipitationProbability;
 
 
 -(void)setWeatherLocation;
