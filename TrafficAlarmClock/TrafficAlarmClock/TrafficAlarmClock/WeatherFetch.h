@@ -11,7 +11,6 @@
     double currentTemp;
     double currentLocationLong;
     double currentLocationLat;
-    CLLocation *weatherLocation;
     NSData *weatherJSON;
     NSMutableArray *weatherData;
 }
@@ -21,7 +20,9 @@
 
 
 -(void)setWeatherLocation;
+-(void)observeLocationFetch;
 -(void)sendWeatherRequest;
+-(id)initWithLocation: (double) latitude : (double)longitude;
 
 
 

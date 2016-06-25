@@ -14,20 +14,35 @@
 
 @implementation ViewController
 
-@synthesize clockLabel, testLocation;
+@synthesize clockLabel, testLocation,latitude,longitude;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateClockLabel];
-    WeatherFetch *weatherUpdate = [[WeatherFetch alloc]init];
-    NSLog(@"Instantiating weatherUpdate ");
-    
+    [[LocationFetch sharedInstance] startingUpdatingLocation];
+    latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
+    longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
+    WeatherFetch *weatherUpdate = [[WeatherFetch alloc]initWithLocation:longitude :latitude];
+    [weatherUpdate sendWeatherRequest];
 }
+
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if([keyPath isEqualToString:@"currentLocation"])
+    {
+        latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
+        longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+        NSLog(@"Observer has received message");
+        WeatherFetch *weatherUpdate = [[WeatherFetch alloc]initWithLocation:longitude :latitude];
+        [weatherUpdate sendWeatherRequest];
+    }
 }
 - (void) updateClockLabel {
     NSDateFormatter *clockFormat= [[NSDateFormatter alloc] init];
@@ -35,11 +50,5 @@
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
 }
--(void)updateTestLocation : (double) longitude : (double) latitude {
-    
-    self.testLocation.text = [NSString stringWithFormat:@"%.6f",longitude];
-    
-}
-
 
 @end

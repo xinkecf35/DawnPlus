@@ -13,10 +13,10 @@
 
 +(LocationFetch *) sharedInstance;
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) CLLocation *currentLocation;
-@property NSString *longitude;
-@property NSString *latitude;
+@property CLLocationManager *locationManager;
+@property CLLocation *currentLocation;
+@property double latitude;
+@property double longitude;
 
 -(void)startingUpdatingLocation;
 -(void)stopUpdatingLocation;

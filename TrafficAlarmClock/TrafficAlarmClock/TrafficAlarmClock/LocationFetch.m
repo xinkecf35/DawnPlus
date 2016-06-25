@@ -24,7 +24,7 @@
 - (id)init
 {
     self = [super init];
-    if(self != nil)
+    if(self)
     {
         
         self.locationManager = [[CLLocationManager alloc]init];
@@ -32,7 +32,8 @@
         self.locationManager.distanceFilter = 100;
         self.locationManager.delegate = self;
         //Request Authorization
-        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+        {
             [self.locationManager requestWhenInUseAuthorization];
         }
     }
@@ -40,13 +41,13 @@
 }
 - (void)startingUpdatingLocation
 {
-    NSLog(@"Starting Location Updates");
     [self.locationManager startUpdatingLocation];
+    NSLog(@"Starting Location Updates");
 }
 -(void)stopUpdatingLocation
 {
-    NSLog(@"Stopping Location Updates");
     [self.locationManager stopUpdatingLocation];
+     NSLog(@"Stopping Location Updates");
 }
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -55,8 +56,12 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     CLLocation *location = [locations lastObject];
-    NSLog(@"Latitude %+.6f, Longitude %+.6f\n", location.coordinate.latitude, location.coordinate.longitude);
-    [self setCurrentLocation:location ];
+    latitude = location.coordinate.latitude;
+    longitude = location.coordinate.longitude;
+    self.currentLocation = location;
+    NSLog(@"LocationFetch sharedInstance: Latitude %+.6f, Longitude %+.6f\n",
+          location.coordinate.latitude,
+          location.coordinate.longitude);
 }
 
 

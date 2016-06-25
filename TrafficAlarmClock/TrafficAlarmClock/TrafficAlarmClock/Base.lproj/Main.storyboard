@@ -23,28 +23,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Output" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB6-Vq-V7y">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4fH-dJ-Nom"/>
-                            <constraint firstItem="HB6-Vq-V7y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Raz-4E-vuA"/>
-                            <constraint firstItem="HB6-Vq-V7y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aEw-9T-EH0"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="121" id="bhG-5c-GxX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="KCI-dh-HRs"/>
-                                <exclude reference="HB6-Vq-V7y"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Raz-4E-vuA"/>
-                                <exclude reference="aEw-9T-EH0"/>
                                 <exclude reference="4fH-dJ-Nom"/>
                                 <exclude reference="bhG-5c-GxX"/>
                             </mask>
@@ -52,11 +41,8 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="KCI-dh-HRs"/>
-                                <include reference="HB6-Vq-V7y"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Raz-4E-vuA"/>
-                                <include reference="aEw-9T-EH0"/>
                                 <include reference="4fH-dJ-Nom"/>
                                 <include reference="bhG-5c-GxX"/>
                             </mask>
@@ -64,7 +50,6 @@
                     </view>
                     <connections>
                         <outlet property="clockLabel" destination="KCI-dh-HRs" id="gOt-CY-AHI"/>
-                        <outlet property="testLocation" destination="HB6-Vq-V7y" id="HAu-LE-A7f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

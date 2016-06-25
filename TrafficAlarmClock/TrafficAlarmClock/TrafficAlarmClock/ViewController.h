@@ -12,6 +12,8 @@
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
+@property double latitude;
+@property double longitude;
 @property (weak,nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak,nonatomic) IBOutlet UILabel *testLocation;
 -(void)updateClockLabel;
