@@ -23,10 +23,6 @@ static void *weatherFetchPointer; //Here to hoping this works
     return self;
 }
 
--(void)observeLocationFetch
-{
-    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
-}
 -(void)dealloc {
     [[LocationFetch sharedInstance] removeObserver:self forKeyPath:@"currentLocation" context:nil];
     
@@ -46,36 +42,10 @@ static void *weatherFetchPointer; //Here to hoping this works
     NSString *weatherURL = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%0.6f,%0.6f",forecastAPIKey,currentLocationLat,currentLocationLong];
     //JSON GET request
     NSData *weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
-    NSMutableArray *weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
+    NSMutableDictionary *weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
     NSLog(@"Weather Request Sent; json recieved for Lat: %0.6f, Long:%0.6f",currentLocationLat,currentLocationLong);
+   
     
 }
-//Trigger Location Update for WeatherFetch via Key Value Observation
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object  change:(NSDictionary *)change context:(void *)context
-{
-    /*
-    if([keyPath isEqualToString:@"currentLocation"]) {
-        [self setWeatherLocation];
-        [self sendWeatherRequest];
-        NSLog(@"Observer has received message");
-        [self removeObserver:self forKeyPath:@"currentLocation" context:nil];
-    }
-     */
-    if (context != &weatherFetchPointer)
-    {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-    else
-    {
-        if([keyPath isEqualToString:@"currentLocation"])
-        {
-            [self setWeatherLocation];
-            [self sendWeatherRequest];
-            NSLog(@"Observer has received message");
-        }
-    }
-    
-}
-
 @end
 
