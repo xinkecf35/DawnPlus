@@ -12,11 +12,20 @@
 {
     double currentLatitude;
     double currentLongitude;
+    double workLatitude;
+    double workLongitude;
     NSData *trafficJSON;
     NSMutableDictionary *trafficData;
+   
 }
 @property NSString *workLocation;
 @property NSString *trafficCondition;
 @property NSString *transitTime;
+
+-(id) initWithLocation: (double)latitude : (double)longitude;
+-(void) sendTrafficRequest;
+-(void) geocodeWorkLocation;
+-(void) setCurrentCoordinates: (double)latitude : (double)longitude;
+
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LocationFetch.h"
 #import "WeatherFetch.h"
+#import "TrafficFetch.h"
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 

@@ -24,7 +24,7 @@
 -(void)setWeatherLocation;
 -(void)sendWeatherRequest;
 -(void)setWeatherParameters;
--(id)initWithLocation: (double) latitude : (double)longitude;
+-(id)initWithLocation: (double)latitude : (double)longitude;
 
 
 

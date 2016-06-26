@@ -23,8 +23,13 @@
     latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
     longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
     [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
+
     WeatherFetch *weatherUpdate = [[WeatherFetch alloc]initWithLocation:latitude :longitude];
+    TrafficFetch *trafficUpdate = [[TrafficFetch alloc]initWithLocation:latitude :longitude];
+    trafficUpdate.workLocation = @"600 N Ithan Ave, Bryn Mawr, PA 19010";
+    
     [weatherUpdate sendWeatherRequest];
+    [trafficUpdate geocodeWorkLocation];
 }
 
 
