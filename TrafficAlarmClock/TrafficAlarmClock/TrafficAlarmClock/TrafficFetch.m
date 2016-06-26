@@ -7,7 +7,7 @@
 //
 
 #import "TrafficFetch.h"
-static const NSString *mapquestAPIKey = @"AIzaSyD5LgUFZJLxAE1FMtjpXRoxhFZYV9vlo84";
+static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY";
 
 
 @implementation TrafficFetch
