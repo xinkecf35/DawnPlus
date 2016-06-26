@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0382A7E1CF409CC00905259 /* WeatherFetch.m */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D05893101D1F42C80024EA09 /* TrafficFetch.m */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0C8168F1D01EFC600B4754E /* AlarmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8168E1D01EFC600B4754E /* AlarmObject.m */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
@@ -43,6 +44,8 @@
 		D0382A7E1CF409CC00905259 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
 		D0382A801CF40DB100905259 /* WeatherFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D058930F1D1F42750024EA09 /* TrafficFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficFetch.h; sourceTree = "<group>"; };
+		D05893101D1F42C80024EA09 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0C8168D1D01E6D000B4754E /* AlarmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmObject.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				D0A0180D1CFA787400E8EECB /* LocationFetch.m */,
 				D0382A801CF40DB100905259 /* WeatherFetch.h */,
 				D0382A7E1CF409CC00905259 /* WeatherFetch.m */,
+				D058930F1D1F42750024EA09 /* TrafficFetch.h */,
+				D05893101D1F42C80024EA09 /* TrafficFetch.m */,
 				D0C8168D1D01E6D000B4754E /* AlarmObject.h */,
 				D0C8168E1D01EFC600B4754E /* AlarmObject.m */,
 			);
@@ -302,6 +307,7 @@
 			files = (
 				D0EDA15C1CF3CA3C0036293B /* ViewController.m in Sources */,
 				D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */,
+				D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,

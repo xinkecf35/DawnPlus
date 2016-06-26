@@ -33,6 +33,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//KVO for ViewController
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     if([keyPath isEqualToString:@"currentLocation"])
@@ -42,6 +43,7 @@
         NSLog(@"Observer has received message");
         WeatherFetch *weatherUpdate = [[WeatherFetch alloc]initWithLocation:latitude :longitude];
         [weatherUpdate sendWeatherRequest];
+        [weatherUpdate setWeatherParameters];
     }
 }
 - (void) updateClockLabel {
