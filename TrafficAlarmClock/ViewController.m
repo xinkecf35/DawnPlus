@@ -23,13 +23,9 @@
     latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
     longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
     [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
-
-    WeatherFetch *weatherUpdate = [[WeatherFetch alloc]initWithLocation:latitude :longitude];
-    TrafficFetch *trafficUpdate = [[TrafficFetch alloc]initWithLocation:latitude :longitude];
-    trafficUpdate.workLocation = @"600 N Ithan Ave, Bryn Mawr, PA 19010";
-    
-    [weatherUpdate sendWeatherRequest];
-    [trafficUpdate geocodeWorkLocation];
+    [[TrafficFetch sharedTraffic] setWorkLocation:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
+    [[WeatherFetch sharedWeather] sendWeatherRequest];
+    [[TrafficFetch sharedTraffic] geocodeWorkLocation];
 }
 
 
@@ -43,12 +39,14 @@
 {
     if([keyPath isEqualToString:@"currentLocation"])
     {
+        NSLog(@"Observer has received message");
         latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
         longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
-        NSLog(@"Observer has received message");
-        WeatherFetch *weatherUpdate = [[WeatherFetch alloc]initWithLocation:latitude :longitude];
-        [weatherUpdate sendWeatherRequest];
-        [weatherUpdate setWeatherParameters];
+        [[WeatherFetch sharedWeather] setWeatherLocation:latitude :longitude];
+        [[WeatherFetch sharedWeather] setWeatherParameters];
+        [[TrafficFetch sharedTraffic] setCurrentCoordinates:latitude :longitude];
+        [[TrafficFetch sharedTraffic]sendTrafficRequest];
+        
     }
 }
 - (void) updateClockLabel {

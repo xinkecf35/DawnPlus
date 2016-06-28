@@ -15,6 +15,17 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
 @implementation WeatherFetch
 
 @synthesize currentCondition,currentTemperature;
+
++(WeatherFetch *) sharedWeather
+{
+    static WeatherFetch *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc]initWithLocation: [LocationFetch sharedInstance].currentLocation.coordinate.latitude : [LocationFetch sharedInstance].currentLocation.coordinate.latitude];
+        
+    });
+    return instance;
+}
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
     self = [super init];
@@ -26,10 +37,10 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
     return self;
 }
 
--(void)setWeatherLocation
+-(void)setWeatherLocation: (double)latitude : (double)longitude
 {
-    currentLatitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
-    currentLongitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+    currentLatitude = latitude;
+    currentLongitude = longitude;
     NSLog(@"%@ Lat: %0.6f, Long: %0.6f",self,currentLatitude,currentLongitude);
 }
 -(void)sendWeatherRequest
@@ -64,7 +75,7 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
     precip *= 100;
     self.precipitationProbability = [NSString stringWithFormat:@"%0.0f %%",precip];
     
-    NSLog(@"%@ Temperature: %@, Condition:%@ Precipitation: %@", self, self.currentTemperature, self.currentCondition,self.precipitationProbability);
+    NSLog(@"%@ Weather Parameters for %0.6f,%0.6f Temperature: %@, Condition:%@ Precipitation: %@", self,currentLongitude,currentLatitude,self.currentTemperature, self.currentCondition,self.precipitationProbability);
 }
 
 @end

@@ -16,12 +16,14 @@
     NSMutableDictionary *weatherData;
 }
 
++(WeatherFetch *) sharedWeather;
+
 @property NSString *currentTemperature;
 @property NSString *currentCondition;
 @property NSString *precipitationProbability;
 
 
--(void)setWeatherLocation;
+-(void)setWeatherLocation: (double)latitude : (double)longitude;
 -(void)sendWeatherRequest;
 -(void)setWeatherParameters;
 -(id)initWithLocation: (double)latitude : (double)longitude;

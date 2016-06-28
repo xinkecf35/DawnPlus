@@ -1,0 +1,137 @@
+2016-06-27 17:15:41.077 TrafficAlarmClock[30665:456433] Starting Location Updates
+2016-06-27 17:15:41.334 TrafficAlarmClock[30665:456433] Weather Request Sent; json recieved for Lat: 0.000000, Long:0.000000
+2016-06-27 17:15:41.666 TrafficAlarmClock[30665:456433] <TrafficFetch: 0x7fa912c6a6d0> geocoded workLocation; Latitude: 40.040149, Longitude: -75.315663
+2016-06-27 17:15:41.689 TrafficAlarmClock[30665:456433] Location updates failed with Error Domain=kCLErrorDomain Code=0 "(null)"
+2016-06-27 17:15:41.692 TrafficAlarmClock[30665:456433] Location updates failed with Error Domain=kCLErrorDomain Code=0 "(null)"
+2016-06-27 17:16:11.028 TrafficAlarmClock[30665:456433] Observer has received message
+2016-06-27 17:16:11.028 TrafficAlarmClock[30665:456433] <WeatherFetch: 0x7fa912c6a890> Lat: 39.991798, Long: -75.113135
+2016-06-27 17:16:11.029 TrafficAlarmClock[30665:456433] <WeatherFetch: 0x7fa912c6a890> Weather Parameters for -75.113135,39.991798 Temperature: 77.09999999999999, Condition:partly-cloudy-night Precipitation: 0 %
+2016-06-27 17:16:11.029 TrafficAlarmClock[30665:456433] http://www.mapquestapi.com/traffic/v2/incidents?key=VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY&boundingBox=40.040149,-75.315663,39.991798,-75.113135&filters=congestion,incidents,event
+2016-06-27 17:16:11.101 TrafficAlarmClock[30665:456433] {
+    incidents =     (
+                 {
+            delayFromFreeFlow = 0;
+            delayFromTypical = 0;
+            distance = 0;
+            endTime = "2016-06-27T17:15:17";
+            eventCode = 75;
+            fullDesc = "Delays increasing and delays of six minutes on Schuylkill Expy Eastbound between Balligomingo Rd and Belmont Ave. Average speed 30 mph.";
+            iconURL = "http://api.mqcdn.com/mqtraffic/congestion_mod.png";
+            id = 18623217;
+            impacting = 1;
+            lat = "40.03548";
+            lng = "-75.243385";
+            parameterizedDescription =             {
+                crossRoad1 = "I-76  Exit 330 / Balligomingo Rd / PA-320 Trinity Ln";
+                crossRoad2 = "I-76  Exit 338 / Belmont Ave";
+                direction = Eastbound;
+                eventText = "Delays increasing, delays, average Speed";
+                fromLocation = Ardmore;
+                position1 = between;
+                position2 = and;
+                roadName = "Schuylkill Expy";
+                toLocation = Ardmore;
+            };
+            severity = 2;
+            shortDesc = "Schuylkill Expy E/B: delays increasing between Balligomingo Rd and Belmont Ave";
+            startTime = "2016-06-27T16:53:00";
+            type = 3;
+        },
+                {
+            delayFromFreeFlow = 0;
+            delayFromTypical = 0;
+            distance = 0;
+            endTime = "2016-06-27T17:18:15";
+            eventCode = 73;
+            fullDesc = "Delays of seven minutes on Schuylkill Expy Westbound between Montgomery Dr and Hollow Rd. Average speed 20 mph.";
+            iconURL = "http://api.mqcdn.com/mqtraffic/congestion_mod.png";
+            id = 18622994;
+            impacting = 1;
+            lat = "40.03215";
+            lng = "-75.23973100000001";
+            parameterizedDescription =             {
+                crossRoad1 = "I-76  Exit 341 / Montgomery Dr";
+                crossRoad2 = "I-76  Exit 337 / Hollow Rd / River Rd";
+                direction = Westbound;
+                eventText = "Delays, average Speed";
+                fromLocation = Ardmore;
+                position1 = between;
+                position2 = and;
+                roadName = "Schuylkill Expy";
+                toLocation = Ardmore;
+            };
+            severity = 2;
+            shortDesc = "Schuylkill Expy W/B: delays of seven minutes between Montgomery Dr and Hollow Rd";
+            startTime = "2016-06-27T16:08:00";
+            type = 3;
+        },
+                {
+            delayFromFreeFlow = 0;
+            delayFromTypical = 0;
+            distance = 0;
+            endTime = "2016-06-27T17:17:20";
+            eventCode = 72;
+            fullDesc = "Delays increasing and delays of five minutes on US-1 Eastbound between I-76 and Pulaski Ave. Average speed 15 mph.";
+            iconURL = "http://api.mqcdn.com/mqtraffic/congestion_mod.png";
+            id = 18615894;
+            impacting = 1;
+            lat = "40.018944";
+            lng = "-75.164749";
+            parameterizedDescription =             {
+                crossRoad1 = "I-76  Exits 339,340A / City Ave / US-1";
+                crossRoad2 = "US-1 / Pulaski Ave / Berkley St";
+                direction = Eastbound;
+                eventText = "Delays increasing, delays, average Speed";
+                fromLocation = Philadelphia;
+                position1 = between;
+                position2 = and;
+                roadName = "US-1";
+                toLocation = Philadelphia;
+            };
+            severity = 2;
+            shortDesc = "US-1 E/B: delays increasing between I-76 and Pulaski Ave";
+            startTime = "2016-06-27T15:28:00";
+            type = 3;
+        },
+                {
+            delayFromFreeFlow = 0;
+            delayFromTypical = 0;
+            distance = 0;
+            endTime = "2016-06-27T17:20:07";
+            eventCode = 71;
+            fullDesc = "Delays of two minutes on PA-611 Broad St Northbound between Allegheny Ave and Pacific St. Average speed ten mph.";
+            iconURL = "http://api.mqcdn.com/mqtraffic/congestion_min.png";
+            id = 18624309;
+            impacting = 1;
+            lat = "40.008324";
+            lng = "-75.151405";
+            parameterizedDescription =             {
+                crossRoad1 = "Allegheny Ave / PA-611 Broad St";
+                crossRoad2 = "PA-611 Broad St / Pacific St";
+                direction = Northbound;
+                eventText = "Delays, average Speed";
+                fromLocation = Philadelphia;
+                position1 = between;
+                position2 = and;
+                roadName = "Broad St";
+                toLocation = Philadelphia;
+            };
+            severity = 0;
+            shortDesc = "PA-611 Broad St N/B: delays of two minutes between Allegheny Ave and Pacific St";
+            startTime = "2016-06-27T17:06:00";
+            type = 3;
+        }
+    );
+    info =     {
+        copyright =         {
+            imageAltText = "\U00a9 2016 MapQuest, Inc.";
+            imageUrl = "http://api.mqcdn.com/res/mqlogo.gif";
+            text = "\U00a9 2016 MapQuest, Inc.";
+        };
+        messages =         (
+        );
+        statuscode = 0;
+    };
+    mqURL = "http://www.mapquest.com/maps?traffic=1&latitude=40.0159736&longitude=-75.2143991";
+}
+2016-06-27 17:16:11.102 TrafficAlarmClock[30665:456433] LocationFetch sharedInstance: Latitude +39.991798, Longitude -75.113135
