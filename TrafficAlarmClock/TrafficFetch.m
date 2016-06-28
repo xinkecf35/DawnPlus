@@ -12,7 +12,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY";
 
 
 @implementation TrafficFetch
-
+@synthesize workLocation,trafficIncidents;
 +(TrafficFetch *)sharedTraffic
 {
     static TrafficFetch *instance;
@@ -90,7 +90,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY";
     NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",workLatitude,workLongitude,currentLatitude,currentLongitude];
     NSDictionary *queryParameters= @{@"key":mapquestAPIKey,
                                     @"boundingBox":boundingBox,
-                                    @"filters":@"congestion,incidents,event"
+                                    @"filters":@"congestion,incidents,event,construction"
                                      };
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters)
@@ -100,17 +100,52 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY";
     trafficURL.queryItems = queryItems;
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
     trafficData = [NSJSONSerialization JSONObjectWithData:trafficJSON options:kNilOptions error:&trafficError];
+    //NSLog(@"%@",trafficData);
     NSLog(@"%@ received trafficData from %0.6f, %0.6f to %0.6f, %0.6f",self, currentLatitude,currentLongitude, workLatitude, workLongitude);
-}
--(NSDictionary*) addTrafficIncidents
-{
-    NSArray *rawIncidentsArray = [trafficData objectForKey:@"incidents"];
-    NSMutableDictionary *simpifiedIncidents = [[NSMutableDictionary alloc]init];
-    for (*item in rawIncidentsArray)
+    //Checking statuscode of request, if not 0, no go
+    NSNumber *statusCode = [[trafficData objectForKey:@"info"]objectForKey:@"statuscode"];
+    //NSLog(@"%@",statusCode);
+    status = [statusCode intValue];
+    if( status != 0)
     {
+        NSArray *error = @[@"-1",[NSNumber numberWithInt:status]];
+        self.trafficIncidents = error;
+        NSLog(@"Some error occured with fetching Traffic Data, most likely due to too large bounding box");
+    }
+}
+-(void) addTrafficIncidents
+{
+    if(status == 0)
+    {
+        NSArray *rawIncidentsArray = [trafficData objectForKey:@"incidents"];
+        NSMutableArray *incidentsArray = [[NSMutableArray alloc]initWithCapacity:[rawIncidentsArray count]];
+        //NSLog(@"%lu",(unsigned long)[rawIncidentsArray count]);
+        if ([rawIncidentsArray count] < 1)
+        {
+            [incidentsArray addObject:@"0"];
+            NSLog(@"%@ no major traffic incidents",self);
+        }
+        else
+        {
+            for (int i = 0; i < [rawIncidentsArray count];i++)
+            {
+                NSDictionary *rawIncident = [rawIncidentsArray objectAtIndex:i];
+                //NSLog(@"%@",rawIncident);
+                NSDictionary *incident = @{
+                                           @"severity":[rawIncident objectForKey:@"severity"],
+                                           @"type":[rawIncident objectForKey:@"type"],
+                                           @"fullDescription": [rawIncident objectForKey:@"fullDesc"],
+                                           @"shortDescription": [rawIncident objectForKey:@"shortDesc"],
+                                           @"direction": [[rawIncident objectForKey:@"parameterizedDescription" ] objectForKey:@"direction"]
+                                           };
+                //NSLog(@"%@",incident);
+                [incidentsArray addObject:incident];
+            }
+        }
+        self.trafficIncidents = incidentsArray;
+        NSLog(@"%@ addTrafficIncidents successful with %lu incidents",self,[rawIncidentsArray count]);
         
     }
-    
 }
 
 

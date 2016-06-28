@@ -26,6 +26,8 @@
     [[TrafficFetch sharedTraffic] setWorkLocation:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
     [[WeatherFetch sharedWeather] sendWeatherRequest];
     [[TrafficFetch sharedTraffic] geocodeWorkLocation];
+    [[TrafficFetch sharedTraffic]sendTrafficRequest];
+    [[TrafficFetch sharedTraffic] addTrafficIncidents];
 }
 
 
@@ -46,6 +48,8 @@
         [[WeatherFetch sharedWeather] setWeatherParameters];
         [[TrafficFetch sharedTraffic] setCurrentCoordinates:latitude :longitude];
         [[TrafficFetch sharedTraffic]sendTrafficRequest];
+        [[TrafficFetch sharedTraffic] addTrafficIncidents];
+        
         
     }
 }

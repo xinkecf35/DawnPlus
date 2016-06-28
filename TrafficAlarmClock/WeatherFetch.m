@@ -75,7 +75,7 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
     precip *= 100;
     self.precipitationProbability = [NSString stringWithFormat:@"%0.0f %%",precip];
     
-    NSLog(@"%@ Weather Parameters for %0.6f,%0.6f Temperature: %@, Condition:%@ Precipitation: %@", self,currentLongitude,currentLatitude,self.currentTemperature, self.currentCondition,self.precipitationProbability);
+    NSLog(@"%@ Weather Parameters for %0.6f,%0.6f Temperature: %@, Condition:%@ Precipitation: %@", self,currentLatitude,currentLongitude,self.currentTemperature, self.currentCondition,self.precipitationProbability);
 }
 
 @end
