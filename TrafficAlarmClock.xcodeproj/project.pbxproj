@@ -11,6 +11,7 @@
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D05893101D1F42C80024EA09 /* TrafficFetch.m */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
+		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
 		D0C8168F1D01EFC600B4754E /* AlarmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8168E1D01EFC600B4754E /* AlarmObject.m */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
 		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
@@ -48,6 +49,7 @@
 		D05893101D1F42C80024EA09 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
+		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
 		D0C8168D1D01E6D000B4754E /* AlarmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmObject.h; sourceTree = "<group>"; };
 		D0C8168E1D01EFC600B4754E /* AlarmObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmObject.m; sourceTree = "<group>"; };
 		D0EDA1511CF3CA3C0036293B /* TrafficAlarmClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficAlarmClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 		D0EDA1481CF3CA3C0036293B = {
 			isa = PBXGroup;
 			children = (
+				D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */,
 				D0382A811CF4101C00905259 /* CoreLocation.framework */,
 				D0EDA1531CF3CA3C0036293B /* TrafficAlarmClock */,
 				D0EDA1701CF3CA3C0036293B /* TrafficAlarmClockTests */,
@@ -281,6 +284,7 @@
 				D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */,
 				D0EDA1641CF3CA3C0036293B /* Assets.xcassets in Resources */,
 				D0EDA15F1CF3CA3C0036293B /* Main.storyboard in Resources */,
+				D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
