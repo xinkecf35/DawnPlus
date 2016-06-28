@@ -1,0 +1,31 @@
+2016-06-28 05:57:40.622 TrafficAlarmClock[1937:43873] Starting Location Updates
+2016-06-28 05:57:40.807 TrafficAlarmClock[1937:43873] Weather Request Sent; json recieved for Lat: 0.000000, Long:0.000000
+2016-06-28 05:57:40.976 TrafficAlarmClock[1937:43873] <TrafficFetch: 0x7fdd49624880> geocoded workLocation; Latitude: 40.040149, Longitude: -75.315663
+2016-06-28 05:57:41.025 TrafficAlarmClock[1937:43873] <TrafficFetch: 0x7fdd49624880> received trafficData from 0.000000, 0.000000 to 40.040149, -75.315663
+2016-06-28 05:57:41.025 TrafficAlarmClock[1937:43873] 400
+2016-06-28 05:57:41.025 TrafficAlarmClock[1937:43873] (
+    "-1",
+    400
+)
+2016-06-28 05:57:41.272 TrafficAlarmClock[1937:43873] Observer has received message
+2016-06-28 05:57:41.272 TrafficAlarmClock[1937:43873] <WeatherFetch: 0x7fdd49624a40> Lat: 39.991798, Long: -75.113135
+2016-06-28 05:57:41.272 TrafficAlarmClock[1937:43873] <WeatherFetch: 0x7fdd49624a40> Weather Parameters for 39.991798,-75.113135 Temperature: 76.97, Condition:cloudy Precipitation: 0 %
+2016-06-28 05:57:41.336 TrafficAlarmClock[1937:43873] <TrafficFetch: 0x7fdd49624880> received trafficData from 39.991798, -75.113135 to 40.040149, -75.315663
+2016-06-28 05:57:41.336 TrafficAlarmClock[1937:43873] 0
+2016-06-28 05:57:41.336 TrafficAlarmClock[1937:43873] (
+        {
+        direction = "both ways";
+        fullDescription = "Walnut Lane bridge closed due to construction on Walnut Ln both ways between Park Line Dr and Magdalena St.";
+        severity = 2;
+        shortDescription = "Walnut Ln: Walnut Lane bridge closed between Park Line Dr and Magdalena St";
+        type = 1;
+    },
+        {
+        direction = "both ways";
+        fullDescription = "Road closed due to incident on Lincoln Dr both ways at Rittenhouse Dr.";
+        severity = 2;
+        shortDescription = "Lincoln Dr: road closed at Rittenhouse Dr";
+        type = 4;
+    }
+)
+2016-06-28 05:57:41.336 TrafficAlarmClock[1937:43873] LocationFetch sharedInstance: Latitude +39.991798, Longitude -75.113135
