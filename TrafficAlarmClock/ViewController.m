@@ -14,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize clockLabel, testLocation,latitude,longitude;
+@synthesize clockLabel, latitude,longitude;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +28,7 @@
     [[TrafficFetch sharedTraffic] geocodeWorkLocation];
     [[TrafficFetch sharedTraffic]sendTrafficRequest];
     [[TrafficFetch sharedTraffic] addTrafficIncidents];
+    
 }
 
 
