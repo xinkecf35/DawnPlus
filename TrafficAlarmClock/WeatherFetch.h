@@ -16,7 +16,7 @@
     NSMutableDictionary *weatherData;
 }
 
-+(WeatherFetch *) sharedWeather;
+//+(WeatherFetch *) sharedWeather;
 
 @property NSString *currentTemperature;
 @property NSString *currentCondition;

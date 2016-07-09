@@ -20,7 +20,7 @@
    
 }
 
-+(TrafficFetch *)sharedTraffic;
+//+(TrafficFetch *)sharedTraffic;
 
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;

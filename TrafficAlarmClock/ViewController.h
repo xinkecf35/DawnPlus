@@ -15,7 +15,10 @@
 
 @property double latitude;
 @property double longitude;
+@property (nonatomic, strong) WeatherFetch *weatherUpdate;
+@property (nonatomic, strong) TrafficFetch *trafficUpdate;
 @property (weak,nonatomic) IBOutlet UILabel *clockLabel;
+
 
 
 -(void)updateClockLabel;
