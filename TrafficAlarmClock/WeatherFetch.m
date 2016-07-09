@@ -8,24 +8,28 @@
 
 #import "WeatherFetch.h"
 static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
+
 //static void *weatherFetchPointer; //Here to hoping this works
+/*
 //NSString of possible weatherConditions
 static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sleet,wind,fog,cloudy,partly-cloudy-day,partly-cloudy-night";
+*/
+
 
 @implementation WeatherFetch
 
 @synthesize currentCondition,currentTemperature;
-
+/*
 +(WeatherFetch *) sharedWeather
 {
     static WeatherFetch *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc]initWithLocation: [LocationFetch sharedInstance].currentLocation.coordinate.latitude : [LocationFetch sharedInstance].currentLocation.coordinate.latitude];
-        
     });
     return instance;
 }
+*/
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
     self = [super init];
@@ -60,9 +64,9 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
     //Getting current temperature, condition and precipitation probablity
     NSDictionary *currentWeather = [weatherData objectForKey:@"currently"];
     self.currentTemperature = [currentWeather objectForKey:@"temperature"];
-    //Checking and Seting weather condition
-    NSArray *weatherConditionsArray = [weatherConditions componentsSeparatedByString:@","];
-    for (NSString *item in weatherConditionsArray)
+    //Checking and Setting weather condition
+    NSArray *weatherConditions = @[@"clear-day",@"clear-night",@"rain",@"snow",@"sleet",@"wind",@"fog",@"cloudy",@"partly-cloudy-day",@"partly-cloudy-night"];
+    for (NSString *item in weatherConditions)
     {
         if([item isEqualToString:[currentWeather objectForKey:@"icon"]])
         {

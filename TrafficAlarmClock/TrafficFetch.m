@@ -7,12 +7,12 @@
 //
 
 #import "TrafficFetch.h"
-static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY";
-
-
+static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //Mapquest API Key
 
 @implementation TrafficFetch
 @synthesize workLocation,trafficIncidents;
+//
+/*
 +(TrafficFetch *)sharedTraffic
 {
     static TrafficFetch *instance;
@@ -22,7 +22,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY";
     });
     return instance;
 }
-
+*/
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
     self = [super init];

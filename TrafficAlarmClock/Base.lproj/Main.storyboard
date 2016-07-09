@@ -28,7 +28,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="118" y="141" width="164" height="42"/>
+                                    <rect key="frame" x="123" y="141" width="155" height="42"/>
                                 </variation>
                             </label>
                         </subviews>
