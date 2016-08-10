@@ -19,17 +19,7 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
 @implementation WeatherFetch
 
 @synthesize currentCondition,currentTemperature;
-/*
-+(WeatherFetch *) sharedWeather
-{
-    static WeatherFetch *instance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[self alloc]initWithLocation: [LocationFetch sharedInstance].currentLocation.coordinate.latitude : [LocationFetch sharedInstance].currentLocation.coordinate.latitude];
-    });
-    return instance;
-}
-*/
+
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
     self = [super init];
@@ -47,6 +37,7 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
     currentLongitude = longitude;
     NSLog(@"%@ Lat: %0.6f, Long: %0.6f",self,currentLatitude,currentLongitude);
 }
+
 -(void)sendWeatherRequest
 {
     NSError *weatherError;

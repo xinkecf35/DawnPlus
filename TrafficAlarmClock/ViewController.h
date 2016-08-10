@@ -18,10 +18,12 @@
 @property (nonatomic, strong) WeatherFetch *weatherUpdate;
 @property (nonatomic, strong) TrafficFetch *trafficUpdate;
 @property (weak,nonatomic) IBOutlet UILabel *clockLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
 
 
 
 -(void)updateClockLabel;
+-(void)updateWeatherLabels;
 
 @end
 
