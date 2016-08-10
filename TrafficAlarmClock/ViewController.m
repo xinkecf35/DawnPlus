@@ -45,7 +45,7 @@
     // Dispose of any resources that can be recreated.
 }
 //KVO for ViewController
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     if([keyPath isEqualToString:@"currentLocation"])
     {
@@ -62,11 +62,16 @@
         
     }
 }
-- (void) updateClockLabel {
+//Interface methods
+- (void)updateClockLabel {
     NSDateFormatter *clockFormat= [[NSDateFormatter alloc] init];
     [clockFormat setDateFormat:@"hh:mm a"];
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
+}
+- (void) updateWeatherLabels
+{
+        
 }
 
 @end
