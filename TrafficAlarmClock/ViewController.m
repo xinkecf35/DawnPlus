@@ -34,7 +34,7 @@
     [self.trafficUpdate geocodeWorkLocation];
     [self.trafficUpdate sendTrafficRequest];
     [self.trafficUpdate addTrafficIncidents];
-    
+    [self updateWeatherLabels];
     
 }
 
@@ -59,6 +59,7 @@
         [self.trafficUpdate geocodeWorkLocation];
         [self.trafficUpdate sendTrafficRequest];
         [self.trafficUpdate addTrafficIncidents];
+        [self updateWeatherLabels];
         
     }
 }
@@ -71,7 +72,9 @@
 }
 - (void) updateWeatherLabels
 {
-        
+    NSString *temp = [NSString stringWithFormat:@"%@%@F",self.weatherUpdate.currentTemperature, @"\u00B0"];
+    self.weatherTemperature.text = temp;
+    NSLog(@"%@ displaying temperature of %@",self, temp);
 }
 
 @end

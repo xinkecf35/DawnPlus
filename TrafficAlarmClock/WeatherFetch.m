@@ -54,7 +54,8 @@ static NSString * const weatherConditions = @"clear-day,clear-night,rain,snow,sl
 {
     //Getting current temperature, condition and precipitation probablity
     NSDictionary *currentWeather = [weatherData objectForKey:@"currently"];
-    self.currentTemperature = [currentWeather objectForKey:@"temperature"];
+    double temperature = [[currentWeather objectForKey:@"temperature"] doubleValue];
+    self.currentTemperature = [NSString stringWithFormat:@"%0.1f",temperature];
     //Checking and Setting weather condition
     NSArray *weatherConditions = @[@"clear-day",@"clear-night",@"rain",@"snow",@"sleet",@"wind",@"fog",@"cloudy",@"partly-cloudy-day",@"partly-cloudy-night"];
     for (NSString *item in weatherConditions)
