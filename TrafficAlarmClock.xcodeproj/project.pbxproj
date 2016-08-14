@@ -128,6 +128,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		D062B6121D5D50F0007086C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDA15D1CF3CA3C0036293B /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D07995FD1D24B351003010C8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +182,7 @@
 				D059AB661D0B918D002CA6D1 /* Model */,
 				D0EDA15A1CF3CA3C0036293B /* ViewController.h */,
 				D0EDA15B1CF3CA3C0036293B /* ViewController.m */,
-				D0EDA15D1CF3CA3C0036293B /* Main.storyboard */,
+				D062B6121D5D50F0007086C9 /* View */,
 				D0EDA1631CF3CA3C0036293B /* Assets.xcassets */,
 				D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */,
 				D0EDA1681CF3CA3C0036293B /* Info.plist */,
