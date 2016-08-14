@@ -130,7 +130,6 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
             for (int i = 0; i < [rawIncidentsArray count];i++)
             {
                 NSDictionary *rawIncident = [rawIncidentsArray objectAtIndex:i];
-                //NSLog(@"%@",rawIncident);
                 NSDictionary *incident = @{
                                            @"severity":[rawIncident objectForKey:@"severity"],
                                            @"type":[rawIncident objectForKey:@"type"],
@@ -138,7 +137,6 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
                                            @"shortDescription": [rawIncident objectForKey:@"shortDesc"],
                                            @"direction": [[rawIncident objectForKey:@"parameterizedDescription" ] objectForKey:@"direction"]
                                            };
-                //NSLog(@"%@",incident);
                 [incidentsArray addObject:incident];
             }
         }

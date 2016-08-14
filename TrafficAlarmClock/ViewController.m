@@ -14,11 +14,12 @@
 
 @implementation ViewController
 
-@synthesize clockLabel, latitude,longitude, weatherUpdate, trafficUpdate;
+@synthesize clockLabel, latitude,longitude, weatherUpdate, trafficUpdate, weatherTemperature;
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
     [self updateClockLabel];
+    
     [[LocationFetch sharedInstance] startingUpdatingLocation];
     latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
     longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
@@ -35,17 +36,18 @@
     [self.trafficUpdate sendTrafficRequest];
     [self.trafficUpdate addTrafficIncidents];
     [self updateWeatherLabels];
+    [self updateTrafficLabels];
     
 }
 
 
 
-- (void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 //KVO for ViewController
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     if([keyPath isEqualToString:@"currentLocation"])
     {
@@ -60,21 +62,29 @@
         [self.trafficUpdate sendTrafficRequest];
         [self.trafficUpdate addTrafficIncidents];
         [self updateWeatherLabels];
+        [self updateTrafficLabels];
         
     }
 }
 //Interface methods
-- (void)updateClockLabel {
+-(void)updateClockLabel
+{
     NSDateFormatter *clockFormat= [[NSDateFormatter alloc] init];
     [clockFormat setDateFormat:@"hh:mm a"];
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
 }
-- (void) updateWeatherLabels
+-(void) updateWeatherLabels
 {
     NSString *temp = [NSString stringWithFormat:@"%@%@F",self.weatherUpdate.currentTemperature, @"\u00B0"];
     self.weatherTemperature.text = temp;
-    NSLog(@"%@ displaying temperature of %@",self, temp);
+    //Logging displays of weather UILabels
+    NSLog(@"%@ method updateWeatherLabels displaying temperature of %@",self, temp);
 }
-
+-(void)updateTrafficLabels
+{
+    self.numberOfTrafficIncidents.text = [NSString stringWithFormat:@"%lu",[self.trafficUpdate.trafficIncidents count]];
+    //Logging displays of traffic UILabels
+    NSLog(@"%@ method updateTrafficLabels displays %lu traffic incidents",self,[self.trafficUpdate.trafficIncidents count]);
+}
 @end
