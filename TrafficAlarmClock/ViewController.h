@@ -20,8 +20,7 @@
 @property (weak,nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfTrafficIncidents;
-
-
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 
 -(void)updateClockLabel;
 -(void)updateWeatherLabels;
