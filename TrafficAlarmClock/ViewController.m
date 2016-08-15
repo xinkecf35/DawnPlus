@@ -7,14 +7,9 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
-@synthesize clockLabel, latitude,longitude, weatherUpdate, trafficUpdate, weatherTemperature;
+@synthesize clockLabel, latitude,longitude, weatherUpdate, trafficUpdate, weatherTemperature, weatherIcon;
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -70,7 +65,7 @@
 -(void)updateClockLabel
 {
     NSDateFormatter *clockFormat= [[NSDateFormatter alloc] init];
-    [clockFormat setDateFormat:@"hh:mm a"];
+    [clockFormat setDateFormat:@"h:mm a"];
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
 }
@@ -78,8 +73,10 @@
 {
     NSString *temp = [NSString stringWithFormat:@"%@%@F",self.weatherUpdate.currentTemperature, @"\u00B0"];
     self.weatherTemperature.text = temp;
+    UIImage *currentIcon = [UIImage imageNamed:self.weatherUpdate.currentCondition];
+    [weatherIcon setImage:currentIcon];
     //Logging displays of weather UILabels
-    NSLog(@"%@ method updateWeatherLabels displaying temperature of %@",self, temp);
+    NSLog(@"%@ method updateWeatherLabels displaying temperature of %@ and icon %@",self, temp,self.weatherUpdate.currentCondition);
 }
 -(void)updateTrafficLabels
 {
