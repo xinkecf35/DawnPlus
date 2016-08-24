@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfTrafficIncidents;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 
+
+-(IBAction)toggleSettings:(id)sender;
 -(void)updateClockLabel;
 -(void)updateWeatherLabels;
 -(void)updateTrafficLabels;
