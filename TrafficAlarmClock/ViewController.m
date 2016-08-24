@@ -84,8 +84,14 @@
     //Logging displays of traffic UILabels
     NSLog(@"%@ method updateTrafficLabels displays %lu traffic incidents",self,[self.trafficUpdate.trafficIncidents count]);
 }
+-(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
+{
+    UIViewController *sourceViewController = sender.sourceViewController;
+}
+/*
 -(IBAction)toggleSettings:(id)sender
 {
     
 }
+ */
 @end
