@@ -23,7 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 
 
--(IBAction)toggleSettings:(id)sender;
+//-(IBAction)toggleSettings:(id)sender;
+-(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
 -(void)updateClockLabel;
 -(void)updateWeatherLabels;
 -(void)updateTrafficLabels;

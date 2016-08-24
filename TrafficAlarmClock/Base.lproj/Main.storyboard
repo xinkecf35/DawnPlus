@@ -22,7 +22,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs">
@@ -50,12 +50,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="menu-icon"/>
+                                <connections>
+                                    <segue destination="jte-F2-Ymd" kind="presentation" id="1jg-ml-LNS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.76862745098039209" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="centerY" secondItem="pGl-EF-jpQ" secondAttribute="centerY" id="06k-pM-8NA"/>
                             <constraint firstItem="g0J-ag-VMu" firstAttribute="leading" secondItem="mwS-nG-RJL" secondAttribute="trailing" constant="12" id="1Ll-MT-ZNw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="-20" id="4Nl-Gb-Uu3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
+                            </constraint>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="KNq-rs-pUG"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="width" secondItem="pGl-EF-jpQ" secondAttribute="width" id="X6y-sc-wSO"/>
                             <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ajX-ES-Joj"/>
@@ -63,7 +69,6 @@
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="top" secondItem="pGl-EF-jpQ" secondAttribute="top" id="cP3-s3-WcJ"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="230" id="lK3-bk-1tR"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="lbY-Bw-63u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="-15" id="qeR-Ha-9OP"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="leading" secondItem="pGl-EF-jpQ" secondAttribute="trailing" constant="12" id="qnF-EL-Fis"/>
                             <constraint firstItem="g0J-ag-VMu" firstAttribute="centerY" secondItem="mwS-nG-RJL" secondAttribute="centerY" id="ubd-NB-fIU"/>
                         </constraints>
@@ -76,8 +81,6 @@
                                 <exclude reference="yeb-D7-7G5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ajX-ES-Joj"/>
-                                <exclude reference="qeR-Ha-9OP"/>
                                 <exclude reference="KNq-rs-pUG"/>
                                 <exclude reference="lbY-Bw-63u"/>
                                 <exclude reference="06k-pM-8NA"/>
@@ -88,6 +91,8 @@
                                 <exclude reference="lK3-bk-1tR"/>
                                 <exclude reference="1Ll-MT-ZNw"/>
                                 <exclude reference="ubd-NB-fIU"/>
+                                <exclude reference="4Nl-Gb-Uu3"/>
+                                <exclude reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -99,8 +104,6 @@
                                 <include reference="yeb-D7-7G5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ajX-ES-Joj"/>
-                                <include reference="qeR-Ha-9OP"/>
                                 <include reference="KNq-rs-pUG"/>
                                 <include reference="lbY-Bw-63u"/>
                                 <include reference="06k-pM-8NA"/>
@@ -111,9 +114,12 @@
                                 <include reference="lK3-bk-1tR"/>
                                 <include reference="1Ll-MT-ZNw"/>
                                 <include reference="ubd-NB-fIU"/>
+                                <include reference="4Nl-Gb-Uu3"/>
+                                <include reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="clockLabel" destination="KCI-dh-HRs" id="gOt-CY-AHI"/>
                         <outlet property="weatherIcon" destination="mwS-nG-RJL" id="RLg-C2-tId"/>
@@ -133,7 +139,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UtO-Xu-ndt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jqj-Ad-iF0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eet-co-vO0">
@@ -142,17 +148,33 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-cQ-eQn" userLabel="Back">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="back-arrow">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8H9-9u-SXo" kind="unwind" unwindAction="unwindToClockView:" id="18Y-XB-j77"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89019607840000003" green="0.76862745099999996" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Eet-co-vO0" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="50" id="7gB-Er-hab"/>
+                            <constraint firstItem="Eet-co-vO0" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="50" id="7gB-Er-hab">
+                                <variation key="heightClass=regular-widthClass=compact" constant="12"/>
+                            </constraint>
                             <constraint firstItem="Eet-co-vO0" firstAttribute="centerX" secondItem="jqj-Ad-iF0" secondAttribute="centerX" id="U3k-Jq-ahe"/>
+                            <constraint firstItem="gbm-cQ-eQn" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="10" id="Z1f-Hx-bPK"/>
+                            <constraint firstItem="gbm-cQ-eQn" firstAttribute="leading" secondItem="jqj-Ad-iF0" secondAttribute="leadingMargin" constant="-10" id="a8c-IW-AS8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Eet-co-vO0"/>
+                                <exclude reference="gbm-cQ-eQn"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Z1f-Hx-bPK"/>
+                                <exclude reference="a8c-IW-AS8"/>
                                 <exclude reference="7gB-Er-hab"/>
                                 <exclude reference="U3k-Jq-ahe"/>
                             </mask>
@@ -160,20 +182,26 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Eet-co-vO0"/>
+                                <include reference="gbm-cQ-eQn"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Z1f-Hx-bPK"/>
+                                <include reference="a8c-IW-AS8"/>
                                 <include reference="7gB-Er-hab"/>
                                 <include reference="U3k-Jq-ahe"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2a-eJ-LeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8H9-9u-SXo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1249.5" y="389.25"/>
+            <point key="canvasLocation" x="1248.75" y="388.875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back-arrow" width="44" height="44"/>
         <image name="fog" width="88" height="88"/>
         <image name="menu-icon" width="44" height="44"/>
     </resources>
