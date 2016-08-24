@@ -84,4 +84,8 @@
     //Logging displays of traffic UILabels
     NSLog(@"%@ method updateTrafficLabels displays %lu traffic incidents",self,[self.trafficUpdate.trafficIncidents count]);
 }
+-(IBAction)toggleSettings:(id)sender
+{
+    
+}
 @end
