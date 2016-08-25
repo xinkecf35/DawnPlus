@@ -6,10 +6,10 @@
 //  Copyright © 2016 Xinke Chen. All rights reserved.
 //
 
-#import "ViewController.h"
-@implementation ViewController
+#import "ClockViewController.h"
+@implementation ClockViewController
 
-@synthesize clockLabel, latitude,longitude, weatherUpdate, trafficUpdate, weatherTemperature, weatherIcon;
+@synthesize clockLabel,latitude,longitude, weatherUpdate, trafficUpdate, weatherTemperature, weatherIcon,trafficInfo;
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +46,7 @@
 {
     if([keyPath isEqualToString:@"currentLocation"])
     {
-        NSLog(@"Observer has received message");
+        NSLog(@"%@ observer has received message",self);
         latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
         longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
         [self.weatherUpdate setWeatherLocation:latitude :longitude];
@@ -80,13 +80,75 @@
 }
 -(void)updateTrafficLabels
 {
-    self.numberOfTrafficIncidents.text = [NSString stringWithFormat:@"%lu",[self.trafficUpdate.trafficIncidents count]];
-    //Logging displays of traffic UILabels
+    int lowSeverity = 0;
+    int highSeverity = 0;
+    //Determining overall status of traffic
+    NSArray *incidents = self.trafficUpdate.trafficIncidents;
+    if(incidents == nil)
+    {
+        UIImage *errorImage = [UIImage imageNamed:@"error"];
+        [trafficInfo setImage:errorImage forState:UIControlStateNormal];
+        NSLog(@"No traffic data is available");
+        
+    }
+    //Totaling severity events, divided into split into 0-2 and 3-4, inclusive
+    
+    for(id incident in incidents)
+    {
+        switch ([[incident valueForKey:@"severity"] intValue]) {
+            case 0:
+                lowSeverity++;
+                break;
+            case 1:
+                lowSeverity++;
+                break;
+            case 2:
+                lowSeverity++;
+                break;
+            case 3:
+                highSeverity++;
+                break;
+            case 4:
+                highSeverity++;
+                break;
+            default:
+                break;
+        }
+    }
+    NSLog(@"Number of low severity events: %d; Number of high severity events: %d",lowSeverity,highSeverity);
+    //Determining overall severity
+    if(lowSeverity == 0 && highSeverity == 0)
+    {
+        UIImage *checkMark = [UIImage imageNamed:@"check-mark"];
+        [trafficInfo setImage:checkMark forState:UIControlStateNormal];
+        NSLog(@"%@ no incidents available",self);
+    }
+    else if(lowSeverity > highSeverity)
+    {
+        UIImage *caution = [UIImage imageNamed:@"caution"];
+        [trafficInfo setImage:caution forState:UIControlStateNormal];
+        NSLog(@"%@ is displaying icon caution for trafficInfo",self);
+    }
+    else if(lowSeverity < highSeverity)
+    {
+        UIImage *cautionRed = [UIImage imageNamed:@"caution-red"];
+        [trafficInfo setImage:cautionRed forState:UIControlStateNormal];
+        NSLog(@"%@ is displaying icon caution-red for trafficInfo",self);
+    }
+    else
+    {
+        UIImage *errorImage = [UIImage imageNamed:@"error"];
+        [trafficInfo setImage:errorImage forState:UIControlStateNormal];
+        NSLog(@"Dear God, this should not even be possible, something has gone seriously wrong");
+    }
+    
+    //Logging displays of traffic UILabel
     NSLog(@"%@ method updateTrafficLabels displays %lu traffic incidents",self,[self.trafficUpdate.trafficIncidents count]);
 }
+
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
 {
-    UIViewController *sourceViewController = sender.sourceViewController;
+    //UIViewController *sourceViewController = sender.sourceViewController;
 }
 /*
 -(IBAction)toggleSettings:(id)sender

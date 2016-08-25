@@ -11,7 +11,7 @@
 #import "WeatherFetch.h"
 #import "TrafficFetch.h"
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface ClockViewController : UIViewController <CLLocationManagerDelegate>
 
 @property double latitude;
 @property double longitude;
@@ -19,11 +19,12 @@
 @property (nonatomic, strong) TrafficFetch *trafficUpdate;
 @property (weak,nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
-@property (weak, nonatomic) IBOutlet UILabel *numberOfTrafficIncidents;
+@property (weak, nonatomic) IBOutlet UIButton *trafficInfo;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 
 
 //-(IBAction)toggleSettings:(id)sender;
+//-(IBAction)toggleTrafficInfo:(id)sender;
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
 -(void)updateClockLabel;
 -(void)updateWeatherLabels;
