@@ -108,9 +108,9 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     status = [statusCode intValue];
     if( status != 0)
     {
-        NSArray *error = @[@"-1",[NSNumber numberWithInt:status]];
-        self.trafficIncidents = error;
-        NSLog(@"Some error occured with fetching Traffic Data, most likely due to too large bounding box");
+        int error;
+        self.trafficIncidents = nil;
+        NSLog(@"Some error occured with fetching Traffic Data, most likely due to too large bounding box; error %d", error);
     }
 }
 -(void) addTrafficIncidents
@@ -144,6 +144,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         NSLog(@"%@ addTrafficIncidents successful with %lu incidents",self,[rawIncidentsArray count]);
         
     }
+    
 }
 
 

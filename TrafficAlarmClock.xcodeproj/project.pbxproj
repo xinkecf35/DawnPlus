@@ -21,11 +21,11 @@
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
+		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
+		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
 		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
 		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
-		D0EDA15C1CF3CA3C0036293B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA15B1CF3CA3C0036293B /* ViewController.m */; };
-		D0EDA15F1CF3CA3C0036293B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA15D1CF3CA3C0036293B /* Main.storyboard */; };
 		D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld */; };
 		D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */; };
 		D0EDA1721CF3CA3C0036293B /* TrafficAlarmClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1711CF3CA3C0036293B /* TrafficAlarmClockTests.m */; };
@@ -68,14 +68,14 @@
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
+		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
+		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
+		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0E8F6E31D6D11BE000098FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0EDA1511CF3CA3C0036293B /* TrafficAlarmClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficAlarmClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0EDA1581CF3CA3C0036293B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0EDA15A1CF3CA3C0036293B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D0EDA15B1CF3CA3C0036293B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D0EDA15E1CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0EDA1611CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrafficAlarmClock.xcdatamodel; sourceTree = "<group>"; };
 		D0EDA1661CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +124,8 @@
 				D05893101D1F42C80024EA09 /* TrafficFetch.m */,
 				D07995FC1D241CAB003010C8 /* AlarmObject.h */,
 				D07995FA1D241C99003010C8 /* AlarmObject.m */,
+				D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */,
+				D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -131,7 +133,7 @@
 		D062B6121D5D50F0007086C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D0EDA15D1CF3CA3C0036293B /* Main.storyboard */,
+				D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -181,8 +183,6 @@
 				D0EDA1571CF3CA3C0036293B /* AppDelegate.h */,
 				D0EDA1581CF3CA3C0036293B /* AppDelegate.m */,
 				D059AB661D0B918D002CA6D1 /* Model */,
-				D0EDA15A1CF3CA3C0036293B /* ViewController.h */,
-				D0EDA15B1CF3CA3C0036293B /* ViewController.m */,
 				D062B6121D5D50F0007086C9 /* View */,
 				D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */,
 				D0EDA1681CF3CA3C0036293B /* Info.plist */,
@@ -324,11 +324,11 @@
 				D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */,
 				D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */,
 				D079961A1D24B38C003010C8 /* Raleway-LightItalic.ttf in Resources */,
+				D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */,
 				D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */,
 				D07996191D24B38C003010C8 /* Raleway-Light.ttf in Resources */,
 				D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */,
 				D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */,
-				D0EDA15F1CF3CA3C0036293B /* Main.storyboard in Resources */,
 				D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */,
 				D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */,
 				D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */,
@@ -357,10 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0EDA15C1CF3CA3C0036293B /* ViewController.m in Sources */,
 				D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */,
 				D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
+				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
@@ -400,10 +400,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D0EDA15D1CF3CA3C0036293B /* Main.storyboard */ = {
+		D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D0EDA15E1CF3CA3C0036293B /* Base */,
+				D0DCA8221D6DEEDC0025CB0D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
