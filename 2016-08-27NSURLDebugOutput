@@ -1,0 +1,87 @@
+2016-08-27 09:55:10.647 NSURL[19411:304872] {
+    info =     {
+        copyright =         {
+            imageAltText = "\U00a9 2016 MapQuest, Inc.";
+            imageUrl = "http://api.mqcdn.com/res/mqlogo.gif";
+            text = "\U00a9 2016 MapQuest, Inc.";
+        };
+        messages =         (
+        );
+        statuscode = 0;
+    };
+    options =     {
+        ignoreLatLngInput = 0;
+        maxResults = "-1";
+        thumbMaps = 1;
+    };
+    results =     (
+                {
+            locations =             (
+                                {
+                    adminArea1 = US;
+                    adminArea1Type = Country;
+                    adminArea3 = PA;
+                    adminArea3Type = State;
+                    adminArea4 = "";
+                    adminArea4Type = County;
+                    adminArea5 = Philadelphia;
+                    adminArea5Type = City;
+                    adminArea6 = "";
+                    adminArea6Type = Neighborhood;
+                    displayLatLng =                     {
+                        lat = "39.991659";
+                        lng = "-75.113078";
+                    };
+                    dragPoint = 0;
+                    geocodeQuality = POINT;
+                    geocodeQualityCode = P1ACA;
+                    latLng =                     {
+                        lat = "39.991659";
+                        lng = "-75.113078";
+                    };
+                    linkId = dr4edb2263td;
+                    mapUrl = "http://www.mapquestapi.com/staticmap/v4/getmap?key=VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY&type=map&size=225,160&pois=purple-1,39.991659,-75.113078,0,0,|&center=39.991659,-75.113078&zoom=15&rand=797329088";
+                    postalCode = 19134;
+                    sideOfStreet = N;
+                    street = "3084 Frankford Ave";
+                    type = s;
+                    unknownInput = "";
+                },
+                                {
+                    adminArea1 = US;
+                    adminArea1Type = Country;
+                    adminArea3 = TX;
+                    adminArea3Type = State;
+                    adminArea4 = "";
+                    adminArea4Type = County;
+                    adminArea5 = Lubbock;
+                    adminArea5Type = City;
+                    adminArea6 = "";
+                    adminArea6Type = Neighborhood;
+                    displayLatLng =                     {
+                        lat = "33.566321";
+                        lng = "-101.940141";
+                    };
+                    dragPoint = 0;
+                    geocodeQuality = ADDRESS;
+                    geocodeQualityCode = L1ACA;
+                    latLng =                     {
+                        lat = "33.566321";
+                        lng = "-101.940141";
+                    };
+                    linkId = 9tzwbq93yx9r;
+                    mapUrl = "http://www.mapquestapi.com/staticmap/v4/getmap?key=VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY&type=map&size=225,160&pois=purple-2,33.5663209,-101.9401412,0,0,|&center=33.5663209,-101.9401412&zoom=15&rand=-148888300";
+                    postalCode = "79407-78";
+                    sideOfStreet = N;
+                    street = "3084 Frankford Ave";
+                    type = s;
+                    unknownInput = "";
+                }
+            );
+            providedLocation =             {
+                location = "3084 Frankford Ave.";
+            };
+        }
+    );
+}
+Program ended with exit code: 0

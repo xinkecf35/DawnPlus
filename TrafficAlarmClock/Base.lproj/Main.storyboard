@@ -7,6 +7,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
@@ -30,9 +33,6 @@
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="52" y="134" width="67" height="88"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -46,24 +46,15 @@
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="86" y="230" width="203" height="63"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-xk-CCs">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="check-mark">
+                                <state key="normal" image="error">
                                     <attributedString key="attributedTitle"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="228" y="134" width="88" height="88"/>
-                                </variation>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-nG-RJL" userLabel="weatherLabel">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="127" y="134" width="93" height="88"/>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.76862745098039209" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
@@ -146,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="389.25"/>
+            <point key="canvasLocation" x="347.25" y="388.875"/>
         </scene>
         <!--Settings-->
         <scene sceneID="duQ-ns-QQK">
@@ -175,13 +166,21 @@
                                     <segue destination="8H9-9u-SXo" kind="unwind" unwindAction="unwindToClockView:" id="6PC-NG-FdM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traffic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qb7-rp-Ibx">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.89019607840000003" green="0.76862745099999996" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Eet-co-vO0" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="50" id="7gB-Er-hab">
                                 <variation key="heightClass=regular-widthClass=compact" constant="12"/>
                             </constraint>
+                            <constraint firstItem="qb7-rp-Ibx" firstAttribute="centerX" secondItem="jqj-Ad-iF0" secondAttribute="centerX" id="O4d-ix-Qdi"/>
                             <constraint firstItem="Eet-co-vO0" firstAttribute="centerX" secondItem="jqj-Ad-iF0" secondAttribute="centerX" id="U3k-Jq-ahe"/>
+                            <constraint firstItem="qb7-rp-Ibx" firstAttribute="top" secondItem="Eet-co-vO0" secondAttribute="bottom" constant="20" id="UfN-5p-Dks"/>
                             <constraint firstItem="gbm-cQ-eQn" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="10" id="Z1f-Hx-bPK"/>
                             <constraint firstItem="gbm-cQ-eQn" firstAttribute="leading" secondItem="jqj-Ad-iF0" secondAttribute="leadingMargin" constant="-10" id="a8c-IW-AS8"/>
                         </constraints>
@@ -189,24 +188,30 @@
                             <mask key="subviews">
                                 <exclude reference="Eet-co-vO0"/>
                                 <exclude reference="gbm-cQ-eQn"/>
+                                <exclude reference="qb7-rp-Ibx"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Z1f-Hx-bPK"/>
                                 <exclude reference="a8c-IW-AS8"/>
                                 <exclude reference="7gB-Er-hab"/>
                                 <exclude reference="U3k-Jq-ahe"/>
+                                <exclude reference="O4d-ix-Qdi"/>
+                                <exclude reference="UfN-5p-Dks"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Eet-co-vO0"/>
                                 <include reference="gbm-cQ-eQn"/>
+                                <include reference="qb7-rp-Ibx"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Z1f-Hx-bPK"/>
                                 <include reference="a8c-IW-AS8"/>
                                 <include reference="7gB-Er-hab"/>
                                 <include reference="U3k-Jq-ahe"/>
+                                <include reference="O4d-ix-Qdi"/>
+                                <include reference="UfN-5p-Dks"/>
                             </mask>
                         </variation>
                     </view>
@@ -215,12 +220,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2a-eJ-LeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8H9-9u-SXo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1248.75" y="388.875"/>
+            <point key="canvasLocation" x="359.25" y="1067.625"/>
         </scene>
     </scenes>
     <resources>
         <image name="back-arrow" width="44" height="44"/>
-        <image name="check-mark" width="88" height="88"/>
+        <image name="error" width="88" height="88"/>
         <image name="fog" width="88" height="88"/>
         <image name="menu-icon" width="44" height="44"/>
     </resources>
