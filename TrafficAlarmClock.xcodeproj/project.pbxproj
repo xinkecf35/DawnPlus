@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D02F82CC1D6F924000A77D76 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02F82CB1D6F924000A77D76 /* SettingsViewController.m */; };
 		D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0382A7E1CF409CC00905259 /* WeatherFetch.m */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D05893101D1F42C80024EA09 /* TrafficFetch.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D02F82CA1D6F91A500A77D76 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D02F82CB1D6F924000A77D76 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D0382A7E1CF409CC00905259 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
 		D0382A801CF40DB100905259 /* WeatherFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				D07995FA1D241C99003010C8 /* AlarmObject.m */,
 				D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */,
 				D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */,
+				D02F82CA1D6F91A500A77D76 /* SettingsViewController.h */,
+				D02F82CB1D6F924000A77D76 /* SettingsViewController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				TargetAttributes = {
 					D0EDA1501CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FN6XFMFZF5;
 					};
 					D0EDA16C1CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -360,6 +366,7 @@
 				D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */,
 				D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
+				D02F82CC1D6F924000A77D76 /* SettingsViewController.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
@@ -505,10 +512,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TrafficAlarmClock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -517,10 +527,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TrafficAlarmClock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

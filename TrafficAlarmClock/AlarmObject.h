@@ -9,7 +9,9 @@
 
 @interface AlarmObject : NSObject <NSCoding>
 
-@property NSDate *timeToSetOff;
+@property NSDate *alarmTime;
+@property NSArray *dayToRepeat;
+@property BOOL gentleWake;
 @property BOOL enabled;
 @property int notificationID;
 

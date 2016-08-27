@@ -20,7 +20,6 @@
    
 }
 
-//+(TrafficFetch *)sharedTraffic;
 
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;
@@ -29,6 +28,7 @@
 -(id) initWithLocation: (double)latitude : (double)longitude;
 -(void) sendTrafficRequest;
 -(void) geocodeWorkLocation;
+-(NSArray *)checkWorkLocation :(NSString *)userInput;
 -(void) setCurrentCoordinates: (double)latitude : (double)longitude;
 -(void) addTrafficIncidents;
 
