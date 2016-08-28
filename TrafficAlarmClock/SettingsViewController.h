@@ -10,6 +10,8 @@
 
 @interface SettingsViewController : UIViewController
 
-@property NSString *workLocation;
+@property NSString *userWorkLocation;
+
+-(void)userInputTrafficSettings;
 
 @end
