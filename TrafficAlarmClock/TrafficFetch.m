@@ -136,8 +136,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     NSLog(@"%@ geocoded workLocation; Latitude: %0.6f, Longitude: %0.6f",self, workLatitude, workLongitude);
 }
 //Checks user input for ambiguity and returns all possible results
-//Note that the first object in the return array will be an boolean value or integer value
-//This is to quickly determine whether there are multiple addresses or not.
+//Note that the first object in the return array will be an boolean value
 -(NSArray *)checkWorkLocation:(NSString *)userInput
 {
     NSError *geocodeError;
