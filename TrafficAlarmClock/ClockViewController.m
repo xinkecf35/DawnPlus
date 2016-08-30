@@ -123,13 +123,13 @@
         [trafficInfo setImage:checkMark forState:UIControlStateNormal];
         NSLog(@"%@ no incidents available",self);
     }
-    else if(lowSeverity > highSeverity)
+    else if(lowSeverity > highSeverity*2)
     {
         UIImage *caution = [UIImage imageNamed:@"caution"];
         [trafficInfo setImage:caution forState:UIControlStateNormal];
         NSLog(@"%@ is displaying icon caution for trafficInfo",self);
     }
-    else if(lowSeverity < highSeverity)
+    else if(lowSeverity < highSeverity*2)
     {
         UIImage *cautionRed = [UIImage imageNamed:@"caution-red"];
         [trafficInfo setImage:cautionRed forState:UIControlStateNormal];
