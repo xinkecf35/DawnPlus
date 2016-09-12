@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment version="2352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Raleway-Medium.ttf">
-            <string>Raleway-Medium</string>
-        </mutableArray>
-        <mutableArray key="Raleway-Regular.ttf">
+        <array key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
-            <string>Raleway-Regular</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--Clock-->
@@ -29,47 +26,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-EF-jpQ" userLabel="Temperature">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="52" y="134" width="67" height="88"/>
-                                </variation>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="menu-icon"/>
                                 <connections>
-                                    <segue destination="jte-F2-Ymd" kind="presentation" id="1jg-ml-LNS"/>
+                                    <segue destination="ktC-Wg-JG1" kind="presentation" id="1jg-ml-LNS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="20" y="20" width="170" height="66"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="86" y="230" width="203" height="63"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-xk-CCs">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="error">
                                     <attributedString key="attributedTitle"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="228" y="134" width="88" height="88"/>
-                                </variation>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-nG-RJL" userLabel="weatherLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="127" y="134" width="93" height="88"/>
-                                </variation>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-nG-RJL" userLabel="weatherLabel"/>
                         </subviews>
-                        <color key="backgroundColor" red="0.8901960784313725" green="0.76862745098039209" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8901960784313725" green="0.76862745098039209" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="centerY" secondItem="pGl-EF-jpQ" secondAttribute="centerY" id="06k-pM-8NA"/>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="centerY" secondItem="mwS-nG-RJL" secondAttribute="centerY" id="1QD-Hv-8Bf"/>
@@ -103,16 +82,16 @@
                             <mask key="constraints">
                                 <exclude reference="1QD-Hv-8Bf"/>
                                 <exclude reference="5Ae-fb-GE7"/>
-                                <exclude reference="4Nl-Gb-Uu3"/>
-                                <exclude reference="ajX-ES-Joj"/>
-                                <exclude reference="KNq-rs-pUG"/>
-                                <exclude reference="lbY-Bw-63u"/>
                                 <exclude reference="bMF-gT-WhA"/>
                                 <exclude reference="lK3-bk-1tR"/>
                                 <exclude reference="06k-pM-8NA"/>
                                 <exclude reference="X6y-sc-wSO"/>
                                 <exclude reference="cP3-s3-WcJ"/>
                                 <exclude reference="qnF-EL-Fis"/>
+                                <exclude reference="KNq-rs-pUG"/>
+                                <exclude reference="lbY-Bw-63u"/>
+                                <exclude reference="4Nl-Gb-Uu3"/>
+                                <exclude reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -126,20 +105,19 @@
                             <mask key="constraints">
                                 <include reference="1QD-Hv-8Bf"/>
                                 <include reference="5Ae-fb-GE7"/>
-                                <include reference="4Nl-Gb-Uu3"/>
-                                <include reference="ajX-ES-Joj"/>
-                                <include reference="KNq-rs-pUG"/>
-                                <include reference="lbY-Bw-63u"/>
                                 <include reference="bMF-gT-WhA"/>
                                 <include reference="lK3-bk-1tR"/>
                                 <include reference="06k-pM-8NA"/>
                                 <include reference="X6y-sc-wSO"/>
                                 <include reference="cP3-s3-WcJ"/>
                                 <include reference="qnF-EL-Fis"/>
+                                <include reference="KNq-rs-pUG"/>
+                                <include reference="lbY-Bw-63u"/>
+                                <include reference="4Nl-Gb-Uu3"/>
+                                <include reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="clockLabel" destination="KCI-dh-HRs" id="dYz-Tv-slJ"/>
                         <outlet property="trafficInfo" destination="DkP-xk-CCs" id="wYU-7G-TCV"/>
@@ -154,6 +132,7 @@
         <!--Settings-->
         <scene sceneID="duQ-ns-QQK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2a-eJ-LeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Settings" id="jte-F2-Ymd" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f6s-fV-mUe"/>
@@ -162,81 +141,33 @@
                     <view key="view" contentMode="scaleToFill" id="jqj-Ad-iF0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eet-co-vO0">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-cQ-eQn" userLabel="Back">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="back-arrow">
-                                    <attributedString key="attributedTitle"/>
-                                </state>
-                                <connections>
-                                    <segue destination="8H9-9u-SXo" kind="unwind" unwindAction="unwindToClockView:" id="6PC-NG-FdM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traffic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qb7-rp-Ibx">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.89019607840000003" green="0.76862745099999996" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Eet-co-vO0" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="50" id="7gB-Er-hab">
-                                <variation key="heightClass=regular-widthClass=compact" constant="12"/>
-                            </constraint>
-                            <constraint firstItem="qb7-rp-Ibx" firstAttribute="centerX" secondItem="jqj-Ad-iF0" secondAttribute="centerX" id="O4d-ix-Qdi"/>
-                            <constraint firstItem="Eet-co-vO0" firstAttribute="centerX" secondItem="jqj-Ad-iF0" secondAttribute="centerX" id="U3k-Jq-ahe"/>
-                            <constraint firstItem="qb7-rp-Ibx" firstAttribute="top" secondItem="Eet-co-vO0" secondAttribute="bottom" constant="20" id="UfN-5p-Dks"/>
-                            <constraint firstItem="gbm-cQ-eQn" firstAttribute="top" secondItem="f6s-fV-mUe" secondAttribute="bottom" constant="10" id="Z1f-Hx-bPK"/>
-                            <constraint firstItem="gbm-cQ-eQn" firstAttribute="leading" secondItem="jqj-Ad-iF0" secondAttribute="leadingMargin" constant="-10" id="a8c-IW-AS8"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Eet-co-vO0"/>
-                                <exclude reference="gbm-cQ-eQn"/>
-                                <exclude reference="qb7-rp-Ibx"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Z1f-Hx-bPK"/>
-                                <exclude reference="a8c-IW-AS8"/>
-                                <exclude reference="7gB-Er-hab"/>
-                                <exclude reference="U3k-Jq-ahe"/>
-                                <exclude reference="O4d-ix-Qdi"/>
-                                <exclude reference="UfN-5p-Dks"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Eet-co-vO0"/>
-                                <include reference="gbm-cQ-eQn"/>
-                                <include reference="qb7-rp-Ibx"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Z1f-Hx-bPK"/>
-                                <include reference="a8c-IW-AS8"/>
-                                <include reference="7gB-Er-hab"/>
-                                <include reference="U3k-Jq-ahe"/>
-                                <include reference="O4d-ix-Qdi"/>
-                                <include reference="UfN-5p-Dks"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.76862745099999996" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationItem key="navigationItem" id="UMQ-GJ-y23"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n2a-eJ-LeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="8H9-9u-SXo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="359.25" y="1067.625"/>
+            <point key="canvasLocation" x="2048.8000000000002" y="388.15592203898052"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8hV-Em-3J0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ktC-Wg-JG1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cOe-dH-tL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jte-F2-Ymd" kind="relationship" relationship="rootViewController" id="ryc-Qb-F1N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4EJ-xb-GuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109.5999999999999" y="388.15592203898052"/>
         </scene>
     </scenes>
     <resources>
-        <image name="back-arrow" width="44" height="44"/>
         <image name="error" width="88" height="88"/>
         <image name="fog" width="88" height="88"/>
         <image name="menu-icon" width="44" height="44"/>
