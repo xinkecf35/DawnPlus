@@ -6,12 +6,8 @@
 //  Copyright © 2016 Xinke Chen. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "LocationFetch.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UITableViewDelegate>
 
-@property NSString *userWorkLocation;
-
--(void)userInputTrafficSettings;
 
 @end
