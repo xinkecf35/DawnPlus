@@ -8,7 +8,7 @@
 
 #import "WeatherFetch.h"
 #import <math.h>
-static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
+static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
 
 
 @implementation WeatherFetch
@@ -36,8 +36,8 @@ static NSString *const forecastAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //S
 -(void)sendWeatherRequest
 {
     NSError *weatherError;
-    //Setting forecast.io url
-    NSString *weatherURL = [NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%0.6f,%0.6f",forecastAPIKey,currentLatitude,currentLongitude];
+    //Setting darksky.net url
+    NSString *weatherURL = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f",darkskyAPIKey,currentLatitude,currentLongitude];
     //JSON GET request
     weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
     weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
