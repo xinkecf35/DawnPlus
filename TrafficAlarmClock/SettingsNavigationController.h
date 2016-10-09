@@ -1,3 +1,5 @@
+
+
 //
 //  SettingsViewController.h
 //  TrafficAlarmClock
@@ -6,9 +8,10 @@
 //  Copyright © 2016 Xinke Chen. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "Foundation/Foundation.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsNavigationController
+
+
 
 
 @end

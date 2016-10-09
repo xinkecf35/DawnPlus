@@ -38,6 +38,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     trafficURL.scheme = @"http";
     trafficURL.host = @"www.mapquestapi.com";
     trafficURL.path = @"/traffic/v2/incidents";
+    //Setting Bounding Box
     NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",workLatitude,workLongitude,currentLatitude,currentLongitude];
     NSDictionary *queryParameters= @{@"key":mapquestAPIKey,
                                     @"boundingBox":boundingBox,
