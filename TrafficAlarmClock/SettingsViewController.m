@@ -7,11 +7,20 @@
 //
 
 #import "SettingsViewController.h"
-#import "AlarmObject.h"
 
 @implementation SettingsViewController
-
-
+{
+    NSArray *settings;
+}
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+//UITableView methods
 
 
 @end

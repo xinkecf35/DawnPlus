@@ -11,7 +11,8 @@
 
 @synthesize clockLabel,latitude,longitude, weatherUpdate, trafficUpdate, weatherTemperature, weatherIcon,trafficInfo;
 
--(void)viewDidLoad {
+-(void)viewDidLoad
+{
     [super viewDidLoad];
     [self updateClockLabel];
     
@@ -34,8 +35,6 @@
     [self updateTrafficLabels];
     
 }
-
-
 
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -148,7 +147,7 @@
 
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
 {
-    //UIViewController *sourceViewController = sender.sourceViewController;
+    UIViewController *sourceViewController = sender.sourceViewController;
 }
 /*
 -(IBAction)toggleSettings:(id)sender

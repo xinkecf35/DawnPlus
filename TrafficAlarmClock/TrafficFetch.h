@@ -10,10 +10,18 @@
 
 @interface TrafficFetch : NSObject
 {
+    //Actual user and work coordinates respectively
     double currentLatitude;
     double currentLongitude;
     double workLatitude;
     double workLongitude;
+    //Bounding Box Cooridinates
+    /*
+    double homeBoundingBoxLatitude;
+    double homeBoundingBoxLongitude;
+    double workBoundingBoxLatitude;
+    double workBoundingBoxLongitude;
+    */
     int status;
     NSData *trafficJSON;
     NSMutableDictionary *trafficData;
