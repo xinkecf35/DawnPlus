@@ -9,9 +9,6 @@
 #import "SettingsViewController.h"
 
 @implementation SettingsViewController 
-{
-    NSArray *settings;
-}
 -(void)viewDidLoad
 {
     [super viewDidLoad];
