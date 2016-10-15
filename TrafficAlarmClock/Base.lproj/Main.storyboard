@@ -224,7 +224,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="accessoryView" destination="eVa-NK-wVx" id="h3j-5V-CP8"/>
+                                            <outlet property="accessoryView" destination="rVS-Io-a5Q" id="XMP-KM-x6X"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="cTg-XV-tff" userLabel="temperatureUnitsCell">
@@ -268,9 +268,6 @@
                                                 <constraint firstItem="XtX-Fr-eQ5" firstAttribute="centerY" secondItem="NTu-MS-bWl" secondAttribute="centerY" id="Bqs-9A-rdp"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="accessoryView" destination="eVa-NK-wVx" id="iAM-lS-SHK"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="kdH-bW-DbI" userLabel="temperatureUnitsCell">
                                         <rect key="frame" x="0.0" y="548" width="375" height="44"/>
@@ -304,7 +301,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89P-qV-USE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eVa-NK-wVx" userLabel="gentleWakeSwitch">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="rVS-Io-a5Q" userLabel="gentleWakeSwitch">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
