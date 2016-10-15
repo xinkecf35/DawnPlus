@@ -95,6 +95,13 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         NSLog(@"%@ addTrafficIncidents successful with %lu incidents",self,[rawIncidentsArray count]);
         
     }
+    //If status code is non-zero
+    else
+    {
+        
+        self.trafficIncidents = nil;
+        NSLog(@"%@", self.trafficIncidents);
+    }
     
 }
 //Code from here on is all part of the Mapquest Geocode API

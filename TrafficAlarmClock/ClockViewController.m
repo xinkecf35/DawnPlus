@@ -82,14 +82,14 @@
     int lowSeverity = 0;
     int highSeverity = 0;
     //Determining overall status of traffic
-    NSArray *incidents = self.trafficUpdate.trafficIncidents;
-    if(incidents == nil)
+    if(self.trafficUpdate.trafficIncidents == nil)
     {
         UIImage *errorImage = [UIImage imageNamed:@"error"];
         [trafficInfo setImage:errorImage forState:UIControlStateNormal];
         NSLog(@"No traffic data is available");
         
     }
+    NSArray *incidents = self.trafficUpdate.trafficIncidents;
     //Totaling severity events, divided into split into 0-2 and 3-4, inclusive
     
     for(id incident in incidents)
