@@ -16,15 +16,15 @@
 {
     double boundingBoxLatitude;
     double boundingBoxLongitude;
-    double workLatitude;
-    double workLongitude;
 }
 @property double currentLatitude;
 @property double currentLongitude;
-@property NSString* inputWorkAddress;
-@property NSString* verifiedAddress;
+@property double workLatitude;
+@property double workLongitude;
+@property NSString* workAddress;
 
 
+-(void)setCurrentCoordinates:(double)latitude :(double)longitude;
 -(void) geocodeWorkLocation;
 -(NSArray *)checkWorkLocation;
 

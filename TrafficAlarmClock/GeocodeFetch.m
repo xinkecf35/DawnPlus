@@ -10,8 +10,13 @@
 static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //Mapquest API Key
 
 @implementation GeocodeFetch
-@synthesize currentLatitude,currentLongitude, inputWorkAddress, verifiedAddress;
+@synthesize currentLatitude,currentLongitude,workLatitude,workLongitude, workAddress;
 
+-(void)setCurrentCoordinates:(double)latitude :(double)longitude
+{
+    workLatitude = latitude;
+    workLongitude = longitude;
+}
 
 //Code from here on is all part of the Mapquest Geocode API
 -(void)geocodeWorkLocation
@@ -23,7 +28,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     geocodeURL.scheme = @"http";
     geocodeURL.host = @"www.mapquestapi.com";
     geocodeURL.path = @"/geocoding/v1/address";
-    NSDictionary *queryParameters = @{@"key": mapquestAPIKey, @"location": verifiedAddress};
+    NSDictionary *queryParameters = @{@"key": mapquestAPIKey, @"location": workAddress};
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters)
     {
@@ -62,7 +67,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     geocodeURL.scheme = @"http";
     geocodeURL.host = @"www.mapquestapi.com";
     geocodeURL.path = @"/geocoding/v1/address";
-    NSDictionary *queryParameters = @{@"key": mapquestAPIKey, @"location": inputWorkAddress};
+    NSDictionary *queryParameters = @{@"key": mapquestAPIKey, @"location": workAddress};
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters)
     {
@@ -105,7 +110,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
                              objectForKey:@"locations"]
                             objectAtIndex:i]
                            objectForKey:@"adminArea3"]];
-        NSString *possibleAddress = [NSString stringWithFormat:@"%@, %@, %@",inputWorkAddress,city,state];
+        NSString *possibleAddress = [NSString stringWithFormat:@"%@, %@, %@",workAddress,city,state];
         [possibleLocations addObject:possibleAddress];
     }
     return possibleLocations;

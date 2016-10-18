@@ -13,21 +13,13 @@
     //Actual user and work coordinates respectively
     double currentLatitude;
     double currentLongitude;
-    double workLatitude;
-    double workLongitude;
-    //Bounding Box Cooridinates
-    /*
-    double homeBoundingBoxLatitude;
-    double homeBoundingBoxLongitude;
-    double workBoundingBoxLatitude;
-    double workBoundingBoxLongitude;
-    */
     int status;
     NSData *trafficJSON;
     NSMutableDictionary *trafficData;
    
 }
-
+@property double workLatitude;
+@property double workLongitude;
 
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;
@@ -35,8 +27,6 @@
 
 -(id) initWithLocation: (double)latitude : (double)longitude;
 -(void) sendTrafficRequest;
--(void) geocodeWorkLocation;
--(NSArray *)checkWorkLocation :(NSString *)userInput;
 -(void) setCurrentCoordinates: (double)latitude : (double)longitude;
 -(void) addTrafficIncidents;
 

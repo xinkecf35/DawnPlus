@@ -10,6 +10,7 @@
 #import "LocationFetch.h"
 #import "WeatherFetch.h"
 #import "TrafficFetch.h"
+#import "GeocodeFetch.h"
 
 @interface ClockViewController : UIViewController
 
@@ -17,6 +18,7 @@
 @property double longitude;
 @property (nonatomic, strong) WeatherFetch *weatherUpdate;
 @property (nonatomic, strong) TrafficFetch *trafficUpdate;
+@property (nonatomic, strong) GeocodeFetch *geocodeService;
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
 @property (weak, nonatomic) IBOutlet UIButton *trafficInfo;

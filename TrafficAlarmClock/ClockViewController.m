@@ -24,11 +24,16 @@
     
     self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
     self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
+    self.geocodeService = [[GeocodeFetch alloc]init];
     
     [self.weatherUpdate sendWeatherRequest];
     [self.weatherUpdate setWeatherParameters];
-    [self.trafficUpdate setWorkLocation:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
-    [self.trafficUpdate geocodeWorkLocation];
+    
+    [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
+    [self.geocodeService geocodeWorkLocation];
+    //From Geocode to TrafficFetch coordinates
+    self.trafficUpdate.workLatitude = self.geocodeService.workLatitude;
+    self.trafficUpdate.workLongitude = self.geocodeService.workLongitude;
     [self.trafficUpdate sendTrafficRequest];
     [self.trafficUpdate addTrafficIncidents];
     [self updateWeatherLabels];
@@ -50,9 +55,16 @@
         longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
         [self.weatherUpdate setWeatherLocation:latitude :longitude];
         [self.trafficUpdate setCurrentCoordinates:latitude :longitude];
+        [self.geocodeService setCurrentCoordinates:latitude :longitude];
+        
         [self.weatherUpdate sendWeatherRequest];
         [self.weatherUpdate setWeatherParameters];
-        [self.trafficUpdate geocodeWorkLocation];
+        
+        [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
+        [self.geocodeService geocodeWorkLocation];
+        //From Geocode to TrafficFetch coordinates
+        self.trafficUpdate.workLatitude = self.geocodeService.workLatitude;
+        self.trafficUpdate.workLongitude = self.geocodeService.workLongitude;
         [self.trafficUpdate sendTrafficRequest];
         [self.trafficUpdate addTrafficIncidents];
         [self updateWeatherLabels];
