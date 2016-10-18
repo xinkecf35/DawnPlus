@@ -20,6 +20,7 @@
 		D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996091D24B38C003010C8 /* Raleway-Medium.ttf */; };
 		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
+		D07B541F1DB68940005BF81F /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D07B541E1DB68940005BF81F /* GeocodeFetch.m */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
@@ -68,6 +69,8 @@
 		D07996091D24B38C003010C8 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		D07B541D1DB68940005BF81F /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
+		D07B541E1DB68940005BF81F /* GeocodeFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeFetch.m; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		D059AB661D0B918D002CA6D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D07B541D1DB68940005BF81F /* GeocodeFetch.h */,
+				D07B541E1DB68940005BF81F /* GeocodeFetch.m */,
 				D0A0180C1CFA783900E8EECB /* LocationFetch.h */,
 				D0A0180D1CFA787400E8EECB /* LocationFetch.m */,
 				D0382A801CF40DB100905259 /* WeatherFetch.h */,
@@ -372,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */,
+				D07B541F1DB68940005BF81F /* GeocodeFetch.m in Sources */,
 				D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */,
