@@ -159,12 +159,7 @@
 
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
 {
-    UIViewController *sourceViewController = sender.sourceViewController;
+    NSLog(@"Back to Clock View");
 }
-/*
--(IBAction)toggleSettings:(id)sender
-{
-    
-}
- */
+
 @end
