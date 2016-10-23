@@ -305,12 +305,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="WVa-Gy-DTL">
                         <barButtonItem key="backBarButtonItem" title="Back" id="xzW-2e-xlw"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="8gh-Zl-gMM">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HO2-3N-0yB">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="OtQ-sD-hoX">
+                            <connections>
+                                <action selector="dismissSettings:" destination="71k-Ke-bFH" id="nyQ-eV-5gX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

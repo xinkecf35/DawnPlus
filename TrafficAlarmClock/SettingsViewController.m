@@ -18,6 +18,11 @@
 {
     [super viewDidUnload];
 }
+-(IBAction)dismissSettings:(id)sender
+{
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
+
 //UITableView methods
 //-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
