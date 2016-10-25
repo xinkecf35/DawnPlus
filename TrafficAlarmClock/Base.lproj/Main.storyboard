@@ -159,6 +159,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.45098039215686275" green="0.78431372549019607" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="LBK-GB-1YJ" kind="show" id="Qam-Fn-h8j"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="8FV-9i-Dce" userLabel="sensitivityCell">
                                         <rect key="frame" x="0.0" y="164" width="375" height="44"/>
@@ -320,12 +323,30 @@
             </objects>
             <point key="canvasLocation" x="2160.8000000000002" y="386.35682158920542"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="VxC-8E-yST">
+            <objects>
+                <viewController id="LBK-GB-1YJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M0N-1U-4CF"/>
+                        <viewControllerLayoutGuide type="bottom" id="d5L-D9-rfx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1En-gE-Vp5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyc-a2-JSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2913" y="-206"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZk-IA-WoL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="I9b-wB-0WW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qlf-hA-lpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qlf-hA-lpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
