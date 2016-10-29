@@ -10,7 +10,7 @@
 static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //Mapquest API Key
 
 @implementation TrafficFetch
-@synthesize workLocation,trafficIncidents,workLatitude,workLongitude;
+@synthesize workLocation,trafficIncidents,workLatitude,workLongitude,status;
 
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
