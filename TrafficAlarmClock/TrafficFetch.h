@@ -13,7 +13,6 @@
     //Actual user and work coordinates respectively
     double currentLatitude;
     double currentLongitude;
-    int status;
     NSData *trafficJSON;
     NSMutableDictionary *trafficData;
    
@@ -23,6 +22,7 @@
 
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;
+@property int status;
 
 
 -(id) initWithLocation: (double)latitude : (double)longitude;

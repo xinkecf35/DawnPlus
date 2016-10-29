@@ -26,6 +26,7 @@
 
 -(void)setCurrentCoordinates:(double)latitude :(double)longitude;
 -(void) geocodeWorkLocation;
+-(double) distanceBetweenCoordinates;
 -(NSArray *)checkWorkLocation;
 
 
