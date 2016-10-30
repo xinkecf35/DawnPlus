@@ -98,21 +98,38 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     {
         NSString *city = [NSString stringWithFormat:@"%@",
                           [[[[[geocodeData
-                               objectForKey:@"results"]
-                              objectAtIndex:0]
-                             objectForKey:@"locations"]
-                            objectAtIndex:i]
-                           objectForKey:@"adminArea5"]];
+                                objectForKey:@"results"]
+                                objectAtIndex:0]
+                                objectForKey:@"locations"]
+                                objectAtIndex:i]
+                                objectForKey:@"adminArea5"]];
         NSString *state =[NSString stringWithFormat:@"%@",
                           [[[[[geocodeData
-                               objectForKey:@"results"]
-                              objectAtIndex:0]
-                             objectForKey:@"locations"]
-                            objectAtIndex:i]
-                           objectForKey:@"adminArea3"]];
+                                objectForKey:@"results"]
+                                objectAtIndex:0]
+                                objectForKey:@"locations"]
+                                objectAtIndex:i]
+                                objectForKey:@"adminArea3"]];
         NSString *possibleAddress = [NSString stringWithFormat:@"%@, %@, %@",workAddress,city,state];
         [possibleLocations addObject:possibleAddress];
     }
     return possibleLocations;
+}
+//Calculate Distance between Coordinates
+-(double) distanceBetweenCoordinates
+{
+    static const double earthRadius = 6371e3;
+    double workLatRadians, workLongRadians, currentLatRadians, currentLongRadians = 0;
+    workLatRadians = (workLatitude * M_PI)/2;
+    workLongRadians = (workLongitude * M_PI)/2;
+    currentLatRadians = (currentLatitude * M_PI)/2;
+    currentLongRadians = (currentLongitude * M_PI)/2;
+    //Haversine Formula
+    double centralAngle = acos((sin(workLatRadians)*sin(currentLatRadians)+
+                              ((cos(workLongRadians)*cos(currentLongRadians)*
+                              cos(fabs(currentLongRadians-workLongRadians))))));
+    double greatCircleDistance = earthRadius * centralAngle;
+    //Returns 'As the crow flies' distance
+    return greatCircleDistance;
 }
 @end
