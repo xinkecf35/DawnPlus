@@ -11,6 +11,8 @@
 //to size an appropriate boundingBox for TrafficFetch
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import "LocationFetch.h"
 
 @interface GeocodeFetch : NSObject
 {

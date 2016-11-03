@@ -38,7 +38,8 @@
     [self.trafficUpdate addTrafficIncidents];
     [self updateWeatherLabels];
     [self updateTrafficLabels];
-    
+    double distance = [self.geocodeService distanceBetweenCoordinates];
+    NSLog(@"Distance is %0.3f",distance);
 }
 
 -(void)didReceiveMemoryWarning {
@@ -69,7 +70,8 @@
         [self.trafficUpdate addTrafficIncidents];
         [self updateWeatherLabels];
         [self updateTrafficLabels];
-        
+        double distance = [self.geocodeService distanceBetweenCoordinates];
+        NSLog(@"Distance is %0.3f",distance);
     }
 }
 //Interface methods
