@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+
 @interface LocationFetch : NSObject <CLLocationManagerDelegate>
 
 +(LocationFetch *) sharedInstance;

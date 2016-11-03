@@ -118,18 +118,11 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
 //Calculate Distance between Coordinates
 -(double) distanceBetweenCoordinates
 {
-    static const double earthRadius = 6371e3;
-    double workLatRadians, workLongRadians, currentLatRadians, currentLongRadians = 0;
-    workLatRadians = (workLatitude * M_PI)/2;
-    workLongRadians = (workLongitude * M_PI)/2;
-    currentLatRadians = (currentLatitude * M_PI)/2;
-    currentLongRadians = (currentLongitude * M_PI)/2;
-    //Haversine Formula
-    double centralAngle = acos((sin(workLatRadians)*sin(currentLatRadians)+
-                              ((cos(workLongRadians)*cos(currentLongRadians)*
-                              cos(fabs(currentLongRadians-workLongRadians))))));
-    double greatCircleDistance = earthRadius * centralAngle;
-    //Returns 'As the crow flies' distance
+    //Not worth implementing independently.
+    //turn geocoded work address into usable CLLocation object
+    CLLocation *homeToWorkCalculation = [[CLLocation alloc] initWithLatitude:workLatitude longitude:workLongitude];
+    //Calculate Distance from work coordinates to user coordinates in meters
+    double greatCircleDistance = [homeToWorkCalculation distanceFromLocation:[LocationFetch sharedInstance].currentLocation];
     return greatCircleDistance;
 }
 @end
