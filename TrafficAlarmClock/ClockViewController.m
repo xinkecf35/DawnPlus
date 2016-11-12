@@ -102,7 +102,6 @@
         [trafficInfo setImage:errorImage forState:UIControlStateNormal];
         NSLog(@"No traffic data is available");
         
-        
     }
     else
     {
