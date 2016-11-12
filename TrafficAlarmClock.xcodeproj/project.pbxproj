@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00916B71D73444A009999F2 /* SettingsViewController.m */; };
+		D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */; };
 		D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0382A7E1CF409CC00905259 /* WeatherFetch.m */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D05893101D1F42C80024EA09 /* TrafficFetch.m */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00916B71D73444A009999F2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherFetchUnitTest.m; path = ../TrafficAlarmClock/WeatherFetchUnitTest.m; sourceTree = "<group>"; };
 		D0382A7E1CF409CC00905259 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
 		D0382A801CF40DB100905259 /* WeatherFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -221,6 +223,7 @@
 		D0EDA1701CF3CA3C0036293B /* TrafficAlarmClockTests */ = {
 			isa = PBXGroup;
 			children = (
+				D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */,
 				D0EDA1711CF3CA3C0036293B /* TrafficAlarmClockTests.m */,
 				D0EDA1731CF3CA3C0036293B /* Info.plist */,
 			);
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EDA1721CF3CA3C0036293B /* TrafficAlarmClockTests.m in Sources */,
+				D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

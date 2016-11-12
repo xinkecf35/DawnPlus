@@ -7,7 +7,6 @@
 //
 
 #import "WeatherFetch.h"
-#import <math.h>
 static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
 
 
@@ -35,39 +34,47 @@ static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Su
 
 -(void)sendWeatherRequest
 {
-    NSError *weatherError;
+    NSError *weatherError = nil;
     //Setting darksky.net url
     NSString *weatherURL = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f",darkskyAPIKey,currentLatitude,currentLongitude];
     //JSON GET request
     weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
-    weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
-    NSLog(@"Weather Request Sent; json recieved for Lat: %0.6f, Long:%0.6f",currentLatitude,currentLongitude);
-    
-
+    if(weatherJSON.length > 0)
+    {
+        weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
+        NSLog(@"Weather Request Sent; json recieved for Lat: %0.6f, Long:%0.6f",currentLatitude,currentLongitude);
+    }
+    else
+    {
+        NSLog(@"WeatherFetch is unable to fetch weather data");
+    }
 }
 -(void)setWeatherParameters
 {
-    //Getting current temperature, condition and precipitation probablity
-    NSDictionary *currentWeather = [weatherData objectForKey:@"currently"];
-    double temperature = [[currentWeather objectForKey:@"temperature"] doubleValue];
-    int roundedTemperature = (int)ceil(temperature);
-    self.currentTemperature = [NSString stringWithFormat:@"%i",roundedTemperature];
-    //Checking and Setting weather condition
-    NSArray *weatherConditions = @[@"clear-day",@"clear-night",@"rain",@"snow",@"sleet",@"wind",@"fog",@"cloudy",@"partly-cloudy-day",@"partly-cloudy-night"];
-    for (NSString *item in weatherConditions)
+    if([weatherData count] > 0)
     {
-        if([item isEqualToString:[currentWeather objectForKey:@"icon"]])
+        //Getting current temperature, condition and precipitation probablity
+        NSDictionary *currentWeather = [weatherData objectForKey:@"currently"];
+        double temperature = [[currentWeather objectForKey:@"temperature"] doubleValue];
+        int roundedTemperature = (int)ceil(temperature);
+        self.currentTemperature = [NSString stringWithFormat:@"%i",roundedTemperature];
+        //Checking and Setting weather condition
+        NSArray *weatherConditions = @[@"clear-day",@"clear-night",@"rain",@"snow",@"sleet",@"wind",@"fog",@"cloudy",@"partly-cloudy-day",@"partly-cloudy-night"];
+        for (NSString *item in weatherConditions)
         {
-            self.currentCondition = [currentWeather objectForKey:@"icon"];
+            if([item isEqualToString:[currentWeather objectForKey:@"icon"]])
+            {
+                self.currentCondition = [currentWeather objectForKey:@"icon"];
+            }
         }
+        //Turn double into percentage
+        NSNumber *precipitation = [weatherData objectForKey:@"precipProbability"];
+        double precip = [precipitation doubleValue];
+        precip *= 100;
+        self.precipitationProbability = [NSString stringWithFormat:@"%0.0f %%",precip];
+        
+        NSLog(@"%@ Weather Parameters for %0.6f,%0.6f Temperature: %@, Condition:%@ Precipitation: %@", self,currentLatitude,currentLongitude,self.currentTemperature, self.currentCondition,self.precipitationProbability);
     }
-    //Turn double into percentage
-    NSNumber *precipitation = [weatherData objectForKey:@"precipProbability"];
-    double precip = [precipitation doubleValue];
-    precip *= 100;
-    self.precipitationProbability = [NSString stringWithFormat:@"%0.0f %%",precip];
-    
-    NSLog(@"%@ Weather Parameters for %0.6f,%0.6f Temperature: %@, Condition:%@ Precipitation: %@", self,currentLatitude,currentLongitude,self.currentTemperature, self.currentCondition,self.precipitationProbability);
 }
 
 @end
