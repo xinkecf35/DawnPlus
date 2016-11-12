@@ -51,11 +51,20 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     }
     trafficURL.queryItems = queryItems;
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
-    trafficData = [NSJSONSerialization JSONObjectWithData:trafficJSON options:kNilOptions error:&trafficError];
-    NSLog(@"%@ received trafficData from %0.6f, %0.6f to %0.6f, %0.6f",self, currentLatitude,currentLongitude, workLatitude, workLongitude);
-    //Checking statuscode of request, if not 0, no go
-    NSNumber *statusCode = [[trafficData objectForKey:@"info"]objectForKey:@"statuscode"];
-    status = [statusCode intValue];
+    //Check if JSON executed correctly
+    if(trafficJSON.length > 0)
+    {
+        trafficData = [NSJSONSerialization JSONObjectWithData:trafficJSON options:kNilOptions error:&trafficError];
+        NSLog(@"%@ received trafficData from %0.6f, %0.6f to %0.6f, %0.6f",self, currentLatitude,currentLongitude, workLatitude, workLongitude);
+        //Checking statuscode of request, if not 0, no go
+        NSNumber *statusCode = [[trafficData objectForKey:@"info"]objectForKey:@"statuscode"];
+        status = [statusCode intValue];
+    }
+    else
+    {
+        status = -1;
+        NSLog(@"TrafficFetch was unable to fetch traffic data");
+    }
     if( status != 0)
     {
         int error = status;

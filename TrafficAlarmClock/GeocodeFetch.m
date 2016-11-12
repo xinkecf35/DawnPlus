@@ -37,25 +37,33 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     geocodeURL.queryItems = queryItems;
     //JSON GET Request from MapQuest GeoCode API
     NSData *json = [NSData dataWithContentsOfURL:geocodeURL.URL];
-    NSMutableDictionary *geocodeData = [NSJSONSerialization JSONObjectWithData:json options:kNilOptions error:&geocodeError];
-    //Setting  workLatitude/workLongitude from geocoded workLocation
-    NSNumber *geocodedLatitude = [[[[[[geocodeData
-                                       objectForKey:@"results"]
-                                      objectAtIndex:0]
-                                     objectForKey:@"locations"]
-                                    objectAtIndex:0]
-                                   objectForKey:@"latLng"]
-                                  objectForKey:@"lat"];
-    NSNumber *geocodedLongitude= [[[[[[geocodeData
-                                       objectForKey:@"results"]
-                                      objectAtIndex:0]
-                                     objectForKey:@"locations"]
-                                    objectAtIndex:0]
-                                   objectForKey:@"latLng"]
-                                  objectForKey:@"lng"];
-    workLatitude = [geocodedLatitude doubleValue];
-    workLongitude = [geocodedLongitude doubleValue];
-    NSLog(@"%@ geocoded workLocation; Latitude: %0.6f, Longitude: %0.6f",self, workLatitude, workLongitude);
+    //Checking if there is valid data
+    if(json.length > 0)
+    {
+        NSMutableDictionary *geocodeData = [NSJSONSerialization JSONObjectWithData:json options:kNilOptions error:&geocodeError];
+        //Setting  workLatitude/workLongitude from geocoded workLocation
+        NSNumber *geocodedLatitude = [[[[[[geocodeData
+                                           objectForKey:@"results"]
+                                          objectAtIndex:0]
+                                         objectForKey:@"locations"]
+                                        objectAtIndex:0]
+                                       objectForKey:@"latLng"]
+                                      objectForKey:@"lat"];
+        NSNumber *geocodedLongitude= [[[[[[geocodeData
+                                           objectForKey:@"results"]
+                                          objectAtIndex:0]
+                                         objectForKey:@"locations"]
+                                        objectAtIndex:0]
+                                       objectForKey:@"latLng"]
+                                      objectForKey:@"lng"];
+        workLatitude = [geocodedLatitude doubleValue];
+        workLongitude = [geocodedLongitude doubleValue];
+        NSLog(@"%@ geocoded workLocation; Latitude: %0.6f, Longitude: %0.6f",self, workLatitude, workLongitude);
+    }
+    else
+    {
+        NSLog(@"GeocodeFetch was unable to fetch data");
+    }
 }
 //Checks user input for ambiguity and returns all possible results
 //Note that the first object in the return array will be an boolean value
@@ -118,7 +126,6 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
 //Calculate Distance between Coordinates
 -(double) distanceBetweenCoordinates
 {
-    //Not worth implementing independently.
     //turn geocoded work address into usable CLLocation object
     CLLocation *homeToWorkCalculation = [[CLLocation alloc] initWithLatitude:workLatitude longitude:workLongitude];
     //Calculate Distance from work coordinates to user coordinates in meters
