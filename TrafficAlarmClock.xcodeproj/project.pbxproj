@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00916B71D73444A009999F2 /* SettingsViewController.m */; };
 		D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */; };
+		D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */; };
 		D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0382A7E1CF409CC00905259 /* WeatherFetch.m */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D05893101D1F42C80024EA09 /* TrafficFetch.m */; };
@@ -56,6 +57,8 @@
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00916B71D73444A009999F2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherFetchUnitTest.m; path = ../TrafficAlarmClock/WeatherFetchUnitTest.m; sourceTree = "<group>"; };
+		D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficAlarmClock-Bridging-Header.h"; sourceTree = "<group>"; };
+		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
 		D0382A7E1CF409CC00905259 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
 		D0382A801CF40DB100905259 /* WeatherFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -124,12 +127,22 @@
 		D00916B51D734427009999F2 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */,
 				D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */,
 				D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */,
 				D00916B61D73444A009999F2 /* SettingsViewController.h */,
 				D00916B71D73444A009999F2 /* SettingsViewController.m */,
 			);
 			name = Control;
+			sourceTree = "<group>";
+		};
+		D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */,
+				D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */,
+			);
+			name = NavigationControlClasses;
 			sourceTree = "<group>";
 		};
 		D059AB661D0B918D002CA6D1 /* Model */ = {
@@ -307,6 +320,7 @@
 					D0EDA1501CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = FN6XFMFZF5;
+						LastSwiftMigration = 0810;
 					};
 					D0EDA16C1CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -383,6 +397,7 @@
 				D07B541F1DB68940005BF81F /* GeocodeFetch.m in Sources */,
 				D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
+				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
@@ -534,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TrafficAlarmClock/Info.plist;
@@ -541,6 +557,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrafficAlarmClock/TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -549,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TrafficAlarmClock/Info.plist;
@@ -556,6 +576,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrafficAlarmClock/TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -563,6 +585,7 @@
 		D0EDA1851CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TrafficAlarmClockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -575,6 +598,7 @@
 		D0EDA1861CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TrafficAlarmClockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -587,6 +611,7 @@
 		D0EDA1881CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockUITests;
@@ -598,6 +623,7 @@
 		D0EDA1891CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockUITests;
