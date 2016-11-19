@@ -10,5 +10,30 @@ import Foundation
 import UIKit
 
 class SensitivityViewController: UITableViewController {
+    //Table options
+    let trafficOptions : [String] = ["Incidents","Events","Congestion","Construction"]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return trafficOptions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sensitivityCell", for: indexPath)
+        
+        cell.textLabel?.text = trafficOptions[indexPath.row]
+        return cell
+    }
+    
+    //Multiple Selection
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+    }
 }
