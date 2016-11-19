@@ -18,6 +18,7 @@ class SensitivityViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,6 +35,11 @@ class SensitivityViewController: UITableViewController {
     
     //Multiple Selection
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        if(tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none) {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
+        else{
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        }
     }
 }
