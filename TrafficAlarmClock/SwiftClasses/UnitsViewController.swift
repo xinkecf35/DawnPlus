@@ -19,6 +19,9 @@ class UnitsViewController: UITableViewController {
         let rowToSelect:IndexPath = IndexPath(row: 0, section: 0)
         tableView.cellForRow(at: rowToSelect)?.accessoryType = UITableViewCellAccessoryType.checkmark
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(<#T##animated: Bool##Bool#>)
+    }
     //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,4 +43,6 @@ class UnitsViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
         }
     }
+    //NSCoding
+    
 }
