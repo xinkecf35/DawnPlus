@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 class UnitsViewController: UITableViewController {
+    //Constants
     let unitOptions : [String] = ["Fahrenheit","Celsius"]
+    let defaults : UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,5 @@ class UnitsViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
         }
     }
-    //NSCoding
     
 }

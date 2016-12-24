@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 class SensitivityViewController: UITableViewController {
-    //Constants
+    //Constants and Default values
     let trafficOptions : [String] = ["Incidents","Events","Congestion","Construction"]
+    let checkedCellsConstant : String = "checkedCells"
+    let defaults : UserDefaults = UserDefaults.standard
     var checkedCells: [Int] = [0,0,0,0]
     
     override func viewDidLoad() {
@@ -19,11 +21,15 @@ class SensitivityViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    //Initialize and Destroying Scene methods
+    required convenience init() {
+        self.init()
+        checkedCells = defaults.object(forKey: checkedCellsConstant) as! [Int]
+        
+    }
     override func viewWillDisappear(_ animated: Bool) {
-        let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let filePath = documents[0]
         super.viewWillDisappear(<#T##animated: Bool##Bool#>)
-        NSKeyedArchiver.archiveRootObject(checkedCells, toFile: filePath)
+        defaults.set(checkedCells, forKey: checkedCellsConstant)
     }
     //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,8 +56,5 @@ class SensitivityViewController: UITableViewController {
             checkedCells[indexPath.row] = 0
         }
     }
-    //NSCoding methods
-    override func encode(with sensitivityCoder: NSCoder) {
-        sensitivityCoder.encode(self.checkedCells, forKey: "checkedCells")
-    }
+    
 }
