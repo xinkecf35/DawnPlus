@@ -14,22 +14,30 @@ class SensitivityViewController: UITableViewController {
     let trafficOptions : [String] = ["Incidents","Events","Congestion","Construction"]
     let checkedCellsConstant : String = "sensitivityCheckedCells"
     let defaults : UserDefaults = UserDefaults.standard
-    var checkedCells: [Int] = [0,0,0,0]
+    var checkedCells:[Int] = [0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
     }
-    //Initialize and Destroying Scene methods
-    required convenience init() {
-        self.init()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         checkedCells = defaults.object(forKey: checkedCellsConstant) as! [Int]
-        
+        for(index, element) in checkedCells.enumerated() {
+            if(element == 1) {
+                let selectedRow = IndexPath.init(row: index, section: 0)
+                let selectedCell = tableView.cellForRow(at: selectedRow)
+                selectedCell?.accessoryType = UITableViewCellAccessoryType.checkmark;
+            }
+            
+        }
+    
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         defaults.set(checkedCells, forKey: checkedCellsConstant)
+        defaults.synchronize()
         NSLog("Defaults for %@ saved", self)
     }
     //Delegate and Datasource Methods
