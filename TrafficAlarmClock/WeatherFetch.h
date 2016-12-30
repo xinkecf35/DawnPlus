@@ -19,7 +19,7 @@
 @property NSString *currentTemperature;
 @property NSString *currentCondition;
 @property NSString *precipitationProbability;
-
+@property NSNumber *isFarenheit;
 
 -(void)setWeatherLocation: (double)latitude : (double)longitude;
 -(void)sendWeatherRequest;

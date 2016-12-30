@@ -85,7 +85,15 @@
 -(void) updateWeatherLabels
 {
     NSString *temp = [NSString stringWithFormat:@"%@%@F",self.weatherUpdate.currentTemperature, @"\u00B0"];
+    if([self.weatherUpdate.isFarenheit boolValue] == false)
+    {
+        temp = [NSString stringWithFormat:@"%@%@C",self.weatherUpdate.currentTemperature, @"\u00B0"];
+    }
+    
+    
     self.weatherTemperature.text = temp;
+    
+    
     UIImage *currentIcon = [UIImage imageNamed:self.weatherUpdate.currentCondition];
     [weatherIcon setImage:currentIcon];
     //Logging displays of weather UILabels

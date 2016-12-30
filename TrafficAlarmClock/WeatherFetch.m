@@ -9,10 +9,9 @@
 #import "WeatherFetch.h"
 static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Super Duper Secret API
 
-
 @implementation WeatherFetch
 
-@synthesize currentCondition,currentTemperature;
+@synthesize currentCondition,currentTemperature,isFarenheit;
 
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
@@ -34,9 +33,18 @@ static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Su
 
 -(void)sendWeatherRequest
 {
+    //Setting desired units from NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    isFarenheit = [defaults objectForKey:@"isFarenheit"];
+    NSString *units = @"us";
+    if([isFarenheit boolValue] == false)
+    {
+        units = @"si";
+    }
+    
     NSError *weatherError = nil;
     //Setting darksky.net url
-    NSString *weatherURL = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f",darkskyAPIKey,currentLatitude,currentLongitude];
+    NSString *weatherURL = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f?units=%@",darkskyAPIKey,currentLatitude,currentLongitude,units];
     //JSON GET request
     weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
     if(weatherJSON.length > 0)
