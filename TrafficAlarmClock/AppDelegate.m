@@ -17,6 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //register intial values
+    NSDictionary *defaults = @{
+                               @"isFarenheit": [NSNumber numberWithBool:true],
+                               @"sensitivityCheckedCells" : [NSArray arrayWithObjects:@[@1,@0,@0,@0], nil]
+                               };
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     return YES;
 }
 

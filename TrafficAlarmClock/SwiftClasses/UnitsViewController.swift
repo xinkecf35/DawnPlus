@@ -14,30 +14,32 @@ class UnitsViewController: UITableViewController {
     let unitOptions : [String] = ["Fahrenheit","Celsius"]
     let defaults : UserDefaults = UserDefaults.standard
     let checkedCellsConstant : String = "isFarenheit"
-    var isFahrenheit = true
-    var currentUnit: Int = 0;
-    
+    var currentUnit:Int = 0
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
-        let setSaveUnit = IndexPath.init(row: currentUnit, section: 0)
-        tableView.cellForRow(at: setSaveUnit)?.accessoryType = UITableViewCellAccessoryType.checkmark
-        
     }
-    required convenience init() {
-        self.init()
-        isFahrenheit = defaults.objectIsForced(forKey: checkedCellsConstant)
-        if(isFahrenheit == false){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let storedValue = defaults.object(forKey: checkedCellsConstant) as! Bool
+        
+        if(storedValue == true) {
+            currentUnit = 0
+        }
+        else {
             currentUnit = 1
         }
+        let storedSelection = IndexPath.init(row: currentUnit, section: 0)
+        tableView.cellForRow(at: storedSelection)?.accessoryType = UITableViewCellAccessoryType.checkmark
         
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        defaults.set(isFahrenheit, forKey: checkedCellsConstant)
-        NSLog("Defaults for %@ saved, saved selection",self)
+        defaults.synchronize()
+        NSLog("Defaults for %@ saved", self)
     }
     //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,13 +73,12 @@ class UnitsViewController: UITableViewController {
         if(oldCell?.accessoryType == UITableViewCellAccessoryType.checkmark) {
             oldCell?.accessoryType = UITableViewCellAccessoryType.none
         }
-        if(currentUnit == 1) {
-            isFahrenheit = false
+        if(currentUnit == 0) {
+            defaults.set(true, forKey: checkedCellsConstant)
         }
-        else{
-            isFahrenheit = true
+        else {
+            defaults.set(false, forKey: checkedCellsConstant)
         }
-        
     }
     
 }
