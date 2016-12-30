@@ -20,7 +20,7 @@
     //register intial values
     NSDictionary *defaults = @{
                                @"isFarenheit": [NSNumber numberWithBool:true],
-                               @"sensitivityCheckedCells" : [NSArray arrayWithObjects:@[@1,@0,@0,@0], nil]
+                               @"sensitivityCheckedCells" : [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:0],[NSNumber numberWithInt:0],[NSNumber numberWithInt:0], nil]
                                };
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     return YES;
