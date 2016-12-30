@@ -13,16 +13,31 @@ class UnitsViewController: UITableViewController {
     //Constants
     let unitOptions : [String] = ["Fahrenheit","Celsius"]
     let defaults : UserDefaults = UserDefaults.standard
+    let checkedCellsConstant : String = "isFarenheit"
+    var isFahrenheit = true
+    var currentUnit: Int = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let rowToSelect:IndexPath = IndexPath(row: 0, section: 0)
-        tableView.cellForRow(at: rowToSelect)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        
+        let setSaveUnit = IndexPath.init(row: currentUnit, section: 0)
+        tableView.cellForRow(at: setSaveUnit)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        
+    }
+    required convenience init() {
+        self.init()
+        isFahrenheit = defaults.objectIsForced(forKey: checkedCellsConstant)
+        if(isFahrenheit == false){
+            currentUnit = 1
+        }
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(<#T##animated: Bool##Bool#>)
+        super.viewWillDisappear(true)
+        defaults.set(isFahrenheit, forKey: checkedCellsConstant)
+        NSLog("Defaults for %@ saved, saved selection",self)
     }
     //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,13 +52,32 @@ class UnitsViewController: UITableViewController {
         cell.textLabel?.text = unitOptions[indexPath.row]
         return cell
     }
+    //Selection of Units
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        if(tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none) {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        if(currentUnit == indexPath.row) {
+            return
+        }
+        let oldSelection = IndexPath.init(row:currentUnit, section:0)
+        
+        let newCell = tableView.cellForRow(at: indexPath)
+        let oldCell = tableView.cellForRow(at: oldSelection)
+        
+        if(newCell?.accessoryType == UITableViewCellAccessoryType.none) {
+            newCell?.accessoryType = UITableViewCellAccessoryType.checkmark
+            currentUnit = indexPath.row
+        }
+        if(oldCell?.accessoryType == UITableViewCellAccessoryType.checkmark) {
+            oldCell?.accessoryType = UITableViewCellAccessoryType.none
+        }
+        if(currentUnit == 1) {
+            isFahrenheit = false
         }
         else{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+            isFahrenheit = true
         }
+        
     }
     
 }
