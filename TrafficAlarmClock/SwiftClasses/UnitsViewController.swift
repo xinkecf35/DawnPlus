@@ -24,8 +24,8 @@ class UnitsViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        //Setting checkmark from saved defaults 
         let storedValue = defaults.object(forKey: checkedCellsConstant) as! Bool
-        
         if(storedValue == true) {
             currentUnit = 0
         }
@@ -39,7 +39,6 @@ class UnitsViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         defaults.synchronize()
-        NSLog("Defaults for %@ saved", self)
     }
     //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,7 +53,7 @@ class UnitsViewController: UITableViewController {
         cell.textLabel?.text = unitOptions[indexPath.row]
         return cell
     }
-    //Selection of Units
+    //Exclusive Selection of Units for Weather Data
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
         tableView.deselectRow(at: indexPath, animated: false)
@@ -73,6 +72,8 @@ class UnitsViewController: UITableViewController {
         if(oldCell?.accessoryType == UITableViewCellAccessoryType.checkmark) {
             oldCell?.accessoryType = UITableViewCellAccessoryType.none
         }
+        
+    //Writing to UserDefaults
         if(currentUnit == 0) {
             defaults.set(true, forKey: checkedCellsConstant)
         }
