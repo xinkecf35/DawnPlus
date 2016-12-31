@@ -15,6 +15,10 @@
 {
     [super viewDidLoad];
     [self updateClockLabel];
+    //Instantiating  weatherUpdate, trafficUpdate, and geocodeService
+    self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
+    self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
+    self.geocodeService = [[GeocodeFetch alloc]init];
     //Fetch Weather Updates
     [self.weatherUpdate sendWeatherRequest];
     [self.weatherUpdate setWeatherParameters];
@@ -39,10 +43,6 @@
     latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
     longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
     
-    //Instantiating  weatherUpdate, trafficUpdate, and geocodeService
-    self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
-    self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
-    self.geocodeService = [[GeocodeFetch alloc]init];
     [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
     [super viewWillAppear:true];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
