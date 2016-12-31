@@ -15,20 +15,10 @@
 {
     [super viewDidLoad];
     [self updateClockLabel];
-    
-    [[LocationFetch sharedInstance] startingUpdatingLocation];
-    latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
-    longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
-    
-    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
-    
-    self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
-    self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
-    self.geocodeService = [[GeocodeFetch alloc]init];
-    
+    //Fetch Weather Updates
     [self.weatherUpdate sendWeatherRequest];
     [self.weatherUpdate setWeatherParameters];
-    
+    //Geocoding workLocation
     [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
     [self.geocodeService geocodeWorkLocation];
     //From Geocode to TrafficFetch coordinates
@@ -40,8 +30,32 @@
     [self updateTrafficLabels];
     double distance = [self.geocodeService distanceBetweenCoordinates];
     NSLog(@"Distance is %0.3f",distance);
+    
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    //Starting Location Updates
+    [[LocationFetch sharedInstance] startingUpdatingLocation];
+    latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
+    longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+    
+    //Instantiating  weatherUpdate, trafficUpdate, and geocodeService
+    self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
+    self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
+    self.geocodeService = [[GeocodeFetch alloc]init];
+    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
+    [super viewWillAppear:true];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(updateLabelsFromDefaults) name:NSUserDefaultsDidChangeNotification object:nil];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:true];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self name:NSUserDefaultsDidChangeNotification object:nil];
 
+}
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -90,9 +104,7 @@
         temp = [NSString stringWithFormat:@"%@%@C",self.weatherUpdate.currentTemperature, @"\u00B0"];
     }
     
-    
     self.weatherTemperature.text = temp;
-    
     
     UIImage *currentIcon = [UIImage imageNamed:self.weatherUpdate.currentCondition];
     [weatherIcon setImage:currentIcon];
@@ -168,6 +180,20 @@
         //Logging displays of traffic UILabel
         NSLog(@"%@ method updateTrafficLabels displays %lu traffic incidents",self,[self.trafficUpdate.trafficIncidents count]);
     }
+}
+//NSUserDefaults NSNotificationCenter Observer
+
+//Update various labels for changes in NSUserDefaults
+-(void)updateLabelsFromDefaults
+{
+    //WeatherUpdate updates for change in NSUserDefaults
+    [self.weatherUpdate sendWeatherRequest];
+    [self.weatherUpdate setWeatherParameters];
+    [self updateWeatherLabels];
+    [self.trafficUpdate sendTrafficRequest];
+    [self.trafficUpdate addTrafficIncidents];
+    [self updateTrafficLabels];
+    NSLog(@"update to NSUserDefaults for %@ has occured",self);
 }
 
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
