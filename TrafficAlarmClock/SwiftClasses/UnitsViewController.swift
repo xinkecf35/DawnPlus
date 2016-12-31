@@ -38,7 +38,13 @@ class UnitsViewController: UITableViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        defaults.synchronize()
+        //Writing to UserDefaults
+        if(currentUnit == 0) {
+            defaults.set(true, forKey: checkedCellsConstant)
+        }
+        else {
+            defaults.set(false, forKey: checkedCellsConstant)
+        }
     }
     //Delegate and Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,14 +77,6 @@ class UnitsViewController: UITableViewController {
         }
         if(oldCell?.accessoryType == UITableViewCellAccessoryType.checkmark) {
             oldCell?.accessoryType = UITableViewCellAccessoryType.none
-        }
-        
-    //Writing to UserDefaults
-        if(currentUnit == 0) {
-            defaults.set(true, forKey: checkedCellsConstant)
-        }
-        else {
-            defaults.set(false, forKey: checkedCellsConstant)
         }
     }
     

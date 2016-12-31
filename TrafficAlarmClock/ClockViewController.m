@@ -15,6 +15,12 @@
 {
     [super viewDidLoad];
     [self updateClockLabel];
+    //Starting Location Updates
+    [[LocationFetch sharedInstance] startingUpdatingLocation];
+    latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
+    longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+    
+    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
     //Instantiating  weatherUpdate, trafficUpdate, and geocodeService
     self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
     self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
@@ -38,24 +44,20 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    //Starting Location Updates
-    [[LocationFetch sharedInstance] startingUpdatingLocation];
-    latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
-    longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
-    
-    [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
     [super viewWillAppear:true];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(updateLabelsFromDefaults) name:NSUserDefaultsDidChangeNotification object:nil];
+    [center addObserver:self
+               selector:@selector(didDefaultsChange:)
+            name:NSUserDefaultsDidChangeNotification
+            object:nil];
     
 }
--(void)viewWillDisappear:(BOOL)animated
+-(void)dealloc
 {
-    [super viewWillDisappear:true];
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center removeObserver:self name:NSUserDefaultsDidChangeNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSUserDefaultsDidChangeNotification object:nil];
+    [[LocationFetch sharedInstance] removeObserver:self forKeyPath:@"currentLocation"];
 }
+
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -184,7 +186,7 @@
 //NSUserDefaults NSNotificationCenter Observer
 
 //Update various labels for changes in NSUserDefaults
--(void)updateLabelsFromDefaults
+-(void)didDefaultsChange:(NSNotification *)notifictation
 {
     //WeatherUpdate updates for change in NSUserDefaults
     [self.weatherUpdate sendWeatherRequest];
@@ -193,7 +195,8 @@
     [self.trafficUpdate sendTrafficRequest];
     [self.trafficUpdate addTrafficIncidents];
     [self updateTrafficLabels];
-    NSLog(@"update to NSUserDefaults for %@ has occured",self);
+    NSLog(@"%@ has been received and responded to",notifictation);
+    
 }
 
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
