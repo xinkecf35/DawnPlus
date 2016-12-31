@@ -31,7 +31,7 @@
 -(void)updateClockLabel;
 -(void)updateWeatherLabels;
 -(void)updateTrafficLabels;
--(void)updateLabelsFromDefaults;
+-(void)didDefaultsChange:(NSNotification *)notification;
 
 @end
 
