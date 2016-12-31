@@ -31,6 +31,7 @@
 -(void)updateClockLabel;
 -(void)updateWeatherLabels;
 -(void)updateTrafficLabels;
+-(void)updateLabelsFromDefaults;
 
 @end
 
