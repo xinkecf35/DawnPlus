@@ -128,11 +128,22 @@
     else
     {
         NSArray *incidents = self.trafficUpdate.trafficIncidents;
+        //Handling no incidents to be reported
+        if([incidents[0] intValue] == 0)
+        {
+            UIImage *checkMark = [UIImage imageNamed:@"check-mark"];
+            [trafficInfo setImage:checkMark forState:UIControlStateNormal];
+            NSLog(@"%@ no incidents available",self);
+            return;
+        }
         //Totaling severity events, divided into split into 0-2 and 3-4, inclusive
-        
         for(id incident in incidents)
         {
             switch ([[incident valueForKey:@"severity"] intValue]) {
+                case -1:
+                    lowSeverity = 0;
+                    highSeverity = 0;
+                    break;
                 case 0:
                     lowSeverity++;
                     break;
