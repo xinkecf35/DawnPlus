@@ -39,10 +39,11 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     trafficURL.host = @"www.mapquestapi.com";
     trafficURL.path = @"/traffic/v2/incidents";
     //Setting Bounding Box
+    NSString *filters = [NSString stringWithString:[self generateFilters:[NSUserDefaults standardUserDefaults]]];
     NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",workLatitude,workLongitude,currentLatitude,currentLongitude];
     NSDictionary *queryParameters= @{@"key":mapquestAPIKey,
                                     @"boundingBox":boundingBox,
-                                    @"filters":[self generateFilters:[NSUserDefaults standardUserDefaults]]
+                                    @"filters":filters
                                      };
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters)
@@ -50,6 +51,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     trafficURL.queryItems = queryItems;
+    // NSLog(@"%@",trafficURL.URL);
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
     //Check if JSON executed correctly
     if(trafficJSON.length > 0)
@@ -133,7 +135,6 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         index++;
     }
     NSString *finalString = [[neededOptions valueForKey:@"description"] componentsJoinedByString:@","];
-    NSLog(@"query parameter to be sent %@",finalString);
     return finalString;
 }
 
