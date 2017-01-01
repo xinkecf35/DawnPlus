@@ -51,7 +51,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     trafficURL.queryItems = queryItems;
-    // NSLog(@"%@",trafficURL.URL);
+    NSLog(@"%@",trafficURL.URL);
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
     //Check if JSON executed correctly
     if(trafficJSON.length > 0)
@@ -121,7 +121,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     NSArray *selectedOptions = [NSArray arrayWithArray:[defaults objectForKey:@"sensitivityCheckedCells"]];
     NSArray *queryOptions = [NSArray arrayWithObjects:
                              @"incidents",
-                             @"events",
+                             @"event",
                              @"congestion",
                              @"construction",
                              nil];
