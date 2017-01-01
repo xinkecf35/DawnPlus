@@ -29,7 +29,7 @@
 -(void) sendTrafficRequest;
 -(void) setCurrentCoordinates: (double)latitude : (double)longitude;
 -(void) addTrafficIncidents;
--(void) generateFilters: (NSNotificationCenter *)center;
+-(NSString *) generateFilters: (NSUserDefaults *)defaults;
 
 
 @end

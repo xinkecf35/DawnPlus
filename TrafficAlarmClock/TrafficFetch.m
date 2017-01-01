@@ -42,7 +42,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",workLatitude,workLongitude,currentLatitude,currentLongitude];
     NSDictionary *queryParameters= @{@"key":mapquestAPIKey,
                                     @"boundingBox":boundingBox,
-                                    @"filters":@"incidents,construction,congestion,events"
+                                    @"filters":[self generateFilters:[NSUserDefaults standardUserDefaults]]
                                      };
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters)
@@ -114,5 +114,27 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     }
 }
 //generate query filters
+-(NSString *)generateFilters:(NSUserDefaults *)defaults
+{
+    NSArray *selectedOptions = [NSArray arrayWithArray:[defaults objectForKey:@"sensitivityCheckedCells"]];
+    NSArray *queryOptions = [NSArray arrayWithObjects:
+                             @"incidents",
+                             @"events",
+                             @"congestion",
+                             @"construction",
+                             nil];
+    NSMutableArray *neededOptions = [[NSMutableArray alloc] init];
+    int index = 0;
+    for (NSNumber *item in selectedOptions ) {
+        if([item intValue] == 1)
+        {
+            [neededOptions addObject:[queryOptions objectAtIndex:index]];
+        }
+        index++;
+    }
+    NSString *finalString = [[neededOptions valueForKey:@"description"] componentsJoinedByString:@","];
+    NSLog(@"query parameter to be sent %@",finalString);
+    return finalString;
+}
 
 @end
