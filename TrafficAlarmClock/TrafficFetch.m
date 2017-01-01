@@ -42,7 +42,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",workLatitude,workLongitude,currentLatitude,currentLongitude];
     NSDictionary *queryParameters= @{@"key":mapquestAPIKey,
                                     @"boundingBox":boundingBox,
-                                    @"filters":@"congestion,incidents,event,construction"
+                                    @"filters":@"incidents,construction,congestion,events"
                                      };
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters)
@@ -80,11 +80,13 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     {
         NSArray *rawIncidentsArray = [trafficData objectForKey:@"incidents"];
         NSMutableArray *incidentsArray = [[NSMutableArray alloc]initWithCapacity:[rawIncidentsArray count]];
+        //Handling code if there are no incidents to report on
         if ([rawIncidentsArray count] < 1)
         {
-            [incidentsArray addObject:@"0"];
+            [incidentsArray addObject:[NSNumber numberWithInt:0]];
             NSLog(@"%@ no major traffic incidents",self);
         }
+        //Adding incidents to be shown to user
         else
         {
             for (int i = 0; i < [rawIncidentsArray count];i++)
@@ -101,7 +103,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
             }
         }
         self.trafficIncidents = incidentsArray;
-        NSLog(@"%@ addTrafficIncidents successful with %lu incidents",self,[rawIncidentsArray count]);
+        NSLog(@"%@ addTrafficIncidents successful with %lu incidents",self,[incidentsArray count]);
         
     }
     //If status code is non-zero
@@ -110,6 +112,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         self.trafficIncidents = nil;
         NSLog(@"%@", self.trafficIncidents);
     }
-    
 }
+//generate query filters
+
 @end
