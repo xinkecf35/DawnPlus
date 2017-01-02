@@ -129,7 +129,7 @@
     {
         NSArray *incidents = self.trafficUpdate.trafficIncidents;
         //Handling no incidents to be reported
-        if([incidents[0] intValue] == 0)
+        if([incidents[0] isEqual:[NSNull null]])
         {
             UIImage *checkMark = [UIImage imageNamed:@"check-mark"];
             [trafficInfo setImage:checkMark forState:UIControlStateNormal];
