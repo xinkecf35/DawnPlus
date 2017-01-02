@@ -51,7 +51,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     trafficURL.queryItems = queryItems;
-    NSLog(@"%@",trafficURL.URL);
+    NSLog(@"MapquestAPI request URL: %@",trafficURL.URL);
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
     //Check if JSON executed correctly
     if(trafficJSON.length > 0)
@@ -85,7 +85,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         //Handling code if there are no incidents to report on
         if ([rawIncidentsArray count] < 1)
         {
-            [incidentsArray addObject:[NSNumber numberWithInt:0]];
+            [incidentsArray addObject:[NSNull null]];
             NSLog(@"%@ no major traffic incidents",self);
         }
         //Adding incidents to be shown to user
@@ -135,6 +135,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         index++;
     }
     NSString *finalString = [[neededOptions valueForKey:@"description"] componentsJoinedByString:@","];
+    NSLog(@"returning filters: %@",finalString);
     return finalString;
 }
 
