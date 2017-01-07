@@ -12,25 +12,21 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
 @implementation TrafficFetch
 @synthesize workLocation,trafficIncidents,workLatitude,workLongitude,status;
 
--(id)initWithLocation: (double)latitude : (double)longitude
-{
+-(id)initWithLocation: (double)latitude : (double)longitude {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         currentLatitude = latitude;
         currentLongitude = longitude;
         
     }
     return self;
 }
--(void)setCurrentCoordinates: (double)latitude : (double)longitude;
-{
+-(void)setCurrentCoordinates: (double)latitude : (double)longitude; {
     currentLatitude = latitude;
     currentLongitude = longitude;
 }
 //Calls Mapquest Traffic API to receive traffic data
--(void)sendTrafficRequest
-{
+-(void)sendTrafficRequest {
     NSError *trafficError;
     
     //Generating URL for API Call
@@ -46,53 +42,44 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
                                     @"filters":filters
                                      };
     NSMutableArray *queryItems = [NSMutableArray array];
-    for(NSString *key in queryParameters)
-    {
+    for(NSString *key in queryParameters) {
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     trafficURL.queryItems = queryItems;
     NSLog(@"MapquestAPI request URL: %@",trafficURL.URL);
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
     //Check if JSON executed correctly
-    if(trafficJSON.length > 0)
-    {
+    if(trafficJSON.length > 0) {
         trafficData = [NSJSONSerialization JSONObjectWithData:trafficJSON options:kNilOptions error:&trafficError];
         NSLog(@"%@ received trafficData from %0.6f, %0.6f to %0.6f, %0.6f",self, currentLatitude,currentLongitude, workLatitude, workLongitude);
         //Checking statuscode of request, if not 0, no go
         NSNumber *statusCode = [[trafficData objectForKey:@"info"]objectForKey:@"statuscode"];
         status = [statusCode intValue];
     }
-    else
-    {
+    else {
         status = -1;
         NSLog(@"TrafficFetch was unable to fetch traffic data");
     }
-    if( status != 0)
-    {
+    if( status != 0) {
         int error = status;
         self.trafficIncidents = nil;
         NSLog(@"Some error occured with fetching Traffic Data, most likely due to too large bounding box; error %d", error);
     }
 }
 //Adds incidents to property NSArray trafficIncidents
--(void) addTrafficIncidents
-{
+-(void) addTrafficIncidents {
     //Note: May need to write code for non-zero status code
-    if(status == 0)
-    {
+    if(status == 0) {
         NSArray *rawIncidentsArray = [trafficData objectForKey:@"incidents"];
         NSMutableArray *incidentsArray = [[NSMutableArray alloc]initWithCapacity:[rawIncidentsArray count]];
         //Handling code if there are no incidents to report on
-        if ([rawIncidentsArray count] < 1)
-        {
+        if ([rawIncidentsArray count] < 1) {
             [incidentsArray addObject:[NSNull null]];
             NSLog(@"%@ no major traffic incidents",self);
         }
         //Adding incidents to be shown to user
-        else
-        {
-            for (int i = 0; i < [rawIncidentsArray count];i++)
-            {
+        else {
+            for (int i = 0; i < [rawIncidentsArray count];i++) {
                 NSDictionary *rawIncident = [rawIncidentsArray objectAtIndex:i];
                 NSDictionary *incident = @{
                                            @"severity":[rawIncident objectForKey:@"severity"],
@@ -109,15 +96,13 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         
     }
     //If status code is non-zero
-    else
-    {
+    else {
         self.trafficIncidents = nil;
         NSLog(@"%@", self.trafficIncidents);
     }
 }
 //generate query filters
--(NSString *)generateFilters:(NSUserDefaults *)defaults
-{
+-(NSString *)generateFilters:(NSUserDefaults *)defaults {
     NSArray *selectedOptions = [NSArray arrayWithArray:[defaults objectForKey:@"sensitivityCheckedCells"]];
     NSArray *queryOptions = [NSArray arrayWithObjects:
                              @"incidents",

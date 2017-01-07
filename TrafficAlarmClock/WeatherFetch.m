@@ -13,31 +13,26 @@ static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Su
 
 @synthesize currentCondition,currentTemperature,isFarenheit;
 
--(id)initWithLocation: (double)latitude : (double)longitude
-{
+-(id)initWithLocation: (double)latitude : (double)longitude {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         currentLatitude = latitude;
         currentLongitude = longitude;
     }
     return self;
 }
 
--(void)setWeatherLocation: (double)latitude : (double)longitude
-{
+-(void)setWeatherLocation: (double)latitude : (double)longitude {
     currentLatitude = latitude;
     currentLongitude = longitude;
 }
 
--(void)sendWeatherRequest
-{
+-(void)sendWeatherRequest {
     //Setting desired units from NSUserDefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     isFarenheit = [defaults objectForKey:@"isFarenheit"];
     NSString *units = @"us";
-    if([isFarenheit boolValue] == false)
-    {
+    if([isFarenheit boolValue] == false) {
         units = @"si";
     }
     
@@ -46,20 +41,17 @@ static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Su
     NSString *weatherURL = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f?units=%@",darkskyAPIKey,currentLatitude,currentLongitude,units];
     //JSON GET request
     weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
-    if(weatherJSON.length > 0)
-    {
+    if(weatherJSON.length > 0) {
         weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
         NSLog(@"Weather Request Sent; json recieved for Lat: %0.6f, Long:%0.6f",currentLatitude,currentLongitude);
     }
-    else
-    {
+    else {
         NSLog(@"WeatherFetch is unable to fetch weather data");
     }
 }
 -(void)setWeatherParameters
 {
-    if([weatherData count] > 0)
-    {
+    if([weatherData count] > 0) {
         //Getting current temperature, condition and precipitation probablity
         NSDictionary *currentWeather = [weatherData objectForKey:@"currently"];
         double temperature = [[currentWeather objectForKey:@"temperature"] doubleValue];
@@ -67,10 +59,8 @@ static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Su
         self.currentTemperature = [NSString stringWithFormat:@"%i",roundedTemperature];
         //Checking and Setting weather condition
         NSArray *weatherConditions = @[@"clear-day",@"clear-night",@"rain",@"snow",@"sleet",@"wind",@"fog",@"cloudy",@"partly-cloudy-day",@"partly-cloudy-night"];
-        for (NSString *item in weatherConditions)
-        {
-            if([item isEqualToString:[currentWeather objectForKey:@"icon"]])
-            {
+        for (NSString *item in weatherConditions) {
+            if([item isEqualToString:[currentWeather objectForKey:@"icon"]]) {
                 self.currentCondition = [currentWeather objectForKey:@"icon"];
             }
         }
