@@ -12,12 +12,6 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
 @implementation GeocodeFetch
 @synthesize currentLatitude,currentLongitude,workLatitude,workLongitude, workAddress;
 
--(void)setCurrentCoordinates:(double)latitude :(double)longitude
-{
-    workLatitude = latitude;
-    workLongitude = longitude;
-}
-
 //Code from here on is all part of the Mapquest Geocode API
 -(void)geocodeWorkLocation
 {
@@ -77,8 +71,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     geocodeURL.path = @"/geocoding/v1/address";
     NSDictionary *queryParameters = @{@"key": mapquestAPIKey, @"location": workAddress};
     NSMutableArray *queryItems = [NSMutableArray array];
-    for(NSString *key in queryParameters)
-    {
+    for(NSString *key in queryParameters) {
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     geocodeURL.queryItems = queryItems;
@@ -91,19 +84,16 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
                                    objectForKey:@"locations"]
                                   count];
     NSMutableArray *possibleLocations = [[NSMutableArray alloc]init];
-    if(countOfLocations > 1)
-    {
+    if(countOfLocations > 1) {
         BOOL multipleLocations = true;
         [possibleLocations addObject:[NSNumber numberWithBool:multipleLocations]];
     }
-    else
-    {
+    else {
         BOOL multipleLocations = false;
         [possibleLocations addObject:[NSNumber numberWithBool:multipleLocations]];
     }
     
-    for(int i = 0; i < countOfLocations; i++)
-    {
+    for(int i = 0; i < countOfLocations; i++) {
         NSString *city = [NSString stringWithFormat:@"%@",
                           [[[[[geocodeData
                                 objectForKey:@"results"]
@@ -124,12 +114,19 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     return possibleLocations;
 }
 //Calculate Distance between Coordinates
--(double) distanceBetweenCoordinates
-{
-    //turn geocoded work address into usable CLLocation object
-    CLLocation *homeToWorkCalculation = [[CLLocation alloc] initWithLatitude:workLatitude longitude:workLongitude];
-    //Calculate Distance from work coordinates to user coordinates in meters
-    double greatCircleDistance = [homeToWorkCalculation distanceFromLocation:[LocationFetch sharedInstance].currentLocation];
+-(double) distanceBetweenCoordinates {
+    const int radius = 6371e3;
+    double greatCircleDistance,radianCurrentLatitude, radianWorkLatitude, deltaLatitude,deltaLongitude, a, c = 0;
+    //Converting degrees to radians
+    radianCurrentLatitude = (currentLatitude * M_PI)/180;
+    radianWorkLatitude = (workLatitude * M_PI)/180;
+    deltaLatitude = ((workLatitude - currentLatitude) * M_PI)/180;
+    deltaLongitude = ((workLongitude - currentLongitude) * M_PI)/180;
+    //Haversine calculation
+    a = (sin(deltaLatitude/2)*sin(deltaLatitude/2))+cos(radianCurrentLatitude)*cos(radianWorkLatitude)*(sin(deltaLongitude/2)*sin(deltaLongitude/2));
+    c = 2 * atan2(sqrt(a), sqrt(1-a));
+    //Distance calculations
+    greatCircleDistance = radius * c;
     return greatCircleDistance;
 }
 @end

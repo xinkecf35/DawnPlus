@@ -14,8 +14,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LocationFetch.h"
 
-@interface GeocodeFetch : NSObject
-{
+@interface GeocodeFetch : NSObject {
     double boundingBoxLatitude;
     double boundingBoxLongitude;
 }
@@ -26,7 +25,6 @@
 @property NSString* workAddress;
 
 
--(void)setCurrentCoordinates:(double)latitude :(double)longitude;
 -(void) geocodeWorkLocation;
 -(double) distanceBetweenCoordinates;
 -(NSArray *)checkWorkLocation;

@@ -28,7 +28,6 @@ static NSString *const darkskyAPIKey = @"e7bf29e10af01a914761cf0ada1074a3"; //Su
 {
     currentLatitude = latitude;
     currentLongitude = longitude;
-    NSLog(@"%@ Lat: %0.6f, Long: %0.6f",self,currentLatitude,currentLongitude);
 }
 
 -(void)sendWeatherRequest
