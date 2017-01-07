@@ -70,9 +70,12 @@
         NSLog(@"%@ observer has received message",self);
         latitude = [LocationFetch sharedInstance].currentLocation.coordinate.latitude;
         longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
+        //Update current lcation for WeatherUpdate and TrafficUpdate
         [self.weatherUpdate setWeatherLocation:latitude :longitude];
         [self.trafficUpdate setCurrentCoordinates:latitude :longitude];
-        [self.geocodeService setCurrentCoordinates:latitude :longitude];
+        //GeocodeService Update;
+        self.geocodeService.currentLatitude = latitude;
+        self.geocodeService.currentLongitude = longitude;
         
         [self.weatherUpdate sendWeatherRequest];
         [self.weatherUpdate setWeatherParameters];
