@@ -40,8 +40,10 @@
     [self updateTrafficLabels];
     double distance = [self.geocodeService distanceBetweenCoordinates];
     NSDictionary *midpoint = [self.geocodeService midpointBetweenCoordinates];
+    NSDictionary *box = [self.geocodeService boundingBoxCalculations];
     NSLog(@"Distance is %0.3f",distance);
     NSLog(@"Midpoint is %@",midpoint);
+    NSLog(@"Bounding box is as follows: %@", box);
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -93,8 +95,10 @@
         [self updateTrafficLabels];
         double distance = [self.geocodeService distanceBetweenCoordinates];
         NSDictionary *midpoint = [self.geocodeService midpointBetweenCoordinates];
+        NSDictionary *box = [self.geocodeService boundingBoxCalculations];
         NSLog(@"Distance is %0.3f",distance);
         NSLog(@"Midpoints is %@",midpoint);
+        NSLog(@"Bounding box is as follows: %@", box);
     }
 }
 //Interface methods

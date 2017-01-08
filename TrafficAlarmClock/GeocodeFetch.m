@@ -153,4 +153,36 @@ static const int radius = 6371e3;
                                           };
     return midpointCoordinates;
 }
+//Calculate Bounding Box Coordinates
+-(NSDictionary *)boundingBoxCalculations {
+    //Constants
+    double circleRadius = [self distanceBetweenCoordinates]/2;
+    double boxDiagonal = sqrt((circleRadius*circleRadius)+(circleRadius*circleRadius));
+    double angularDistance = boxDiagonal/radius;
+    NSDictionary *midpoint = [self midpointBetweenCoordinates];
+    double midpointLatitude = [[midpoint objectForKey:@"latitude"] doubleValue];
+    double midpointLongitude = [[midpoint objectForKey:@"longitude"] doubleValue];
+    //Degree to radian conversion
+    double radianLatitude = (midpointLatitude * M_PI)/180;
+    double radianLongitude = (midpointLongitude * M_PI)/180;
+    double upperLatitude, upperLongitude, lowerLatitude, lowerLongitude = 0;
+    //Bounding box calculations
+    lowerLatitude = asin(sin(radianLatitude)*cos(angularDistance)+cos(radianLatitude)*sin(angularDistance)*cos((135 * M_PI)/180));
+    lowerLongitude = radianLongitude + atan2(sin((135 * M_PI)/180)*sin(angularDistance)*cos(lowerLatitude), cos(angularDistance)-sin(radianLatitude)*sin(lowerLatitude));
+    upperLatitude = asin(sin(radianLatitude)*cos(angularDistance)+cos(radianLatitude)*sin(angularDistance)*cos((315 * M_PI)/180));
+    upperLongitude = radianLongitude + atan2(sin((315 * M_PI)/180)*sin(angularDistance)*cos(lowerLatitude), cos(angularDistance)-sin(radianLatitude)*sin(lowerLatitude));
+    //radian to degree conversion
+    lowerLatitude = (lowerLatitude * 180)/M_PI;
+    lowerLongitude = (lowerLongitude * 180)/M_PI;
+    upperLatitude = (upperLatitude * 180)/M_PI;
+    upperLongitude = (upperLongitude * 180)/M_PI;
+    //Returning bounding box coordinates
+    NSDictionary *boundingBox = @{
+                                  @"lowerLatitude": [NSNumber numberWithDouble:lowerLatitude],
+                                  @"lowerLongitude": [NSNumber numberWithDouble:lowerLongitude],
+                                  @"upperLatitude": [NSNumber numberWithDouble:upperLatitude],
+                                  @"upperLongitude": [NSNumber numberWithDouble:upperLongitude]
+                                  };
+    return boundingBox;
+}
 @end
