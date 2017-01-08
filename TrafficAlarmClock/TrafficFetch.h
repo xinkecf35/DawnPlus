@@ -10,24 +10,21 @@
 
 @interface TrafficFetch : NSObject
 {
-    //Actual user and work coordinates respectively
-    double currentLatitude;
-    double currentLongitude;
     NSData *trafficJSON;
     NSMutableDictionary *trafficData;
    
 }
-@property double workLatitude;
-@property double workLongitude;
 
+@property NSDictionary *coordinates;
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;
 @property int status;
 
 
--(id) initWithLocation: (double)latitude : (double)longitude;
+
+//-(id) initWithLocation: (double)latitude : (double)longitude;
+//-(void) setCurrentCoordinates: (double)latitude : (double)longitude;
 -(void) sendTrafficRequest;
--(void) setCurrentCoordinates: (double)latitude : (double)longitude;
 -(void) addTrafficIncidents;
 -(NSString *) generateFilters: (NSUserDefaults *)defaults;
 

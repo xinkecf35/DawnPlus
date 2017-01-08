@@ -10,21 +10,8 @@
 static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //Mapquest API Key
 
 @implementation TrafficFetch
-@synthesize workLocation,trafficIncidents,workLatitude,workLongitude,status;
+@synthesize workLocation,trafficIncidents, coordinates, status;
 
--(id)initWithLocation: (double)latitude : (double)longitude {
-    self = [super init];
-    if(self) {
-        currentLatitude = latitude;
-        currentLongitude = longitude;
-        
-    }
-    return self;
-}
--(void)setCurrentCoordinates: (double)latitude : (double)longitude; {
-    currentLatitude = latitude;
-    currentLongitude = longitude;
-}
 //Calls Mapquest Traffic API to receive traffic data
 -(void)sendTrafficRequest {
     NSError *trafficError;
@@ -36,7 +23,12 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     trafficURL.path = @"/traffic/v2/incidents";
     //Setting Bounding Box
     NSString *filters = [NSString stringWithString:[self generateFilters:[NSUserDefaults standardUserDefaults]]];
-    NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",workLatitude,workLongitude,currentLatitude,currentLongitude];
+    NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",
+                             [[coordinates objectForKey:@"upperLatitude"] doubleValue],
+                             [[coordinates objectForKey:@"upperLongitude"] doubleValue],
+                             [[coordinates objectForKey:@"lowerLatitude"] doubleValue],
+                             [[coordinates objectForKey:@"lowerLongitude"] doubleValue]];
+                             
     NSDictionary *queryParameters= @{@"key":mapquestAPIKey,
                                     @"boundingBox":boundingBox,
                                     @"filters":filters
@@ -51,7 +43,12 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     //Check if JSON executed correctly
     if(trafficJSON.length > 0) {
         trafficData = [NSJSONSerialization JSONObjectWithData:trafficJSON options:kNilOptions error:&trafficError];
-        NSLog(@"%@ received trafficData from %0.6f, %0.6f to %0.6f, %0.6f",self, currentLatitude,currentLongitude, workLatitude, workLongitude);
+        NSLog(@"%@ received trafficData from %0.6f, %0.6f to %0.6f, %0.6f",
+                      self,
+                      [[coordinates objectForKey:@"upperLatitude"] doubleValue],
+                      [[coordinates objectForKey:@"upperLongitude"] doubleValue],
+                      [[coordinates objectForKey:@"lowerLatitude"] doubleValue],
+                      [[coordinates objectForKey:@"lowerLongitude"] doubleValue]);
         //Checking statuscode of request, if not 0, no go
         NSNumber *statusCode = [[trafficData objectForKey:@"info"]objectForKey:@"statuscode"];
         status = [statusCode intValue];

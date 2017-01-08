@@ -23,7 +23,7 @@
     [[LocationFetch sharedInstance] addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
     //Instantiating  weatherUpdate, trafficUpdate, and geocodeService
     self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
-    self.trafficUpdate = [[TrafficFetch alloc] initWithLocation:latitude :longitude];
+    self.trafficUpdate = [[TrafficFetch alloc] init];
     self.geocodeService = [[GeocodeFetch alloc]init];
     //Fetch Weather Updates
     [self.weatherUpdate sendWeatherRequest];
@@ -32,18 +32,11 @@
     [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
     [self.geocodeService geocodeWorkLocation];
     //From Geocode to TrafficFetch coordinates
-    self.trafficUpdate.workLatitude = self.geocodeService.workLatitude;
-    self.trafficUpdate.workLongitude = self.geocodeService.workLongitude;
+    self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
     [self.trafficUpdate sendTrafficRequest];
     [self.trafficUpdate addTrafficIncidents];
     [self updateWeatherLabels];
     [self updateTrafficLabels];
-    double distance = [self.geocodeService distanceBetweenCoordinates];
-    NSDictionary *midpoint = [self.geocodeService midpointBetweenCoordinates];
-    NSDictionary *box = [self.geocodeService boundingBoxCalculations];
-    NSLog(@"Distance is %0.3f",distance);
-    NSLog(@"Midpoint is %@",midpoint);
-    NSLog(@"Bounding box is as follows: %@", box);
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -76,7 +69,7 @@
         longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
         //Update current lcation for WeatherUpdate and TrafficUpdate
         [self.weatherUpdate setWeatherLocation:latitude :longitude];
-        [self.trafficUpdate setCurrentCoordinates:latitude :longitude];
+        
         //GeocodeService Update;
         self.geocodeService.currentLatitude = latitude;
         self.geocodeService.currentLongitude = longitude;
@@ -87,18 +80,11 @@
         [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
         [self.geocodeService geocodeWorkLocation];
         //From Geocode to TrafficFetch coordinates
-        self.trafficUpdate.workLatitude = self.geocodeService.workLatitude;
-        self.trafficUpdate.workLongitude = self.geocodeService.workLongitude;
+        self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
         [self.trafficUpdate sendTrafficRequest];
         [self.trafficUpdate addTrafficIncidents];
         [self updateWeatherLabels];
         [self updateTrafficLabels];
-        double distance = [self.geocodeService distanceBetweenCoordinates];
-        NSDictionary *midpoint = [self.geocodeService midpointBetweenCoordinates];
-        NSDictionary *box = [self.geocodeService boundingBoxCalculations];
-        NSLog(@"Distance is %0.3f",distance);
-        NSLog(@"Midpoints is %@",midpoint);
-        NSLog(@"Bounding box is as follows: %@", box);
     }
 }
 //Interface methods
