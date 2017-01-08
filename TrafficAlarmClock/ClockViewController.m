@@ -168,7 +168,7 @@
             [trafficInfo setImage:checkMark forState:UIControlStateNormal];
             NSLog(@"%@ no incidents available",self);
         }
-        else if(lowSeverity > highSeverity*2)
+        else if(lowSeverity >= highSeverity*2)
         {
             UIImage *caution = [UIImage imageNamed:@"caution"];
             [trafficInfo setImage:caution forState:UIControlStateNormal];
