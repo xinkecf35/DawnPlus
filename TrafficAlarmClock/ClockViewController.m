@@ -39,7 +39,9 @@
     [self updateWeatherLabels];
     [self updateTrafficLabels];
     double distance = [self.geocodeService distanceBetweenCoordinates];
+    NSDictionary *midpoint = [self.geocodeService midpointBetweenCoordinates];
     NSLog(@"Distance is %0.3f",distance);
+    NSLog(@"Midpoint is %@",midpoint);
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -90,7 +92,9 @@
         [self updateWeatherLabels];
         [self updateTrafficLabels];
         double distance = [self.geocodeService distanceBetweenCoordinates];
+        NSDictionary *midpoint = [self.geocodeService midpointBetweenCoordinates];
         NSLog(@"Distance is %0.3f",distance);
+        NSLog(@"Midpoints is %@",midpoint);
     }
 }
 //Interface methods

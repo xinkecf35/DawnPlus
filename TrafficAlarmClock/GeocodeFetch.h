@@ -27,6 +27,7 @@
 
 -(void) geocodeWorkLocation;
 -(double) distanceBetweenCoordinates;
+-(NSDictionary *)midpointBetweenCoordinates;
 -(NSArray *)checkWorkLocation;
 
 

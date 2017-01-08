@@ -8,6 +8,7 @@
 
 #import "GeocodeFetch.h"
 static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //Mapquest API Key
+static const int radius = 6371e3;
 
 @implementation GeocodeFetch
 @synthesize currentLatitude,currentLongitude,workLatitude,workLongitude, workAddress;
@@ -115,7 +116,6 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
 }
 //Calculate Distance between Coordinates
 -(double) distanceBetweenCoordinates {
-    const int radius = 6371e3;
     double greatCircleDistance,radianCurrentLatitude, radianWorkLatitude, deltaLatitude,deltaLongitude, a, c = 0;
     //Converting degrees to radians
     radianCurrentLatitude = (currentLatitude * M_PI)/180;
@@ -128,5 +128,29 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
     //Distance calculations
     greatCircleDistance = radius * c;
     return greatCircleDistance;
+}
+//Calculate Midpoint
+-(NSDictionary *)midpointBetweenCoordinates {
+    double latitudeMidpoint, longitudeMidpoint, radianCurrentLatitude, radianWorkLatitude, deltaLongitude = 0;
+    //Converting to Radians
+    radianCurrentLatitude = (currentLatitude * M_PI)/180;
+    radianWorkLatitude = (workLatitude * M_PI)/180;
+    deltaLongitude = ((workLongitude - currentLongitude) * M_PI)/180;
+    double radianCurrentLongitude = (currentLongitude * M_PI)/180;
+    //Calculating Midpoint
+    double Bx = cos(radianWorkLatitude)*cos(deltaLongitude);
+    double By = cos(radianWorkLatitude)*sin(deltaLongitude);
+    double Ly = sin(radianCurrentLatitude) + sin(radianWorkLatitude);
+    double Lx = sqrt(((cos(radianCurrentLatitude) + Bx)*(cos(radianCurrentLatitude) + Bx)+(By*By)));
+    latitudeMidpoint = atan2(Ly, Lx);
+    longitudeMidpoint = radianCurrentLongitude + atan2(By, (cos(radianCurrentLatitude)+Bx));
+    //Converting back to degrees
+    latitudeMidpoint = (latitudeMidpoint * 180)/M_PI;
+    longitudeMidpoint = (longitudeMidpoint * 180)/M_PI;
+    NSDictionary *midpointCoordinates = @{
+                                          @"latitude":[NSNumber numberWithDouble:latitudeMidpoint],
+                                          @"longitude":[NSNumber numberWithDouble:longitudeMidpoint]
+                                          };
+    return midpointCoordinates;
 }
 @end
