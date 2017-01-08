@@ -20,10 +20,6 @@
 @property NSArray *trafficIncidents;
 @property int status;
 
-
-
-//-(id) initWithLocation: (double)latitude : (double)longitude;
-//-(void) setCurrentCoordinates: (double)latitude : (double)longitude;
 -(void) sendTrafficRequest;
 -(void) addTrafficIncidents;
 -(NSString *) generateFilters: (NSUserDefaults *)defaults;
