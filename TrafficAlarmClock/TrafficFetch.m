@@ -3,7 +3,7 @@
 //  TrafficAlarmClock
 //
 //  Created by Xinke Chen on 6/25/16.
-//  Copyright © 2016 Xinke Chen. All rights reserved.
+//  Copyright © 20f16 Xinke Chen. All rights reserved.
 //
 
 #import "TrafficFetch.h"
@@ -38,7 +38,7 @@ static const NSString *mapquestAPIKey = @"VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY"; //M
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     trafficURL.queryItems = queryItems;
-    NSLog(@"MapquestAPI request URL: %@",trafficURL.URL);
+    //NSLog(@"MapquestAPI request URL: %@",trafficURL.URL);
     trafficJSON = [NSData dataWithContentsOfURL:trafficURL.URL];
     //Check if JSON executed correctly
     if(trafficJSON.length > 0) {
