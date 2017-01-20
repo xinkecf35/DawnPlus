@@ -35,9 +35,13 @@ class SensitivityViewController: UITableViewController {
     
     }
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        defaults.set(checkedCells, forKey: checkedCellsConstant)
-        defaults.synchronize()
+        
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            self.defaults.set(self.checkedCells, forKey: self.checkedCellsConstant)
+            DispatchQueue.main.async {
+                super.viewWillDisappear(true)
+            }
+        }
         NSLog("Defaults for %@ saved", self)
     }
     //Delegate and Datasource Methods
