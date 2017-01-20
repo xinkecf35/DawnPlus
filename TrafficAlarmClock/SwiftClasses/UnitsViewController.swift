@@ -37,13 +37,17 @@ class UnitsViewController: UITableViewController {
         
     }
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        //Writing to UserDefaults
-        if(currentUnit == 0) {
-            defaults.set(true, forKey: checkedCellsConstant)
-        }
-        else {
-            defaults.set(false, forKey: checkedCellsConstant)
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                if(self.currentUnit == 0) {
+                    
+                    self.defaults.set(true, forKey: self.checkedCellsConstant)
+                }
+                else {
+                    self.defaults.set(false, forKey: self.checkedCellsConstant)
+                }
+            DispatchQueue.main.async {
+                super.viewWillDisappear(true)
+            }
         }
     }
     //Delegate and Datasource Methods
