@@ -35,6 +35,7 @@
 		D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */; };
 		D0EDA1721CF3CA3C0036293B /* TrafficAlarmClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1711CF3CA3C0036293B /* TrafficAlarmClockTests.m */; };
 		D0EDA17D1CF3CA3C0036293B /* TrafficAlarmClockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA17C1CF3CA3C0036293B /* TrafficAlarmClockUITests.m */; };
+		D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0673A1E492CBA0014AAB3 /* constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		D0EDA1781CF3CA3C0036293B /* TrafficAlarmClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafficAlarmClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA17C1CF3CA3C0036293B /* TrafficAlarmClockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficAlarmClockUITests.m; sourceTree = "<group>"; };
 		D0EDA17E1CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 		D0EDA1541CF3CA3C0036293B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0F0673A1E492CBA0014AAB3 /* constants.m */,
 				D0EDA1551CF3CA3C0036293B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -404,6 +407,7 @@
 				D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
+				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
 				D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */,
