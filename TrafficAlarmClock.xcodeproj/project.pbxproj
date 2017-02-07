@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00916B71D73444A009999F2 /* SettingsViewController.m */; };
 		D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */; };
+		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
+		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
+		D02394F91E494B590011C410 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F81E494B590011C410 /* TrafficFetch.m */; };
 		D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */; };
-		D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0382A7E1CF409CC00905259 /* WeatherFetch.m */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D05893101D1F42C80024EA09 /* TrafficFetch.m */; };
 		D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D07995FA1D241C99003010C8 /* AlarmObject.m */; };
 		D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996001D24B38C003010C8 /* Raleway-Bold.ttf */; };
 		D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */; };
@@ -22,7 +23,6 @@
 		D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996091D24B38C003010C8 /* Raleway-Medium.ttf */; };
 		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
-		D07B541F1DB68940005BF81F /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D07B541E1DB68940005BF81F /* GeocodeFetch.m */; };
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
@@ -59,13 +59,15 @@
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00916B71D73444A009999F2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherFetchUnitTest.m; path = ../TrafficAlarmClock/WeatherFetchUnitTest.m; sourceTree = "<group>"; };
+		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
+		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
+		D02394ED1E4945660011C410 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
+		D02394F51E494A260011C410 /* GeocodeFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeFetch.m; sourceTree = "<group>"; };
+		D02394F71E494ADE0011C410 /* TrafficFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficFetch.h; sourceTree = "<group>"; };
+		D02394F81E494B590011C410 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
 		D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficAlarmClock-Bridging-Header.h"; sourceTree = "<group>"; };
 		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
-		D0382A7E1CF409CC00905259 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
-		D0382A801CF40DB100905259 /* WeatherFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D058930F1D1F42750024EA09 /* TrafficFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficFetch.h; sourceTree = "<group>"; };
-		D05893101D1F42C80024EA09 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
 		D07995FA1D241C99003010C8 /* AlarmObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmObject.m; sourceTree = "<group>"; };
 		D07995FC1D241CAB003010C8 /* AlarmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmObject.h; sourceTree = "<group>"; };
 		D07996001D24B38C003010C8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
@@ -76,8 +78,6 @@
 		D07996091D24B38C003010C8 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		D07B541D1DB68940005BF81F /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
-		D07B541E1DB68940005BF81F /* GeocodeFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeFetch.m; sourceTree = "<group>"; };
 		D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitsViewController.swift; path = SwiftClasses/UnitsViewController.swift; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
@@ -153,14 +153,14 @@
 		D059AB661D0B918D002CA6D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D07B541D1DB68940005BF81F /* GeocodeFetch.h */,
-				D07B541E1DB68940005BF81F /* GeocodeFetch.m */,
+				D02394E91E49454F0011C410 /* GeocodeFetch.h */,
+				D02394F51E494A260011C410 /* GeocodeFetch.m */,
 				D0A0180C1CFA783900E8EECB /* LocationFetch.h */,
 				D0A0180D1CFA787400E8EECB /* LocationFetch.m */,
-				D0382A801CF40DB100905259 /* WeatherFetch.h */,
-				D0382A7E1CF409CC00905259 /* WeatherFetch.m */,
-				D058930F1D1F42750024EA09 /* TrafficFetch.h */,
-				D05893101D1F42C80024EA09 /* TrafficFetch.m */,
+				D02394EC1E4945660011C410 /* WeatherFetch.h */,
+				D02394ED1E4945660011C410 /* WeatherFetch.m */,
+				D02394F71E494ADE0011C410 /* TrafficFetch.h */,
+				D02394F81E494B590011C410 /* TrafficFetch.m */,
 				D07995FC1D241CAB003010C8 /* AlarmObject.h */,
 				D07995FA1D241C99003010C8 /* AlarmObject.m */,
 			);
@@ -399,13 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0382A7F1CF409CC00905259 /* WeatherFetch.m in Sources */,
-				D07B541F1DB68940005BF81F /* GeocodeFetch.m in Sources */,
-				D05893111D1F42C80024EA09 /* TrafficFetch.m in Sources */,
+				D02394F91E494B590011C410 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
+				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
+				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
