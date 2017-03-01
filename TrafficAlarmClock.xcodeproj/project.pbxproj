@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00916B71D73444A009999F2 /* SettingsViewController.m */; };
 		D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */; };
 		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
 		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
@@ -26,6 +25,7 @@
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
+		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
 		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
@@ -57,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		D00916B71D73444A009999F2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherFetchUnitTest.m; path = ../TrafficAlarmClock/WeatherFetchUnitTest.m; sourceTree = "<group>"; };
 		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
 		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
+		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
 		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 				D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */,
 				D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */,
 				D00916B61D73444A009999F2 /* SettingsViewController.h */,
-				D00916B71D73444A009999F2 /* SettingsViewController.m */,
+				D0D4A2501E674D9700A925A5 /* SettingsViewController.m */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -403,7 +403,6 @@
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
-				D00916B81D73444A009999F2 /* SettingsViewController.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
@@ -412,6 +411,7 @@
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
 				D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */,
 				D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */,
+				D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
