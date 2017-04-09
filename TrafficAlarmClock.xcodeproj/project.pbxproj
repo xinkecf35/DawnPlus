@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016AA4A1E9A0837004B387B /* AddressViewController.swift */; };
+		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */; };
 		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
 		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D016AA4A1E9A0837004B387B /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressViewController.swift; path = SwiftClasses/AddressViewController.swift; sourceTree = "<group>"; };
+		D016AA4F1E9A11FC004B387B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherFetchUnitTest.m; path = ../TrafficAlarmClock/WeatherFetchUnitTest.m; sourceTree = "<group>"; };
 		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
 		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
 				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,12 +145,21 @@
 			name = Control;
 			sourceTree = "<group>";
 		};
+		D016AA4C1E9A1168004B387B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */ = {
 			isa = PBXGroup;
 			children = (
 				D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */,
 				D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */,
 				D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */,
+				D016AA4A1E9A0837004B387B /* AddressViewController.swift */,
 			);
 			name = NavigationControlClasses;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 				D0EDA1701CF3CA3C0036293B /* TrafficAlarmClockTests */,
 				D0EDA17B1CF3CA3C0036293B /* TrafficAlarmClockUITests */,
 				D0EDA1521CF3CA3C0036293B /* Products */,
+				D016AA4C1E9A1168004B387B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -327,6 +342,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = FN6XFMFZF5;
 						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D0EDA16C1CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -404,6 +424,7 @@
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
+				D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,

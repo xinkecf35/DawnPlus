@@ -3,3 +3,4 @@
 //
 #import "TrafficFetch.h"
 #import "GeocodeFetch.h"
+#import "LocationFetch.h"
