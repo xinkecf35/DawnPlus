@@ -15,10 +15,14 @@ class AddressViewController: UIViewController {
     var latitude:Double = 0
     var longitude:Double = 0
     
+    @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad();
         latitude = LocationFetch.sharedInstance().latitude
         longitude = LocationFetch.sharedInstance().longitude
+        let span = MKCoordinateSpan(latitudeDelta: 0.05,longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: LocationFetch.sharedInstance().currentLocation.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
         LocationFetch.sharedInstance().addObserver(self, forKeyPath: #keyPath(LocationFetch.currentLocation), options: .new, context: nil)
         debugPrint("\(self) current location is: \(latitude), \(longitude)")
         
