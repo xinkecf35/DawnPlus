@@ -51,7 +51,9 @@
     CLLocation *location = [locations lastObject];
     latitude = location.coordinate.latitude;
     longitude = location.coordinate.longitude;
-    self.currentLocation = location;
+    
+    //self.currentLocation = location;
+    [self setCurrentLocation:location];
     NSLog(@"LocationFetch sharedInstance: Latitude %+.6f, Longitude %+.6f\n",
           location.coordinate.latitude,
           location.coordinate.longitude);
