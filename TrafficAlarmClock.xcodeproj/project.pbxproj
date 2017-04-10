@@ -27,6 +27,7 @@
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
+		D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */; };
 		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
+		D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSearchTable.swift; path = SwiftClasses/AddressSearchTable.swift; sourceTree = "<group>"; };
 		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */,
 				D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */,
 				D016AA4A1E9A0837004B387B /* AddressViewController.swift */,
+				D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */,
 			);
 			name = NavigationControlClasses;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
+				D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
