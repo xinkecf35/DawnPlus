@@ -47,6 +47,13 @@ class AddressViewController: UIViewController {
         addressSearchTable.mapView = mapView
         addressSearchTable.handleMapSearchDelegate = self
     }
+    func getDirections() {
+        if let selectedPin = selectedPin {
+            let mapItem = MKMapItem(placemark: selectedPin)
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+            mapItem.openInMaps(launchOptions: launchOptions)
+        }
+    }
     deinit {
         LocationFetch.sharedInstance().removeObserver(self, forKeyPath: #keyPath(LocationFetch.currentLocation))
     }
@@ -61,13 +68,14 @@ class AddressViewController: UIViewController {
         }
     }
 }
+//Dropping pin for of selected address
 extension AddressViewController: HandleMapSearch {
     func dropMapPin(placemark: MKPlacemark) {
         selectedPin = placemark
         mapView.removeAnnotations(mapView.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
-        annotation.title = "Work"
+        annotation.title = placemark.title
         if let city = placemark.locality, let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
         }
@@ -75,5 +83,26 @@ extension AddressViewController: HandleMapSearch {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated:true)
+    }
+}
+//Setting pin to set button to open Maps
+extension AddressViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor  annotation: MKAnnotation) -> MKAnnotationView?{
+        if annotation is MKUserLocation {
+            //return nil if user location is being drawn
+            return nil
+        }
+        let reuseID = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID) as? MKPinAnnotationView
+        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+        pinView?.pinTintColor = UIColor.orange
+        pinView?.canShowCallout = true
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: CGPoint(x: 0, y:0), size: smallSquare))
+        button.setBackgroundImage(UIImage(named: "car"), for: UIControlState.normal)
+        button.addTarget(self, action: #selector(AddressViewController.getDirections), for: .touchUpInside)
+        pinView?.leftCalloutAccessoryView = button
+        return pinView
+        
     }
 }

@@ -544,7 +544,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="I9b-wB-0WW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qlf-hA-lpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qlf-hA-lpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -566,7 +566,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g8E-5D-flj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YNW-G0-FRc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YNW-G0-FRc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
