@@ -13,6 +13,7 @@ import MapKit
 class AddressSearchTable: UITableViewController {
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
+    var handleMapSearchDelegate:HandleMapSearch? = nil
     
     func parseAddress(selectedItem:MKPlacemark) -> String {
         // put a space between "4" and "Melrose Place"
@@ -66,5 +67,12 @@ extension AddressSearchTable {
         cell.textLabel?.text = selectedItem.name
         cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
         return cell
+    }
+}
+extension AddressSearchTable {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = matchingItems[indexPath.row].placemark
+        handleMapSearchDelegate?.dropMapPin(placemark: selectedCell)
+        dismiss(animated: true, completion: nil)
     }
 }

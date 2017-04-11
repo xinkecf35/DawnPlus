@@ -10,11 +10,16 @@ import Foundation
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    func dropMapPin (placemark: MKPlacemark)
+}
+
 class AddressViewController: UIViewController {
     //Properties
     var latitude:Double = 0
     var longitude:Double = 0
     var addressSearchController:UISearchController? = nil
+    var selectedPin: MKPlacemark? = nil
     
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
@@ -40,6 +45,7 @@ class AddressViewController: UIViewController {
         addressSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         addressSearchTable.mapView = mapView
+        addressSearchTable.handleMapSearchDelegate = self
     }
     deinit {
         LocationFetch.sharedInstance().removeObserver(self, forKeyPath: #keyPath(LocationFetch.currentLocation))
@@ -53,5 +59,21 @@ class AddressViewController: UIViewController {
             debugPrint("\(self) updated current location is: \(latitude), \(longitude)")
             
         }
+    }
+}
+extension AddressViewController: HandleMapSearch {
+    func dropMapPin(placemark: MKPlacemark) {
+        selectedPin = placemark
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = "Work"
+        if let city = placemark.locality, let state = placemark.administrativeArea {
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated:true)
     }
 }
