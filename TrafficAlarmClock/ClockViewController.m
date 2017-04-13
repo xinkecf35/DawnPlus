@@ -29,7 +29,7 @@
     [self.weatherUpdate sendWeatherRequest];
     [self.weatherUpdate setWeatherParameters];
     //Geocoding workLocation
-    [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
+    [self.geocodeService setWorkAddress:@"600 N Ithan Ave Lower Merion PA 19010"];
     [self.geocodeService geocodeWorkLocation];
     //From Geocode to TrafficFetch coordinates
     self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
