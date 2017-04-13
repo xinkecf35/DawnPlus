@@ -40,7 +40,9 @@ class AddressViewController: UIViewController {
         let searchBar = addressSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for your Work"
+        navigationItem.leftBarButtonItem = nil
         navigationItem.titleView = addressSearchController?.searchBar
+        
         addressSearchController?.hidesNavigationBarDuringPresentation = false
         addressSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
