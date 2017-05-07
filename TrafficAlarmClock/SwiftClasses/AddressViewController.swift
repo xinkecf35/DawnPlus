@@ -15,6 +15,8 @@ protocol HandleMapSearch {
 }
 
 class AddressViewController: UIViewController {
+    //Constants
+    let defaults:UserDefaults = UserDefaults.standard;
     //Properties
     var latitude:Double = 0
     var longitude:Double = 0
@@ -48,6 +50,21 @@ class AddressViewController: UIViewController {
         definesPresentationContext = true
         addressSearchTable.mapView = mapView
         addressSearchTable.handleMapSearchDelegate = self
+    }
+    //Asynchronusly save data while popping view off stack
+    override func viewWillDisappear(_ animated: Bool) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            if(self.selectedPin?.coordinate != nil) {
+                let latitude:Double = (self.selectedPin?.coordinate.latitude)!
+                let longitude:Double = (self.selectedPin?.coordinate.longitude)!
+                let workCoordinates = ["latitude":latitude, "longitude":longitude]
+                self.defaults.set(workCoordinates, forKey: "workLocation")
+                NSLog("%@ workLocation saved to Defaults; latitude: %0.6f, longitude: %0.6f", self, latitude,longitude)
+            }
+            DispatchQueue.main.async {
+                super.viewWillDisappear(true)
+            }
+        }
     }
     func getDirections() {
         if let selectedPin = selectedPin {
