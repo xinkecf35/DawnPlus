@@ -102,9 +102,10 @@
     self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
     [self.trafficUpdate sendTrafficRequest];
     [self.trafficUpdate addTrafficIncidents];
-    [self updateWeatherLabels];
-    [self updateTrafficLabels];
-
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self updateWeatherLabels];
+        [self updateTrafficLabels];
+    });
     
 }
 -(void) updateWeatherLabels
@@ -118,7 +119,7 @@
     self.weatherTemperature.text = temp;
     
     UIImage *currentIcon = [UIImage imageNamed:self.weatherUpdate.currentCondition];
-    [weatherIcon setImage:currentIcon];
+    weatherIcon.image = currentIcon;
     //Logging displays of weather UILabels
     NSLog(@"%@ method updateWeatherLabels displaying temperature of %@ and icon %@",self, temp,self.weatherUpdate.currentCondition);
 }
