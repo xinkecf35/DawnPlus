@@ -8,18 +8,26 @@
 
 #import "SettingsViewController.h"
 
-@implementation SettingsViewController 
--(void)viewDidLoad
-{
+
+@implementation SettingsViewController
+
+@synthesize gentleWakeSwitch;
+
+-(void)viewDidLoad {
     [super viewDidLoad];
+    [gentleWakeSwitch addTarget:self action:@selector(toggleGentleWake) forControlEvents:UIControlEventValueChanged];
     //settings = [NSArray arrayWithObjects:@"Alarm",@"Traffic",@"Weather",@"About", nil];
 }
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
+
 }
--(IBAction)dismissSettings:(id)sender
-{
+//Handle Gentle Wake
+-(void) toggleGentleWake {
+    NSLog(@"Value of Gentle Wake Switch %d", gentleWakeSwitch.isOn);
+}
+//Dismiss View Controller
+-(IBAction)dismissSettings:(id)sender {
     [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 

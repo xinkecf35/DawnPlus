@@ -9,9 +9,10 @@
 #import "Foundation/Foundation.h"
 
 @interface SettingsViewController : UITableViewController
-{
 
-}
+@property (weak, nonatomic) IBOutlet UISwitch *gentleWakeSwitch;
+
+-(void)toggleGentleWake;
 
 
 @end
