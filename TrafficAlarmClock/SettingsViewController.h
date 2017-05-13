@@ -8,7 +8,9 @@
 #import <UIKit/UIKit.h>
 #import "Foundation/Foundation.h"
 
-@interface SettingsViewController : UITableViewController
+@interface SettingsViewController : UITableViewController {
+    NSUserDefaults *defaults;
+}
 
 @property (weak, nonatomic) IBOutlet UISwitch *gentleWakeSwitch;
 
