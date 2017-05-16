@@ -33,6 +33,13 @@
     [super viewDidUnload];
 
 }
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    UIView *customSelectionView = [[UIView alloc] init];
+    customSelectionView.backgroundColor = [UIColor colorWithRed:227/255.0 green:196/255.0 blue:13/255.0 alpha:1.0];
+    cell.selectedBackgroundView = customSelectionView;
+    return cell;
+}
 //Handle Gentle Wake
 -(void) toggleGentleWake {
     dispatch_async(dispatch_get_main_queue(), ^ {
