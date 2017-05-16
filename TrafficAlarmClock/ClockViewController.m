@@ -28,9 +28,14 @@
     //Fetch Weather Updates
     [self.weatherUpdate sendWeatherRequest];
     [self.weatherUpdate setWeatherParameters];
-    //Geocoding workLocation
-    [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
-    [self.geocodeService geocodeWorkLocation];
+    //Run Geocode Methods
+    NSDictionary *workCoordinates = [defaults dictionaryForKey:@"workLocation"];
+    if(![workCoordinates isEqual:[NSNull null]]) {
+        self.geocodeService.currentLatitude = latitude;
+        self.geocodeService.currentLongitude = longitude;
+        self.geocodeService.workLatitude = [[workCoordinates valueForKey:@"latitude"] doubleValue];
+        self.geocodeService.workLongitude = [[workCoordinates valueForKey:@"longitude"] doubleValue];
+    }
     //From Geocode to TrafficFetch coordinates
     self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
     [self.trafficUpdate sendTrafficRequest];
@@ -47,7 +52,7 @@
                selector:@selector(didDefaultsChange:)
             name:NSUserDefaultsDidChangeNotification
             object:nil];
-    
+    defaults = NSUserDefaults.standardUserDefaults;
 }
 -(void)dealloc
 {
@@ -69,22 +74,9 @@
         longitude = [LocationFetch sharedInstance].currentLocation.coordinate.longitude;
         //Update current lcation for WeatherUpdate and TrafficUpdate
         [self.weatherUpdate setWeatherLocation:latitude :longitude];
-        
-        //GeocodeService Update;
-        self.geocodeService.currentLatitude = latitude;
-        self.geocodeService.currentLongitude = longitude;
-        
-        [self.weatherUpdate sendWeatherRequest];
-        [self.weatherUpdate setWeatherParameters];
-        
-        [self.geocodeService setWorkAddress:@"600 N Ithan Ave, Bryn Mawr, PA 19010"];
-        [self.geocodeService geocodeWorkLocation];
-        //From Geocode to TrafficFetch coordinates
-        self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
-        [self.trafficUpdate sendTrafficRequest];
-        [self.trafficUpdate addTrafficIncidents];
-        [self updateWeatherLabels];
-        [self updateTrafficLabels];
+        self.geocodeService.workLatitude = latitude;
+        self.geocodeService.workLongitude = longitude;
+        [self updateServices];
     }
 }
 //Interface methods
@@ -94,6 +86,27 @@
     [clockFormat setDateFormat:@"h:mm a"];
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
+}
+-(void) updateServices {
+    [self.weatherUpdate sendWeatherRequest];
+    [self.weatherUpdate setWeatherParameters];
+    //Run Geocode Methods
+    NSDictionary *workCoordinates = [defaults dictionaryForKey:@"workLocation"];
+    if(![workCoordinates isEqual:[NSNull null]]) {
+        self.geocodeService.currentLatitude = latitude;
+        self.geocodeService.currentLongitude = longitude;
+        self.geocodeService.workLatitude = [[workCoordinates valueForKey:@"latitude"] doubleValue];
+        self.geocodeService.workLongitude = [[workCoordinates valueForKey:@"longitude"] doubleValue];
+    }
+    //From Geocode to TrafficFetch coordinates
+    self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
+    [self.trafficUpdate sendTrafficRequest];
+    [self.trafficUpdate addTrafficIncidents];
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self updateWeatherLabels];
+        [self updateTrafficLabels];
+    });
+    
 }
 -(void) updateWeatherLabels
 {
@@ -106,7 +119,7 @@
     self.weatherTemperature.text = temp;
     
     UIImage *currentIcon = [UIImage imageNamed:self.weatherUpdate.currentCondition];
-    [weatherIcon setImage:currentIcon];
+    weatherIcon.image = currentIcon;
     //Logging displays of weather UILabels
     NSLog(@"%@ method updateWeatherLabels displaying temperature of %@ and icon %@",self, temp,self.weatherUpdate.currentCondition);
 }
@@ -197,12 +210,7 @@
 -(void)didDefaultsChange:(NSNotification *)notifictation
 {
     //WeatherUpdate updates for change in NSUserDefaults
-    [self.weatherUpdate sendWeatherRequest];
-    [self.weatherUpdate setWeatherParameters];
-    [self updateWeatherLabels];
-    [self.trafficUpdate sendTrafficRequest];
-    [self.trafficUpdate addTrafficIncidents];
-    [self updateTrafficLabels];
+    [self updateServices];
     NSLog(@"%@ has been received and responded to",notifictation);
     
 }

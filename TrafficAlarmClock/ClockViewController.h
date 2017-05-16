@@ -12,7 +12,9 @@
 #import "TrafficFetch.h"
 #import "GeocodeFetch.h"
 
-@interface ClockViewController : UIViewController
+@interface ClockViewController : UIViewController {
+    NSUserDefaults *defaults;
+}
 
 @property double latitude;
 @property double longitude;
