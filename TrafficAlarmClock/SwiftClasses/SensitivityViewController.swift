@@ -54,6 +54,11 @@ class SensitivityViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sensitivityCell", for: indexPath)
+        //Setting Custom Color
+        let customSelectionView = UIView()
+        customSelectionView.backgroundColor = UIColor.init(colorLiteralRed: 227/255.0, green: 196/255.0, blue: 13/255.0, alpha: 1.0)
+        cell.selectedBackgroundView = customSelectionView;
+        //Setting Text
         cell.textLabel?.text = trafficOptions[indexPath.row]
         return cell
     }
