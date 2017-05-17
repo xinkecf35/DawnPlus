@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="85.5" y="230" width="205" height="63"/>
+                                <rect key="frame" x="85" y="230" width="205" height="63"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -56,8 +56,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-nG-RJL" userLabel="weatherLabel">
                                 <rect key="frame" x="126" y="134" width="92" height="88"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXn-YQ-uiW" userLabel="toggleAlarms">
-                                <rect key="frame" x="6" y="28" width="44" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXn-YQ-uiW" userLabel="toggleAlarms">
+                                <rect key="frame" x="6" y="30" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
                             </button>
                         </subviews>
@@ -70,10 +70,10 @@
                             </constraint>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="leading" secondItem="mwS-nG-RJL" secondAttribute="trailing" constant="8" id="5Ae-fb-GE7"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="KNq-rs-pUG"/>
-                            <constraint firstItem="iXn-YQ-uiW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="SKa-ws-cNp"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="width" secondItem="pGl-EF-jpQ" secondAttribute="width" id="X6y-sc-wSO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="26"/>
                             </constraint>
+                            <constraint firstItem="yeb-D7-7G5" firstAttribute="centerY" secondItem="iXn-YQ-uiW" secondAttribute="centerY" id="aNF-HJ-9wK"/>
                             <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ajX-ES-Joj"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMF-gT-WhA"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="top" secondItem="pGl-EF-jpQ" secondAttribute="top" id="cP3-s3-WcJ"/>
@@ -84,6 +84,7 @@
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="leading" secondItem="pGl-EF-jpQ" secondAttribute="trailing" constant="12" id="qnF-EL-Fis">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="iXn-YQ-uiW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="uhr-E9-vnc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
