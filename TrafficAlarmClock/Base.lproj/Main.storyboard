@@ -34,13 +34,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
-                                <rect key="frame" x="325" y="30" width="44" height="44"/>
-                                <state key="normal" image="menu-icon"/>
-                                <connections>
-                                    <segue destination="I9b-wB-0WW" kind="presentation" id="Tgn-uI-URO"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
                                 <rect key="frame" x="85" y="230" width="205" height="63"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
@@ -56,22 +49,45 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-nG-RJL" userLabel="weatherLabel">
                                 <rect key="frame" x="126" y="134" width="92" height="88"/>
                             </imageView>
+<<<<<<< HEAD
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31h-Uq-h1f" userLabel="toggleAlarms">
+                                <rect key="frame" x="10" y="28" width="44" height="44"/>
+                                <state key="normal" image="plus-icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
+                                <rect key="frame" x="321" y="28" width="44" height="44"/>
+                                <state key="normal" image="menu-icon"/>
+                                <connections>
+                                    <segue destination="I9b-wB-0WW" kind="presentation" id="Tgn-uI-URO"/>
+                                </connections>
+                            </button>
+=======
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXn-YQ-uiW" userLabel="toggleAlarms">
+                                <rect key="frame" x="6" y="30" width="44" height="44"/>
+                                <state key="normal" image="plus-icon"/>
+                            </button>
+>>>>>>> a4b6337018ea45eacc372355aca1ed705b87a2e4
                         </subviews>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.76862745098039209" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="centerY" secondItem="pGl-EF-jpQ" secondAttribute="centerY" id="06k-pM-8NA"/>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="centerY" secondItem="mwS-nG-RJL" secondAttribute="centerY" id="1QD-Hv-8Bf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="-20" id="4Nl-Gb-Uu3">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
-                            </constraint>
+                            <constraint firstItem="31h-Uq-h1f" firstAttribute="top" secondItem="yeb-D7-7G5" secondAttribute="top" id="1uL-6T-U6i"/>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="leading" secondItem="mwS-nG-RJL" secondAttribute="trailing" constant="8" id="5Ae-fb-GE7"/>
+                            <constraint firstItem="31h-Uq-h1f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="JYU-lI-ixn"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="KNq-rs-pUG"/>
+                            <constraint firstAttribute="trailing" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="10" id="O1r-Eb-caN"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="width" secondItem="pGl-EF-jpQ" secondAttribute="width" id="X6y-sc-wSO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="26"/>
                             </constraint>
+<<<<<<< HEAD
+=======
+                            <constraint firstItem="yeb-D7-7G5" firstAttribute="centerY" secondItem="iXn-YQ-uiW" secondAttribute="centerY" id="aNF-HJ-9wK"/>
                             <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ajX-ES-Joj"/>
+>>>>>>> a4b6337018ea45eacc372355aca1ed705b87a2e4
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMF-gT-WhA"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="top" secondItem="pGl-EF-jpQ" secondAttribute="top" id="cP3-s3-WcJ"/>
+                            <constraint firstItem="31h-Uq-h1f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="fe2-bI-5Ny"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="230" id="lK3-bk-1tR"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="lbY-Bw-63u">
                                 <variation key="heightClass=regular-widthClass=compact" constant="36"/>
@@ -79,14 +95,15 @@
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="leading" secondItem="pGl-EF-jpQ" secondAttribute="trailing" constant="12" id="qnF-EL-Fis">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="iXn-YQ-uiW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="uhr-E9-vnc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pGl-EF-jpQ"/>
-                                <exclude reference="yeb-D7-7G5"/>
                                 <exclude reference="KCI-dh-HRs"/>
                                 <exclude reference="DkP-xk-CCs"/>
                                 <exclude reference="mwS-nG-RJL"/>
+                                <exclude reference="yeb-D7-7G5"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KNq-rs-pUG"/>
@@ -99,17 +116,15 @@
                                 <exclude reference="lK3-bk-1tR"/>
                                 <exclude reference="1QD-Hv-8Bf"/>
                                 <exclude reference="5Ae-fb-GE7"/>
-                                <exclude reference="4Nl-Gb-Uu3"/>
-                                <exclude reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="pGl-EF-jpQ"/>
-                                <include reference="yeb-D7-7G5"/>
                                 <include reference="KCI-dh-HRs"/>
                                 <include reference="DkP-xk-CCs"/>
                                 <include reference="mwS-nG-RJL"/>
+                                <include reference="yeb-D7-7G5"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KNq-rs-pUG"/>
@@ -122,8 +137,6 @@
                                 <include reference="lK3-bk-1tR"/>
                                 <include reference="1QD-Hv-8Bf"/>
                                 <include reference="5Ae-fb-GE7"/>
-                                <include reference="4Nl-Gb-Uu3"/>
-                                <include reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                     </view>
@@ -149,7 +162,11 @@
                         <sections>
                             <tableViewSection headerTitle="Traffic" footerTitle="" id="K1G-xL-ZKW">
                                 <cells>
+<<<<<<< HEAD
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="workLocationCell" id="m9E-0b-clK">
+=======
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="m9E-0b-clK">
+>>>>>>> a4b6337018ea45eacc372355aca1ed705b87a2e4
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9E-0b-clK" id="zNE-vY-gGm">
@@ -157,10 +174,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sBz-yw-j38">
+<<<<<<< HEAD
+                                                    <rect key="frame" x="18" y="11" width="117" height="21.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-Gt-lEf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="117" height="21.5"/>
+=======
                                                     <rect key="frame" x="18" y="11" width="117" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-Gt-lEf">
                                                             <rect key="frame" x="0.0" y="0.0" width="117" height="21"/>
+>>>>>>> a4b6337018ea45eacc372355aca1ed705b87a2e4
                                                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                             <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -237,7 +261,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Alarm" footerTitle="" id="CNv-HX-kFJ" userLabel="Alarm">
                                 <cells>
+<<<<<<< HEAD
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="3eJ-GQ-6gD" userLabel="gentleWakeCell">
+=======
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="3eJ-GQ-6gD" userLabel="gentleWakeCell">
+>>>>>>> a4b6337018ea45eacc372355aca1ed705b87a2e4
                                         <rect key="frame" x="0.0" y="314.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eJ-GQ-6gD" id="HGl-Sg-d87">
@@ -295,8 +323,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+<<<<<<< HEAD
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequently Asked Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-Fr-eQ5">
+                                                    <rect key="frame" x="18" y="11" width="233" height="21"/>
+=======
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F.A.Q." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-Fr-eQ5" userLabel="F.A.Q.">
                                                     <rect key="frame" x="18" y="11" width="227" height="21"/>
+>>>>>>> a4b6337018ea45eacc372355aca1ed705b87a2e4
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -578,5 +611,6 @@
         <image name="error" width="88" height="88"/>
         <image name="fog" width="88" height="88"/>
         <image name="menu-icon" width="44" height="44"/>
+        <image name="plus-icon" width="44" height="44"/>
     </resources>
 </document>
