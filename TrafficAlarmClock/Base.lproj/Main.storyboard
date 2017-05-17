@@ -16,6 +16,34 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Alarm Table View Controller-->
+        <scene sceneID="EYX-6P-GsU">
+            <objects>
+                <tableViewController id="Qgu-qJ-Zz6" customClass="AlarmTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VTs-al-CWD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QKI-Na-Ym0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKI-Na-Ym0" id="Oww-kf-BJw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qgu-qJ-Zz6" id="Ych-Wt-KHQ"/>
+                            <outlet property="delegate" destination="Qgu-qJ-Zz6" id="EEK-VL-tvW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NlV-nn-KeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="1233"/>
+        </scene>
         <!--Clock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -59,6 +87,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSn-Xd-C2i" userLabel="toggleAlarmView">
                                 <rect key="frame" x="6" y="30" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
+                                <connections>
+                                    <segue destination="Qgu-qJ-Zz6" kind="presentation" id="j62-JO-rPi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.76862745098039209" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,8 +100,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
                             </constraint>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="leading" secondItem="mwS-nG-RJL" secondAttribute="trailing" constant="8" id="5Ae-fb-GE7"/>
-                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="D75-nc-In3"/>
-                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="YSn-Xd-C2i" secondAttribute="top" id="IkD-j5-FlL"/>
+                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="top" secondItem="yeb-D7-7G5" secondAttribute="top" id="JMt-jc-Y12"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="KNq-rs-pUG"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="width" secondItem="pGl-EF-jpQ" secondAttribute="width" id="X6y-sc-wSO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="26"/>
@@ -78,6 +108,7 @@
                             <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ajX-ES-Joj"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMF-gT-WhA"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="top" secondItem="pGl-EF-jpQ" secondAttribute="top" id="cP3-s3-WcJ"/>
+                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="jEZ-9L-JRP"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="230" id="lK3-bk-1tR"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="lbY-Bw-63u">
                                 <variation key="heightClass=regular-widthClass=compact" constant="36"/>
@@ -142,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="388"/>
+            <point key="canvasLocation" x="-142" y="386"/>
         </scene>
         <!--SettingsView-->
         <scene sceneID="LFo-5M-ry6">
@@ -163,10 +194,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sBz-yw-j38">
-                                                    <rect key="frame" x="18" y="11" width="113" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="117" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-Gt-lEf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="113" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="117" height="21"/>
                                                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                             <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -193,7 +224,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensitivity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xz6-dj-M53">
-                                                    <rect key="frame" x="18" y="11" width="82" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="84" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -222,7 +253,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC8-cH-Lgy">
-                                                    <rect key="frame" x="18" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="43" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -251,7 +282,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gentle Wake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MJ-0u-rvQ">
-                                                    <rect key="frame" x="18" y="11" width="102.5" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="107" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -276,7 +307,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjm-h5-qQs">
-                                                    <rect key="frame" x="18" y="11" width="61.5" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="64" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -390,7 +421,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
             </objects>
-            <point key="canvasLocation" x="2160.8000000000002" y="386.35682158920542"/>
+            <point key="canvasLocation" x="1529" y="385"/>
         </scene>
         <!--Work Address-->
         <scene sceneID="VxC-8E-yST">
@@ -435,7 +466,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3212" y="-469"/>
+            <point key="canvasLocation" x="2366" y="-304"/>
         </scene>
         <!--Address Search Table-->
         <scene sceneID="9Fx-zs-hV3">
@@ -479,7 +510,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buQ-M3-7Qa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3895" y="-469"/>
+            <point key="canvasLocation" x="3132" y="-304"/>
         </scene>
         <!--Units-->
         <scene sceneID="3Kw-aT-LXK">
@@ -517,7 +548,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRc-EC-BNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3894" y="193"/>
+            <point key="canvasLocation" x="3132" y="387"/>
         </scene>
         <!--Sensitivity-->
         <scene sceneID="DfT-fz-Rs0">
@@ -555,14 +586,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DC-rv-E7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="193"/>
+            <point key="canvasLocation" x="2366" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZk-IA-WoL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="I9b-wB-0WW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qlf-hA-lpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qlf-hA-lpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -577,7 +608,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQK-XH-9ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="387"/>
+            <point key="canvasLocation" x="682" y="385"/>
         </scene>
     </scenes>
     <resources>
