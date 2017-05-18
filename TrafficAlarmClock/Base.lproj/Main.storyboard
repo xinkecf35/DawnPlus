@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Alarm Table View Controller-->
+        <!--Alarms-->
         <scene sceneID="EYX-6P-GsU">
             <objects>
                 <tableViewController id="Qgu-qJ-Zz6" customClass="AlarmTableViewController" sceneMemberID="viewController">
@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QKI-Na-Ym0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="alarmCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" id="QKI-Na-Ym0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKI-Na-Ym0" id="Oww-kf-BJw">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="alarmView" tableViewCell="QKI-Na-Ym0" id="Oww-kf-BJw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -39,10 +39,18 @@
                             <outlet property="delegate" destination="Qgu-qJ-Zz6" id="EEK-VL-tvW"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Alarms" id="9m1-lg-8RL">
+                        <barButtonItem key="leftBarButtonItem" image="back-arrow" id="dNJ-xA-b1R">
+                            <connections>
+                                <segue destination="bXR-kr-lFQ" kind="unwind" unwindAction="unwindToClockView:" id="MZx-gE-1gN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlV-nn-KeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bXR-kr-lFQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="1233"/>
+            <point key="canvasLocation" x="681" y="1318"/>
         </scene>
         <!--Clock-->
         <scene sceneID="tne-QT-ifu">
@@ -70,7 +78,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="85" y="230" width="205" height="63"/>
+                                <rect key="frame" x="86" y="230" width="205" height="63"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -88,7 +96,7 @@
                                 <rect key="frame" x="6" y="30" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
                                 <connections>
-                                    <segue destination="Qgu-qJ-Zz6" kind="presentation" id="j62-JO-rPi"/>
+                                    <segue destination="sw3-LR-2Vh" kind="presentation" id="j62-JO-rPi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,19 +104,16 @@
                         <constraints>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="centerY" secondItem="pGl-EF-jpQ" secondAttribute="centerY" id="06k-pM-8NA"/>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="centerY" secondItem="mwS-nG-RJL" secondAttribute="centerY" id="1QD-Hv-8Bf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="-20" id="4Nl-Gb-Uu3">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
-                            </constraint>
                             <constraint firstItem="DkP-xk-CCs" firstAttribute="leading" secondItem="mwS-nG-RJL" secondAttribute="trailing" constant="8" id="5Ae-fb-GE7"/>
-                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="top" secondItem="yeb-D7-7G5" secondAttribute="top" id="JMt-jc-Y12"/>
+                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="7JR-PV-Q08"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="114" id="KNq-rs-pUG"/>
+                            <constraint firstAttribute="trailing" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="6" id="Kaj-ms-nEj"/>
+                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="VmY-gz-0I9"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="width" secondItem="pGl-EF-jpQ" secondAttribute="width" id="X6y-sc-wSO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="26"/>
                             </constraint>
-                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ajX-ES-Joj"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMF-gT-WhA"/>
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="top" secondItem="pGl-EF-jpQ" secondAttribute="top" id="cP3-s3-WcJ"/>
-                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="jEZ-9L-JRP"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="230" id="lK3-bk-1tR"/>
                             <constraint firstItem="pGl-EF-jpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="lbY-Bw-63u">
                                 <variation key="heightClass=regular-widthClass=compact" constant="36"/>
@@ -116,11 +121,11 @@
                             <constraint firstItem="mwS-nG-RJL" firstAttribute="leading" secondItem="pGl-EF-jpQ" secondAttribute="trailing" constant="12" id="qnF-EL-Fis">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="rjS-bG-T4V"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pGl-EF-jpQ"/>
-                                <exclude reference="yeb-D7-7G5"/>
                                 <exclude reference="KCI-dh-HRs"/>
                                 <exclude reference="DkP-xk-CCs"/>
                                 <exclude reference="mwS-nG-RJL"/>
@@ -136,14 +141,11 @@
                                 <exclude reference="lK3-bk-1tR"/>
                                 <exclude reference="1QD-Hv-8Bf"/>
                                 <exclude reference="5Ae-fb-GE7"/>
-                                <exclude reference="4Nl-Gb-Uu3"/>
-                                <exclude reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="pGl-EF-jpQ"/>
-                                <include reference="yeb-D7-7G5"/>
                                 <include reference="KCI-dh-HRs"/>
                                 <include reference="DkP-xk-CCs"/>
                                 <include reference="mwS-nG-RJL"/>
@@ -159,8 +161,6 @@
                                 <include reference="lK3-bk-1tR"/>
                                 <include reference="1QD-Hv-8Bf"/>
                                 <include reference="5Ae-fb-GE7"/>
-                                <include reference="4Nl-Gb-Uu3"/>
-                                <include reference="ajX-ES-Joj"/>
                             </mask>
                         </variation>
                     </view>
@@ -380,8 +380,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-kv-GEL">
-                                                    <rect key="frame" x="18" y="11" width="55" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-kv-GEL">
+                                                    <rect key="frame" x="18" y="11" width="47.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -404,10 +404,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="WVa-Gy-DTL">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="xzW-2e-xlw"/>
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="OtQ-sD-hoX">
+                        <barButtonItem key="leftBarButtonItem" image="back-arrow" id="mKH-pQ-W7x">
                             <connections>
-                                <action selector="dismissSettings:" destination="71k-Ke-bFH" id="nyQ-eV-5gX"/>
+                                <segue destination="uAQ-Ki-Lui" kind="unwind" unwindAction="unwindToClockView:" id="mbl-ej-iV7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -416,12 +415,13 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89P-qV-USE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uAQ-Ki-Lui" userLabel="Exit" sceneMemberID="exit"/>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="v6s-r3-9RA" userLabel="gentleWakeSwitch">
                     <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
             </objects>
-            <point key="canvasLocation" x="1529" y="385"/>
+            <point key="canvasLocation" x="1528.5" y="384.5"/>
         </scene>
         <!--Work Address-->
         <scene sceneID="VxC-8E-yST">
@@ -610,8 +610,27 @@
             </objects>
             <point key="canvasLocation" x="682" y="385"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qP0-Cj-dBi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sw3-LR-2Vh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rgf-F9-2Ch">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qgu-qJ-Zz6" kind="relationship" relationship="rootViewController" id="EgS-Ea-ZSi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwz-tP-Atn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143.19999999999999" y="1318.2908545727137"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="back-arrow" width="17" height="28"/>
         <image name="error" width="88" height="88"/>
         <image name="fog" width="88" height="88"/>
         <image name="menu-icon" width="44" height="44"/>
