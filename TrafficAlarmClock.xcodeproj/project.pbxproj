@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016AA4A1E9A0837004B387B /* AddressViewController.swift */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01E3CD21DD69BC900284417 /* WeatherFetchUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D01553821ECEAF7600ACF012 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D016AA4A1E9A0837004B387B /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressViewController.swift; path = SwiftClasses/AddressViewController.swift; sourceTree = "<group>"; };
 		D016AA4F1E9A11FC004B387B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D01E3CD11DD69BC900284417 /* WeatherFetchUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherFetchUnitTest.m; path = ../TrafficAlarmClock/WeatherFetchUnitTest.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */,
 				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
 				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
 			);
@@ -155,6 +158,7 @@
 		D016AA4C1E9A1168004B387B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D01553821ECEAF7600ACF012 /* CoreData.framework */,
 				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
 			);
 			name = Frameworks;
