@@ -6,8 +6,9 @@
 //  Copyright © 2016 Xinke Chen. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface AlarmObject : NSObject <NSCoding>
+@interface AlarmObject : NSManagedObject
 
 @property NSDate *alarmTime;
 @property NSArray *dayToRepeat;
