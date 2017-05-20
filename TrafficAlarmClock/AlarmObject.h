@@ -12,7 +12,6 @@
 
 @property NSDate *alarmTime;
 @property NSArray *dayToRepeat;
-@property BOOL gentleWake;
 @property BOOL enabled;
 @property int notificationID;
 
