@@ -9,7 +9,7 @@
 #import "AlarmObject.h"
 @implementation AlarmObject
 
-@dynamic dayToRepeat, alarmTime,enabled,notificationID,gentleWake;
+@dynamic dayToRepeat, alarmTime,enabled,notificationID;
 
 //This is important to for saving the alarm object in user defaults
 -(void)setAlarm;
