@@ -20,9 +20,9 @@
 @property NSArray *trafficIncidents;
 @property int status;
 
--(void) sendTrafficRequest;
--(void) addTrafficIncidents;
--(NSString *) generateFilters: (NSUserDefaults *)defaults;
+-(void)sendTrafficRequest;
+-(void)addTrafficIncidents;
+-(NSString *)generateFilters:(NSUserDefaults *) defaults;
 
 
 @end
