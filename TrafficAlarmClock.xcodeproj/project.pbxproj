@@ -32,6 +32,7 @@
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
 		D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */; };
+		D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8821D1ED1642D00D8198E /* CoreDataController.m */; };
 		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		967727E53C43F86DC86432D0 /* Pods_TrafficAlarmClockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrafficAlarmClockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A474DDB76C9DD6E4AFE27EFB /* Pods-TrafficAlarmClockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClockTests/Pods-TrafficAlarmClockTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		D01553821ECEAF7600ACF012 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D016AA4A1E9A0837004B387B /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressViewController.swift; path = SwiftClasses/AddressViewController.swift; sourceTree = "<group>"; };
 		D016AA4F1E9A11FC004B387B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
 		D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSearchTable.swift; path = SwiftClasses/AddressSearchTable.swift; sourceTree = "<group>"; };
+		D0C8821D1ED1642D00D8198E /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				D07995FD1D24B351003010C8 /* Fonts */,
 				D0EDA1571CF3CA3C0036293B /* AppDelegate.h */,
 				D0EDA1581CF3CA3C0036293B /* AppDelegate.m */,
+				D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */,
+				D0C8821D1ED1642D00D8198E /* CoreDataController.m */,
 				D059AB661D0B918D002CA6D1 /* Model */,
 				D00916B51D734427009999F2 /* Control */,
 				D062B6121D5D50F0007086C9 /* View */,
@@ -619,6 +624,7 @@
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
 				D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */,
+				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
 				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,

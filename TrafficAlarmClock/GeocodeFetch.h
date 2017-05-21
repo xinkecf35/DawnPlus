@@ -22,8 +22,8 @@
 @property double workLongitude;
 @property NSString* workAddress;
 
--(void) geocodeWorkLocation;
--(double) distanceBetweenCoordinates;
+-(void)geocodeWorkLocation;
+-(double)distanceBetweenCoordinates;
 -(NSDictionary *)midpointBetweenCoordinates;
 -(NSDictionary *)boundingBoxCalculations;
 -(NSArray *)checkWorkLocation;
