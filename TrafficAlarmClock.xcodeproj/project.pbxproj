@@ -39,7 +39,7 @@
 		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
 		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
-		D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld */; };
+		D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */; };
 		D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */; };
 		D0EDA1721CF3CA3C0036293B /* TrafficAlarmClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1711CF3CA3C0036293B /* TrafficAlarmClockTests.m */; };
 		D0EDA17D1CF3CA3C0036293B /* TrafficAlarmClockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA17C1CF3CA3C0036293B /* TrafficAlarmClockUITests.m */; };
@@ -114,7 +114,7 @@
 		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0EDA1581CF3CA3C0036293B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0EDA1611CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrafficAlarmClock.xcdatamodel; sourceTree = "<group>"; };
+		D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DawnPlusDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D0EDA1661CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0EDA16D1CF3CA3C0036293B /* TrafficAlarmClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafficAlarmClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,7 +288,7 @@
 				D062B6121D5D50F0007086C9 /* View */,
 				D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */,
 				D0EDA1681CF3CA3C0036293B /* Info.plist */,
-				D0EDA1601CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld */,
+				D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */,
 				D0EDA1541CF3CA3C0036293B /* Supporting Files */,
 			);
 			path = TrafficAlarmClock;
@@ -627,7 +627,7 @@
 				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
 				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
-				D0EDA1621CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld in Sources */,
+				D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */,
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
 				D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */,
 				D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */,
@@ -910,13 +910,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D0EDA1601CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodeld */ = {
+		D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D0EDA1611CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodel */,
+				D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */,
 			);
-			currentVersion = D0EDA1611CF3CA3C0036293B /* TrafficAlarmClock.xcdatamodel */;
-			path = TrafficAlarmClock.xcdatamodeld;
+			currentVersion = D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */;
+			path = DawnPlusDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
