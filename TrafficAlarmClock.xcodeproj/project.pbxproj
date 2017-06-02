@@ -19,6 +19,7 @@
 		D02394F91E494B590011C410 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F81E494B590011C410 /* TrafficFetch.m */; };
 		D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03D957C1EE20DF30079247C /* AlarmViews.storyboard */; };
 		D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D07995FA1D241C99003010C8 /* AlarmObject.m */; };
 		D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996001D24B38C003010C8 /* Raleway-Bold.ttf */; };
 		D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */; };
@@ -89,6 +90,8 @@
 		D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficAlarmClock-Bridging-Header.h"; sourceTree = "<group>"; };
 		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
+		D03D957F1EE20EF90079247C /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		D07995FA1D241C99003010C8 /* AlarmObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmObject.m; sourceTree = "<group>"; };
 		D07995FC1D241CAB003010C8 /* AlarmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmObject.h; sourceTree = "<group>"; };
 		D07996001D24B38C003010C8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 				D0D4A2501E674D9700A925A5 /* SettingsViewController.m */,
 				D01ED5B21ECC2B0000AA436C /* AlarmTableViewController.h */,
 				D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */,
+				D03D957F1EE20EF90079247C /* AddAlarmViewController.h */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */,
+				D03D957C1EE20DF30079247C /* AlarmViews.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 				D079961A1D24B38C003010C8 /* Raleway-LightItalic.ttf in Resources */,
 				D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */,
 				D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */,
+				D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */,
 				D07996191D24B38C003010C8 /* Raleway-Light.ttf in Resources */,
 				D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */,
 				D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */,
@@ -668,6 +674,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D03D957C1EE20DF30079247C /* AlarmViews.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D03D957D1EE20DF30079247C /* Base */,
+			);
+			name = AlarmViews.storyboard;
+			sourceTree = "<group>";
+		};
 		D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
