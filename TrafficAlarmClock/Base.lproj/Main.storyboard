@@ -16,42 +16,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Alarms-->
-        <scene sceneID="EYX-6P-GsU">
-            <objects>
-                <tableViewController id="Qgu-qJ-Zz6" customClass="AlarmTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VTs-al-CWD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="alarmCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" id="QKI-Na-Ym0">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="alarmView" tableViewCell="QKI-Na-Ym0" id="Oww-kf-BJw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Qgu-qJ-Zz6" id="Ych-Wt-KHQ"/>
-                            <outlet property="delegate" destination="Qgu-qJ-Zz6" id="EEK-VL-tvW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Alarms" id="9m1-lg-8RL">
-                        <barButtonItem key="leftBarButtonItem" image="back-arrow" id="dNJ-xA-b1R">
-                            <connections>
-                                <segue destination="bXR-kr-lFQ" kind="unwind" unwindAction="unwindToClockView:" id="MZx-gE-1gN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NlV-nn-KeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="bXR-kr-lFQ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="681" y="1318"/>
-        </scene>
         <!--Clock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -96,7 +60,7 @@
                                 <rect key="frame" x="6" y="30" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
                                 <connections>
-                                    <segue destination="sw3-LR-2Vh" kind="presentation" id="j62-JO-rPi"/>
+                                    <segue destination="642-wV-8S4" kind="presentation" id="j62-JO-rPi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -404,7 +368,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="WVa-Gy-DTL">
-                        <barButtonItem key="leftBarButtonItem" image="back-arrow" id="mKH-pQ-W7x">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="mKH-pQ-W7x">
                             <connections>
                                 <segue destination="uAQ-Ki-Lui" kind="unwind" unwindAction="unwindToClockView:" id="mbl-ej-iV7"/>
                             </connections>
@@ -610,27 +574,16 @@
             </objects>
             <point key="canvasLocation" x="682" y="385"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qP0-Cj-dBi">
+        <!--AlarmViews-->
+        <scene sceneID="rAl-sz-GAU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sw3-LR-2Vh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rgf-F9-2Ch">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qgu-qJ-Zz6" kind="relationship" relationship="rootViewController" id="EgS-Ea-ZSi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwz-tP-Atn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AlarmViews" id="642-wV-8S4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPS-xq-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143.19999999999999" y="1318.2908545727137"/>
+            <point key="canvasLocation" x="-143" y="1114"/>
         </scene>
     </scenes>
     <resources>
-        <image name="back-arrow" width="17" height="28"/>
         <image name="error" width="88" height="88"/>
         <image name="fog" width="88" height="88"/>
         <image name="menu-icon" width="44" height="44"/>
