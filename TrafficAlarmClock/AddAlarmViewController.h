@@ -6,11 +6,14 @@
 //  Copyright © 2017 Xinke Chen. All rights reserved.
 //
 
-#import "Foundation/Foundation.h"
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "AlarmObject.h"
 
-@interface AddAlarmViewController : UIViewController
+@interface AddAlarmViewController : UIViewController {
+    NSArray *options;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 
