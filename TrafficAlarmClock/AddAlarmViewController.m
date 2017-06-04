@@ -13,6 +13,9 @@
 -(void) viewDidLoad {
     
 }
-
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:true];
+    
+}
 
 @end

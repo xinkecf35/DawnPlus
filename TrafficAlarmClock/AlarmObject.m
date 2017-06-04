@@ -11,7 +11,7 @@
 
 @dynamic dayToRepeat, alarmTime,enabled,notificationID;
 
-//This is important to for saving the alarm object in user defaults
+
 -(void)setAlarm;
 {
     

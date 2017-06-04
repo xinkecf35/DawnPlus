@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @import UIKit;
+@import CoreData;
 
 @interface AlarmTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *alarmTableView;
+
+@property NSArray *alarms;
 
 @end
