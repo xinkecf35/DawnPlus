@@ -15,6 +15,8 @@
     
 }
 
+@property (strong, nonatomic) NSDate *selectedTime;
+@property (strong, nonatomic) NSArray *dayRepeat;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 
 
