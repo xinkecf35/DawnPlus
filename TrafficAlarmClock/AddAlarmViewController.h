@@ -11,7 +11,7 @@
 #import "AlarmObject.h"
 
 @interface AddAlarmViewController : UIViewController {
-    NSArray *options;
+    
     
 }
 

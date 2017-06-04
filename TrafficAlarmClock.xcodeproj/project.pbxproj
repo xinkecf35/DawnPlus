@@ -20,7 +20,6 @@
 		D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */; };
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03D957C1EE20DF30079247C /* AlarmViews.storyboard */; };
-		D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D07995FA1D241C99003010C8 /* AlarmObject.m */; };
 		D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996001D24B38C003010C8 /* Raleway-Bold.ttf */; };
 		D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */; };
 		D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996061D24B38C003010C8 /* Raleway-Italic.ttf */; };
@@ -93,8 +92,6 @@
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
 		D03D957F1EE20EF90079247C /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
-		D07995FA1D241C99003010C8 /* AlarmObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmObject.m; sourceTree = "<group>"; };
-		D07995FC1D241CAB003010C8 /* AlarmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmObject.h; sourceTree = "<group>"; };
 		D07996001D24B38C003010C8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D07996061D24B38C003010C8 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
@@ -228,8 +225,6 @@
 				D02394ED1E4945660011C410 /* WeatherFetch.m */,
 				D02394F71E494ADE0011C410 /* TrafficFetch.h */,
 				D02394F81E494B590011C410 /* TrafficFetch.m */,
-				D07995FC1D241CAB003010C8 /* AlarmObject.h */,
-				D07995FA1D241C99003010C8 /* AlarmObject.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -632,7 +627,6 @@
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
-				D07995FB1D241C99003010C8 /* AlarmObject.m in Sources */,
 				D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */,
 				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
 				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,
