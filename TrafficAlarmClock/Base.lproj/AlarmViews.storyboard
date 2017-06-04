@@ -86,7 +86,7 @@
                                 <rect key="frame" x="0.0" y="288" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="QPy-9x-Eek" kind="embed" id="EFw-hO-CnF"/>
+                                    <segue destination="QPy-9x-Eek" kind="embed" identifier="embedAlarmOptions" id="EFw-hO-CnF"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1525.5999999999999" y="1112.2938530734634"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Day Table View Controller-->
         <scene sceneID="Kyx-8q-wl9">
             <objects>
-                <tableViewController id="E8L-rF-U6E" sceneMemberID="viewController">
+                <tableViewController id="E8L-rF-U6E" customClass="DayTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vJr-vP-ILk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
