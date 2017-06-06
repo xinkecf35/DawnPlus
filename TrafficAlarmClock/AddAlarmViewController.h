@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AlarmObject.h"
+#import "AlarmDataDelegate.h"
+#import "DayTableViewController.h"
 
-@interface AddAlarmViewController : UIViewController {
-    
-    
-}
+@interface AddAlarmViewController : UIViewController <AlarmDataDelegate>
 
-@property (strong, nonatomic) NSDate *selectedTime;
 @property (strong, nonatomic) NSArray *dayRepeat;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
+//@property (strong, nonatomic) AlarmDataManager *alarmData;
 
 
 @end

@@ -10,11 +10,19 @@
 
 @implementation DayTableViewController
 
+-(void)viewDidLoad {
+    [super viewDidLoad];
+   
+}
+-(void)viewWillDisappear:(BOOL)animated {
+    
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:false];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if(cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
     }
     else {
         cell.accessoryType = UITableViewCellAccessoryNone;
