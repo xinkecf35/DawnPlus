@@ -11,11 +11,9 @@
 #import "AlarmDataDelegate.h"
 
 @interface DayTableViewController: UITableViewController{
-    NSMutableArray *selectedDays;
+    int selectedDays[7];
 }
 
 @property (weak, nonatomic) id <AlarmDataDelegate> delegate;
-
-
 
 @end
