@@ -13,7 +13,8 @@
 @synthesize timePicker, selectedDays, alarmName, enabled, selectedTime, notificationID;
 
 -(void) viewDidLoad {
-    
+    UIBarButtonItem *saveDone = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveToCoreData)];
+    self.navigationItem.rightBarButtonItem = saveDone;
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:true];
@@ -26,6 +27,10 @@
     });
 }
 
+-(void)saveToCoreData {
+    NSLog(@"message saveToCoreData passed");
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 
 //setting delegates for children
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
