@@ -47,7 +47,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Add" id="ufE-j9-A4N">
                             <connections>
                                 <action selector="addAlarm:" destination="Qgu-qJ-Zz6" id="YHQ-P7-Vlf"/>
-                                <segue destination="H1N-To-RhP" kind="show" id="xYx-mo-wKe"/>
+                                <segue destination="H1N-To-RhP" kind="show" identifier="AddAlarmSegue" id="xYx-mo-wKe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
