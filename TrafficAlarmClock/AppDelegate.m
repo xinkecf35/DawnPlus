@@ -65,7 +65,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
     ClockViewController *initalVC = [storyboard instantiateInitialViewController];
-    initalVC.CoreDataManager = _persistenceController;
+    initalVC.coreDataManager = _persistenceController;
     _window.rootViewController = initalVC;
     NSLog(@"completeUserInterface method finished");
 }

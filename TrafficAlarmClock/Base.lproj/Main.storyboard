@@ -60,7 +60,7 @@
                                 <rect key="frame" x="6" y="30" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
                                 <connections>
-                                    <segue destination="642-wV-8S4" kind="presentation" id="j62-JO-rPi"/>
+                                    <segue destination="642-wV-8S4" kind="presentation" identifier="AlarmViewSegue" id="j62-JO-rPi"/>
                                 </connections>
                             </button>
                         </subviews>

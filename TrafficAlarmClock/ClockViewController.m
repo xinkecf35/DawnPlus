@@ -214,10 +214,16 @@
     NSLog(@"%@ has been received and responded to",notifictation);
     
 }
-
+//Segues
 -(IBAction)unwindToClockView:(UIStoryboardSegue*)sender;
 {
     NSLog(@"Back to Clock View");
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"AlarmViewSegue"]) {
+        AlarmTableViewController *alarmVC = [[[segue destinationViewController] childViewControllers] objectAtIndex:0];
+        alarmVC.coreDataManager = self.coreDataManager;
+    }
 }
 
 @end

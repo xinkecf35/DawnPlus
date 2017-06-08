@@ -12,6 +12,7 @@
 #import "TrafficFetch.h"
 #import "GeocodeFetch.h"
 #import "CoreDataController.h"
+#import "AlarmTableViewController.h"
 
 @interface ClockViewController : UIViewController {
     NSUserDefaults *defaults;
@@ -22,7 +23,7 @@
 @property (nonatomic, strong) WeatherFetch *weatherUpdate;
 @property (nonatomic, strong) TrafficFetch *trafficUpdate;
 @property (nonatomic, strong) GeocodeFetch *geocodeService;
-@property (nonatomic, strong) CoreDataController *CoreDataManager;
+@property (nonatomic, strong) CoreDataController *coreDataManager;
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
 @property (weak, nonatomic) IBOutlet UIButton *trafficInfo;
