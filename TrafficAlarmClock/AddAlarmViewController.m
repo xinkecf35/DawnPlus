@@ -29,7 +29,10 @@
 
 -(void)saveToCoreData {
     NSLog(@"message saveToCoreData passed");
+    
+    
     [self dismissViewControllerAnimated:true completion:nil];
+    
 }
 
 //setting delegates for children

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoreDataController.h"
+#import "ClockViewController.h"
 
 @interface AppDelegate ()
 
@@ -61,7 +62,12 @@
     [[self persistenceController] save];
 }
 - (void)completeUserInterface {
-    NSLog(@"Nothing yet for completeUserInterface method");
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+    ClockViewController *initalVC = [storyboard instantiateInitialViewController];
+    initalVC.CoreDataManager = _persistenceController;
+    _window.rootViewController = initalVC;
+    NSLog(@"completeUserInterface method finished");
 }
      
 @end
