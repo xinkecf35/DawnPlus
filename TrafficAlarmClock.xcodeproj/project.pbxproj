@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9819C88CD1BCB6F9EB2E5EA7 /* Pods_TrafficAlarmClockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967727E53C43F86DC86432D0 /* Pods_TrafficAlarmClockTests.framework */; };
-		BEA566B1606D8DB7FBA35045 /* Pods_TrafficAlarmClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D3A43889BB4C93B87E223B /* Pods_TrafficAlarmClock.framework */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016AA4A1E9A0837004B387B /* AddressViewController.swift */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
@@ -46,7 +44,6 @@
 		D0EDA1721CF3CA3C0036293B /* TrafficAlarmClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1711CF3CA3C0036293B /* TrafficAlarmClockTests.m */; };
 		D0EDA17D1CF3CA3C0036293B /* TrafficAlarmClockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA17C1CF3CA3C0036293B /* TrafficAlarmClockUITests.m */; };
 		D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0673A1E492CBA0014AAB3 /* constants.m */; };
-		FDE1962AED7BCB0A0AF1A96F /* Pods_TrafficAlarmClockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04DB04977ACC32AFAAC2982 /* Pods_TrafficAlarmClockUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39A28F9DB35BE4CCD4E0AC95 /* Pods-TrafficAlarmClockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClockTests/Pods-TrafficAlarmClockTests.release.xcconfig"; sourceTree = "<group>"; };
-		3FD10B11A9AD056FE96478AB /* Pods-TrafficAlarmClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClock/Pods-TrafficAlarmClock.release.xcconfig"; sourceTree = "<group>"; };
-		60D3A43889BB4C93B87E223B /* Pods_TrafficAlarmClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TrafficAlarmClock.framework; path = "../../../../../../../../../Users/xinkecf35/Library/Developer/Xcode/DerivedData/DawnPlusWorkSpace-dsjuusvsthdvwfdfpnwxcnlodfpd/Build/Products/Debug-iphoneos/Pods_TrafficAlarmClock.framework"; sourceTree = SDKROOT; };
-		62FD49EEA8DA13D579C563B2 /* Pods-TrafficAlarmClockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClockUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClockUITests/Pods-TrafficAlarmClockUITests.release.xcconfig"; sourceTree = "<group>"; };
-		822602010CE047EADC341586 /* Pods-TrafficAlarmClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClock/Pods-TrafficAlarmClock.debug.xcconfig"; sourceTree = "<group>"; };
-		967727E53C43F86DC86432D0 /* Pods_TrafficAlarmClockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TrafficAlarmClockTests.framework; path = "../../../../../../../../../Users/xinkecf35/Library/Developer/Xcode/DerivedData/DawnPlusWorkSpace-dsjuusvsthdvwfdfpnwxcnlodfpd/Build/Products/Debug-iphoneos/Pods_TrafficAlarmClockTests.framework"; sourceTree = SDKROOT; };
-		A474DDB76C9DD6E4AFE27EFB /* Pods-TrafficAlarmClockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClockTests/Pods-TrafficAlarmClockTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		D01553821ECEAF7600ACF012 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -130,8 +120,6 @@
 		D0EDA17C1CF3CA3C0036293B /* TrafficAlarmClockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficAlarmClockUITests.m; sourceTree = "<group>"; };
 		D0EDA17E1CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
-		E906D015F18136013401E84C /* Pods-TrafficAlarmClockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafficAlarmClockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrafficAlarmClockUITests/Pods-TrafficAlarmClockUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F04DB04977ACC32AFAAC2982 /* Pods_TrafficAlarmClockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TrafficAlarmClockUITests.framework; path = "../../../../../../../../../Users/xinkecf35/Library/Developer/Xcode/DerivedData/DawnPlusWorkSpace-dsjuusvsthdvwfdfpnwxcnlodfpd/Build/Products/Debug-iphoneos/Pods_TrafficAlarmClockUITests.framework"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +130,6 @@
 				D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */,
 				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
 				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
-				BEA566B1606D8DB7FBA35045 /* Pods_TrafficAlarmClock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9819C88CD1BCB6F9EB2E5EA7 /* Pods_TrafficAlarmClockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,26 +144,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDE1962AED7BCB0A0AF1A96F /* Pods_TrafficAlarmClockUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		59C0809BF94646395BE87EC3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				822602010CE047EADC341586 /* Pods-TrafficAlarmClock.debug.xcconfig */,
-				3FD10B11A9AD056FE96478AB /* Pods-TrafficAlarmClock.release.xcconfig */,
-				A474DDB76C9DD6E4AFE27EFB /* Pods-TrafficAlarmClockTests.debug.xcconfig */,
-				39A28F9DB35BE4CCD4E0AC95 /* Pods-TrafficAlarmClockTests.release.xcconfig */,
-				E906D015F18136013401E84C /* Pods-TrafficAlarmClockUITests.debug.xcconfig */,
-				62FD49EEA8DA13D579C563B2 /* Pods-TrafficAlarmClockUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		D00916B51D734427009999F2 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,9 +173,6 @@
 			children = (
 				D01553821ECEAF7600ACF012 /* CoreData.framework */,
 				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
-				60D3A43889BB4C93B87E223B /* Pods_TrafficAlarmClock.framework */,
-				967727E53C43F86DC86432D0 /* Pods_TrafficAlarmClockTests.framework */,
-				F04DB04977ACC32AFAAC2982 /* Pods_TrafficAlarmClockUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,7 +239,6 @@
 				D0EDA17B1CF3CA3C0036293B /* TrafficAlarmClockUITests */,
 				D0EDA1521CF3CA3C0036293B /* Products */,
 				D016AA4C1E9A1168004B387B /* Frameworks */,
-				59C0809BF94646395BE87EC3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,12 +307,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "TrafficAlarmClock" */;
 			buildPhases = (
-				FCCD9C979EEED1DC6D115287 /* [CP] Check Pods Manifest.lock */,
 				D0EDA14D1CF3CA3C0036293B /* Sources */,
 				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
 				D0EDA14F1CF3CA3C0036293B /* Resources */,
-				3A62680B10A30505964A39CC /* [CP] Embed Pods Frameworks */,
-				D6AC7B296615E4F5CD8D40D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,12 +324,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1841CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "TrafficAlarmClockTests" */;
 			buildPhases = (
-				A0AD29D2B43C3DB73864EDCE /* [CP] Check Pods Manifest.lock */,
 				D0EDA1691CF3CA3C0036293B /* Sources */,
 				D0EDA16A1CF3CA3C0036293B /* Frameworks */,
 				D0EDA16B1CF3CA3C0036293B /* Resources */,
-				2C819E12BDC0F4656707A12D /* [CP] Embed Pods Frameworks */,
-				5F5738D5D2D6433D7211922A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -380,12 +342,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1871CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "TrafficAlarmClockUITests" */;
 			buildPhases = (
-				E45E22BBBA38878E2AB1E8B0 /* [CP] Check Pods Manifest.lock */,
 				D0EDA1741CF3CA3C0036293B /* Sources */,
 				D0EDA1751CF3CA3C0036293B /* Frameworks */,
 				D0EDA1761CF3CA3C0036293B /* Resources */,
-				726C5E1FC88CA0BD0A6F7D32 /* [CP] Embed Pods Frameworks */,
-				307CBFAA4B1ADF0236717041 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -482,144 +441,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2C819E12BDC0F4656707A12D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrafficAlarmClockTests/Pods-TrafficAlarmClockTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		307CBFAA4B1ADF0236717041 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrafficAlarmClockUITests/Pods-TrafficAlarmClockUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A62680B10A30505964A39CC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrafficAlarmClock/Pods-TrafficAlarmClock-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F5738D5D2D6433D7211922A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrafficAlarmClockTests/Pods-TrafficAlarmClockTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		726C5E1FC88CA0BD0A6F7D32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrafficAlarmClockUITests/Pods-TrafficAlarmClockUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A0AD29D2B43C3DB73864EDCE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D6AC7B296615E4F5CD8D40D7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrafficAlarmClock/Pods-TrafficAlarmClock-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E45E22BBBA38878E2AB1E8B0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FCCD9C979EEED1DC6D115287 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0EDA14D1CF3CA3C0036293B /* Sources */ = {
@@ -797,7 +618,6 @@
 		};
 		D0EDA1821CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 822602010CE047EADC341586 /* Pods-TrafficAlarmClock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -817,7 +637,6 @@
 		};
 		D0EDA1831CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FD10B11A9AD056FE96478AB /* Pods-TrafficAlarmClock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -836,7 +655,6 @@
 		};
 		D0EDA1851CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A474DDB76C9DD6E4AFE27EFB /* Pods-TrafficAlarmClockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -850,7 +668,6 @@
 		};
 		D0EDA1861CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39A28F9DB35BE4CCD4E0AC95 /* Pods-TrafficAlarmClockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -864,7 +681,6 @@
 		};
 		D0EDA1881CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E906D015F18136013401E84C /* Pods-TrafficAlarmClockUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
@@ -877,7 +693,6 @@
 		};
 		D0EDA1891CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62FD49EEA8DA13D579C563B2 /* Pods-TrafficAlarmClockUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
