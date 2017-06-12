@@ -1,4 +1,4 @@
-# TrafficAlarmClock
+# DawnPlus
 
 An app for a better morning.
 
