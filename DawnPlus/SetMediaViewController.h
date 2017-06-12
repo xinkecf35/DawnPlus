@@ -1,13 +1,17 @@
 //
-//  SetMediaController.h
+//  SetMediaViewController.h
 //  DawnPlus
 //
 //  Created by Xinke Chen on 2017-06-12.
 //  Copyright © 2017 Xinke Chen. All rights reserved.
 //
 
-#ifndef SetMediaController_h
-#define SetMediaController_h
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import "AlarmDataDelegate.h"
+
+@interface SetMediaViewController: UIViewController <MPMediaPickerControllerDelegate>
 
 
-#endif /* SetMediaController_h */
+@end
