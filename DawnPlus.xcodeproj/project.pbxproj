@@ -32,6 +32,7 @@
 		D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */; };
 		D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */; };
 		D0BB2B141EE24184000092B5 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */; };
+		D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
 		D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8821D1ED1642D00D8198E /* CoreDataController.m */; };
 		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
@@ -45,19 +46,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D0EDA16E1CF3CA3C0036293B /* PBXContainerItemProxy */ = {
+		D0C5F1901EEE5F97005897CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0EDA1491CF3CA3C0036293B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D0EDA1501CF3CA3C0036293B;
-			remoteInfo = TrafficAlarmClock;
-		};
-		D0EDA1791CF3CA3C0036293B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0EDA1491CF3CA3C0036293B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EDA1501CF3CA3C0036293B;
-			remoteInfo = TrafficAlarmClock;
+			remoteInfo = DawnPlus;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -99,6 +93,9 @@
 		D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTableViewController.m; sourceTree = "<group>"; };
 		D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSearchTable.swift; path = SwiftClasses/AddressSearchTable.swift; sourceTree = "<group>"; };
 		D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
+		D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnPlusTests.m; sourceTree = "<group>"; };
+		D0C5F18F1EEE5F97005897CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0C7BBFF1EE6649E00402933 /* AlarmDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmDataDelegate.h; sourceTree = "<group>"; };
 		D0C8821D1ED1642D00D8198E /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -113,12 +110,17 @@
 		D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DawnPlusDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D0EDA1661CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0EDA16D1CF3CA3C0036293B /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0EDA1781CF3CA3C0036293B /* DawnPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D0C5F1881EEE5F97005897CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0EDA14E1CF3CA3C0036293B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,20 +128,6 @@
 				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
 				D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */,
 				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0EDA16A1CF3CA3C0036293B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0EDA1751CF3CA3C0036293B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,12 +215,22 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		D0C5F18C1EEE5F97005897CD /* DawnPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */,
+				D0C5F18F1EEE5F97005897CD /* Info.plist */,
+			);
+			path = DawnPlusTests;
+			sourceTree = "<group>";
+		};
 		D0EDA1481CF3CA3C0036293B = {
 			isa = PBXGroup;
 			children = (
 				D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */,
 				D0382A811CF4101C00905259 /* CoreLocation.framework */,
 				D0EDA1531CF3CA3C0036293B /* DawnPlus */,
+				D0C5F18C1EEE5F97005897CD /* DawnPlusTests */,
 				D0EDA1521CF3CA3C0036293B /* Products */,
 				D016AA4C1E9A1168004B387B /* Frameworks */,
 			);
@@ -242,8 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D0EDA1511CF3CA3C0036293B /* DawnPlus.app */,
-				D0EDA16D1CF3CA3C0036293B /* DawnPlusTests.xctest */,
-				D0EDA1781CF3CA3C0036293B /* DawnPlusUITests.xctest */,
+				D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +278,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D0C5F18A1EEE5F97005897CD /* DawnPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
+			buildPhases = (
+				D0C5F1871EEE5F97005897CD /* Sources */,
+				D0C5F1881EEE5F97005897CD /* Frameworks */,
+				D0C5F1891EEE5F97005897CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0C5F1911EEE5F97005897CD /* PBXTargetDependency */,
+			);
+			name = DawnPlusTests;
+			productName = DawnPlusTests;
+			productReference = D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D0EDA1501CF3CA3C0036293B /* DawnPlus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */;
@@ -298,42 +313,6 @@
 			productReference = D0EDA1511CF3CA3C0036293B /* DawnPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D0EDA16C1CF3CA3C0036293B /* DawnPlusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D0EDA1841CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
-			buildPhases = (
-				D0EDA1691CF3CA3C0036293B /* Sources */,
-				D0EDA16A1CF3CA3C0036293B /* Frameworks */,
-				D0EDA16B1CF3CA3C0036293B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D0EDA16F1CF3CA3C0036293B /* PBXTargetDependency */,
-			);
-			name = DawnPlusTests;
-			productName = TrafficAlarmClockTests;
-			productReference = D0EDA16D1CF3CA3C0036293B /* DawnPlusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D0EDA1771CF3CA3C0036293B /* DawnPlusUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D0EDA1871CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusUITests" */;
-			buildPhases = (
-				D0EDA1741CF3CA3C0036293B /* Sources */,
-				D0EDA1751CF3CA3C0036293B /* Frameworks */,
-				D0EDA1761CF3CA3C0036293B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D0EDA17A1CF3CA3C0036293B /* PBXTargetDependency */,
-			);
-			name = DawnPlusUITests;
-			productName = TrafficAlarmClockUITests;
-			productReference = D0EDA1781CF3CA3C0036293B /* DawnPlusUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -343,6 +322,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Xinke Chen";
 				TargetAttributes = {
+					D0C5F18A1EEE5F97005897CD = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = D0EDA1501CF3CA3C0036293B;
+					};
 					D0EDA1501CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D72NW9AP4N;
@@ -355,14 +338,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					D0EDA16C1CF3CA3C0036293B = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = D0EDA1501CF3CA3C0036293B;
-					};
-					D0EDA1771CF3CA3C0036293B = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = D0EDA1501CF3CA3C0036293B;
 					};
 				};
 			};
@@ -380,13 +355,19 @@
 			projectRoot = "";
 			targets = (
 				D0EDA1501CF3CA3C0036293B /* DawnPlus */,
-				D0EDA16C1CF3CA3C0036293B /* DawnPlusTests */,
-				D0EDA1771CF3CA3C0036293B /* DawnPlusUITests */,
+				D0C5F18A1EEE5F97005897CD /* DawnPlusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D0C5F1891EEE5F97005897CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0EDA14F1CF3CA3C0036293B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,23 +388,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0EDA16B1CF3CA3C0036293B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0EDA1761CF3CA3C0036293B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D0C5F1871EEE5F97005897CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0EDA14D1CF3CA3C0036293B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,32 +425,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0EDA1691CF3CA3C0036293B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0EDA1741CF3CA3C0036293B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D0EDA16F1CF3CA3C0036293B /* PBXTargetDependency */ = {
+		D0C5F1911EEE5F97005897CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D0EDA1501CF3CA3C0036293B /* DawnPlus */;
-			targetProxy = D0EDA16E1CF3CA3C0036293B /* PBXContainerItemProxy */;
-		};
-		D0EDA17A1CF3CA3C0036293B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D0EDA1501CF3CA3C0036293B /* DawnPlus */;
-			targetProxy = D0EDA1791CF3CA3C0036293B /* PBXContainerItemProxy */;
+			targetProxy = D0C5F1901EEE5F97005897CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +463,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D0C5F1931EEE5F97005897CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DawnPlusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.DawnPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DawnPlus.app/DawnPlus";
+			};
+			name = Debug;
+		};
+		D0C5F1941EEE5F97005897CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DawnPlusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.DawnPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DawnPlus.app/DawnPlus";
+			};
+			name = Release;
+		};
 		D0EDA17F1CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -648,59 +646,17 @@
 			};
 			name = Release;
 		};
-		D0EDA1851CF3CA3C0036293B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TrafficAlarmClockTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DawnPlus.app/DawnPlus";
-			};
-			name = Debug;
-		};
-		D0EDA1861CF3CA3C0036293B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TrafficAlarmClockTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DawnPlus.app/DawnPlus";
-			};
-			name = Release;
-		};
-		D0EDA1881CF3CA3C0036293B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TrafficAlarmClock;
-			};
-			name = Debug;
-		};
-		D0EDA1891CF3CA3C0036293B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TrafficAlarmClock;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0C5F1931EEE5F97005897CD /* Debug */,
+				D0C5F1941EEE5F97005897CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D0EDA14C1CF3CA3C0036293B /* Build configuration list for PBXProject "DawnPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -715,24 +671,6 @@
 			buildConfigurations = (
 				D0EDA1821CF3CA3C0036293B /* Debug */,
 				D0EDA1831CF3CA3C0036293B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D0EDA1841CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D0EDA1851CF3CA3C0036293B /* Debug */,
-				D0EDA1861CF3CA3C0036293B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D0EDA1871CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D0EDA1881CF3CA3C0036293B /* Debug */,
-				D0EDA1891CF3CA3C0036293B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
