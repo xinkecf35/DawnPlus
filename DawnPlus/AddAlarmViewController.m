@@ -41,6 +41,23 @@
         DayTableViewController *daysViewController = segue.destinationViewController;
         daysViewController.delegate = self;
     }
-
 }
 @end
+
+@interface AddAlarmTableViewController: UITableViewController <MPMediaPickerControllerDelegate>
+
+@end
+
+@implementation AddAlarmTableViewController
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if([cell.reuseIdentifier isEqualToString:@"mediaCell"]) {
+        NSLog(@"Launching MPMediaPickerController");
+        MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+        mediaPicker.delegate = self;
+        mediaPicker.allowsPickingMultipleItems = false;
+        [self presentViewController:mediaPicker animated:true completion:nil];
+    }
+}
+@end
+
