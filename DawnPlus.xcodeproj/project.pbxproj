@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
+		D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016AA4A1E9A0837004B387B /* AddressViewController.swift */; };
+		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
+		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
+		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
+		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
+		D02394F91E494B590011C410 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F81E494B590011C410 /* TrafficFetch.m */; };
+		D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */; };
+		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03D957C1EE20DF30079247C /* AlarmViews.storyboard */; };
+		D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996001D24B38C003010C8 /* Raleway-Bold.ttf */; };
+		D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */; };
+		D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996061D24B38C003010C8 /* Raleway-Italic.ttf */; };
+		D07996191D24B38C003010C8 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996071D24B38C003010C8 /* Raleway-Light.ttf */; };
+		D079961A1D24B38C003010C8 /* Raleway-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996081D24B38C003010C8 /* Raleway-LightItalic.ttf */; };
+		D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996091D24B38C003010C8 /* Raleway-Medium.ttf */; };
+		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
+		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
+		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
+		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
+		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
+		D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */; };
+		D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */; };
+		D0BB2B141EE24184000092B5 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */; };
+		D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8821D1ED1642D00D8198E /* CoreDataController.m */; };
+		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
+		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
+		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
+		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
+		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
+		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
+		D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */; };
+		D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */; };
+		D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0673A1E492CBA0014AAB3 /* constants.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0EDA16E1CF3CA3C0036293B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0EDA1491CF3CA3C0036293B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EDA1501CF3CA3C0036293B;
+			remoteInfo = TrafficAlarmClock;
+		};
+		D0EDA1791CF3CA3C0036293B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0EDA1491CF3CA3C0036293B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EDA1501CF3CA3C0036293B;
+			remoteInfo = TrafficAlarmClock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
+		D01553821ECEAF7600ACF012 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D016AA4A1E9A0837004B387B /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressViewController.swift; path = SwiftClasses/AddressViewController.swift; sourceTree = "<group>"; };
+		D016AA4F1E9A11FC004B387B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D01ED5B21ECC2B0000AA436C /* AlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewController.h; sourceTree = "<group>"; };
+		D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
+		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
+		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
+		D02394ED1E4945660011C410 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
+		D02394F51E494A260011C410 /* GeocodeFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeFetch.m; sourceTree = "<group>"; };
+		D02394F71E494ADE0011C410 /* TrafficFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficFetch.h; sourceTree = "<group>"; };
+		D02394F81E494B590011C410 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
+		D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficAlarmClock-Bridging-Header.h"; sourceTree = "<group>"; };
+		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
+		D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DawnPlus.entitlements; sourceTree = "<group>"; };
+		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
+		D03D957F1EE20EF90079247C /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
+		D07996001D24B38C003010C8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
+		D07996061D24B38C003010C8 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
+		D07996071D24B38C003010C8 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		D07996081D24B38C003010C8 /* Raleway-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-LightItalic.ttf"; sourceTree = "<group>"; };
+		D07996091D24B38C003010C8 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
+		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitsViewController.swift; path = SwiftClasses/UnitsViewController.swift; sourceTree = "<group>"; };
+		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
+		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
+		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
+		D0B33FCA1EE3B5F600CCAAB7 /* DayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTableViewController.h; sourceTree = "<group>"; };
+		D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTableViewController.m; sourceTree = "<group>"; };
+		D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressSearchTable.swift; path = SwiftClasses/AddressSearchTable.swift; sourceTree = "<group>"; };
+		D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
+		D0C7BBFF1EE6649E00402933 /* AlarmDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmDataDelegate.h; sourceTree = "<group>"; };
+		D0C8821D1ED1642D00D8198E /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
+		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
+		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
+		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0E8F6E31D6D11BE000098FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0EDA1511CF3CA3C0036293B /* DawnPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DawnPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D0EDA1581CF3CA3C0036293B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DawnPlusDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D0EDA1661CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EDA16D1CF3CA3C0036293B /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EDA1781CF3CA3C0036293B /* DawnPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0EDA14E1CF3CA3C0036293B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */,
+				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
+				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EDA16A1CF3CA3C0036293B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EDA1751CF3CA3C0036293B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D00916B51D734427009999F2 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */,
+				D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */,
+				D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */,
+				D00916B61D73444A009999F2 /* SettingsViewController.h */,
+				D0D4A2501E674D9700A925A5 /* SettingsViewController.m */,
+				D01ED5B21ECC2B0000AA436C /* AlarmTableViewController.h */,
+				D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */,
+				D03D957F1EE20EF90079247C /* AddAlarmViewController.h */,
+				D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */,
+				D0B33FCA1EE3B5F600CCAAB7 /* DayTableViewController.h */,
+				D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		D016AA4C1E9A1168004B387B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D01553821ECEAF7600ACF012 /* CoreData.framework */,
+				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */,
+				D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */,
+				D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */,
+				D016AA4A1E9A0837004B387B /* AddressViewController.swift */,
+				D0B716C01E9B13C800C662F3 /* AddressSearchTable.swift */,
+			);
+			name = NavigationControlClasses;
+			sourceTree = "<group>";
+		};
+		D059AB661D0B918D002CA6D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D02394E91E49454F0011C410 /* GeocodeFetch.h */,
+				D02394F51E494A260011C410 /* GeocodeFetch.m */,
+				D0A0180C1CFA783900E8EECB /* LocationFetch.h */,
+				D0A0180D1CFA787400E8EECB /* LocationFetch.m */,
+				D02394EC1E4945660011C410 /* WeatherFetch.h */,
+				D02394ED1E4945660011C410 /* WeatherFetch.m */,
+				D02394F71E494ADE0011C410 /* TrafficFetch.h */,
+				D02394F81E494B590011C410 /* TrafficFetch.m */,
+				D0C7BBFF1EE6649E00402933 /* AlarmDataDelegate.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D062B6121D5D50F0007086C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */,
+				D03D957C1EE20DF30079247C /* AlarmViews.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D07995FD1D24B351003010C8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D07996001D24B38C003010C8 /* Raleway-Bold.ttf */,
+				D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */,
+				D07996061D24B38C003010C8 /* Raleway-Italic.ttf */,
+				D07996071D24B38C003010C8 /* Raleway-Light.ttf */,
+				D07996081D24B38C003010C8 /* Raleway-LightItalic.ttf */,
+				D07996091D24B38C003010C8 /* Raleway-Medium.ttf */,
+				D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */,
+				D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		D0EDA1481CF3CA3C0036293B = {
+			isa = PBXGroup;
+			children = (
+				D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */,
+				D0382A811CF4101C00905259 /* CoreLocation.framework */,
+				D0EDA1531CF3CA3C0036293B /* DawnPlus */,
+				D0EDA1521CF3CA3C0036293B /* Products */,
+				D016AA4C1E9A1168004B387B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D0EDA1521CF3CA3C0036293B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDA1511CF3CA3C0036293B /* DawnPlus.app */,
+				D0EDA16D1CF3CA3C0036293B /* DawnPlusTests.xctest */,
+				D0EDA1781CF3CA3C0036293B /* DawnPlusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0EDA1531CF3CA3C0036293B /* DawnPlus */ = {
+			isa = PBXGroup;
+			children = (
+				D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */,
+				D0E8F6E31D6D11BE000098FB /* Assets.xcassets */,
+				D07995FD1D24B351003010C8 /* Fonts */,
+				D0EDA1571CF3CA3C0036293B /* AppDelegate.h */,
+				D0EDA1581CF3CA3C0036293B /* AppDelegate.m */,
+				D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */,
+				D0C8821D1ED1642D00D8198E /* CoreDataController.m */,
+				D059AB661D0B918D002CA6D1 /* Model */,
+				D00916B51D734427009999F2 /* Control */,
+				D062B6121D5D50F0007086C9 /* View */,
+				D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */,
+				D0EDA1681CF3CA3C0036293B /* Info.plist */,
+				D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */,
+				D0EDA1541CF3CA3C0036293B /* Supporting Files */,
+			);
+			path = DawnPlus;
+			sourceTree = "<group>";
+		};
+		D0EDA1541CF3CA3C0036293B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0F0673A1E492CBA0014AAB3 /* constants.m */,
+				D0EDA1551CF3CA3C0036293B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0EDA1501CF3CA3C0036293B /* DawnPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */;
+			buildPhases = (
+				D0EDA14D1CF3CA3C0036293B /* Sources */,
+				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
+				D0EDA14F1CF3CA3C0036293B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DawnPlus;
+			productName = TrafficAlarmClock;
+			productReference = D0EDA1511CF3CA3C0036293B /* DawnPlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0EDA16C1CF3CA3C0036293B /* DawnPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0EDA1841CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
+			buildPhases = (
+				D0EDA1691CF3CA3C0036293B /* Sources */,
+				D0EDA16A1CF3CA3C0036293B /* Frameworks */,
+				D0EDA16B1CF3CA3C0036293B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0EDA16F1CF3CA3C0036293B /* PBXTargetDependency */,
+			);
+			name = DawnPlusTests;
+			productName = TrafficAlarmClockTests;
+			productReference = D0EDA16D1CF3CA3C0036293B /* DawnPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0EDA1771CF3CA3C0036293B /* DawnPlusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0EDA1871CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusUITests" */;
+			buildPhases = (
+				D0EDA1741CF3CA3C0036293B /* Sources */,
+				D0EDA1751CF3CA3C0036293B /* Frameworks */,
+				D0EDA1761CF3CA3C0036293B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0EDA17A1CF3CA3C0036293B /* PBXTargetDependency */,
+			);
+			name = DawnPlusUITests;
+			productName = TrafficAlarmClockUITests;
+			productReference = D0EDA1781CF3CA3C0036293B /* DawnPlusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0EDA1491CF3CA3C0036293B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Xinke Chen";
+				TargetAttributes = {
+					D0EDA1501CF3CA3C0036293B = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D72NW9AP4N;
+						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					D0EDA16C1CF3CA3C0036293B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D0EDA1501CF3CA3C0036293B;
+					};
+					D0EDA1771CF3CA3C0036293B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D0EDA1501CF3CA3C0036293B;
+					};
+				};
+			};
+			buildConfigurationList = D0EDA14C1CF3CA3C0036293B /* Build configuration list for PBXProject "DawnPlus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0EDA1481CF3CA3C0036293B;
+			productRefGroup = D0EDA1521CF3CA3C0036293B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0EDA1501CF3CA3C0036293B /* DawnPlus */,
+				D0EDA16C1CF3CA3C0036293B /* DawnPlusTests */,
+				D0EDA1771CF3CA3C0036293B /* DawnPlusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0EDA14F1CF3CA3C0036293B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */,
+				D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */,
+				D079961A1D24B38C003010C8 /* Raleway-LightItalic.ttf in Resources */,
+				D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */,
+				D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */,
+				D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */,
+				D07996191D24B38C003010C8 /* Raleway-Light.ttf in Resources */,
+				D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */,
+				D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */,
+				D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */,
+				D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */,
+				D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */,
+				D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EDA16B1CF3CA3C0036293B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EDA1761CF3CA3C0036293B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0EDA14D1CF3CA3C0036293B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0BB2B141EE24184000092B5 /* AddAlarmViewController.m in Sources */,
+				D02394F91E494B590011C410 /* TrafficFetch.m in Sources */,
+				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
+				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
+				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
+				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
+				D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */,
+				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
+				D0B716C11E9B13C800C662F3 /* AddressSearchTable.swift in Sources */,
+				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
+				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,
+				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
+				D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */,
+				D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */,
+				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
+				D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */,
+				D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */,
+				D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EDA1691CF3CA3C0036293B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EDA1741CF3CA3C0036293B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0EDA16F1CF3CA3C0036293B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0EDA1501CF3CA3C0036293B /* DawnPlus */;
+			targetProxy = D0EDA16E1CF3CA3C0036293B /* PBXContainerItemProxy */;
+		};
+		D0EDA17A1CF3CA3C0036293B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0EDA1501CF3CA3C0036293B /* DawnPlus */;
+			targetProxy = D0EDA1791CF3CA3C0036293B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D03D957C1EE20DF30079247C /* AlarmViews.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D03D957D1EE20DF30079247C /* Base */,
+			);
+			name = AlarmViews.storyboard;
+			sourceTree = "<group>";
+		};
+		D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0DCA8221D6DEEDC0025CB0D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0EDA1661CF3CA3C0036293B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0EDA17F1CF3CA3C0036293B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TrafficAlarmClock-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		D0EDA1801CF3CA3C0036293B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0EDA1821CF3CA3C0036293B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DawnPlus/DawnPlus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D72NW9AP4N;
+				INFOPLIST_FILE = "$(SRCROOT)/DawnPlus/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.DawnPlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrafficAlarmClock/TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D0EDA1831CF3CA3C0036293B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DawnPlus/DawnPlus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D72NW9AP4N;
+				INFOPLIST_FILE = "$(SRCROOT)/DawnPlus/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.DawnPlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrafficAlarmClock/TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D0EDA1851CF3CA3C0036293B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrafficAlarmClockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DawnPlus.app/DawnPlus";
+			};
+			name = Debug;
+		};
+		D0EDA1861CF3CA3C0036293B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrafficAlarmClockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DawnPlus.app/DawnPlus";
+			};
+			name = Release;
+		};
+		D0EDA1881CF3CA3C0036293B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TrafficAlarmClock;
+			};
+			name = Debug;
+		};
+		D0EDA1891CF3CA3C0036293B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = TrafficAlarmClockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.TrafficAlarmClockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TrafficAlarmClock;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0EDA14C1CF3CA3C0036293B /* Build configuration list for PBXProject "DawnPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EDA17F1CF3CA3C0036293B /* Debug */,
+				D0EDA1801CF3CA3C0036293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EDA1821CF3CA3C0036293B /* Debug */,
+				D0EDA1831CF3CA3C0036293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0EDA1841CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EDA1851CF3CA3C0036293B /* Debug */,
+				D0EDA1861CF3CA3C0036293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0EDA1871CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EDA1881CF3CA3C0036293B /* Debug */,
+				D0EDA1891CF3CA3C0036293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */,
+			);
+			currentVersion = D0EDA1611CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodel */;
+			path = DawnPlusDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0EDA1491CF3CA3C0036293B /* Project object */;
+}
