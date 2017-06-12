@@ -13,5 +13,6 @@
 
 @interface SetMediaViewController: UIViewController <MPMediaPickerControllerDelegate>
 
+@property (weak, nonatomic) id <AlarmDataDelegate> delegate;
 
 @end
