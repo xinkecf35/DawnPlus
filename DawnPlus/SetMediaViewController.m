@@ -6,4 +6,8 @@
 //  Copyright © 2017 Xinke Chen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SetMediaViewController.h"
+
+@implementation SetMediaViewController
+
+@end
