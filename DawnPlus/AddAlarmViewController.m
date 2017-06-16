@@ -90,7 +90,8 @@
 }
 -(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
     MPMediaItem *selectedTrack = [[mediaItemCollection items] objectAtIndex:0];
-    NSLog(@"%@ selected",selectedTrack.title);
+    _selectedTitle = selectedTrack.title;
+    NSLog(@"%@ selected",_selectedTitle);
 }
 @end
 
