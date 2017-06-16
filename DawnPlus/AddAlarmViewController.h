@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "CoreDataController.h"
 #import "AlarmDataDelegate.h"
 #import "DayTableViewController.h"
-#import "SetMediaViewController.h"
 
 @interface AddAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate>
 
