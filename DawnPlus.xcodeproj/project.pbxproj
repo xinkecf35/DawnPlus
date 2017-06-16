@@ -69,7 +69,6 @@
 		D02394F51E494A260011C410 /* GeocodeFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeFetch.m; sourceTree = "<group>"; };
 		D02394F71E494ADE0011C410 /* TrafficFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficFetch.h; sourceTree = "<group>"; };
 		D02394F81E494B590011C410 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
-		D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficAlarmClock-Bridging-Header.h"; sourceTree = "<group>"; };
 		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
 		D03461A31EF3BF6F00905B4D /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = DawnPlus/Tones/alarm.mp3; sourceTree = "<group>"; };
 		D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DawnPlus.entitlements; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		D0EDA1661CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
+		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "../../../../Users/xinkecf35/Dropbox/Objective-C/DawnPlus/DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,6 @@
 		D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */ = {
 			isa = PBXGroup;
 			children = (
-				D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */,
 				D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */,
 				D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */,
 				D016AA4A1E9A0837004B387B /* AddressViewController.swift */,
@@ -184,6 +183,7 @@
 				D02394F71E494ADE0011C410 /* TrafficFetch.h */,
 				D02394F81E494B590011C410 /* TrafficFetch.m */,
 				D0C7BBFF1EE6649E00402933 /* AlarmDataDelegate.h */,
+				D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -562,7 +562,11 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "./DawnPlus/DawnPlus-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "-Swift.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -608,7 +612,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "./DawnPlus/DawnPlus-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -627,7 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.DawnPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TrafficAlarmClock/TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -648,7 +657,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xinkecf35.DawnPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TrafficAlarmClock/TrafficAlarmClock-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
