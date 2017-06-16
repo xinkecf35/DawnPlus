@@ -13,7 +13,7 @@
 
 @property NSArray *selectedDays;
 @property NSArray *alarmName;
-//insert property for sound selection
+@property NSString *soundAsset;
 @property NSNumber *enabled;
 @property NSDate *selectedTime;
 @property NSNumber *notificationID;
