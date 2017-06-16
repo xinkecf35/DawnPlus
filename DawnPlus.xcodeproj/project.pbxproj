@@ -35,7 +35,6 @@
 		D0C5F1961EEE606D005897CD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F1951EEE6063005897CD /* MediaPlayer.framework */; };
 		D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8821D1ED1642D00D8198E /* CoreDataController.m */; };
 		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
-		D0D911A31EEE623C008A2CF8 /* SetMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D911A21EEE623C008A2CF8 /* SetMediaViewController.m */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
 		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
@@ -72,6 +71,7 @@
 		D02394F81E494B590011C410 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
 		D028424D1DDEB9C700B3BB87 /* TrafficAlarmClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrafficAlarmClock-Bridging-Header.h"; sourceTree = "<group>"; };
 		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
+		D03461A31EF3BF6F00905B4D /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = DawnPlus/Tones/alarm.mp3; sourceTree = "<group>"; };
 		D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DawnPlus.entitlements; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
@@ -99,8 +99,6 @@
 		D0C7BBFF1EE6649E00402933 /* AlarmDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmDataDelegate.h; sourceTree = "<group>"; };
 		D0C8821D1ED1642D00D8198E /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		D0D911A21EEE623C008A2CF8 /* SetMediaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetMediaViewController.m; sourceTree = "<group>"; };
-		D0D911A51EEE6260008A2CF8 /* SetMediaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetMediaViewController.h; sourceTree = "<group>"; };
 		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
 		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -230,8 +228,6 @@
 				D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */,
 				D0B33FCA1EE3B5F600CCAAB7 /* DayTableViewController.h */,
 				D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */,
-				D0D911A51EEE6260008A2CF8 /* SetMediaViewController.h */,
-				D0D911A21EEE623C008A2CF8 /* SetMediaViewController.m */,
 			);
 			name = AlarmControlClasses;
 			sourceTree = "<group>";
@@ -239,6 +235,7 @@
 		D0EDA1481CF3CA3C0036293B = {
 			isa = PBXGroup;
 			children = (
+				D03461A31EF3BF6F00905B4D /* alarm.mp3 */,
 				D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */,
 				D0382A811CF4101C00905259 /* CoreLocation.framework */,
 				D0EDA1531CF3CA3C0036293B /* DawnPlus */,
@@ -419,7 +416,6 @@
 				D02394F91E494B590011C410 /* TrafficFetch.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
-				D0D911A31EEE623C008A2CF8 /* SetMediaViewController.m in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D016AA4B1E9A0837004B387B /* AddressViewController.swift in Sources */,
