@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
-class AddressResultViewController: UITableViewController {
-    
+class AddressResultViewController: UITableViewController{
+    override func viewDidLoad() {
+        
+    }
+}
+
+extension AddressResultViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 }
