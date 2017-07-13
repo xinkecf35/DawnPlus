@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SetAddressViewController
 
 class AddressResultViewController: UITableViewController{
     override func viewDidLoad() {
