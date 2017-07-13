@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		484AC4F57086708F333A19BC /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
@@ -25,8 +26,6 @@
 		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
-		D094CD781EF79012007E0BE7 /* SetAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D094CD771EF79012007E0BE7 /* SetAddressViewController.swift */; };
-		D094CD7D1EF7A532007E0BE7 /* AddressResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D094CD7C1EF7A532007E0BE7 /* AddressResultViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
 		D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */; };
@@ -34,6 +33,7 @@
 		D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
 		D0C5F1961EEE606D005897CD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F1951EEE6063005897CD /* MediaPlayer.framework */; };
 		D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8821D1ED1642D00D8198E /* CoreDataController.m */; };
+		D0D2CC201F08896B00A19E77 /* SetWorkAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2CC1F1F08896B00A19E77 /* SetWorkAddressViewController.swift */; };
 		D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4A2501E674D9700A925A5 /* SettingsViewController.m */; };
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
@@ -43,6 +43,8 @@
 		D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */; };
 		D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */; };
 		D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0673A1E492CBA0014AAB3 /* constants.m */; };
+		D6B3E7631F08C0A600177470 /* AddressResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */; };
+		ED1B7C5CA3DDF62ED80B1E77 /* Pods_DawnPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
+		380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		D01553821ECEAF7600ACF012 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -83,8 +90,6 @@
 		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitsViewController.swift; path = SwiftClasses/UnitsViewController.swift; sourceTree = "<group>"; };
-		D094CD771EF79012007E0BE7 /* SetAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAddressViewController.swift; sourceTree = "<group>"; };
-		D094CD7C1EF7A532007E0BE7 /* AddressResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressResultViewController.swift; path = SwiftClasses/AddressResultViewController.swift; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		D0C5F1951EEE6063005897CD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D0C7BBFF1EE6649E00402933 /* AlarmDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmDataDelegate.h; sourceTree = "<group>"; };
 		D0C8821D1ED1642D00D8198E /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
+		D0D2CC1F1F08896B00A19E77 /* SetWorkAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetWorkAddressViewController.swift; path = SwiftClasses/SetWorkAddressViewController.swift; sourceTree = "<group>"; };
 		D0D4A2501E674D9700A925A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D0DCA81E1D6DEEA20025CB0D /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "../../../../Users/xinkecf35/Dropbox/Objective-C/DawnPlus/DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = DEVELOPER_DIR; };
+		D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressResultsViewController.swift; path = SwiftClasses/AddressResultsViewController.swift; sourceTree = "<group>"; };
+		F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484AC4F57086708F333A19BC /* Pods_DawnPlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,12 +138,24 @@
 				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
 				D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */,
 				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
+				ED1B7C5CA3DDF62ED80B1E77 /* Pods_DawnPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A38F69A2D6FEC633814B62DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */,
+				094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */,
+				BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */,
+				F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D00916B51D734427009999F2 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +177,8 @@
 				D0C5F1951EEE6063005897CD /* MediaPlayer.framework */,
 				D01553821ECEAF7600ACF012 /* CoreData.framework */,
 				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
+				380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */,
+				8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,8 +188,8 @@
 			children = (
 				D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */,
 				D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */,
-				D094CD771EF79012007E0BE7 /* SetAddressViewController.swift */,
-				D094CD7C1EF7A532007E0BE7 /* AddressResultViewController.swift */,
+				D0D2CC1F1F08896B00A19E77 /* SetWorkAddressViewController.swift */,
+				D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */,
 			);
 			name = NavigationControlClasses;
 			sourceTree = "<group>";
@@ -242,6 +265,7 @@
 				D0C5F18C1EEE5F97005897CD /* DawnPlusTests */,
 				D0EDA1521CF3CA3C0036293B /* Products */,
 				D016AA4C1E9A1168004B387B /* Frameworks */,
+				A38F69A2D6FEC633814B62DC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,9 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
 			buildPhases = (
+				C5DE9297B648783EE7A58147 /* [CP] Check Pods Manifest.lock */,
 				D0C5F1871EEE5F97005897CD /* Sources */,
 				D0C5F1881EEE5F97005897CD /* Frameworks */,
 				D0C5F1891EEE5F97005897CD /* Resources */,
+				6D9BB59E4D58BA05166A2296 /* [CP] Embed Pods Frameworks */,
+				609DCCC69B129EEC3C8D4AD8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,9 +336,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */;
 			buildPhases = (
+				8DF72CFA954144FF447AFB80 /* [CP] Check Pods Manifest.lock */,
 				D0EDA14D1CF3CA3C0036293B /* Sources */,
 				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
 				D0EDA14F1CF3CA3C0036293B /* Resources */,
+				842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */,
+				EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -399,6 +429,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		609DCCC69B129EEC3C8D4AD8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D9BB59E4D58BA05166A2296 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DF72CFA954144FF447AFB80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C5DE9297B648783EE7A58147 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0C5F1871EEE5F97005897CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -420,13 +543,13 @@
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
+				D6B3E7631F08C0A600177470 /* AddressResultsViewController.swift in Sources */,
+				D0D2CC201F08896B00A19E77 /* SetWorkAddressViewController.swift in Sources */,
 				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
 				D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */,
 				D0EDA1561CF3CA3C0036293B /* main.m in Sources */,
-				D094CD781EF79012007E0BE7 /* SetAddressViewController.swift in Sources */,
-				D094CD7D1EF7A532007E0BE7 /* AddressResultViewController.swift in Sources */,
 				D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */,
 				D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */,
 				D0D4A2511E674D9700A925A5 /* SettingsViewController.m in Sources */,
@@ -473,6 +596,7 @@
 /* Begin XCBuildConfiguration section */
 		D0C5F1931EEE5F97005897CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +618,7 @@
 		};
 		D0C5F1941EEE5F97005897CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -624,6 +749,7 @@
 		};
 		D0EDA1821CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -645,6 +771,7 @@
 		};
 		D0EDA1831CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
