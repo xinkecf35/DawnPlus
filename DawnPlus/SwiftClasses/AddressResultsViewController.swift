@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+class AddressResultsViewController:UITableViewController {
+    var setAddressController: SetWorkAddressViewController!
+}
+extension AddressResultsViewController:UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+    }
+}

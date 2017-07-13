@@ -1,0 +1,18 @@
+PODS:
+  - DZNEmptyDataSet (1.8.1)
+  - MGSwipeTableCell (1.5.6)
+  - SnapKit (3.2.0)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - MGSwipeTableCell
+  - SnapKit (~> 3.2.0)
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+
+PODFILE CHECKSUM: 26d4011cf9ea5e57c81c2a58fa10a4e0e1782570
+
+COCOAPODS: 1.2.1
