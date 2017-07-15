@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-EF-jpQ" userLabel="Temperature">
-                                <rect key="frame" x="52" y="134" width="66" height="88"/>
+                                <rect key="frame" x="52" y="134" width="67" height="88"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,19 +42,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="85" y="230" width="205" height="63"/>
+                                <rect key="frame" x="86.5" y="230" width="202.5" height="63"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-xk-CCs">
-                                <rect key="frame" x="226" y="134" width="88" height="88"/>
+                                <rect key="frame" x="228" y="134" width="88" height="88"/>
                                 <state key="normal" image="error">
                                     <attributedString key="attributedTitle"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fog" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-nG-RJL" userLabel="weatherLabel">
-                                <rect key="frame" x="126" y="134" width="92" height="88"/>
+                                <rect key="frame" x="127" y="134" width="93" height="88"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSn-Xd-C2i" userLabel="toggleAlarmView">
                                 <rect key="frame" x="6" y="30" width="44" height="44"/>
@@ -101,10 +101,10 @@
                                 <exclude reference="X6y-sc-wSO"/>
                                 <exclude reference="cP3-s3-WcJ"/>
                                 <exclude reference="qnF-EL-Fis"/>
-                                <exclude reference="1QD-Hv-8Bf"/>
-                                <exclude reference="5Ae-fb-GE7"/>
                                 <exclude reference="bMF-gT-WhA"/>
                                 <exclude reference="lK3-bk-1tR"/>
+                                <exclude reference="1QD-Hv-8Bf"/>
+                                <exclude reference="5Ae-fb-GE7"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -121,10 +121,10 @@
                                 <include reference="X6y-sc-wSO"/>
                                 <include reference="cP3-s3-WcJ"/>
                                 <include reference="qnF-EL-Fis"/>
-                                <include reference="1QD-Hv-8Bf"/>
-                                <include reference="5Ae-fb-GE7"/>
                                 <include reference="bMF-gT-WhA"/>
                                 <include reference="lK3-bk-1tR"/>
+                                <include reference="1QD-Hv-8Bf"/>
+                                <include reference="5Ae-fb-GE7"/>
                             </mask>
                         </variation>
                     </view>
@@ -177,7 +177,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.45098039215686275" green="0.78431372549019607" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="epM-z9-wlF" kind="show" id="itQ-c9-6Wg"/>
+                                            <segue destination="epM-z9-wlF" kind="show" identifier="SetAddressSegue" id="itQ-c9-6Wg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" id="8FV-9i-Dce" userLabel="sensitivityCell">
@@ -253,9 +253,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9MJ-0u-rvQ" firstAttribute="centerY" secondItem="HGl-Sg-d87" secondAttribute="centerY" id="FxY-gM-CMk"/>
-                                                <constraint firstItem="9MJ-0u-rvQ" firstAttribute="leading" secondItem="HGl-Sg-d87" secondAttribute="leadingMargin" constant="10" id="RzF-3n-fV7"/>
-                                                <constraint firstItem="9MJ-0u-rvQ" firstAttribute="top" secondItem="HGl-Sg-d87" secondAttribute="topMargin" constant="3" id="rtB-gq-k5U"/>
+                                                <constraint firstItem="9MJ-0u-rvQ" firstAttribute="centerY" secondItem="HGl-Sg-d87" secondAttribute="centerY" id="Khc-QB-Ule"/>
+                                                <constraint firstItem="9MJ-0u-rvQ" firstAttribute="leading" secondItem="HGl-Sg-d87" secondAttribute="leadingMargin" constant="10" id="ZQt-63-Gxo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.45098039215686275" green="0.78431372549019607" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -297,17 +296,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F.A.Q." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-Fr-eQ5" userLabel="F.A.Q.">
-                                                    <rect key="frame" x="18" y="11" width="227" height="21"/>
+                                                    <rect key="frame" x="18" y="11" width="44.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XtX-Fr-eQ5" firstAttribute="leading" secondItem="NTu-MS-bWl" secondAttribute="leadingMargin" constant="10" id="0Oj-ke-9VT"/>
-                                                <constraint firstItem="XtX-Fr-eQ5" firstAttribute="centerY" secondItem="NTu-MS-bWl" secondAttribute="centerY" id="Bqs-9A-rdp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XtX-Fr-eQ5" secondAttribute="trailing" constant="89" id="kGx-ZN-2BO"/>
-                                                <constraint firstItem="XtX-Fr-eQ5" firstAttribute="top" secondItem="NTu-MS-bWl" secondAttribute="topMargin" constant="3" id="lQK-b0-2VQ"/>
+                                                <constraint firstItem="XtX-Fr-eQ5" firstAttribute="leading" secondItem="NTu-MS-bWl" secondAttribute="leadingMargin" constant="10" id="FuK-9u-OZC"/>
+                                                <constraint firstItem="XtX-Fr-eQ5" firstAttribute="centerY" secondItem="NTu-MS-bWl" secondAttribute="centerY" id="doT-39-MVN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.45098039215686275" green="0.78431372549019607" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -320,19 +317,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caB-Qn-VJ4">
-                                                    <rect key="frame" x="18" y="11" width="57" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="57" id="tmI-lB-WKT"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="18" y="11" width="51" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="caB-Qn-VJ4" firstAttribute="leading" secondItem="NS6-w0-Ivf" secondAttribute="leadingMargin" constant="10" id="aTT-6v-WcU"/>
-                                                <constraint firstItem="caB-Qn-VJ4" firstAttribute="centerY" secondItem="NS6-w0-Ivf" secondAttribute="centerY" id="biH-qj-bsM"/>
-                                                <constraint firstItem="caB-Qn-VJ4" firstAttribute="top" secondItem="NS6-w0-Ivf" secondAttribute="topMargin" constant="3" id="mW6-96-BlW"/>
+                                                <constraint firstItem="caB-Qn-VJ4" firstAttribute="centerY" secondItem="NS6-w0-Ivf" secondAttribute="centerY" id="PBP-Bn-NJv"/>
+                                                <constraint firstItem="caB-Qn-VJ4" firstAttribute="leading" secondItem="NS6-w0-Ivf" secondAttribute="leadingMargin" constant="10" id="U4e-gh-cdI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.45098039215686275" green="0.78431372549019607" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -344,17 +337,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-kv-GEL">
-                                                    <rect key="frame" x="18" y="11" width="47.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
-                                                    <color key="textColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Fp-VQ-hIz">
+                                                    <rect key="frame" x="18" y="11" width="47.5" height="21.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ozi-pk-N1e">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47.5" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-kv-GEL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="47.5" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                                    <color key="textColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4Cm-kv-GEL" firstAttribute="top" secondItem="PER-Q3-k8G" secondAttribute="topMargin" constant="3" id="56m-i3-tei"/>
-                                                <constraint firstItem="4Cm-kv-GEL" firstAttribute="leading" secondItem="PER-Q3-k8G" secondAttribute="leadingMargin" constant="10" id="Izp-J3-TaB"/>
-                                                <constraint firstItem="4Cm-kv-GEL" firstAttribute="centerY" secondItem="PER-Q3-k8G" secondAttribute="centerY" id="SSw-5O-bVk"/>
+                                                <constraint firstItem="7Fp-VQ-hIz" firstAttribute="centerY" secondItem="PER-Q3-k8G" secondAttribute="centerY" id="8sf-8r-fsM"/>
+                                                <constraint firstItem="7Fp-VQ-hIz" firstAttribute="leading" secondItem="PER-Q3-k8G" secondAttribute="leadingMargin" constant="10" id="eOL-au-8F5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.7843137255" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,7 +387,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
             </objects>
-            <point key="canvasLocation" x="1528.5" y="384.5"/>
+            <point key="canvasLocation" x="1521" y="386"/>
         </scene>
         <!--Units-->
         <scene sceneID="3Kw-aT-LXK">
@@ -425,10 +427,10 @@
             </objects>
             <point key="canvasLocation" x="3132" y="387"/>
         </scene>
-        <!--Set Address View Controller-->
+        <!--Set Work Address View Controller-->
         <scene sceneID="aAr-W0-dK8">
             <objects>
-                <viewController storyboardIdentifier="SetAddress" id="epM-z9-wlF" customClass="SetAddressViewController" customModule="DawnPlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetAddress" id="epM-z9-wlF" customClass="SetWorkAddressViewController" customModule="DawnPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UyA-j9-t8I"/>
                         <viewControllerLayoutGuide type="bottom" id="lBp-Tl-yqy"/>
@@ -452,7 +454,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2365.5999999999999" y="-285.60719640179911"/>
+            <point key="canvasLocation" x="2366" y="-287"/>
         </scene>
         <!--Sensitivity-->
         <scene sceneID="DfT-fz-Rs0">
@@ -512,7 +514,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQK-XH-9ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="385"/>
+            <point key="canvasLocation" x="666" y="385"/>
         </scene>
         <!--AlarmViews-->
         <scene sceneID="rAl-sz-GAU">
