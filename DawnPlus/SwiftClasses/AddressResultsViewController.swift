@@ -13,6 +13,13 @@ import MapKit
 class AddressResultsViewController:UITableViewController {
     var setAddressController: SetWorkAddressViewController!
 }
+extension AddressResultsViewController:UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+}
 extension AddressResultsViewController:UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
