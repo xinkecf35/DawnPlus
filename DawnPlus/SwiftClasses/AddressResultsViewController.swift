@@ -11,17 +11,26 @@ import UIKit
 import MapKit
 
 class AddressResultsViewController:UITableViewController {
-    var setAddressController: SetWorkAddressViewController!
-}
-extension AddressResultsViewController:UISearchBarDelegate {
+    var matchingPlaces: [MKMapItem] = []
+    var mapSearchDelegate: addressMapSearch? = nil
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    func parseAddress(selectedItem: MKPlacemark) -> String {
+        var addressLine: String = ""
+        var addressComponents: [String] = []
+        addressComponents.append(selectedItem.subThoroughfare ?? "")
+        addressComponents.append(selectedItem.thoroughfare ?? "")
+        addressComponents.append(selectedItem.locality ?? "")
+        addressComponents.append(selectedItem.administrativeArea ?? "")
+        addressComponents.append(selectedItem.postalCode ?? "")
+        addressLine = addressComponents.joined(separator: " ")
+        return addressLine
+    }
+    func updateSearchResults() {
         
     }
-    
+
 }
-extension AddressResultsViewController:UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-    }
+protocol addressMapSearch {
+    func dropMapPin(placemark: MKPlacemark)
 }
+

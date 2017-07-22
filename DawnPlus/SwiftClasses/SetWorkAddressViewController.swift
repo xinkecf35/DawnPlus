@@ -14,7 +14,8 @@ import SnapKit
 class SetWorkAddressViewController:UIViewController {
     let defaults:UserDefaults = UserDefaults.standard
     let resultsController = AddressResultsViewController()
-
+    let searchBar = UISearchBar()
+    let mapView = MKMapView()
     var coordinate: CLLocationCoordinate2D!
     
     //UIKit Methods
@@ -27,59 +28,85 @@ class SetWorkAddressViewController:UIViewController {
         definesPresentationContext = true;
         configureSearchView()
         configureMapView()
+        super.viewDidLoad()
     }
     override func viewWillDisappear(_ animated: Bool) {
         
     }
     //Configure Views
     func configureMapView() {
-//        let navigationBarHeight = self.navigationController!.navigationBar.frame.height;
-        let mapViewHeight = view.frame.height;
-        let mapFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: mapViewHeight )
-        let mapView = MKMapView(frame: mapFrame)
-        let span = MKCoordinateSpanMake(0.03, 0.03)
-        let region = MKCoordinateRegionMake(coordinate, span)
+        let span = MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
-        view.insertSubview(mapView, at: 0)
-//        mapView.snp.makeConstraints({ (make) -> Void in
-//            //Bounds
-//            let searchBarHeight = searchController.searchBar.frame.size.height
-//
-//            //Make constraints
-//            make.top.equalTo(view).offset(searchBarHeight)
-//            make.bottom.equalTo(view)
-//        })
-        debugPrint("Map View Added")
-        
-    }
-    func configureSearchView() {
-        searchController = UISearchController(searchResultsController: resultsController)
-        searchController.searchResultsUpdater = resultsController
-//        searchController.delegate = self;
-        searchController.hidesNavigationBarDuringPresentation = false;
-        resultsController.searchController = searchController
-        //Searchbar setting
-        searchController.searchBar.delegate = resultsController
-        let searchBar = searchController.searchBar
-        searchBar.placeholder = "Search for your Workplace"
-        searchBar.searchBarStyle = UISearchBarStyle.minimal
-        //Setting Frame and Adding View
-        let navigationBarHeight = self.navigationController!.navigationBar.frame.height;
-        let searchBarFrame = CGRect(x: 0, y: navigationBarHeight + 22, width: view.frame.width, height: 44)
-        searchBar.frame = searchBarFrame
-        searchBar.sizeToFit()
-        view.addSubview(searchBar)
-        debugPrint("Added Search Bar View")
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == #keyPath(LocationFetch.currentLocation)) {
-            
+        mapView.showsUserLocation = true
+        view.addSubview(mapView)
+        let navigationBarHeight = self.navigationController!.navigationBar.frame.height + 20
+        debugPrint(navigationBarHeight)
+        mapView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(view).offset(navigationBarHeight)
+            make.right.equalTo(view)
+            make.bottom.equalTo(view)
+            make.left.equalTo(view)
         }
     }
-}
-extension SetWorkAddressViewController:UISearchControllerDelegate {
-    func willPresentSearchController(_ searchController: UISearchController) {
+    func configureSearchView() {
+        searchBar.searchBarStyle = UISearchBarStyle.minimal
+        searchBar.delegate = self
+        searchBar.placeholder = "Search for your Work"
+//        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
+//        let searchBarFrame = CGRect(x: 0, y: navigationBarHeight + 22, width: view.frame.width, height: 44)
+//        searchBar.frame = searchBarFrame
+//        view.addSubview(searchBar)
+        navigationItem.titleView = searchBar
+        searchBar.sizeToFit()
+        debugPrint("Added Search Bar View")
     }
-   
+    func displayResultsController() {
+        addChildViewController(resultsController)
+        view.addSubview(resultsController.view)
+        resultsController.view.snp.makeConstraints{ (make) -> Void in
+            make.edges.equalTo(mapView)
+        }
+        resultsController.didMove(toParentViewController: self)
+        resultsController.mapSearchDelegate = self
+    }
+    func dismissResultsController() {
+        resultsController.willMove(toParentViewController: nil)
+        resultsController.view.removeFromSuperview()
+        resultsController.removeFromParentViewController()
+    }
 }
+extension SetWorkAddressViewController:UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        searchBar.setShowsCancelButton(true, animated: true)
+        searchBar.sizeToFit()
+        searchBar.becomeFirstResponder()
+        displayResultsController()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        self.navigationItem.setHidesBackButton(false, animated: true)
+        searchBar.sizeToFit()
+        searchBar.resignFirstResponder()
+        dismissResultsController()
+    }
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = false
+        self.navigationItem.hidesBackButton = false
+        searchBar.sizeToFit()
+        searchBar.resignFirstResponder()
+        dismissResultsController()
+        return true
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+}
+extension SetWorkAddressViewController: addressMapSearch {
+    func  dropMapPin(placemark: MKPlacemark) {
+        
+    }
+}
+
+
