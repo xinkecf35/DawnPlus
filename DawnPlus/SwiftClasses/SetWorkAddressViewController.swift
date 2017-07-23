@@ -13,7 +13,7 @@ import SnapKit
 
 class SetWorkAddressViewController:UIViewController {
     let defaults:UserDefaults = UserDefaults.standard
-    let resultsController = AddressResultsViewController()
+    var resultsController:AddressResultsViewController!
     let searchBar = UISearchBar()
     let mapView = MKMapView()
     var coordinate: CLLocationCoordinate2D!
@@ -62,12 +62,15 @@ class SetWorkAddressViewController:UIViewController {
         debugPrint("Added Search Bar View")
     }
     func displayResultsController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        resultsController = storyboard.instantiateViewController(withIdentifier: "AddressResultsTable") as! AddressResultsViewController
         addChildViewController(resultsController)
         view.addSubview(resultsController.view)
         resultsController.view.snp.makeConstraints{ (make) -> Void in
             make.edges.equalTo(mapView)
         }
         resultsController.didMove(toParentViewController: self)
+        resultsController.mapView = mapView
         resultsController.mapSearchDelegate = self
     }
     func dismissResultsController() {
@@ -100,7 +103,7 @@ extension SetWorkAddressViewController:UISearchBarDelegate {
         return true
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        resultsController.updateSearchResults(searchPhrase: searchText)
     }
 }
 extension SetWorkAddressViewController: addressMapSearch {
