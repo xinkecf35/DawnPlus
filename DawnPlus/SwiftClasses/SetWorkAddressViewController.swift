@@ -88,27 +88,38 @@ extension SetWorkAddressViewController:UISearchBarDelegate {
         displayResultsController()
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(false, animated: true)
-        self.navigationItem.setHidesBackButton(false, animated: true)
-        searchBar.sizeToFit()
-        searchBar.resignFirstResponder()
-        dismissResultsController()
+        finishSearch()
     }
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.showsCancelButton = false
-        self.navigationItem.hidesBackButton = false
-        searchBar.sizeToFit()
-        searchBar.resignFirstResponder()
-        dismissResultsController()
+        finishSearch()
         return true
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         resultsController.updateSearchResults(searchPhrase: searchText)
     }
+    func finishSearch() {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        self.navigationItem.hidesBackButton = false
+        searchBar.sizeToFit()
+        searchBar.resignFirstResponder()
+        dismissResultsController()
+    }
 }
 extension SetWorkAddressViewController: addressMapSearch {
     func  dropMapPin(placemark: MKPlacemark) {
-        
+        finishSearch()
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.title
+        if let city = placemark.locality, let state = placemark.administrativeArea {
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated:true)
     }
 }
 
