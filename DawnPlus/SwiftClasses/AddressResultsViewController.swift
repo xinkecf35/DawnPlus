@@ -33,7 +33,7 @@ class AddressResultsViewController:UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = matchingPlaces[indexPath.row].placemark
         mapSearchDelegate?.dropMapPin(placemark: selectedCell)
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
     }
     //Address handling
     func parseAddress(selectedItem: MKPlacemark) -> String {
