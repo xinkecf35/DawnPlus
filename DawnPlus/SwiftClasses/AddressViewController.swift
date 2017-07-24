@@ -43,9 +43,10 @@ class AddressViewController: UIViewController {
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for your Work"
         navigationItem.leftBarButtonItem = nil
-        navigationItem.titleView = addressSearchController?.searchBar
-        
-        addressSearchController?.hidesNavigationBarDuringPresentation = false
+        //navigationItem.titleView = addressSearchController?.searchBar
+        searchBar.frame = CGRect(x: 0, y: 64, width: self.view.frame.size.width, height: 44);
+        self.view.addSubview(searchBar);
+        //addressSearchController?.hidesNavigationBarDuringPresentation = false
         addressSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         addressSearchTable.mapView = mapView
