@@ -17,18 +17,14 @@ class SetWorkAddressViewController:UIViewController {
     let searchBar = UISearchBar()
     let mapView = MKMapView()
     var coordinate: CLLocationCoordinate2D!
+    var workCoordinates:[String:Double]? = nil
     
     //UIKit Methods
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
     override func viewDidLoad() {
-        LocationFetch.addObserver(self, forKeyPath: #keyPath(LocationFetch.currentLocation), options: NSKeyValueObservingOptions.new, context: nil)
         coordinate = LocationFetch.sharedInstance().currentLocation.coordinate
         definesPresentationContext = true;
         configureSearchView()
         configureMapView()
-        configureConfirmAddressView()
         super.viewDidLoad()
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,6 +75,21 @@ class SetWorkAddressViewController:UIViewController {
         resultsController.view.removeFromSuperview()
         resultsController.removeFromParentViewController()
     }
+    func returnToSettingsandSaveAddress() {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            if(self.workCoordinates != nil) {
+                self.defaults.set(self.workCoordinates, forKey: "workLocation")
+                let latitude = self.workCoordinates!["latitude"]!
+                let longitude = self.workCoordinates!["longitude"]!
+                NSLog("%@ workLocation saved to Defaults; latitude: %0.6f, longitude: %0.6f", self, latitude,longitude)
+            }
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    func returnToSettingsWithoutSaving() {
+        NSLog("%@ workLocation is not saved ", self)
+        navigationController?.popViewController(animated: true)
+    }
     func configureConfirmAddressView() {
         //Creating Parent View for Buttons
         let frame = CGRect(x: 0.0, y: view.frame.height - 54.0, width: view.frame.width, height: 54.0)
@@ -89,28 +100,26 @@ class SetWorkAddressViewController:UIViewController {
         let leftFrame = CGRect(x: 0.0, y: 0.0, width: Double(buttonWidth), height: buttonHeight)
         let rightFrame = CGRect(x: Double(buttonWidth), y: 0.0, width: Double(buttonWidth), height: buttonHeight)
         //Defining Okay Button
-        let okayButton = UIButton()
+        let okayButton = UIButton(type: .custom)
         okayButton.frame = leftFrame
         okayButton.setTitle("OK", for:.normal)
         okayButton.backgroundColor = UIColor(hue: 0.22, saturation: 0.74, brightness: 0.8, alpha: 1.0)
-        okayButton.layer.shadowColor = CGColor(colorLiteralRed: 0.529, green: 0.702, blue: 0.184, alpha: 1.0)
-        okayButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        okayButton.layer.shadowOpacity = 1.0
-        okayButton.layer.masksToBounds = false
         confirmAddressView.addSubview(okayButton)
         //Defining Cancel Button
-        let cancelButton = UIButton()
+        let cancelButton = UIButton(type: .custom)
         cancelButton.frame = rightFrame
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.backgroundColor = UIColor(hue: 0.0, saturation: 0.85, brightness: 0.86, alpha: 1.0)
-        cancelButton.layer.shadowColor = CGColor(colorLiteralRed: 0.702, green: 0.110, blue: 0.098, alpha: 1.0)
-        cancelButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        cancelButton.layer.shadowOpacity = 1.0
-        okayButton.layer.masksToBounds = false
         confirmAddressView.addSubview(cancelButton)
+        //Adding Target-Action for ViewController
+        okayButton.addTarget(self, action: #selector(returnToSettingsandSaveAddress), for: UIControlEvents.touchDown)
+        cancelButton.addTarget(self, action: #selector(returnToSettingsWithoutSaving), for: UIControlEvents.touchDown)
         //Adding View into SuperView
+        confirmAddressView.isUserInteractionEnabled = true
         view.addSubview(confirmAddressView)
+        
     }
+    
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -153,6 +162,8 @@ extension SetWorkAddressViewController: addressMapSearch {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated:true)
+        configureConfirmAddressView()
+        workCoordinates = ["latitude":placemark.coordinate.latitude, "longitude":placemark.coordinate.longitude]
     }
 }
 
