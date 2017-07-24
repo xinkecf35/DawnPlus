@@ -27,9 +27,6 @@ class SetWorkAddressViewController:UIViewController {
         configureMapView()
         super.viewDidLoad()
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
     //Configure Views
     func configureMapView() {
         let span = MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04)
@@ -117,9 +114,7 @@ class SetWorkAddressViewController:UIViewController {
         //Adding View into SuperView
         confirmAddressView.isUserInteractionEnabled = true
         view.addSubview(confirmAddressView)
-        
     }
-    
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -163,7 +158,7 @@ extension SetWorkAddressViewController: addressMapSearch {
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated:true)
         configureConfirmAddressView()
-        workCoordinates = ["latitude":placemark.coordinate.latitude, "longitude":placemark.coordinate.longitude]
+        workCoordinates = ["latitude":Double(placemark.coordinate.latitude), "longitude":Double(placemark.coordinate.longitude)]
     }
 }
 
