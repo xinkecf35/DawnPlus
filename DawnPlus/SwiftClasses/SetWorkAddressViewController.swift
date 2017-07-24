@@ -28,6 +28,7 @@ class SetWorkAddressViewController:UIViewController {
         definesPresentationContext = true;
         configureSearchView()
         configureMapView()
+        configureConfirmAddressView()
         super.viewDidLoad()
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,6 +78,38 @@ class SetWorkAddressViewController:UIViewController {
         resultsController.willMove(toParentViewController: nil)
         resultsController.view.removeFromSuperview()
         resultsController.removeFromParentViewController()
+    }
+    func configureConfirmAddressView() {
+        //Creating Parent View for Buttons
+        let frame = CGRect(x: 0.0, y: view.frame.height - 54.0, width: view.frame.width, height: 54.0)
+        let confirmAddressView = UIView(frame: frame)
+        confirmAddressView.backgroundColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
+        let buttonWidth = view.frame.width/2
+        let buttonHeight = 54.0
+        let leftFrame = CGRect(x: 0.0, y: 0.0, width: Double(buttonWidth), height: buttonHeight)
+        let rightFrame = CGRect(x: Double(buttonWidth), y: 0.0, width: Double(buttonWidth), height: buttonHeight)
+        //Defining Okay Button
+        let okayButton = UIButton()
+        okayButton.frame = leftFrame
+        okayButton.setTitle("OK", for:.normal)
+        okayButton.backgroundColor = UIColor(hue: 0.22, saturation: 0.74, brightness: 0.8, alpha: 1.0)
+        okayButton.layer.shadowColor = CGColor(colorLiteralRed: 0.529, green: 0.702, blue: 0.184, alpha: 1.0)
+        okayButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        okayButton.layer.shadowOpacity = 1.0
+        okayButton.layer.masksToBounds = false
+        confirmAddressView.addSubview(okayButton)
+        //Defining Cancel Button
+        let cancelButton = UIButton()
+        cancelButton.frame = rightFrame
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.backgroundColor = UIColor(hue: 0.0, saturation: 0.85, brightness: 0.86, alpha: 1.0)
+        cancelButton.layer.shadowColor = CGColor(colorLiteralRed: 0.702, green: 0.110, blue: 0.098, alpha: 1.0)
+        cancelButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        cancelButton.layer.shadowOpacity = 1.0
+        okayButton.layer.masksToBounds = false
+        confirmAddressView.addSubview(cancelButton)
+        //Adding View into SuperView
+        view.addSubview(confirmAddressView)
     }
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
