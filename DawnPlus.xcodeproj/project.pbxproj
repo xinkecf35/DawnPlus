@@ -119,6 +119,7 @@
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "../../../../Users/xinkecf35/Dropbox/Objective-C/DawnPlus/DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = DEVELOPER_DIR; };
+
 		D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressResultsViewController.swift; path = SwiftClasses/AddressResultsViewController.swift; sourceTree = "<group>"; };
 		F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -319,6 +320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
 			buildPhases = (
+
 				C5DE9297B648783EE7A58147 /* [CP] Check Pods Manifest.lock */,
 				D0C5F1871EEE5F97005897CD /* Sources */,
 				D0C5F1881EEE5F97005897CD /* Frameworks */,
@@ -340,12 +342,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */;
 			buildPhases = (
+
 				8DF72CFA954144FF447AFB80 /* [CP] Check Pods Manifest.lock */,
 				D0EDA14D1CF3CA3C0036293B /* Sources */,
 				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
 				D0EDA14F1CF3CA3C0036293B /* Resources */,
 				842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */,
-				EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */,
+				EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */
+
 			);
 			buildRules = (
 			);
@@ -453,6 +457,7 @@
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */,
 			);
 			inputPaths = (
 			);
@@ -464,6 +469,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+
 		842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
