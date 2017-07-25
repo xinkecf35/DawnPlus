@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="87" y="250" width="202.5" height="63"/>
+                                <rect key="frame" x="86.5" y="230" width="202.5" height="63"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -101,10 +101,10 @@
                                 <exclude reference="X6y-sc-wSO"/>
                                 <exclude reference="cP3-s3-WcJ"/>
                                 <exclude reference="qnF-EL-Fis"/>
-                                <exclude reference="bMF-gT-WhA"/>
-                                <exclude reference="lK3-bk-1tR"/>
                                 <exclude reference="1QD-Hv-8Bf"/>
                                 <exclude reference="5Ae-fb-GE7"/>
+                                <exclude reference="bMF-gT-WhA"/>
+                                <exclude reference="lK3-bk-1tR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -121,10 +121,10 @@
                                 <include reference="X6y-sc-wSO"/>
                                 <include reference="cP3-s3-WcJ"/>
                                 <include reference="qnF-EL-Fis"/>
-                                <include reference="bMF-gT-WhA"/>
-                                <include reference="lK3-bk-1tR"/>
                                 <include reference="1QD-Hv-8Bf"/>
                                 <include reference="5Ae-fb-GE7"/>
+                                <include reference="bMF-gT-WhA"/>
+                                <include reference="lK3-bk-1tR"/>
                             </mask>
                         </variation>
                     </view>
@@ -392,7 +392,6 @@
         <!--Units-->
         <scene sceneID="3Kw-aT-LXK">
             <objects>
-
                 <tableViewController title="Units" id="vn1-zU-dgk" customClass="UnitsViewController" customModule="DawnPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wjq-nh-Lqt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -406,7 +405,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OoA-60-QcB">
                                             <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
