@@ -26,6 +26,8 @@
 		D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996091D24B38C003010C8 /* Raleway-Medium.ttf */; };
 		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
+		D07F797D1F271A5F005464D1 /* DawnPlusTests.m in [CP] Embed Pods Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
+		D07F79801F271A91005464D1 /* drone.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D07F797F1F271A90005464D1 /* drone.m4a */; };
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
@@ -91,6 +93,7 @@
 		D07996091D24B38C003010C8 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		D07F797F1F271A90005464D1 /* drone.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = drone.m4a; path = DawnPlus/Tones/drone.m4a; sourceTree = "<group>"; };
 		D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitsViewController.swift; path = SwiftClasses/UnitsViewController.swift; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
@@ -119,7 +122,6 @@
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "../../../../Users/xinkecf35/Dropbox/Objective-C/DawnPlus/DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = DEVELOPER_DIR; };
-
 		D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressResultsViewController.swift; path = SwiftClasses/AddressResultsViewController.swift; sourceTree = "<group>"; };
 		F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +242,15 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		D07F797E1F271A73005464D1 /* Tones */ = {
+			isa = PBXGroup;
+			children = (
+				D07F797F1F271A90005464D1 /* drone.m4a */,
+				D03461A31EF3BF6F00905B4D /* alarm.mp3 */,
+			);
+			name = Tones;
+			sourceTree = "<group>";
+		};
 		D0C5F18C1EEE5F97005897CD /* DawnPlusTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +274,7 @@
 		D0EDA1481CF3CA3C0036293B = {
 			isa = PBXGroup;
 			children = (
-				D03461A31EF3BF6F00905B4D /* alarm.mp3 */,
+				D07F797E1F271A73005464D1 /* Tones */,
 				D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */,
 				D0382A811CF4101C00905259 /* CoreLocation.framework */,
 				D0EDA1531CF3CA3C0036293B /* DawnPlus */,
@@ -320,7 +331,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
 			buildPhases = (
-
 				C5DE9297B648783EE7A58147 /* [CP] Check Pods Manifest.lock */,
 				D0C5F1871EEE5F97005897CD /* Sources */,
 				D0C5F1881EEE5F97005897CD /* Frameworks */,
@@ -342,14 +352,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */;
 			buildPhases = (
-
 				8DF72CFA954144FF447AFB80 /* [CP] Check Pods Manifest.lock */,
 				D0EDA14D1CF3CA3C0036293B /* Sources */,
 				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
 				D0EDA14F1CF3CA3C0036293B /* Resources */,
 				842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */,
-				EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */
-
+				EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -432,6 +440,7 @@
 				D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */,
 				D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */,
 				D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */,
+				D07F79801F271A91005464D1 /* drone.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +466,7 @@
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */,
+				D07F797D1F271A5F005464D1 /* DawnPlusTests.m in [CP] Embed Pods Frameworks */,
 			);
 			inputPaths = (
 			);
@@ -469,7 +478,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-
 		842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
