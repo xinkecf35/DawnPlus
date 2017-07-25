@@ -28,6 +28,7 @@
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
 		D07F797D1F271A5F005464D1 /* DawnPlusTests.m in [CP] Embed Pods Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
 		D07F79801F271A91005464D1 /* drone.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D07F797F1F271A90005464D1 /* drone.m4a */; };
+		D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F79821F272E6B005464D1 /* LabelViewController.m */; };
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
@@ -94,6 +95,8 @@
 		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		D07F797F1F271A90005464D1 /* drone.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = drone.m4a; path = DawnPlus/Tones/drone.m4a; sourceTree = "<group>"; };
+		D07F79811F272E6B005464D1 /* LabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
+		D07F79821F272E6B005464D1 /* LabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
 		D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitsViewController.swift; path = SwiftClasses/UnitsViewController.swift; sourceTree = "<group>"; };
 		D0A0180C1CFA783900E8EECB /* LocationFetch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationFetch.h; sourceTree = "<group>"; };
 		D0A0180D1CFA787400E8EECB /* LocationFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetch.m; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 				D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */,
 				D0B33FCA1EE3B5F600CCAAB7 /* DayTableViewController.h */,
 				D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */,
+				D07F79811F272E6B005464D1 /* LabelViewController.h */,
+				D07F79821F272E6B005464D1 /* LabelViewController.m */,
 			);
 			name = AlarmControlClasses;
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
+				D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */,
 				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
 				D6B3E7631F08C0A600177470 /* AddressResultsViewController.swift in Sources */,
 				D0D2CC201F08896B00A19E77 /* SetWorkAddressViewController.swift in Sources */,

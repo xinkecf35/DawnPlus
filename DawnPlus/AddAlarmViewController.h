@@ -12,14 +12,13 @@
 #import "CoreDataController.h"
 #import "AlarmDataDelegate.h"
 #import "DayTableViewController.h"
+#import "LabelViewController.h"
 
 @interface AddAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *dayRepeat;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property (strong, nonatomic) CoreDataController *coreDataManager;
-//@property (strong, nonatomic) AlarmDataManager *alarmData;
-
 
 @end
 
