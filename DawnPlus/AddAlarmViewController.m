@@ -41,6 +41,10 @@
         DayTableViewController *daysViewController = segue.destinationViewController;
         daysViewController.delegate = self;
     }
+    else if([segue.identifier isEqualToString:@"labelSegue"]) {
+        LabelViewController *labelViewController = segue.destinationViewController;
+        labelViewController.delegate = self;
+    }
 }
 @end
 

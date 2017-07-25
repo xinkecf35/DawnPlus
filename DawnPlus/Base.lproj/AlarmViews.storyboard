@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sw3-LR-2Vh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sw3-LR-2Vh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1525.5999999999999" y="1112.2938530734634"/>
         </scene>
-        <!--Day Table View Controller-->
+        <!--Repeat-->
         <scene sceneID="Kyx-8q-wl9">
             <objects>
-                <tableViewController id="E8L-rF-U6E" customClass="DayTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Repeat" id="E8L-rF-U6E" customClass="DayTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vJr-vP-ILk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,7 +303,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-nq-syC">
-                                                    <rect key="frame" x="18" y="11.5" width="58" height="21"/>
+                                                    <rect key="frame" x="18" y="11.5" width="59.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -326,7 +326,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY0-uX-GUZ">
-                                                    <rect key="frame" x="18" y="11.5" width="53" height="21"/>
+                                                    <rect key="frame" x="18" y="11.5" width="54.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -346,7 +346,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-mc-2Sq">
-                                                    <rect key="frame" x="18" y="11.5" width="44.5" height="21"/>
+                                                    <rect key="frame" x="18" y="11.5" width="47" height="21"/>
                                                     <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -357,6 +357,9 @@
                                                 <constraint firstItem="Sma-mc-2Sq" firstAttribute="leading" secondItem="EgZ-bY-ud7" secondAttribute="leadingMargin" constant="10" id="lu0-AB-7lK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="EMo-tx-0iS" kind="show" identifier="labelSegue" id="niO-zr-2dv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -370,6 +373,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHU-CU-ejt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1526" y="1591"/>
+        </scene>
+        <!--Label-->
+        <scene sceneID="hcJ-bq-kgo">
+            <objects>
+                <viewController title="Label" id="EMo-tx-0iS" customClass="LabelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ckc-re-OQo"/>
+                        <viewControllerLayoutGuide type="bottom" id="d8Q-RX-Z2x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rxD-yX-Kxc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bCE-XH-Jai">
+                                <rect key="frame" x="6" y="52" width="363" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dta-9h-e9j"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="labelTextField:" destination="EMo-tx-0iS" eventType="editingDidEnd" id="CKe-IV-IME"/>
+                                    <action selector="labelTextField:" destination="tKT-dG-5Kd" eventType="editingDidEnd" id="JYM-kg-ioc"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bCE-XH-Jai" firstAttribute="leading" secondItem="rxD-yX-Kxc" secondAttribute="leading" constant="6" id="8gx-Wq-eOA"/>
+                            <constraint firstItem="bCE-XH-Jai" firstAttribute="centerX" secondItem="rxD-yX-Kxc" secondAttribute="centerX" id="K2K-ai-cfQ"/>
+                            <constraint firstItem="bCE-XH-Jai" firstAttribute="centerY" secondItem="rxD-yX-Kxc" secondAttribute="centerY" id="oIg-sY-2O6"/>
+                            <constraint firstAttribute="trailing" secondItem="bCE-XH-Jai" secondAttribute="trailing" constant="6" id="tKk-rE-EFh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelTextField" destination="bCE-XH-Jai" id="Ke7-Ku-58n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ar2-Dw-akR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tKT-dG-5Kd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="1591"/>
         </scene>
     </scenes>
 </document>
