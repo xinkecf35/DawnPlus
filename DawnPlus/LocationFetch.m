@@ -27,7 +27,7 @@
         
         self.locationManager = [[CLLocationManager alloc]init];
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locationManager.distanceFilter = 100;
+        self.locationManager.distanceFilter = 200;
         self.locationManager.delegate = self;
         //Request Authorization
         if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
@@ -49,6 +49,12 @@
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *location = [locations lastObject];
+    NSTimeInterval time = [[location timestamp] timeIntervalSinceNow];
+    NSLog(@"%0.5f", time);
+    if (time < -180.0) {
+        NSLog(@"Returning Early");
+        return;
+    }
     latitude = location.coordinate.latitude;
     longitude = location.coordinate.longitude;
     
