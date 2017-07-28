@@ -25,9 +25,6 @@
     self.weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
     self.trafficUpdate = [[TrafficFetch alloc] init];
     self.geocodeService = [[GeocodeFetch alloc]init];
-    //Fetch Weather Updates
-    [self.weatherUpdate sendWeatherRequest];
-    [self.weatherUpdate setWeatherParameters];
     //Run Geocode Methods
     NSDictionary *workCoordinates = [defaults dictionaryForKey:@"workLocation"];
     if(![workCoordinates isEqual:[NSNull null]]) {
@@ -38,10 +35,6 @@
     }
     //From Geocode to TrafficFetch coordinates
     self.trafficUpdate.coordinates = [self.geocodeService boundingBoxCalculations];
-    [self.trafficUpdate sendTrafficRequest];
-    [self.trafficUpdate addTrafficIncidents];
-    [self updateWeatherLabels];
-    [self updateTrafficLabels];
     
 }
 -(void)viewWillAppear:(BOOL)animated
