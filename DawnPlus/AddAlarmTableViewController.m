@@ -31,7 +31,7 @@
     }
 }
 -(void)launchTonePickerController {
-    _selectedTitle = @"alarm";
+    _alarmDelegate.alarmName = @"alarm";
     
 }
 -(void)launchMediaPickerController {
@@ -51,7 +51,7 @@
 }
 -(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
     MPMediaItem *selectedTrack = [[mediaItemCollection items] objectAtIndex:0];
-    _selectedTitle = selectedTrack.title;
-    NSLog(@"%@ selected",_selectedTitle);
+    _alarmDelegate.alarmName = selectedTrack.title;
+    NSLog(@"%@ selected",selectedTrack.title);
 }
 @end
