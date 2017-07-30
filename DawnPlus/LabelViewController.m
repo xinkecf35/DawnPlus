@@ -10,7 +10,7 @@
 
 @implementation LabelViewController
 
-@synthesize labelTextField;
+@synthesize labelTextField,alarmDelegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,5 +22,8 @@
 }
 
 - (IBAction)labelTextField:(id)sender {
+    alarmLabel = labelTextField.text;
+    NSLog(@"%@ saving label %@",self, alarmLabel);
+    alarmDelegate.alarmName = alarmLabel;
 }
 @end

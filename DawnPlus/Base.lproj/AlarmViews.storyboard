@@ -399,11 +399,19 @@
                                     <action selector="labelTextField:" destination="tKT-dG-5Kd" eventType="editingDidEnd" id="JYM-kg-ioc"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter A Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mo-hf-adQ">
+                                <rect key="frame" x="6" y="23" width="102" height="19"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bCE-XH-Jai" firstAttribute="leading" secondItem="rxD-yX-Kxc" secondAttribute="leading" constant="6" id="8gx-Wq-eOA"/>
+                            <constraint firstItem="6Mo-hf-adQ" firstAttribute="leading" secondItem="rxD-yX-Kxc" secondAttribute="leading" constant="6" id="ARn-gS-yHF"/>
                             <constraint firstItem="bCE-XH-Jai" firstAttribute="centerX" secondItem="rxD-yX-Kxc" secondAttribute="centerX" id="K2K-ai-cfQ"/>
+                            <constraint firstItem="bCE-XH-Jai" firstAttribute="top" secondItem="6Mo-hf-adQ" secondAttribute="bottom" constant="10" id="kQB-wQ-PyC"/>
                             <constraint firstItem="bCE-XH-Jai" firstAttribute="centerY" secondItem="rxD-yX-Kxc" secondAttribute="centerY" id="oIg-sY-2O6"/>
                             <constraint firstAttribute="trailing" secondItem="bCE-XH-Jai" secondAttribute="trailing" constant="6" id="tKk-rE-EFh"/>
                         </constraints>
@@ -415,7 +423,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar2-Dw-akR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tKT-dG-5Kd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="1591"/>
+            <point key="canvasLocation" x="2349.5999999999999" y="1590.8545727136434"/>
         </scene>
     </scenes>
 </document>

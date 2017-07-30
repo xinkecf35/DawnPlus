@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AlarmDataDelegate.h"
 
-@interface LabelViewController : UIViewController <UITextFieldDelegate>
+@interface LabelViewController : UIViewController <UITextFieldDelegate> {
+    NSString *alarmLabel;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *labelTextField;
-@property (weak, nonatomic) id <AlarmDataDelegate> delegate;
+@property (weak, nonatomic) id <AlarmDataDelegate> alarmDelegate;
 
 @end

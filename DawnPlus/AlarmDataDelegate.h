@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
 @protocol AlarmDataDelegate <NSObject>
 
 @property NSArray *selectedDays;
-@property NSArray *alarmName;
+@property NSString *alarmName;
 @property NSString *soundAsset;
 @property NSNumber *enabled;
 @property NSDate *selectedTime;

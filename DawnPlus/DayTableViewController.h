@@ -14,6 +14,6 @@
     int selectedDays[7];
 }
 
-@property (weak, nonatomic) id <AlarmDataDelegate> delegate;
+@property (weak, nonatomic) id <AlarmDataDelegate> alarmDelegate;
 
 @end
