@@ -14,8 +14,9 @@
     [super viewDidLoad];
     keys = @[@"Alarm", @"Drone"];
     NSArray *objects = @[@"alarm.mp3", @"drone.m4a"];
-    tonesList = [NSDictionary dictionaryWithObject:objects forKey:keys];
+    tonesList = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"toneCell"];
+    self.clearsSelectionOnViewWillAppear = YES;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,7 +55,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *desiredFile = [tonesList objectForKey:cell.textLabel.text];
+    NSLog(@"%@", desiredFile);
     _alarmDelegate.soundAsset = desiredFile;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*
