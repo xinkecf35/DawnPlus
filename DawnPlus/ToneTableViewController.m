@@ -12,9 +12,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *keys = @[@"Alarm", @"Drone"];
+    keys = @[@"Alarm", @"Drone"];
     NSArray *objects = @[@"alarm.mp3", @"drone.m4a"];
     tonesList = [NSDictionary dictionaryWithObject:objects forKey:keys];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"toneCell"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -37,15 +39,23 @@
     return tonesList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *reuseIdentifer = @"toneCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifer forIndexPath:indexPath];
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifer];
+    }
+    cell.textLabel.text = [keys objectAtIndex:indexPath.row];
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *desiredFile = [tonesList objectForKey:cell.textLabel.text];
+    _alarmDelegate.soundAsset = desiredFile;
+}
 
 /*
 // Override to support conditional editing of the table view.

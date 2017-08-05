@@ -10,6 +10,7 @@
 #import "AlarmDataDelegate.h"
 
 @interface ToneTableViewController : UITableViewController {
+    NSArray *keys;
     NSDictionary *tonesList;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AddAlarmTableViewController.h"
+#import "ToneTableViewController.h"
 
 @implementation AddAlarmTableViewController
 
@@ -31,7 +32,9 @@
     }
 }
 -(void)launchTonePickerController {
-    _alarmDelegate.alarmName = @"alarm";
+    ToneTableViewController *toneVC = [[ToneTableViewController alloc] init];
+    toneVC.alarmDelegate = self.alarmDelegate;
+    [self.navigationController pushViewController:toneVC animated:true];
     
 }
 -(void)launchMediaPickerController {
