@@ -41,7 +41,6 @@
     [self setPrivateContext:[[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType]];
     [[self privateContext] setPersistentStoreCoordinator:coordinator];
     [[self managedObjectContext] setParentContext:[self privateContext]];
-    //Analyse the following block of code; for now this is going to black magic
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSPersistentStoreCoordinator *psc = [[self privateContext] persistentStoreCoordinator];
         NSMutableDictionary *options = [NSMutableDictionary dictionary];

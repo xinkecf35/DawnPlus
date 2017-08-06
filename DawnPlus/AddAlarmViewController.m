@@ -10,7 +10,7 @@
 
 @implementation AddAlarmViewController
 
-@synthesize timePicker, selectedDays, alarmName, enabled, selectedTime, notificationID, soundAsset;
+@synthesize timePicker, selectedDays, alarmName, enabled, selectedTime, notificationID, soundAsset,coreDataManager;
 
 -(void) viewDidLoad {
     UIBarButtonItem *saveDone = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveToCoreData)];
@@ -28,9 +28,10 @@
 }
 
 -(void)saveToCoreData {
+    
+    
+    
     NSLog(@"message saveToCoreData passed");
-    
-    
     [self dismissViewControllerAnimated:true completion:nil];
     
 }
