@@ -29,10 +29,18 @@
 
 -(void)saveToCoreData {
     AlarmObject *alarm = [NSEntityDescription insertNewObjectForEntityForName:@"AlarmObject" inManagedObjectContext:coreDataManager.managedObjectContext];
-    
-    
+    alarm.alarmTime = selectedTime;
+    alarm.soundAsset = soundAsset;
+    alarm.dayToRepeat = selectedDays;
+    alarm.enabled = YES;
+    NSString *UUID = [[NSUUID UUID] UUIDString];
+    alarm.notificationID = UUID;
+    NSError *dataError = nil;
+    if([coreDataManager.managedObjectContext save:&dataError] == NO) {
+        NSAssert(NO, @"Error saving context %@\n%@", [dataError localizedDescription], [dataError userInfo]);
+    }
     NSLog(@"message saveToCoreData passed");
-    [self dismissViewControllerAnimated:true completion:nil];
+    [self.navigationController popViewControllerAnimated:true];
     
 }
 

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSDate *alarmTime;
 @property (nullable, nonatomic, retain) NSObject *dayToRepeat;
 @property (nonatomic) BOOL enabled;
-@property (nonatomic) NSString *notificationID;
+@property (nullable, nonatomic, copy) NSString *notificationID;
 @property (nullable, nonatomic, copy) NSString *soundAsset;
 
 @end
