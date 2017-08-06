@@ -1,5 +1,5 @@
 //
-//  Alarm+CoreDataClass.h
+//  AlarmObject+CoreDataClass.h
 //  DawnPlus
 //
 //  Created by Xinke Chen on 2017-08-05.
@@ -14,10 +14,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Alarm : NSManagedObject
+@interface AlarmObject : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "Alarm+CoreDataProperties.h"
+#import "AlarmObject+CoreDataProperties.h"

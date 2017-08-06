@@ -28,7 +28,7 @@
 }
 
 -(void)saveToCoreData {
-    
+    AlarmObject *alarm = [NSEntityDescription insertNewObjectForEntityForName:@"AlarmObject" inManagedObjectContext:coreDataManager.managedObjectContext];
     
     
     NSLog(@"message saveToCoreData passed");

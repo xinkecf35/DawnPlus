@@ -1,5 +1,5 @@
 //
-//  Alarm+CoreDataClass.m
+//  AlarmObject+CoreDataClass.m
 //  DawnPlus
 //
 //  Created by Xinke Chen on 2017-08-05.
@@ -7,8 +7,8 @@
 //
 //
 
-#import "Alarm+CoreDataClass.h"
+#import "AlarmObject+CoreDataClass.h"
 
-@implementation Alarm
+@implementation AlarmObject
 
 @end

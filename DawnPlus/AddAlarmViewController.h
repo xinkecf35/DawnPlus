@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CoreDataController.h"
+#import "AlarmObject+CoreDataClass.h"
 #import "AlarmDataDelegate.h"
 #import "DayTableViewController.h"
 #import "LabelViewController.h"
