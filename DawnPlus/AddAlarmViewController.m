@@ -33,8 +33,8 @@
     alarm.soundAsset = soundAsset;
     alarm.dayToRepeat = selectedDays;
     alarm.enabled = YES;
-    NSString *UUID = [[NSUUID UUID] UUIDString];
-    alarm.notificationID = UUID;
+    alarm.label = alarmName;
+    alarm.notificationID = [[NSUUID UUID] UUIDString];
     NSError *dataError = nil;
     if([coreDataManager.managedObjectContext save:&dataError] == NO) {
         NSAssert(NO, @"Error saving context %@\n%@", [dataError localizedDescription], [dataError userInfo]);

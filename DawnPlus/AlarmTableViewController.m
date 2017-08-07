@@ -17,7 +17,7 @@
 }
 
 -(void)initializeFetchedResultsController {
-    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
     
 }
 

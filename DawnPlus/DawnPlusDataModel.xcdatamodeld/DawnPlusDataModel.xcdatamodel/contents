@@ -4,10 +4,11 @@
         <attribute name="alarmTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dayToRepeat" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="enabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notificationID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="soundAsset" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AlarmObject" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="AlarmObject" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>
