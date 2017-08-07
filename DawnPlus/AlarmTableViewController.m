@@ -14,7 +14,10 @@
 
 -(void)viewDidLoad {
     [self initializeAlarmResultsController];
-    [alarmTableView registerClass:UITableViewCell.self forCellReuseIdentifier:@"alarmCell"];
+}
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:true];
+    [coreDataManager save];
 }
 
 -(void)initializeAlarmResultsController {
@@ -47,7 +50,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
     AlarmObject *alarm = [self.alarmResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = alarm.label;
-    NSLog(@"%@",alarm);
+    NSDateFormatter *time = [[NSDateFormatter alloc] init];
+    time.dateStyle = NSDateFormatterNoStyle;
+    time.timeStyle = NSDateFormatterShortStyle;
+    cell.detailTextLabel.text = [time stringFromDate:alarm.alarmTime];
     return cell;
 }
 

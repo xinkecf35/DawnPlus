@@ -35,10 +35,7 @@
     alarm.label = alarmName;
     alarm.notificationID = [[NSUUID UUID] UUIDString];
     NSLog(@"Alarm being saved with %@",alarm);
-    NSError *dataError = nil;
-    if([coreDataManager.managedObjectContext save:&dataError] == NO) {
-        NSAssert(NO, @"Error saving context %@\n%@", [dataError localizedDescription], [dataError userInfo]);
-    }
+    
     NSLog(@"message saveToCoreData passed");
     [self.navigationController popViewControllerAnimated:true];
     
