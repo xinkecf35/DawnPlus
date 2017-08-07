@@ -16,7 +16,8 @@
     [alarmTableView registerClass:UITableViewCell.self forCellReuseIdentifier:@"alarmCell"];
 }
 
--(void)viewDidUnload {
+-(void)initializeFetchedResultsController {
+    
     
 }
 
