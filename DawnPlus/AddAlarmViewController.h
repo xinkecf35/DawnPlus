@@ -11,11 +11,12 @@
 #import "CoreDataController.h"
 #import "AlarmObject+CoreDataClass.h"
 #import "AlarmDataDelegate.h"
-#import "DayTableViewController.h"
-#import "LabelViewController.h"
+
 #import "AddAlarmTableViewController.h"
 
-@interface AddAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate>
+@interface AddAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate> {
+    AddAlarmTableViewController *embeddedVC;
+}
 
 @property (strong, nonatomic) NSArray *dayRepeat;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;

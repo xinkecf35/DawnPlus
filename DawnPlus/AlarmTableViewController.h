@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "CoreDataController.h"
+#import "AlarmObject+CoreDataClass.h"
 #import "AddAlarmViewController.h"
+
 @import UIKit;
 @import CoreData;
 
-@interface AlarmTableViewController : UITableViewController
+@interface AlarmTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *alarmTableView;
 @property (strong, nonatomic) CoreDataController *coreDataManager;
+@property (strong, nonatomic) NSFetchedResultsController *alarmResultsController;
 
-@property NSArray *alarms;
+//@property NSArray *alarms;
 
 @end

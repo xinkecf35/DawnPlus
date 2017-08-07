@@ -7,7 +7,6 @@
 //
 
 #import "AddAlarmViewController.h"
-
 @implementation AddAlarmViewController
 
 @synthesize timePicker, selectedDays, alarmName, enabled, selectedTime, notificationID, soundAsset,coreDataManager;
@@ -35,6 +34,7 @@
     alarm.enabled = YES;
     alarm.label = alarmName;
     alarm.notificationID = [[NSUUID UUID] UUIDString];
+    NSLog(@"Alarm being saved with %@",alarm);
     NSError *dataError = nil;
     if([coreDataManager.managedObjectContext save:&dataError] == NO) {
         NSAssert(NO, @"Error saving context %@\n%@", [dataError localizedDescription], [dataError userInfo]);
@@ -47,16 +47,8 @@
 //setting delegates for children
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"embedAlarmSegue"]) {
-        AddAlarmTableViewController *vc = segue.destinationViewController;
-        vc.alarmDelegate = self;
-    }
-    else if([segue.identifier isEqualToString:@"repeatSegue"]) {
-        DayTableViewController *daysViewController = segue.destinationViewController;
-        daysViewController.alarmDelegate = self;
-    }
-    else if([segue.identifier isEqualToString:@"labelSegue"]) {
-        LabelViewController *labelViewController = segue.destinationViewController;
-        labelViewController.alarmDelegate = self;
+        embeddedVC = segue.destinationViewController;
+        embeddedVC.alarmDelegate = self;
     }
 }
 @end

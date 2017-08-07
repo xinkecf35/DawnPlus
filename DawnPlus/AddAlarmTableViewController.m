@@ -54,7 +54,17 @@
 }
 -(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
     MPMediaItem *selectedTrack = [[mediaItemCollection items] objectAtIndex:0];
-    _alarmDelegate.alarmName = selectedTrack.title;
+    self.alarmDelegate.alarmName = selectedTrack.title;
     NSLog(@"%@ selected",selectedTrack.title);
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"repeatSegue"]) {
+        DayTableViewController *daysViewController = segue.destinationViewController;
+        daysViewController.alarmDelegate = self.alarmDelegate;
+    }
+    else if([segue.identifier isEqualToString:@"labelSegue"]) {
+        LabelViewController *labelViewController = segue.destinationViewController;
+        labelViewController.alarmDelegate = self.alarmDelegate;
+    }
 }
 @end

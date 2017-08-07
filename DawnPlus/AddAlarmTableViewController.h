@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "AlarmDataDelegate.h"
+#import "DayTableViewController.h"
+#import "LabelViewController.h"
 
 @interface AddAlarmTableViewController: UITableViewController <MPMediaPickerControllerDelegate>
 
