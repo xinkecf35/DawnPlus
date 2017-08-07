@@ -14,7 +14,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSDate *date = [[NSDate alloc] init];
+    NSDateFormatter *day = [[NSDateFormatter alloc] init];
+    day.dateFormat = @"EEEE";
+    NSString *dayLabel = [NSString stringWithFormat:@"My %@ Alarm", [day stringFromDate:date]];
+    labelTextField.placeholder = dayLabel;
 }
 
 - (IBAction)labelTextField:(id)sender {
