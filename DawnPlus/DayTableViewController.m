@@ -10,6 +10,8 @@
 
 @implementation DayTableViewController
 
+@synthesize alarmDelegate;
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     
@@ -20,7 +22,7 @@
     for(int i = 0; i < 7; i++) {
         [tempArray addObject:[NSNumber numberWithInt:selectedDays[i]]];
     }
-    self.delegate.selectedDays = tempArray;
+    alarmDelegate.selectedDays = tempArray;
     NSLog(@"Saved the following array %@", tempArray);
     
 }

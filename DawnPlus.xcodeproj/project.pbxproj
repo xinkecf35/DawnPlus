@@ -11,6 +11,7 @@
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
+		D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */; };
 		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
 		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
 		D02394F91E494B590011C410 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F81E494B590011C410 /* TrafficFetch.m */; };
@@ -18,6 +19,8 @@
 		D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0382A811CF4101C00905259 /* CoreLocation.framework */; };
 		D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03D957C1EE20DF30079247C /* AlarmViews.storyboard */; };
 		D042E9251F253D3C00C1691A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D042E9241F253D2300C1691A /* QuartzCore.framework */; };
+		D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D07069C71F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m */; };
+		D07069CB1F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D07069C91F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m */; };
 		D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996001D24B38C003010C8 /* Raleway-Bold.ttf */; };
 		D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */; };
 		D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996061D24B38C003010C8 /* Raleway-Italic.ttf */; };
@@ -33,6 +36,7 @@
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
 		D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */; };
 		D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */; };
+		D0B86E071F2DA719005FFCD8 /* ToneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B86E061F2DA719005FFCD8 /* ToneTableViewController.m */; };
 		D0BB2B141EE24184000092B5 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */; };
 		D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
 		D0C5F1961EEE606D005897CD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F1951EEE6063005897CD /* MediaPlayer.framework */; };
@@ -73,6 +77,8 @@
 		D016AA4F1E9A11FC004B387B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D01ED5B21ECC2B0000AA436C /* AlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewController.h; sourceTree = "<group>"; };
 		D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
+		D021B2891F2DA1C6002F2289 /* AddAlarmTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmTableViewController.h; sourceTree = "<group>"; };
+		D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmTableViewController.m; sourceTree = "<group>"; };
 		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
 		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D02394ED1E4945660011C410 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
@@ -86,6 +92,10 @@
 		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
 		D03D957F1EE20EF90079247C /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		D042E9241F253D2300C1691A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D07069C61F36C48A00BFDD2F /* AlarmObject+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlarmObject+CoreDataClass.h"; sourceTree = "<group>"; };
+		D07069C71F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AlarmObject+CoreDataClass.m"; sourceTree = "<group>"; };
+		D07069C81F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlarmObject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D07069C91F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AlarmObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D07996001D24B38C003010C8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D07996061D24B38C003010C8 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
@@ -103,6 +113,8 @@
 		D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Philadelphia - Home.gpx"; sourceTree = "<group>"; };
 		D0B33FCA1EE3B5F600CCAAB7 /* DayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTableViewController.h; sourceTree = "<group>"; };
 		D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTableViewController.m; sourceTree = "<group>"; };
+		D0B86E051F2DA719005FFCD8 /* ToneTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToneTableViewController.h; sourceTree = "<group>"; };
+		D0B86E061F2DA719005FFCD8 /* ToneTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToneTableViewController.m; sourceTree = "<group>"; };
 		D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnPlusTests.m; sourceTree = "<group>"; };
@@ -124,7 +136,7 @@
 		D0EDA1661CF3CA3C0036293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EDA1681CF3CA3C0036293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
-		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "../../../../Users/xinkecf35/Dropbox/Objective-C/DawnPlus/DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = DEVELOPER_DIR; };
+		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressResultsViewController.swift; path = SwiftClasses/AddressResultsViewController.swift; sourceTree = "<group>"; };
 		F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +219,10 @@
 		D059AB661D0B918D002CA6D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D07069C61F36C48A00BFDD2F /* AlarmObject+CoreDataClass.h */,
+				D07069C71F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m */,
+				D07069C81F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.h */,
+				D07069C91F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m */,
 				D02394E91E49454F0011C410 /* GeocodeFetch.h */,
 				D02394F51E494A260011C410 /* GeocodeFetch.m */,
 				D0A0180C1CFA783900E8EECB /* LocationFetch.h */,
@@ -268,6 +284,10 @@
 			children = (
 				D03D957F1EE20EF90079247C /* AddAlarmViewController.h */,
 				D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */,
+				D021B2891F2DA1C6002F2289 /* AddAlarmTableViewController.h */,
+				D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */,
+				D0B86E051F2DA719005FFCD8 /* ToneTableViewController.h */,
+				D0B86E061F2DA719005FFCD8 /* ToneTableViewController.m */,
 				D0B33FCA1EE3B5F600CCAAB7 /* DayTableViewController.h */,
 				D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */,
 				D07F79811F272E6B005464D1 /* LabelViewController.h */,
@@ -563,6 +583,9 @@
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
+				D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */,
+				D07069CB1F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m in Sources */,
+				D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */,
@@ -570,6 +593,7 @@
 				D6B3E7631F08C0A600177470 /* AddressResultsViewController.swift in Sources */,
 				D0D2CC201F08896B00A19E77 /* SetWorkAddressViewController.swift in Sources */,
 				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,
+				D0B86E071F2DA719005FFCD8 /* ToneTableViewController.m in Sources */,
 				D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */,
 				D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */,
 				D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */,

@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <MediaPlayer/MediaPlayer.h>
 #import "CoreDataController.h"
+#import "AlarmObject+CoreDataClass.h"
 #import "AlarmDataDelegate.h"
-#import "DayTableViewController.h"
-#import "LabelViewController.h"
 
-@interface AddAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate>
+#import "AddAlarmTableViewController.h"
+
+@interface AddAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate> {
+    AddAlarmTableViewController *embeddedVC;
+}
 
 @property (strong, nonatomic) NSArray *dayRepeat;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
