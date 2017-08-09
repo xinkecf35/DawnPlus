@@ -47,13 +47,22 @@
     return [sectionInfo numberOfObjects];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
+    MGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
     AlarmObject *alarm = [self.alarmResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = alarm.label;
     NSDateFormatter *time = [[NSDateFormatter alloc] init];
     time.dateStyle = NSDateFormatterNoStyle;
     time.timeStyle = NSDateFormatterShortStyle;
     cell.detailTextLabel.text = [time stringFromDate:alarm.alarmTime];
+    //MGSwipeTableCell Setup
+    cell.delegate = self;
+    UIColor *deleteColor = [UIColor colorWithHue:0.0 saturation:0.85 brightness:0.86 alpha:1.0];
+    MGSwipeButton *deleteButton = [MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:deleteColor];
+    UIColor *editColor = [UIColor colorWithHue:0.142 saturation:0.94 brightness:0.89 alpha:1.0];
+    MGSwipeButton *editButton = [MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:editColor];
+    cell.rightButtons = @[editButton,deleteButton];
+    cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
+    
     return cell;
 }
 
