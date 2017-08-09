@@ -7,7 +7,7 @@ target 'DawnPlus' do
 
   # Pods for DawnPlus
   pod 'DZNEmptyDataSet', '~> 1.8'
-  pod 'MGSwipeTableCell', '~> 1.5'
+  pod 'MGSwipeTableCell', '~> 1.5.6'
   pod 'SnapKit', '~> 3.2.0'
 
   target 'DawnPlusTests' do

@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="alarmCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" textLabel="8nr-3A-L01" detailTextLabel="xAm-jD-G2E" style="IBUITableViewCellStyleSubtitle" id="QKI-Na-Ym0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="alarmCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" textLabel="8nr-3A-L01" detailTextLabel="xAm-jD-G2E" style="IBUITableViewCellStyleSubtitle" id="QKI-Na-Ym0" customClass="MGSwipeTableCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="alarmView" tableViewCell="QKI-Na-Ym0" id="Oww-kf-BJw">

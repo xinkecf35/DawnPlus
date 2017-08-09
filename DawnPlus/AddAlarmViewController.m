@@ -35,7 +35,6 @@
     alarm.label = alarmName;
     alarm.notificationID = [[NSUUID UUID] UUIDString];
     NSLog(@"Alarm being saved with %@",alarm);
-    
     NSLog(@"message saveToCoreData passed");
     [self.navigationController popViewControllerAnimated:true];
     
