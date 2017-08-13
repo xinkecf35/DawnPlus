@@ -12,6 +12,7 @@
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
 		D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */; };
+		D0238D751F40A4B700F55054 /* TrafficFetchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0238D741F40A4B700F55054 /* TrafficFetchTests.m */; };
 		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
 		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
 		D02394F91E494B590011C410 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F81E494B590011C410 /* TrafficFetch.m */; };
@@ -76,6 +77,7 @@
 		D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
 		D021B2891F2DA1C6002F2289 /* AddAlarmTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmTableViewController.h; sourceTree = "<group>"; };
 		D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmTableViewController.m; sourceTree = "<group>"; };
+		D0238D741F40A4B700F55054 /* TrafficFetchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficFetchTests.m; sourceTree = "<group>"; };
 		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
 		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D02394ED1E4945660011C410 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
@@ -86,7 +88,6 @@
 		D03461A31EF3BF6F00905B4D /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = DawnPlus/Tones/alarm.mp3; sourceTree = "<group>"; };
 		D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DawnPlus.entitlements; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D03A2ED61F3EB6EC00794BE6 /* TrafficFetchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficFetchTests.m; sourceTree = "<group>"; };
 		D03A2EDC1F3EBA7F00794BE6 /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
 		D03D957F1EE20EF90079247C /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
@@ -273,7 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */,
-				D03A2ED61F3EB6EC00794BE6 /* TrafficFetchTests.m */,
+				D0238D741F40A4B700F55054 /* TrafficFetchTests.m */,
 				D0C5F18F1EEE5F97005897CD /* Info.plist */,
 			);
 			path = DawnPlusTests;
@@ -570,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0238D751F40A4B700F55054 /* TrafficFetchTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

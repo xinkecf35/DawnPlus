@@ -98,7 +98,11 @@
 
 -(NSString *)generateFilters:(NSUserDefaults *)defaults {
     NSArray *selectedOptions = [NSArray arrayWithArray:[defaults objectForKey:@"sensitivityCheckedCells"]];
-    NSArray *queryOptions = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",nil];
+    NSArray *queryOptions = [NSArray arrayWithObjects:
+                             @"accident",@"congestion",
+                             @"disabledvehicle,roadhazard,weather",
+                             @"construction"@"masstransit",
+                             @"misc,othernews,plannedevent",nil];
     NSMutableArray *neededOptions = [[NSMutableArray alloc] init];
     int index = 0;
     for (NSNumber *item in selectedOptions ) {

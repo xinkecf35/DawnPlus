@@ -11,10 +11,12 @@ import UIKit
 
 class SensitivityViewController: UITableViewController {
     //Constants and Default values
-    let trafficOptions : [String] = ["Incidents","Events","Congestion","Construction"]
+    let trafficOptions : [String] = ["Accident","Congestion",
+                                     "Road Hazard","Construction",
+                                     "Mass Transit", "Other"]
     let checkedCellsConstant : String = "sensitivityCheckedCells"
     let defaults : UserDefaults = UserDefaults.standard
-    var checkedCells:[Int] = [0,0,0,0]
+    var checkedCells:[Int] = [0,0,0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
