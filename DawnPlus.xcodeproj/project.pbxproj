@@ -13,6 +13,7 @@
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
 		D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */; };
 		D0238D751F40A4B700F55054 /* TrafficFetchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0238D741F40A4B700F55054 /* TrafficFetchTests.m */; };
+		D0238D771F40E5AC00F55054 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0238D761F40E5AC00F55054 /* OCMock.framework */; };
 		D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394ED1E4945660011C410 /* WeatherFetch.m */; };
 		D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F51E494A260011C410 /* GeocodeFetch.m */; };
 		D02394F91E494B590011C410 /* TrafficFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D02394F81E494B590011C410 /* TrafficFetch.m */; };
@@ -78,6 +79,7 @@
 		D021B2891F2DA1C6002F2289 /* AddAlarmTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmTableViewController.h; sourceTree = "<group>"; };
 		D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmTableViewController.m; sourceTree = "<group>"; };
 		D0238D741F40A4B700F55054 /* TrafficFetchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficFetchTests.m; sourceTree = "<group>"; };
+		D0238D761F40E5AC00F55054 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = "../../../Library/Developer/Xcode/DerivedData/DawnPlus-fmhkrgsksjmxoegkskvgisrlaiev/Build/Products/Debug-iphonesimulator/OCMock/OCMock.framework"; sourceTree = "<group>"; };
 		D02394E91E49454F0011C410 /* GeocodeFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeFetch.h; sourceTree = "<group>"; };
 		D02394EC1E4945660011C410 /* WeatherFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherFetch.h; sourceTree = "<group>"; };
 		D02394ED1E4945660011C410 /* WeatherFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherFetch.m; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0238D771F40E5AC00F55054 /* OCMock.framework in Frameworks */,
 				B7396558006C883399C8A7FA /* Pods_DawnPlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +198,7 @@
 		D016AA4C1E9A1168004B387B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0238D761F40E5AC00F55054 /* OCMock.framework */,
 				D042E9241F253D2300C1691A /* QuartzCore.framework */,
 				D0C5F1951EEE6063005897CD /* MediaPlayer.framework */,
 				D01553821ECEAF7600ACF012 /* CoreData.framework */,

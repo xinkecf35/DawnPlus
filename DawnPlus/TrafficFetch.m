@@ -11,7 +11,7 @@
 
 
 @implementation TrafficFetch
-@synthesize workLocation,trafficIncidents, coordinates, status;
+@synthesize workLocation,trafficIncidents, coordinates, status,userDefaults;
 
 -(id)init {
     self = [super init];
@@ -21,12 +21,12 @@
     }
     return self;
 }
--(NSURL *)generateURL {
+-(NSURL *)generateURL:(NSUserDefaults *)defaults {
     NSURLComponents *trafficURL = [[NSURLComponents alloc] init];
     trafficURL.scheme = @"https";
     trafficURL.host = @"traffic.cit.api.here.com";
     trafficURL.path = @"/traffic/6.2/incidents.json";
-    NSString *type = [NSString  stringWithString:[self generateFilters:[NSUserDefaults standardUserDefaults]]];
+    NSString *type = [NSString  stringWithString:[self generateFilters:defaults]];
     NSString *boundingBox = nil;
     if(coordinates) {
         boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f;%0.6f,%0.6f",
@@ -50,7 +50,7 @@
     return trafficURL.URL;
 }
 -(void)sendTrafficRequest {
-    NSURL *requestURL = [self generateURL];
+    NSURL *requestURL = [self generateURL:userDefaults];
     NSURLSessionDataTask *requestTask = [session dataTaskWithURL:requestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(!error) {
             if([response isKindOfClass:[NSHTTPURLResponse class]]) {

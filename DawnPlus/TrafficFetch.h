@@ -16,12 +16,14 @@
    
 }
 
+@property NSUserDefaults *userDefaults;
 @property NSDictionary *coordinates;
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;
 @property int status;
 
 -(void)sendTrafficRequest;
+-(NSURL *)generateURL:(NSUserDefaults *)defaults;
 -(NSInteger)addTrafficIncidents;
 -(NSString *)generateFilters:(NSUserDefaults *) defaults;
 
