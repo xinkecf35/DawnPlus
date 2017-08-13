@@ -10,8 +10,9 @@
 
 @interface TrafficFetch : NSObject
 {
-    NSData *trafficJSON;
+    //NSData *trafficJSON;
     NSMutableDictionary *trafficData;
+    NSURLSession *session;
    
 }
 
@@ -21,7 +22,7 @@
 @property int status;
 
 -(void)sendTrafficRequest;
--(void)addTrafficIncidents;
+-(NSInteger)addTrafficIncidents;
 -(NSString *)generateFilters:(NSUserDefaults *) defaults;
 
 

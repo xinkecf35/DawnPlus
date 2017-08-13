@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		484AC4F57086708F333A19BC /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */; };
+		B7396558006C883399C8A7FA /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EC63A41F1B94C0A4569EDC /* Pods_DawnPlusTests.framework */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
@@ -29,7 +29,6 @@
 		D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996091D24B38C003010C8 /* Raleway-Medium.ttf */; };
 		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
-		D07F797D1F271A5F005464D1 /* DawnPlusTests.m in [CP] Embed Pods Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
 		D07F79801F271A91005464D1 /* drone.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D07F797F1F271A90005464D1 /* drone.m4a */; };
 		D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F79821F272E6B005464D1 /* LabelViewController.m */; };
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
@@ -38,7 +37,6 @@
 		D0B33FCC1EE3B65700CCAAB7 /* DayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B33FCB1EE3B65600CCAAB7 /* DayTableViewController.m */; };
 		D0B86E071F2DA719005FFCD8 /* ToneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B86E061F2DA719005FFCD8 /* ToneTableViewController.m */; };
 		D0BB2B141EE24184000092B5 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */; };
-		D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */; };
 		D0C5F1961EEE606D005897CD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C5F1951EEE6063005897CD /* MediaPlayer.framework */; };
 		D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C8821D1ED1642D00D8198E /* CoreDataController.m */; };
 		D0D2CC201F08896B00A19E77 /* SetWorkAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2CC1F1F08896B00A19E77 /* SetWorkAddressViewController.swift */; };
@@ -56,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D0C5F1901EEE5F97005897CD /* PBXContainerItemProxy */ = {
+		D03A2EE11F3EBA7F00794BE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0EDA1491CF3CA3C0036293B /* Project object */;
 			proxyType = 1;
@@ -69,7 +67,6 @@
 		07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
 		380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
@@ -89,6 +86,8 @@
 		D03461A31EF3BF6F00905B4D /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = DawnPlus/Tones/alarm.mp3; sourceTree = "<group>"; };
 		D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DawnPlus.entitlements; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D03A2ED61F3EB6EC00794BE6 /* TrafficFetchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficFetchTests.m; sourceTree = "<group>"; };
+		D03A2EDC1F3EBA7F00794BE6 /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03D957D1EE20DF30079247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AlarmViews.storyboard; sourceTree = "<group>"; };
 		D03D957F1EE20EF90079247C /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		D042E9241F253D2300C1691A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -116,7 +115,6 @@
 		D0B86E051F2DA719005FFCD8 /* ToneTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToneTableViewController.h; sourceTree = "<group>"; };
 		D0B86E061F2DA719005FFCD8 /* ToneTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToneTableViewController.m; sourceTree = "<group>"; };
 		D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
-		D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnPlusTests.m; sourceTree = "<group>"; };
 		D0C5F18F1EEE5F97005897CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0C5F1951EEE6063005897CD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -128,6 +126,7 @@
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
 		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0E8F6E31D6D11BE000098FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0EC63A41F1B94C0A4569EDC /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA1511CF3CA3C0036293B /* DawnPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DawnPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,11 +141,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D0C5F1881EEE5F97005897CD /* Frameworks */ = {
+		D03A2ED91F3EBA7F00794BE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				484AC4F57086708F333A19BC /* Pods_DawnPlusTests.framework in Frameworks */,
+				B7396558006C883399C8A7FA /* Pods_DawnPlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +199,7 @@
 				D01553821ECEAF7600ACF012 /* CoreData.framework */,
 				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
 				380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */,
-				8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */,
+				D0EC63A41F1B94C0A4569EDC /* Pods_DawnPlusTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */,
+				D03A2ED61F3EB6EC00794BE6 /* TrafficFetchTests.m */,
 				D0C5F18F1EEE5F97005897CD /* Info.plist */,
 			);
 			path = DawnPlusTests;
@@ -314,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				D0EDA1511CF3CA3C0036293B /* DawnPlus.app */,
-				D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */,
+				D03A2EDC1F3EBA7F00794BE6 /* DawnPlusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,25 +352,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0C5F18A1EEE5F97005897CD /* DawnPlusTests */ = {
+		D03A2EDB1F3EBA7F00794BE6 /* DawnPlusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
+			buildConfigurationList = D03A2EE31F3EBA7F00794BE6 /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
 			buildPhases = (
-				C5DE9297B648783EE7A58147 /* [CP] Check Pods Manifest.lock */,
-				D0C5F1871EEE5F97005897CD /* Sources */,
-				D0C5F1881EEE5F97005897CD /* Frameworks */,
-				D0C5F1891EEE5F97005897CD /* Resources */,
-				6D9BB59E4D58BA05166A2296 /* [CP] Embed Pods Frameworks */,
-				609DCCC69B129EEC3C8D4AD8 /* [CP] Copy Pods Resources */,
+				B22965A5F045DEFBDCC45551 /* [CP] Check Pods Manifest.lock */,
+				D03A2ED81F3EBA7F00794BE6 /* Sources */,
+				D03A2ED91F3EBA7F00794BE6 /* Frameworks */,
+				D03A2EDA1F3EBA7F00794BE6 /* Resources */,
+				D15C70B7FDB1A32AFA468552 /* [CP] Embed Pods Frameworks */,
+				AFA1227F8AEF3468B56420B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D0C5F1911EEE5F97005897CD /* PBXTargetDependency */,
+				D03A2EE21F3EBA7F00794BE6 /* PBXTargetDependency */,
 			);
 			name = DawnPlusTests;
 			productName = DawnPlusTests;
-			productReference = D0C5F18B1EEE5F97005897CD /* DawnPlusTests.xctest */;
+			productReference = D03A2EDC1F3EBA7F00794BE6 /* DawnPlusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D0EDA1501CF3CA3C0036293B /* DawnPlus */ = {
@@ -402,8 +402,9 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Xinke Chen";
 				TargetAttributes = {
-					D0C5F18A1EEE5F97005897CD = {
+					D03A2EDB1F3EBA7F00794BE6 = {
 						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = D72NW9AP4N;
 						TestTargetID = D0EDA1501CF3CA3C0036293B;
 					};
 					D0EDA1501CF3CA3C0036293B = {
@@ -435,13 +436,13 @@
 			projectRoot = "";
 			targets = (
 				D0EDA1501CF3CA3C0036293B /* DawnPlus */,
-				D0C5F18A1EEE5F97005897CD /* DawnPlusTests */,
+				D03A2EDB1F3EBA7F00794BE6 /* DawnPlusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D0C5F1891EEE5F97005897CD /* Resources */ = {
+		D03A2EDA1F3EBA7F00794BE6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -472,37 +473,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		609DCCC69B129EEC3C8D4AD8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D9BB59E4D58BA05166A2296 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D07F797D1F271A5F005464D1 /* DawnPlusTests.m in [CP] Embed Pods Frameworks */,
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,7 +503,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C5DE9297B648783EE7A58147 /* [CP] Check Pods Manifest.lock */ = {
+		AFA1227F8AEF3468B56420B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B22965A5F045DEFBDCC45551 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -546,6 +531,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D15C70B7FDB1A32AFA468552 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */ = {
@@ -566,11 +566,10 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D0C5F1871EEE5F97005897CD /* Sources */ = {
+		D03A2ED81F3EBA7F00794BE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C5F18E1EEE5F97005897CD /* DawnPlusTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,10 +606,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D0C5F1911EEE5F97005897CD /* PBXTargetDependency */ = {
+		D03A2EE21F3EBA7F00794BE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D0EDA1501CF3CA3C0036293B /* DawnPlus */;
-			targetProxy = D0C5F1901EEE5F97005897CD /* PBXContainerItemProxy */;
+			targetProxy = D03A2EE11F3EBA7F00794BE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -642,7 +641,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D0C5F1931EEE5F97005897CD /* Debug */ = {
+		D03A2EE41F3EBA7F00794BE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */;
 			buildSettings = {
@@ -653,7 +652,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D72NW9AP4N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = DawnPlusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -665,7 +664,7 @@
 			};
 			name = Debug;
 		};
-		D0C5F1941EEE5F97005897CD /* Release */ = {
+		D03A2EE51F3EBA7F00794BE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */;
 			buildSettings = {
@@ -676,7 +675,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D72NW9AP4N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = DawnPlusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -851,11 +850,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0C5F1921EEE5F97005897CD /* Build configuration list for PBXNativeTarget "DawnPlusTests" */ = {
+		D03A2EE31F3EBA7F00794BE6 /* Build configuration list for PBXNativeTarget "DawnPlusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D0C5F1931EEE5F97005897CD /* Debug */,
-				D0C5F1941EEE5F97005897CD /* Release */,
+				D03A2EE41F3EBA7F00794BE6 /* Debug */,
+				D03A2EE51F3EBA7F00794BE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
