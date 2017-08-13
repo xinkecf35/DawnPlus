@@ -26,7 +26,7 @@
     trafficURL.scheme = @"https";
     trafficURL.host = @"traffic.cit.api.here.com";
     trafficURL.path = @"/traffic/6.2/incidents.json";
-    NSString *criticality = [NSString  stringWithString:[self generateFilters:[NSUserDefaults standardUserDefaults]]];
+    NSString *type = [NSString  stringWithString:[self generateFilters:[NSUserDefaults standardUserDefaults]]];
     NSString *boundingBox = nil;
     if(coordinates) {
         boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f;%0.6f,%0.6f",
@@ -38,14 +38,15 @@
         return nil;
     }
     NSDictionary *queryParameters = @{@"bbox":boundingBox,
-                                      @"criticality":criticality,
                                       @"app_id":HERE_APP_ID,
-                                      @"app_code":HERE_APP_CODE};
+                                      @"app_code":HERE_APP_CODE,
+                                      @"type":type};
     NSMutableArray *queryItems = [NSMutableArray array];
-    for(NSString *key in queryItems) {
+    for(NSString *key in queryParameters) {
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];
     }
     trafficURL.queryItems = queryItems;
+    NSLog(@"URL is %@",trafficURL.URL);
     return trafficURL.URL;
 }
 -(void)sendTrafficRequest {
@@ -72,10 +73,10 @@
 }
 
 -(NSInteger) addTrafficIncidents {
-    if(!trafficData) {
+    if(trafficData == nil) {
         return  -1;
     }
-    if(![trafficData objectForKey:@"TRAFFIC_ITEMS"]) {
+    if([trafficData objectForKey:@"TRAFFIC_ITEMS"] != nil) {
         NSDictionary *data = [trafficData objectForKey:@"TRAFFIC_ITEMS"];
         NSArray *rawItems = [NSArray arrayWithObject:[data objectForKey:@"TRAFFIC_ITEM"]];
         NSMutableArray *filteredItems = [[NSMutableArray alloc] init];
@@ -101,7 +102,7 @@
     NSArray *queryOptions = [NSArray arrayWithObjects:
                              @"accident",@"congestion",
                              @"disabledvehicle,roadhazard,weather",
-                             @"construction"@"masstransit",
+                             @"construction",@"masstransit",
                              @"misc,othernews,plannedevent",nil];
     NSMutableArray *neededOptions = [[NSMutableArray alloc] init];
     int index = 0;
