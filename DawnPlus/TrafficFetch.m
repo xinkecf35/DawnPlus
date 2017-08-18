@@ -12,11 +12,12 @@
 @interface TrafficFetch ()
 
 @property (readwrite) NSMutableDictionary *trafficData;
+@property (readwrite) NSInteger status;
 
 @end
 
 @implementation TrafficFetch
-@synthesize workLocation,trafficIncidents, coordinates, status,userDefaults, trafficData;
+@synthesize workLocation,trafficIncidents, coordinates, status, userDefaults, trafficData;
 
 -(id)init {
     self = [super init];
@@ -30,6 +31,8 @@
     NSURL *requestURL = [self generateURL:userDefaults];
     NSURLSessionDataTask *requestTask = [session dataTaskWithURL:requestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            status = httpResponse.statusCode;
             if([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 NSError *JSONError;
                 trafficData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
@@ -39,8 +42,7 @@
                     NSLog(@"Success on serialization, data: %@",trafficData);
                 }
             } else {
-                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                NSLog(@"Request failed, following HTTP status code: %ld", httpResponse.statusCode);
+                NSLog(@"Request failed, following HTTP status code: %ld", status);
             }
         } else {
             NSLog(@"Error on data task for TrafficFetch %@",error);

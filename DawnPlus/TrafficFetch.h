@@ -20,7 +20,7 @@
 @property NSDictionary *coordinates;
 @property NSString *workLocation;
 @property NSArray *trafficIncidents;
-@property int status;
+@property (readonly) NSInteger status;
 
 -(NSURLSessionTask *)sendTrafficRequest;
 -(NSInteger)addTrafficIncidents;
