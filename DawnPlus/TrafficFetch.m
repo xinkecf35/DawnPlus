@@ -39,7 +39,7 @@
                 if (JSONError) {
                     NSLog(@"JSON serialization screwed up for some reason");
                 } else {
-                    NSLog(@"Success on serialization, data: %@",trafficData);
+                    NSLog(@"Success on serialization, status: %ld", status);
                 }
             } else {
                 NSLog(@"Request failed, following HTTP status code: %ld", status);
