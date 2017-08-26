@@ -34,6 +34,7 @@
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
             status = httpResponse.statusCode;
             if([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                [self willChangeValueForKey:@"trafficData"];
                 NSError *JSONError;
                 trafficData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
                 if (JSONError) {
@@ -41,6 +42,7 @@
                 } else {
                     NSLog(@"Success on serialization, status: %ld", status);
                 }
+                [self didChangeValueForKey:@"trafficData"];
             } else {
                 NSLog(@"Request failed, following HTTP status code: %ld", status);
             }
@@ -59,7 +61,6 @@
     if([trafficData objectForKey:@"TRAFFIC_ITEMS"] != nil) {
         NSDictionary *data = [trafficData objectForKey:@"TRAFFIC_ITEMS"];
         NSArray *rawItems = [NSArray arrayWithArray:[data objectForKey:@"TRAFFIC_ITEM"]];
-        NSLog(@"%@",rawItems);
         NSMutableArray *filteredItems = [[NSMutableArray alloc] init];
         for (NSDictionary *item in rawItems) {
             NSMutableDictionary *incident = [[NSMutableDictionary alloc] init];
@@ -68,7 +69,7 @@
             [incident setObject:[[[item objectForKey:@"LOCATION"] objectForKey:@"GEOLOC"] objectForKey:@"ORIGIN"] forKey:@"location"];
             [incident setObject:[item objectForKey:@"TRAFFIC_ITEM_DESCRIPTION"] forKey:@"descriptions"];
             [incident setObject:[item objectForKey:@"TRAFFIC_ITEM_DETAIL"] forKey:@"detail"];
-            NSLog(@"%@ added incident %@",self, incident);
+            //NSLog(@"%@ added incident %@",self, incident);
             [filteredItems addObject:incident];
         }
         trafficIncidents = [filteredItems copy];

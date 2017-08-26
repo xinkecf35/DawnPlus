@@ -75,7 +75,9 @@
     } else if ([keyPath isEqualToString:@"trafficData"]) {
         NSLog(@"%@ observer has received message for trafficData",self);
         [trafficUpdate addTrafficIncidents];
-        [self updateTrafficLabels];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateTrafficLabels];
+        });
     }
 }
 //Interface methods
@@ -100,8 +102,10 @@
     //From Geocode to TrafficFetch coordinates
     trafficUpdate.coordinates = [geocodeService boundingBoxCalculations];
     [trafficUpdate sendTrafficRequest];
-    [self updateWeatherLabels];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateWeatherLabels];
+        
+    });
 }
 -(void) updateWeatherLabels
 {
