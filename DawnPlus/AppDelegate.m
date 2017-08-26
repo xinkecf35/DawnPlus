@@ -29,7 +29,10 @@
     //Registering default values for keys
     NSDictionary *defaults = @{
                                @"isFarenheit": [NSNumber numberWithBool:true],
-                               @"sensitivityCheckedCells" : [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:0],[NSNumber numberWithInt:1],[NSNumber numberWithInt:0], nil],
+                               @"sensitivityCheckedCells" : [NSArray arrayWithObjects:
+                                                             [NSNumber numberWithInt:1],[NSNumber numberWithInt:1],
+                                                             [NSNumber numberWithInt:1],[NSNumber numberWithInt:1],
+                                                             [NSNumber numberWithInt:1],[NSNumber numberWithInt:1], nil],
                                @"isGentleWake": [NSNumber numberWithBool:true]
                                };
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
