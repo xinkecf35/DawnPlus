@@ -1,26 +1,21 @@
 //
 //  AlarmCreateViewController.m
-//  
+//  DawnPlus
 //
-//  Created by Xinke Chen on 2017-09-17.
+//  Created by Xinke Chen on 2017-10-01.
+//  Copyright © 2017 Xinke Chen. All rights reserved.
 //
 
 #import "AlarmCreateViewController.h"
-#import "AddAlarmTableViewController.h"
-#import "ToneTableViewController.h"
-#import "DayTableViewController.h"
-#import "LabelViewController.h"
 
 @interface AlarmCreateViewController ()
 
-@property (strong, nonatomic) AddAlarmTableViewController *optionsVC;
-@property (strong, nonatomic) UIDatePicker *timePicker;
+@property (strong,nonatomic) UIDatePicker *timePicker;
+@property (strong, nonatomic) NSArray *daysToRepeat;
 
 @end
 
 @implementation AlarmCreateViewController
-
-@synthesize alarmName, selectedDays, selectedTime, notificationID, soundAsset, enabled, timePicker, optionsVC;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,15 +26,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)addDatePickerView {
-    CGRect frame = CGRectMake(0, 64, self.view.frame.size.width, 200);
-    self.timePicker = [[UIDatePicker alloc] initWithFrame:frame];
-    timePicker.datePickerMode = UIDatePickerModeTime;
-}
-
--(void)addTableView {
+-(void) addTimePickerView {
     
 }
+-(void) addAlarmTableOptionsView {
+    
+}
+
 /*
 #pragma mark - Navigation
 

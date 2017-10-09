@@ -1,18 +1,18 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
-  - MGSwipeTableCell (1.5.6)
-  - SnapKit (3.2.0)
+  - MGSwipeTableCell (1.6.1)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
-  - DZNEmptyDataSet (~> 1.8)
-  - MGSwipeTableCell (~> 1.5.6)
-  - SnapKit (~> 3.2.0)
+  - DZNEmptyDataSet (~> 1.8.1)
+  - MGSwipeTableCell (~> 1.6.1)
+  - SnapKit (~> 4.0.0)
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  MGSwipeTableCell: 19a1d65dcc1ceaea42eb44bb2adae32101904514
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 37d8ebffbf90a3a62ce0b2927614a9db228c1d4e
+PODFILE CHECKSUM: 3d4416e878a6ab8b053d95c8740ff6a00982b221
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

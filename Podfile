@@ -6,9 +6,9 @@ target 'DawnPlus' do
   use_frameworks!
 
   # Pods for DawnPlus
-  pod 'DZNEmptyDataSet', '~> 1.8'
-  pod 'MGSwipeTableCell', '~> 1.5.6'
-  pod 'SnapKit', '~> 3.2.0'
+  pod 'DZNEmptyDataSet', '~> 1.8.1'
+  pod 'MGSwipeTableCell', '~> 1.6.1'
+  pod 'SnapKit', '~> 4.0.0'
 
   target 'DawnPlusTests' do
     inherit! :search_paths
