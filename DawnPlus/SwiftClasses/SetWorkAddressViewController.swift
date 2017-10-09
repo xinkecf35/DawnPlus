@@ -72,7 +72,7 @@ class SetWorkAddressViewController:UIViewController {
         resultsController.view.removeFromSuperview()
         resultsController.removeFromParentViewController()
     }
-    func returnToSettingsandSaveAddress() {
+    @objc func returnToSettingsandSaveAddress() {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             if(self.workCoordinates != nil) {
                 self.defaults.set(self.workCoordinates, forKey: "workLocation")
@@ -83,7 +83,7 @@ class SetWorkAddressViewController:UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
-    func returnToSettingsWithoutSaving() {
+    @objc func returnToSettingsWithoutSaving() {
         NSLog("%@ workLocation is not saved ", self)
         navigationController?.popViewController(animated: true)
     }
