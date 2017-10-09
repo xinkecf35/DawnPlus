@@ -12,6 +12,7 @@ target 'DawnPlus' do
 
   target 'DawnPlusTests' do
     inherit! :search_paths
+    pod 'OCMock', '~> 3.4'
     # Pods for testing
   end
 

@@ -11,10 +11,12 @@ import UIKit
 
 class SensitivityViewController: UITableViewController {
     //Constants and Default values
-    let trafficOptions : [String] = ["Incidents","Events","Congestion","Construction"]
+    let trafficOptions : [String] = ["Accident","Congestion",
+                                     "Road Hazard","Construction",
+                                     "Mass Transit", "Other"]
     let checkedCellsConstant : String = "sensitivityCheckedCells"
     let defaults : UserDefaults = UserDefaults.standard
-    var checkedCells:[Int] = [0,0,0,0]
+    var checkedCells:[Int] = [0,0,0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +58,7 @@ class SensitivityViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sensitivityCell", for: indexPath)
         //Setting Custom Color
         let customSelectionView = UIView()
-        customSelectionView.backgroundColor = UIColor.init(colorLiteralRed: 227/255.0, green: 196/255.0, blue: 13/255.0, alpha: 1.0)
+        customSelectionView.backgroundColor = UIColor.init(hue: 0.14, saturation: 0.94, brightness: 0.89, alpha: 1.0)
         cell.selectedBackgroundView = customSelectionView;
         //Setting Text
         cell.textLabel?.text = trafficOptions[indexPath.row]
