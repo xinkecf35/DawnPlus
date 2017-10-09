@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sw3-LR-2Vh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sw3-LR-2Vh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,6 +47,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="l05-lO-JlP" kind="show" id="c2a-H6-UTY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -115,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7N-wP-ozf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5999999999999" y="1112.2938530734634"/>
+            <point key="canvasLocation" x="1602" y="47"/>
         </scene>
         <!--Repeat-->
         <scene sceneID="Kyx-8q-wl9">
@@ -281,7 +284,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KtC-cm-V9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="960"/>
+            <point key="canvasLocation" x="2402" y="-105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qP0-Cj-dBi">
@@ -289,7 +292,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sw3-LR-2Vh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rgf-F9-2Ch">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -389,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHU-CU-ejt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="1591"/>
+            <point key="canvasLocation" x="1602" y="510"/>
         </scene>
         <!--Label-->
         <scene sceneID="hcJ-bq-kgo">
@@ -440,7 +443,360 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar2-Dw-akR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tKT-dG-5Kd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2349.5999999999999" y="1590.8545727136434"/>
+            <point key="canvasLocation" x="2426" y="510"/>
+        </scene>
+        <!--Alarm-->
+        <scene sceneID="cj0-Ka-eCv">
+            <objects>
+                <viewController title="Alarm" id="l05-lO-JlP" customClass="EditAlarmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x2c-W5-UGa"/>
+                        <viewControllerLayoutGuide type="bottom" id="oST-27-nnV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="INv-Sh-sN5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tbm-Ib-2pB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="517126412.96390301">
+                                    <!--2017-05-22 06:13:32 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                                <connections>
+                                    <action selector="pickerTimeChanged:forEvent:" destination="l05-lO-JlP" eventType="valueChanged" id="cux-NM-1x6"/>
+                                </connections>
+                            </datePicker>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-Qo-fMm">
+                                <rect key="frame" x="0.0" y="288" width="375" height="135"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="5HH-W4-us9" kind="embed" identifier="embedAlarmSegue" id="1X3-Vb-zXW"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="timePicker" destination="Tbm-Ib-2pB" id="qBV-MP-vDN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEa-iW-gAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="1035"/>
+        </scene>
+        <!--Repeat-->
+        <scene sceneID="fCn-3C-wWA">
+            <objects>
+                <tableViewController title="Repeat" id="4Ne-6i-jQ7" customClass="DayTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dCK-Td-ktR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="2fT-M8-02W">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zqy-qr-unk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zqy-qr-unk" id="C67-nC-YGp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfn-dC-uYG">
+                                                    <rect key="frame" x="18" y="11.5" width="67.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mfn-dC-uYG" firstAttribute="leading" secondItem="C67-nC-YGp" secondAttribute="leadingMargin" constant="10" id="V5m-pq-JJo"/>
+                                                <constraint firstItem="mfn-dC-uYG" firstAttribute="centerY" secondItem="C67-nC-YGp" secondAttribute="centerY" id="bsR-kh-qDS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2vb-O4-dQH">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2vb-O4-dQH" id="HX5-a0-Xyb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-rO-TYQ">
+                                                    <rect key="frame" x="18" y="11.5" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pbB-rO-TYQ" firstAttribute="centerY" secondItem="HX5-a0-Xyb" secondAttribute="centerY" id="8Lm-4N-HZ7"/>
+                                                <constraint firstItem="pbB-rO-TYQ" firstAttribute="leading" secondItem="HX5-a0-Xyb" secondAttribute="leadingMargin" constant="10" id="DeW-gG-3Yh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UK6-3c-16v">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UK6-3c-16v" id="iUh-R2-oks">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHY-Cg-u3m">
+                                                    <rect key="frame" x="18" y="11.5" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GHY-Cg-u3m" firstAttribute="leading" secondItem="iUh-R2-oks" secondAttribute="leadingMargin" constant="10" id="S2n-TX-72r"/>
+                                                <constraint firstItem="GHY-Cg-u3m" firstAttribute="centerY" secondItem="iUh-R2-oks" secondAttribute="centerY" id="erg-1g-dXp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ikr-XJ-JlM">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ikr-XJ-JlM" id="HYa-Xc-63z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cp2-Tb-m8b">
+                                                    <rect key="frame" x="18" y="11.5" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cp2-Tb-m8b" firstAttribute="leading" secondItem="HYa-Xc-63z" secondAttribute="leadingMargin" constant="10" id="fOf-Xb-AbU"/>
+                                                <constraint firstItem="Cp2-Tb-m8b" firstAttribute="centerY" secondItem="HYa-Xc-63z" secondAttribute="centerY" id="tmA-ux-jMS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nke-MS-GzS">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nke-MS-GzS" id="JTC-Y1-4eM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC1-Fe-kkR">
+                                                    <rect key="frame" x="18" y="11.5" width="51" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MC1-Fe-kkR" firstAttribute="leading" secondItem="JTC-Y1-4eM" secondAttribute="leadingMargin" constant="10" id="nad-ho-fbX"/>
+                                                <constraint firstItem="MC1-Fe-kkR" firstAttribute="centerY" secondItem="JTC-Y1-4eM" secondAttribute="centerY" id="wQc-nd-lbx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TvG-EW-uWy">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TvG-EW-uWy" id="HlU-ps-oXc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-Ty-7Gb">
+                                                    <rect key="frame" x="18" y="11.5" width="74" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jQZ-Ty-7Gb" firstAttribute="centerY" secondItem="HlU-ps-oXc" secondAttribute="centerY" id="ard-cr-JlJ"/>
+                                                <constraint firstItem="jQZ-Ty-7Gb" firstAttribute="leading" secondItem="HlU-ps-oXc" secondAttribute="leadingMargin" constant="10" id="vLR-KQ-ShS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Q7h-8v-4BV">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q7h-8v-4BV" id="Ucf-hv-hre">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuN-KW-m4v">
+                                                    <rect key="frame" x="18" y="11.5" width="63" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MuN-KW-m4v" firstAttribute="leading" secondItem="Ucf-hv-hre" secondAttribute="leadingMargin" constant="10" id="5Lu-Bc-W3p"/>
+                                                <constraint firstItem="MuN-KW-m4v" firstAttribute="centerY" secondItem="Ucf-hv-hre" secondAttribute="centerY" id="Ke4-2w-5WI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="4Ne-6i-jQ7" id="aIB-SA-F3l"/>
+                            <outlet property="delegate" destination="4Ne-6i-jQ7" id="83l-vC-PsR"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="330"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoK-Ew-Foh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="882"/>
+        </scene>
+        <!--Add Alarm Table View Controller-->
+        <scene sceneID="SuO-XU-Wxs">
+            <objects>
+                <tableViewController id="5HH-W4-us9" customClass="AddAlarmTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="u5P-vY-VyV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="UcU-MS-HcC">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repeatCell" id="95v-Ik-zHL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="95v-Ik-zHL" id="S8Z-PH-yn4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPo-Ta-iX9">
+                                                    <rect key="frame" x="18" y="11.5" width="59.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nPo-Ta-iX9" firstAttribute="leading" secondItem="S8Z-PH-yn4" secondAttribute="leadingMargin" constant="10" id="4iz-ql-nds"/>
+                                                <constraint firstItem="nPo-Ta-iX9" firstAttribute="centerY" secondItem="S8Z-PH-yn4" secondAttribute="centerY" id="9N1-Kv-d1d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4Ne-6i-jQ7" kind="show" identifier="repeatSegue" id="ewt-vq-h3a">
+                                                <nil key="action"/>
+                                            </segue>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mediaCell" id="Ns0-UT-owg">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ns0-UT-owg" id="xr1-PI-HZJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tg-9t-e6t">
+                                                    <rect key="frame" x="18" y="11.5" width="54.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1tg-9t-e6t" firstAttribute="centerY" secondItem="xr1-PI-HZJ" secondAttribute="centerY" id="WH5-Bw-OI4"/>
+                                                <constraint firstItem="1tg-9t-e6t" firstAttribute="leading" secondItem="xr1-PI-HZJ" secondAttribute="leadingMargin" constant="10" id="hRI-S8-hXU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="labelCell" id="97b-lX-sYW">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97b-lX-sYW" id="sKp-BE-Hnb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlh-Wx-sHU">
+                                                    <rect key="frame" x="18" y="11.5" width="47" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dlh-Wx-sHU" firstAttribute="centerY" secondItem="sKp-BE-Hnb" secondAttribute="centerY" id="XoJ-Xh-J6C"/>
+                                                <constraint firstItem="dlh-Wx-sHU" firstAttribute="leading" secondItem="sKp-BE-Hnb" secondAttribute="leadingMargin" constant="10" id="uJg-2A-c6e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SD2-mI-bb7" kind="show" identifier="labelSegue" id="sRh-uV-aBQ">
+                                                <nil key="action"/>
+                                            </segue>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="5HH-W4-us9" id="icR-yV-Vmb"/>
+                            <outlet property="delegate" destination="5HH-W4-us9" id="GQu-33-Vxa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ok-gR-bDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="1498"/>
+        </scene>
+        <!--Label-->
+        <scene sceneID="q9e-2q-gGP">
+            <objects>
+                <viewController title="Label" id="SD2-mI-bb7" customClass="LabelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pmW-Yy-bK6"/>
+                        <viewControllerLayoutGuide type="bottom" id="1uM-pX-Yar"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yYj-Z9-r4m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AjU-Uc-kJS">
+                                <rect key="frame" x="6" y="52" width="363" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6Rj-2p-yZJ"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="labelTextField:" destination="SD2-mI-bb7" eventType="editingDidEnd" id="Bah-9S-jbn"/>
+                                    <action selector="labelTextField:" destination="42X-8P-HbU" eventType="editingDidEnd" id="g4y-Jl-6Uj"/>
+                                    <action selector="labelTextField:" destination="tKT-dG-5Kd" eventType="editingDidEnd" id="mOa-yR-nt0"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter A Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-Ns-ngp">
+                                <rect key="frame" x="6" y="23" width="102" height="19"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sXA-Ns-ngp" firstAttribute="leading" secondItem="yYj-Z9-r4m" secondAttribute="leading" constant="6" id="Pya-P1-dYe"/>
+                            <constraint firstItem="AjU-Uc-kJS" firstAttribute="centerX" secondItem="yYj-Z9-r4m" secondAttribute="centerX" id="fm7-El-jxR"/>
+                            <constraint firstItem="AjU-Uc-kJS" firstAttribute="centerY" secondItem="yYj-Z9-r4m" secondAttribute="centerY" id="o6F-bU-SKW"/>
+                            <constraint firstItem="AjU-Uc-kJS" firstAttribute="leading" secondItem="yYj-Z9-r4m" secondAttribute="leading" constant="6" id="vWU-KJ-O5c"/>
+                            <constraint firstAttribute="trailing" secondItem="AjU-Uc-kJS" secondAttribute="trailing" constant="6" id="x1L-cd-ZrD"/>
+                            <constraint firstItem="AjU-Uc-kJS" firstAttribute="top" secondItem="sXA-Ns-ngp" secondAttribute="bottom" constant="10" id="ypc-HZ-sO4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelTextField" destination="AjU-Uc-kJS" id="lSf-yt-PgY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBj-Um-txb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="42X-8P-HbU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2402" y="1498"/>
         </scene>
     </scenes>
 </document>

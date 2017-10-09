@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B7396558006C883399C8A7FA /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EC63A41F1B94C0A4569EDC /* Pods_DawnPlusTests.framework */; };
+
+		484AC4F57086708F333A19BC /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */; };
+		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
@@ -46,6 +48,7 @@
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
 		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
+		D0E9049C1F5E4EC90029948E /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E9049B1F5E4EC90029948E /* EditAlarmViewController.m */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
 		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
 		D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */; };
@@ -69,6 +72,9 @@
 		07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
 		380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC96FBECD76CF0E8137F967 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmCreateViewController.h; sourceTree = "<group>"; };
+		8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmCreateViewController.m; sourceTree = "<group>"; };
 		BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
@@ -129,7 +135,8 @@
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
 		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0E8F6E31D6D11BE000098FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D0EC63A41F1B94C0A4569EDC /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E9049A1F5E4EC90029948E /* EditAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditAlarmViewController.h; sourceTree = "<group>"; };
+		D0E9049B1F5E4EC90029948E /* EditAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditAlarmViewController.m; sourceTree = "<group>"; };
 		D0EDA1511CF3CA3C0036293B /* DawnPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DawnPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -287,8 +294,12 @@
 		D0D911A11EEE61EB008A2CF8 /* AlarmControlClasses */ = {
 			isa = PBXGroup;
 			children = (
+				8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */,
+				8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */,
 				D03D957F1EE20EF90079247C /* AddAlarmViewController.h */,
 				D0BB2B131EE24184000092B5 /* AddAlarmViewController.m */,
+				D0E9049A1F5E4EC90029948E /* EditAlarmViewController.h */,
+				D0E9049B1F5E4EC90029948E /* EditAlarmViewController.m */,
 				D021B2891F2DA1C6002F2289 /* AddAlarmTableViewController.h */,
 				D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */,
 				D0B86E051F2DA719005FFCD8 /* ToneTableViewController.h */,
@@ -524,9 +535,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -544,7 +562,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DawnPlusTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DawnPlus-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -557,16 +575,17 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+				"$(DERIVED_FILE_DIR)/Pods-DawnPlusTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */ = {
@@ -601,10 +620,12 @@
 			files = (
 				D0BB2B141EE24184000092B5 /* AddAlarmViewController.m in Sources */,
 				D02394F91E494B590011C410 /* TrafficFetch.m in Sources */,
+				8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */,
+				D0E9049C1F5E4EC90029948E /* EditAlarmViewController.m in Sources */,
 				D07069CB1F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m in Sources */,
 				D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,

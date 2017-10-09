@@ -2,7 +2,7 @@
 //  AlarmObject+CoreDataProperties.m
 //  DawnPlus
 //
-//  Created by Xinke Chen on 2017-08-07.
+//  Created by Xinke Chen on 2017-08-31.
 //  Copyright © 2017 Xinke Chen. All rights reserved.
 //
 //
@@ -18,8 +18,8 @@
 @dynamic alarmTime;
 @dynamic dayToRepeat;
 @dynamic enabled;
+@dynamic label;
 @dynamic notificationID;
 @dynamic soundAsset;
-@dynamic label;
 
 @end
