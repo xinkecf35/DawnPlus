@@ -10,9 +10,13 @@
 
 @interface EditAlarmViewController ()
 
+@property (strong, nonatomic) UIDatePicker *timePicker;
+
 @end
 
 @implementation EditAlarmViewController
+
+@synthesize enabled, soundAsset, alarmName, notificationID, selectedDays, selectedTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,5 +37,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

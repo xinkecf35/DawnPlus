@@ -22,6 +22,7 @@ class SetWorkAddressViewController:UIViewController {
     //UIKit Methods
     override func viewDidLoad() {
         coordinate = LocationFetch.sharedInstance().currentLocation.coordinate
+        //Handle nil here more gracefully
         definesPresentationContext = true;
         configureSearchView()
         configureMapView()

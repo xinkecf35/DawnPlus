@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
 @property (weak, nonatomic) IBOutlet UIButton *trafficInfo;
-@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
+@property (weak, nonatomic) IBOutlet UIButton *weatherIcon;
 
 
 //-(IBAction)toggleSettings:(id)sender;

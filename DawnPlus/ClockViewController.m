@@ -118,7 +118,7 @@
     self.weatherTemperature.text = temp;
     
     UIImage *currentIcon = [UIImage imageNamed:weatherUpdate.currentCondition];
-    weatherIcon.image = currentIcon;
+    [weatherIcon setImage:currentIcon forState:UIControlStateNormal];
     //Logging displays of weather UILabels
     NSLog(@"%@ method updateWeatherLabels displaying temperature of %@ and icon %@",self, temp,weatherUpdate.currentCondition);
 }
