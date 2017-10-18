@@ -90,11 +90,11 @@ class SetWorkAddressViewController:UIViewController {
     }
     func configureConfirmAddressView() {
         //Creating Parent View for Buttons
-        let frame = CGRect(x: 0.0, y: view.frame.height - 54.0, width: view.frame.width, height: 54.0)
+        let frame = CGRect(x: 0.0, y: view.frame.height - 84.0, width: view.frame.width, height: 84.0)
         let confirmAddressView = UIView(frame: frame)
         confirmAddressView.backgroundColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
         let buttonWidth = view.frame.width/2
-        let buttonHeight = 54.0
+        let buttonHeight = 84.0
         let leftFrame = CGRect(x: 0.0, y: 0.0, width: Double(buttonWidth), height: buttonHeight)
         let rightFrame = CGRect(x: Double(buttonWidth), y: 0.0, width: Double(buttonWidth), height: buttonHeight)
         //Defining Okay Button
