@@ -26,14 +26,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
-                                <rect key="frame" x="321" y="54" width="44" height="44"/>
+                                <rect key="frame" x="319" y="59" width="44" height="44"/>
                                 <state key="normal" image="menu-icon"/>
                                 <connections>
                                     <segue destination="I9b-wB-0WW" kind="presentation" id="Tgn-uI-URO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="66" y="324" width="243" height="64"/>
+                                <rect key="frame" x="67.666666666666686" y="324" width="239.66666666666663" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Tc9-rk-LD5"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSn-Xd-C2i" userLabel="toggleAlarmView">
-                                <rect key="frame" x="10" y="54" width="44" height="44"/>
+                                <rect key="frame" x="12" y="59" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
                                 <connections>
                                     <segue destination="642-wV-8S4" kind="presentation" identifier="AlarmViewSegue" id="j62-JO-rPi"/>
@@ -70,14 +70,13 @@
                         <constraints>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0eX-hs-QeC"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="Ae5-X3-ddE" secondAttribute="bottom" constant="25" id="1z4-0x-wPW"/>
-                            <constraint firstItem="9UH-Om-Iqo" firstAttribute="trailing" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="10" id="6Z7-Mn-qg2"/>
+                            <constraint firstItem="9UH-Om-Iqo" firstAttribute="trailing" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="12" id="6Z7-Mn-qg2"/>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="centerY" secondItem="fJd-ZD-pd0" secondAttribute="centerY" id="ABC-5N-0B2"/>
+                            <constraint firstItem="yeb-D7-7G5" firstAttribute="centerY" secondItem="YSn-Xd-C2i" secondAttribute="centerY" id="GAF-q2-6rh"/>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="leading" secondItem="fJd-ZD-pd0" secondAttribute="trailing" constant="5" id="IYa-X0-AtE"/>
-                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="top" secondItem="9UH-Om-Iqo" secondAttribute="top" constant="10" id="P7d-b5-M3B"/>
-                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="YSn-Xd-C2i" secondAttribute="top" id="QCr-U0-3mN"/>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="top" secondItem="fJd-ZD-pd0" secondAttribute="top" id="T8s-xb-iOx"/>
-                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="9UH-Om-Iqo" secondAttribute="top" constant="10" id="VI2-M5-wF9"/>
-                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="9UH-Om-Iqo" secondAttribute="leading" constant="10" id="Vpv-pI-eMG"/>
+                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="9UH-Om-Iqo" secondAttribute="top" constant="15" id="VI2-M5-wF9"/>
+                            <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="9UH-Om-Iqo" secondAttribute="leading" constant="12" id="Vpv-pI-eMG"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="9UH-Om-Iqo" secondAttribute="centerX" id="WRC-SD-jBV"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="XPu-9T-aFH">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
@@ -94,16 +93,14 @@
                                 <exclude reference="fJd-ZD-pd0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6Z7-Mn-qg2"/>
-                                <exclude reference="P7d-b5-M3B"/>
-                                <exclude reference="Vpv-pI-eMG"/>
                                 <exclude reference="f8c-dT-79k"/>
                                 <exclude reference="hTV-oa-fIj"/>
+                                <exclude reference="cIo-0C-KQ8"/>
+                                <exclude reference="6Z7-Mn-qg2"/>
+                                <exclude reference="Vpv-pI-eMG"/>
+                                <exclude reference="VI2-M5-wF9"/>
                                 <exclude reference="1z4-0x-wPW"/>
                                 <exclude reference="XPu-9T-aFH"/>
-                                <exclude reference="cIo-0C-KQ8"/>
-                                <exclude reference="QCr-U0-3mN"/>
-                                <exclude reference="VI2-M5-wF9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -113,16 +110,14 @@
                                 <include reference="fJd-ZD-pd0"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6Z7-Mn-qg2"/>
-                                <include reference="P7d-b5-M3B"/>
-                                <include reference="Vpv-pI-eMG"/>
                                 <include reference="f8c-dT-79k"/>
                                 <include reference="hTV-oa-fIj"/>
+                                <include reference="cIo-0C-KQ8"/>
+                                <include reference="6Z7-Mn-qg2"/>
+                                <include reference="Vpv-pI-eMG"/>
+                                <include reference="VI2-M5-wF9"/>
                                 <include reference="1z4-0x-wPW"/>
                                 <include reference="XPu-9T-aFH"/>
-                                <include reference="cIo-0C-KQ8"/>
-                                <include reference="QCr-U0-3mN"/>
-                                <include reference="VI2-M5-wF9"/>
                             </mask>
                         </variation>
                     </view>
@@ -135,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143.19999999999999" y="385.71428571428572"/>
+            <point key="canvasLocation" x="-144.375" y="385.56338028169017"/>
         </scene>
         <!--SettingsView-->
         <scene sceneID="LFo-5M-ry6">
