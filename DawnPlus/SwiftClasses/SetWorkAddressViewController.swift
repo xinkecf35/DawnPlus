@@ -24,36 +24,59 @@ class SetWorkAddressViewController:UIViewController {
         coordinate = LocationFetch.sharedInstance().currentLocation.coordinate
         //Handle nil here more gracefully
         definesPresentationContext = true;
-        configureSearchView()
         configureMapView()
+        configureSearchView()
         super.viewDidLoad()
+        view.layoutSubviews()
+        debugPrint(searchBar.frame)
     }
     //Configure Views
     func configureMapView() {
+        let frame = CGRect(x: 0, y: 0, width: 300, height: 400)
+        mapView.frame = frame
         let span = MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
         view.addSubview(mapView)
-        let navigationBarHeight = self.navigationController!.navigationBar.frame.height + 20
-        debugPrint(navigationBarHeight)
-        mapView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(view).offset(navigationBarHeight)
-            make.right.equalTo(view)
-            make.bottom.equalTo(view)
-            make.left.equalTo(view)
+        if #available(iOS 11, *) {
+            mapView.snp.makeConstraints ({ (make) -> Void in
+                let safeArea = view.safeAreaLayoutGuide
+                make.edges.equalTo(safeArea.snp.edges)
+            })
+        } else {
+            mapView.snp.makeConstraints({ (make) -> Void in
+                make.top.equalTo(topLayoutGuide.snp.bottom)
+                make.right.equalTo(view)
+                make.bottom.equalTo(view)
+                make.left.equalTo(view)
+            })
         }
+        mapView.setNeedsLayout()
     }
     func configureSearchView() {
+        let frame = CGRect(x: 20, y: 40, width: 200, height: 44)
+        searchBar.frame = frame
         searchBar.searchBarStyle = UISearchBarStyle.minimal
         searchBar.delegate = self
         searchBar.placeholder = "Search for your Work"
-//        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
-//        let searchBarFrame = CGRect(x: 0, y: navigationBarHeight + 22, width: view.frame.width, height: 44)
-//        searchBar.frame = searchBarFrame
-//        view.addSubview(searchBar)
-        navigationItem.titleView = searchBar
-        searchBar.sizeToFit()
+        view.addSubview(searchBar)
+        if #available(iOS 11, *) {
+            searchBar.snp.makeConstraints({(make) -> Void in
+                let safeArea = view.safeAreaLayoutGuide
+                make.top.equalTo(safeArea).offset(10)
+                make.height.equalTo(44);
+                make.left.equalTo(safeArea.snp.left).offset(10)
+                make.right.equalTo(safeArea.snp.right).offset(-10)
+            })
+        }
+        searchBar.snp.makeConstraints({(make) -> Void in
+            make.top.equalTo(topLayoutGuide.snp.bottom).offset(10)
+            make.height.equalTo(44);
+            make.left.equalTo(view.snp.left).offset(10)
+            make.right.equalTo(view.snp.right).offset(-10)
+        })
+        searchBar.setNeedsLayout()
         debugPrint("Added Search Bar View")
     }
     func displayResultsController() {
@@ -92,7 +115,7 @@ class SetWorkAddressViewController:UIViewController {
         //Creating Parent View for Buttons
         let frame = CGRect(x: 20.0, y: view.frame.height - 84.0, width: view.frame.width - 40 , height: 64.0)
         let confirmAddressView = UIView(frame: frame)
-        confirmAddressView.layer.cornerRadius = 8
+        confirmAddressView.layer.cornerRadius = 9
         confirmAddressView.layer.masksToBounds = true;
         confirmAddressView.backgroundColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
         let buttonWidth = (view.frame.width-40)/2

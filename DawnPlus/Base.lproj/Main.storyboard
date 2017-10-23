@@ -103,9 +103,9 @@
                                 <exclude reference="cIo-0C-KQ8"/>
                                 <exclude reference="6Z7-Mn-qg2"/>
                                 <exclude reference="Vpv-pI-eMG"/>
-                                <exclude reference="VI2-M5-wF9"/>
                                 <exclude reference="1z4-0x-wPW"/>
                                 <exclude reference="XPu-9T-aFH"/>
+                                <exclude reference="VI2-M5-wF9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -120,9 +120,9 @@
                                 <include reference="cIo-0C-KQ8"/>
                                 <include reference="6Z7-Mn-qg2"/>
                                 <include reference="Vpv-pI-eMG"/>
-                                <include reference="VI2-M5-wF9"/>
                                 <include reference="1z4-0x-wPW"/>
                                 <include reference="XPu-9T-aFH"/>
+                                <include reference="VI2-M5-wF9"/>
                             </mask>
                         </variation>
                     </view>
@@ -529,7 +529,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="I9b-wB-0WW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qlf-hA-lpx">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
