@@ -61,20 +61,21 @@ class SetWorkAddressViewController:UIViewController {
         searchBar.delegate = self
         searchBar.placeholder = "Search for your Work"
         view.addSubview(searchBar)
+        let searchMargin = 5
         if #available(iOS 11, *) {
             searchBar.snp.makeConstraints({(make) -> Void in
                 let safeArea = view.safeAreaLayoutGuide
-                make.top.equalTo(safeArea).offset(10)
+                make.top.equalTo(safeArea).offset(searchMargin)
                 make.height.equalTo(44);
-                make.left.equalTo(safeArea.snp.left).offset(10)
-                make.right.equalTo(safeArea.snp.right).offset(-10)
+                make.left.equalTo(safeArea.snp.left).offset(searchMargin)
+                make.right.equalTo(safeArea.snp.right).offset(-searchMargin)
             })
         }
         searchBar.snp.makeConstraints({(make) -> Void in
-            make.top.equalTo(topLayoutGuide.snp.bottom).offset(10)
+            make.top.equalTo(topLayoutGuide.snp.bottom).offset(searchMargin)
             make.height.equalTo(44);
-            make.left.equalTo(view.snp.left).offset(10)
-            make.right.equalTo(view.snp.right).offset(-10)
+            make.left.equalTo(view.snp.left).offset(searchMargin)
+            make.right.equalTo(view.snp.right).offset(-searchMargin)
         })
         searchBar.setNeedsLayout()
         debugPrint("Added Search Bar View")
@@ -87,14 +88,14 @@ class SetWorkAddressViewController:UIViewController {
         if #available(iOS 11, *) {
             resultsController.view.snp.makeConstraints({(make) -> Void in
                 let safeArea = view.safeAreaLayoutGuide
-                make.top.equalTo(safeArea).offset(70)
+                make.top.equalTo(searchBar.snp.bottom).offset(5)
                 make.left.equalTo(safeArea.snp.left)
                 make.right.equalTo(safeArea.snp.right)
                 make.bottom.equalTo(safeArea.snp.bottom)
             })
         } else {
             resultsController.view.snp.makeConstraints({(make) -> Void in
-                make.top.equalTo(topLayoutGuide.snp.bottom).offset(70)
+                make.top.equalTo(searchBar.snp.bottom).offset(5)
                 make.right.equalTo(view)
                 make.left.equalTo(view)
                 make.bottom.equalTo(view)
