@@ -84,12 +84,27 @@ class SetWorkAddressViewController:UIViewController {
         resultsController = storyboard.instantiateViewController(withIdentifier: "AddressResultsTable") as! AddressResultsViewController
         addChildViewController(resultsController)
         view.addSubview(resultsController.view)
-        resultsController.view.snp.makeConstraints{ (make) -> Void in
-            make.edges.equalTo(mapView)
+        if #available(iOS 11, *) {
+            resultsController.view.snp.makeConstraints({(make) -> Void in
+                let safeArea = view.safeAreaLayoutGuide
+                make.top.equalTo(safeArea).offset(70)
+                make.left.equalTo(safeArea.snp.left)
+                make.right.equalTo(safeArea.snp.right)
+                make.bottom.equalTo(safeArea.snp.bottom)
+            })
+        } else {
+            resultsController.view.snp.makeConstraints({(make) -> Void in
+                make.top.equalTo(topLayoutGuide.snp.bottom).offset(70)
+                make.right.equalTo(view)
+                make.left.equalTo(view)
+                make.bottom.equalTo(view)
+            })
         }
+        resultsController.view.setNeedsLayout()
         resultsController.didMove(toParentViewController: self)
         resultsController.mapView = mapView
         resultsController.mapSearchDelegate = self
+        view.layoutSubviews()
     }
     func dismissResultsController() {
         resultsController.willMove(toParentViewController: nil)
@@ -146,7 +161,6 @@ extension SetWorkAddressViewController:UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.navigationItem.setHidesBackButton(true, animated: true)
         searchBar.setShowsCancelButton(true, animated: true)
-        searchBar.sizeToFit()
         searchBar.becomeFirstResponder()
         displayResultsController()
     }
@@ -164,7 +178,6 @@ extension SetWorkAddressViewController:UISearchBarDelegate {
         searchBar.text = ""
         searchBar.showsCancelButton = false
         self.navigationItem.hidesBackButton = false
-        searchBar.sizeToFit()
         searchBar.resignFirstResponder()
         dismissResultsController()
     }
