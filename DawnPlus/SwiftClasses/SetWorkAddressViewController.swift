@@ -57,11 +57,12 @@ class SetWorkAddressViewController:UIViewController {
     func configureSearchView() {
         let frame = CGRect(x: 20, y: 40, width: 200, height: 44)
         searchBar.frame = frame
-        searchBar.searchBarStyle = UISearchBarStyle.minimal
+        searchBar.searchBarStyle = UISearchBarStyle.prominent
+        searchBar.isTranslucent = true
         searchBar.delegate = self
         searchBar.placeholder = "Search for your Work"
         view.addSubview(searchBar)
-        let searchMargin = 5
+        let searchMargin = 0
         if #available(iOS 11, *) {
             searchBar.snp.makeConstraints({(make) -> Void in
                 let safeArea = view.safeAreaLayoutGuide
@@ -88,14 +89,14 @@ class SetWorkAddressViewController:UIViewController {
         if #available(iOS 11, *) {
             resultsController.view.snp.makeConstraints({(make) -> Void in
                 let safeArea = view.safeAreaLayoutGuide
-                make.top.equalTo(searchBar.snp.bottom).offset(5)
+                make.top.equalTo(searchBar.snp.bottom).offset(0)
                 make.left.equalTo(safeArea.snp.left)
                 make.right.equalTo(safeArea.snp.right)
                 make.bottom.equalTo(safeArea.snp.bottom)
             })
         } else {
             resultsController.view.snp.makeConstraints({(make) -> Void in
-                make.top.equalTo(searchBar.snp.bottom).offset(5)
+                make.top.equalTo(searchBar.snp.bottom).offset(0)
                 make.right.equalTo(view)
                 make.left.equalTo(view)
                 make.bottom.equalTo(view)
@@ -160,10 +161,10 @@ class SetWorkAddressViewController:UIViewController {
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.navigationItem.setHidesBackButton(true, animated: true)
         searchBar.setShowsCancelButton(true, animated: true)
         searchBar.becomeFirstResponder()
         displayResultsController()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         finishSearch()
@@ -178,9 +179,9 @@ extension SetWorkAddressViewController:UISearchBarDelegate {
     func finishSearch() {
         searchBar.text = ""
         searchBar.showsCancelButton = false
-        self.navigationItem.hidesBackButton = false
         searchBar.resignFirstResponder()
         dismissResultsController()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 extension SetWorkAddressViewController: addressMapSearch {
