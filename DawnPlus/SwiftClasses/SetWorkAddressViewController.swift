@@ -130,10 +130,17 @@ class SetWorkAddressViewController:UIViewController {
     }
     func configureConfirmAddressView() {
         //Creating Parent View for Buttons
-        let frame = CGRect(x: 20.0, y: view.frame.height - 84.0, width: view.frame.width - 40 , height: 64.0)
+        let frame = CGRect(x: 20.0, y: view.frame.height - 100.0, width: view.frame.width - 40 , height: 64.0)
         let confirmAddressView = UIView(frame: frame)
         confirmAddressView.layer.cornerRadius = 9
         confirmAddressView.layer.masksToBounds = true;
+        confirmAddressView.snp.makeConstraints({(make) -> Void in
+            let edgeOffset = 10
+            if #available(iOS 11, *) {
+                let safeArea = view.safeAreaLayoutGuide
+                make.bottom.equalTo(safeArea.snp.bottom).offset(edgeOffset)
+            }
+        })
         confirmAddressView.backgroundColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
         let buttonWidth = (view.frame.width-40)/2
         let buttonHeight = 64.0
@@ -157,6 +164,7 @@ class SetWorkAddressViewController:UIViewController {
         //Adding View into SuperView
         confirmAddressView.isUserInteractionEnabled = true
         view.addSubview(confirmAddressView)
+        confirmAddressView.setNeedsLayout()
     }
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
@@ -199,6 +207,7 @@ extension SetWorkAddressViewController: addressMapSearch {
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated:true)
         configureConfirmAddressView()
+        view.layoutSubviews()
         workCoordinates = ["latitude":Double(placemark.coordinate.latitude), "longitude":Double(placemark.coordinate.longitude)]
     }
 }

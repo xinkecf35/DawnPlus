@@ -27,14 +27,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-D7-7G5" userLabel="toggleSettings">
-                                <rect key="frame" x="319" y="44" width="44" height="44"/>
+                                <rect key="frame" x="319" y="42" width="44" height="44"/>
                                 <state key="normal" image="menu-icon"/>
                                 <connections>
                                     <segue destination="I9b-wB-0WW" kind="presentation" id="Tgn-uI-URO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-dh-HRs" userLabel="Clock">
-                                <rect key="frame" x="66" y="251.5" width="243" height="64"/>
+                                <rect key="frame" x="66" y="268" width="243" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Tc9-rk-LD5"/>
                                 </constraints>
@@ -43,22 +43,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSn-Xd-C2i" userLabel="toggleAlarmView">
-                                <rect key="frame" x="12" y="44" width="44" height="44"/>
+                                <rect key="frame" x="12" y="42" width="44" height="44"/>
                                 <state key="normal" image="plus-icon"/>
                                 <connections>
                                     <segue destination="642-wV-8S4" kind="presentation" identifier="AlarmViewSegue" id="j62-JO-rPi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae5-X3-ddE" userLabel="weatherButton">
-                                <rect key="frame" x="143.5" y="138.5" width="88" height="88"/>
+                                <rect key="frame" x="143.5" y="165" width="88" height="88"/>
                                 <state key="normal" image="partly-cloudy-day"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az1-nZ-JQF" userLabel="trafficButton">
-                                <rect key="frame" x="236.5" y="138.5" width="88" height="88"/>
+                                <rect key="frame" x="236.5" y="165" width="88" height="88"/>
                                 <state key="normal" image="caution-red"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 60°F " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJd-ZD-pd0" userLabel="temperatureLabel">
-                                <rect key="frame" x="50.5" y="138.5" width="88" height="88"/>
+                                <rect key="frame" x="50.5" y="165" width="88" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fJd-ZD-pd0" secondAttribute="height" multiplier="1:1" id="VLc-LP-ure"/>
                                 </constraints>
@@ -70,19 +70,19 @@
                         <color key="backgroundColor" red="0.8901960784313725" green="0.76431372549019605" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0eX-hs-QeC"/>
-                            <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="Ae5-X3-ddE" secondAttribute="bottom" constant="25" id="1z4-0x-wPW"/>
+                            <constraint firstItem="KCI-dh-HRs" firstAttribute="top" secondItem="Ae5-X3-ddE" secondAttribute="bottom" constant="15" id="1z4-0x-wPW"/>
                             <constraint firstItem="9UH-Om-Iqo" firstAttribute="trailing" secondItem="yeb-D7-7G5" secondAttribute="trailing" constant="12" id="6Z7-Mn-qg2"/>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="centerY" secondItem="fJd-ZD-pd0" secondAttribute="centerY" id="ABC-5N-0B2"/>
                             <constraint firstItem="yeb-D7-7G5" firstAttribute="centerY" secondItem="YSn-Xd-C2i" secondAttribute="centerY" id="GAF-q2-6rh"/>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="leading" secondItem="fJd-ZD-pd0" secondAttribute="trailing" constant="5" id="IYa-X0-AtE"/>
                             <constraint firstItem="Ae5-X3-ddE" firstAttribute="top" secondItem="fJd-ZD-pd0" secondAttribute="top" id="T8s-xb-iOx"/>
-                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="9UH-Om-Iqo" secondAttribute="top" multiplier="1.2" constant="15" id="VI2-M5-wF9">
+                            <constraint firstItem="yeb-D7-7G5" firstAttribute="top" secondItem="9UH-Om-Iqo" secondAttribute="top" multiplier="1.1" constant="15" id="VI2-M5-wF9">
                                 <variation key="heightClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstItem="YSn-Xd-C2i" firstAttribute="leading" secondItem="9UH-Om-Iqo" secondAttribute="leading" constant="12" id="Vpv-pI-eMG"/>
                             <constraint firstItem="KCI-dh-HRs" firstAttribute="centerX" secondItem="9UH-Om-Iqo" secondAttribute="centerX" id="WRC-SD-jBV"/>
-                            <constraint firstItem="KCI-dh-HRs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="XPu-9T-aFH">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
+                            <constraint firstItem="KCI-dh-HRs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.6" constant="-25" id="XPu-9T-aFH">
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
                             </constraint>
                             <constraint firstItem="az1-nZ-JQF" firstAttribute="leading" secondItem="Ae5-X3-ddE" secondAttribute="trailing" constant="5" id="cIo-0C-KQ8">
                                 <variation key="heightClass=regular" constant="5"/>
@@ -529,7 +529,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="I9b-wB-0WW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qlf-hA-lpx">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
