@@ -71,13 +71,14 @@ class SetWorkAddressViewController:UIViewController {
                 make.left.equalTo(safeArea.snp.left).offset(searchMargin)
                 make.right.equalTo(safeArea.snp.right).offset(-searchMargin)
             })
+        } else {
+            searchBar.snp.makeConstraints({(make) -> Void in
+                make.top.equalTo(topLayoutGuide.snp.bottom).offset(searchMargin)
+                make.height.equalTo(44);
+                make.left.equalTo(view.snp.left).offset(searchMargin)
+                make.right.equalTo(view.snp.right).offset(-searchMargin)
+            })
         }
-        searchBar.snp.makeConstraints({(make) -> Void in
-            make.top.equalTo(topLayoutGuide.snp.bottom).offset(searchMargin)
-            make.height.equalTo(44);
-            make.left.equalTo(view.snp.left).offset(searchMargin)
-            make.right.equalTo(view.snp.right).offset(-searchMargin)
-        })
         searchBar.setNeedsLayout()
         debugPrint("Added Search Bar View")
     }
@@ -134,12 +135,23 @@ class SetWorkAddressViewController:UIViewController {
         let confirmAddressView = UIView(frame: frame)
         confirmAddressView.layer.cornerRadius = 9
         confirmAddressView.layer.masksToBounds = true;
+        //Autolayout constraints
         confirmAddressView.snp.makeConstraints({(make) -> Void in
             let edgeOffset = 10
+            let confirmHeight = 128
             if #available(iOS 11, *) {
                 let safeArea = view.safeAreaLayoutGuide
                 make.bottom.equalTo(safeArea.snp.bottom).offset(edgeOffset)
+                make.left.equalTo(safeArea.snp.left).offset(edgeOffset)
+                make.right.equalTo(safeArea.snp.right).offset(edgeOffset)
+                make.height.equalTo(confirmHeight)
+            } else {
+                make.bottom.equalTo(bottomLayoutGuide.snp.top).offset(edgeOffset)
+                make.left.equalTo(view).offset(edgeOffset)
+                make.right.equalTo(view).offset(edgeOffset)
+                make.height.equalTo(confirmHeight)
             }
+            
         })
         confirmAddressView.backgroundColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
         let buttonWidth = (view.frame.width-40)/2
