@@ -131,45 +131,67 @@ class SetWorkAddressViewController:UIViewController {
     }
     func configureConfirmAddressView() {
         //Creating Parent View for Buttons
-        let frame = CGRect(x: 20.0, y: view.frame.height - 100.0, width: view.frame.width - 40 , height: 64.0)
-        let confirmAddressView = UIView(frame: frame)
-        confirmAddressView.layer.cornerRadius = 9
+        let confirmAddressView = UIView()
+        confirmAddressView.layer.cornerRadius = 12
         confirmAddressView.layer.masksToBounds = true;
+        view.addSubview(confirmAddressView)
         //Autolayout constraints
+//        let confirmHeight = 128.0
         confirmAddressView.snp.makeConstraints({(make) -> Void in
             let edgeOffset = 10
             let confirmHeight = 128
             if #available(iOS 11, *) {
                 let safeArea = view.safeAreaLayoutGuide
-                make.bottom.equalTo(safeArea.snp.bottom).offset(edgeOffset)
+                make.height.equalTo(confirmHeight)
                 make.left.equalTo(safeArea.snp.left).offset(edgeOffset)
-                make.right.equalTo(safeArea.snp.right).offset(edgeOffset)
-                make.height.equalTo(confirmHeight)
+                make.right.equalTo(safeArea.snp.right).offset(-edgeOffset)
+                 make.bottom.equalTo(safeArea.snp.bottom).offset(-edgeOffset)
             } else {
-                make.bottom.equalTo(bottomLayoutGuide.snp.top).offset(edgeOffset)
-                make.left.equalTo(view).offset(edgeOffset)
-                make.right.equalTo(view).offset(edgeOffset)
                 make.height.equalTo(confirmHeight)
+                make.left.equalTo(view).offset(edgeOffset)
+                make.right.equalTo(view).offset(-edgeOffset)
+                make.bottom.equalTo(bottomLayoutGuide.snp.top).offset(-edgeOffset)
             }
             
         })
-        confirmAddressView.backgroundColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
-        let buttonWidth = (view.frame.width-40)/2
-        let buttonHeight = 64.0
-        let leftFrame = CGRect(x: 0.0, y: 0.0, width: Double(buttonWidth), height: buttonHeight)
-        let rightFrame = CGRect(x: Double(buttonWidth), y: 0.0, width: Double(buttonWidth), height: buttonHeight)
+        confirmAddressView.backgroundColor = UIColor(hue: 0.14, saturation: 0.94, brightness: 0.89, alpha: 1.0)
+        let buttonWidth = (view.frame.width-32)/2
+        let buttonHeight = 44.0
+//        let leftFrame = CGRect(x: 0.0, y: confirmHeight - buttonHeight, width: Double(buttonWidth), height: buttonHeight)
+//        let rightFrame = CGRect(x: Double(buttonWidth), y: confirmHeight - buttonHeight, width: Double(buttonWidth), height: buttonHeight)
         //Defining Okay Button
         let okayButton = UIButton(type: .custom)
-        okayButton.frame = leftFrame
+//        okayButton.frame = leftFrame
         okayButton.setTitle("OK", for:.normal)
-        okayButton.backgroundColor = UIColor(hue: 0.22, saturation: 0.74, brightness: 0.8, alpha: 1.0)
+        okayButton.backgroundColor = UIColor(hue: 0.22, saturation: 0.76, brightness: 0.75, alpha: 1.0)
+        okayButton.layer.cornerRadius = 10
         confirmAddressView.addSubview(okayButton)
         //Defining Cancel Button
         let cancelButton = UIButton(type: .custom)
-        cancelButton.frame = rightFrame
+//        cancelButton.frame = rightFrame
+        cancelButton.layer.cornerRadius = 10
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.backgroundColor = UIColor(hue: 0.0, saturation: 0.85, brightness: 0.86, alpha: 1.0)
+        confirmAddressView.addSubview(okayButton)
         confirmAddressView.addSubview(cancelButton)
+        //Auto Layout Constraints for buttons
+        let edgeOffset = 4
+//        let width = confirmAddressView.frame.width/2
+        cancelButton.snp.makeConstraints({(make) -> Void in
+            make.width.equalTo(buttonWidth)
+            make.right.equalTo(confirmAddressView.snp.right).offset(-edgeOffset)
+            make.bottom.equalTo(confirmAddressView.snp.bottom).offset(-edgeOffset)
+            make.height.equalTo(buttonHeight)
+        })
+        cancelButton.setNeedsLayout()
+        okayButton.snp.makeConstraints({(make) -> Void in
+            make.width.equalTo(buttonWidth)
+            make.left.equalTo(confirmAddressView.snp.left).offset(edgeOffset)
+            make.bottom.equalTo(confirmAddressView.snp.bottom).offset(-edgeOffset)
+            make.height.equalTo(buttonHeight)
+        })
+        okayButton.setNeedsLayout()
+        confirmAddressView.layoutSubviews()
         //Adding Target-Action for ViewController
         okayButton.addTarget(self, action: #selector(returnToSettingsandSaveAddress), for: UIControlEvents.touchDown)
         cancelButton.addTarget(self, action: #selector(returnToSettingsWithoutSaving), for: UIControlEvents.touchDown)
@@ -177,6 +199,7 @@ class SetWorkAddressViewController:UIViewController {
         confirmAddressView.isUserInteractionEnabled = true
         view.addSubview(confirmAddressView)
         confirmAddressView.setNeedsLayout()
+        debugPrint(okayButton.frame)
     }
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
