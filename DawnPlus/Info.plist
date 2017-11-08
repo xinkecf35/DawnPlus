@@ -6,8 +6,6 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>DawnPlus</string>
-	<key>CFBundleDocumentTypes</key>
-	<array/>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,17 +24,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>MQApplicationKey</key>
-	<string>VHvMoKU4OTqvSQE7AfGzGniuwykvkdlY</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app uses your location to retrieve current weather data about your location. Please enable location services so that the app may work correctly.</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Please allow the app access to your Music Library</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app uses your location to retrieve current data for your location. Please enable location services so that the app can retrieve data.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway-Bold.ttf</string>
@@ -57,6 +53,8 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
