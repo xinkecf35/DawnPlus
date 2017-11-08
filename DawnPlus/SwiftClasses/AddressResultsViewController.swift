@@ -33,6 +33,7 @@ class AddressResultsViewController:UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = matchingPlaces[indexPath.row].placemark
         mapSearchDelegate?.dropMapPin(placemark: selectedCell)
+        mapSearchDelegate?.shortAddress = parseShortFormAddress(selectedItem: selectedCell) //Look at this
     }
     //Address handling
     func parseAddress(selectedItem: MKPlacemark) -> String {
@@ -45,6 +46,15 @@ class AddressResultsViewController:UITableViewController {
         addressComponents.append(selectedItem.postalCode ?? "")
         addressLine = addressComponents.joined(separator: " ")
         return addressLine
+    }
+    func parseShortFormAddress(selectedItem: MKPlacemark) -> String {
+        var shortAddressLine: String = ""
+        var shortAddressComponents: [String] = []
+        shortAddressComponents.append(selectedItem.subThoroughfare ?? "")
+        shortAddressComponents.append(selectedItem.thoroughfare ?? "")
+        shortAddressLine = shortAddressComponents.joined(separator: " ");
+        //debugPrint(shortAddressLine)
+        return shortAddressLine
     }
     func updateSearchResults(searchPhrase: String?) {
         guard let requestRegion = mapView?.region, let input = searchPhrase  else {
@@ -64,6 +74,7 @@ class AddressResultsViewController:UITableViewController {
     }
 }
 protocol addressMapSearch {
+    var shortAddress:String? {get set}
     func dropMapPin(placemark: MKPlacemark)
 }
 
