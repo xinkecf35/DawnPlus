@@ -18,6 +18,7 @@ class SetWorkAddressViewController:UIViewController {
     let mapView = MKMapView()
     var coordinate: CLLocationCoordinate2D!
     var workCoordinates:[String:Double]? = nil
+    var shortAddress: String?
     
     //UIKit Methods
     override func viewDidLoad() {
@@ -228,6 +229,7 @@ extension SetWorkAddressViewController:UISearchBarDelegate {
     }
 }
 extension SetWorkAddressViewController: addressMapSearch {
+    
     func  dropMapPin(placemark: MKPlacemark) {
         finishSearch()
         mapView.removeAnnotations(mapView.annotations)
