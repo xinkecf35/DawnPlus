@@ -32,8 +32,8 @@ class AddressResultsViewController:UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = matchingPlaces[indexPath.row].placemark
+        mapSearchDelegate?.shortAddress = parseShortFormAddress(selectedItem: selectedCell)
         mapSearchDelegate?.dropMapPin(placemark: selectedCell)
-        mapSearchDelegate?.shortAddress = parseShortFormAddress(selectedItem: selectedCell) //Look at this
     }
     //Address handling
     func parseAddress(selectedItem: MKPlacemark) -> String {

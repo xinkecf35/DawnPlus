@@ -1,0 +1,69 @@
+
+/* Class = "UILabel"; text = "Reset"; ObjectID = "4Cm-kv-GEL"; */
+"4Cm-kv-GEL.text" = "Reset";
+
+/* Class = "UITableViewController"; title = "SettingsView"; ObjectID = "71k-Ke-bFH"; */
+"71k-Ke-bFH.title" = "SettingsView";
+
+/* Class = "UILabel"; text = "Gentle Wake"; ObjectID = "9MJ-0u-rvQ"; */
+"9MJ-0u-rvQ.text" = "Gentle Wake";
+
+/* Class = "UIViewController"; title = "Clock"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Clock";
+
+/* Class = "UITableViewSection"; headerTitle = "Alarm"; ObjectID = "CNv-HX-kFJ"; */
+"CNv-HX-kFJ.headerTitle" = "Alarm";
+
+/* Class = "UITableViewSection"; headerTitle = "Traffic"; ObjectID = "K1G-xL-ZKW"; */
+"K1G-xL-ZKW.headerTitle" = "Traffic";
+
+/* Class = "UILabel"; text = "6:00 AM"; ObjectID = "KCI-dh-HRs"; */
+"KCI-dh-HRs.text" = "6:00 AM";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "OoA-60-QcB"; */
+"OoA-60-QcB.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "PI1-NI-lRX"; */
+"PI1-NI-lRX.text" = "Title";
+
+/* Class = "UITableViewController"; title = "Sensitivity"; ObjectID = "Qzk-Gw-qEc"; */
+"Qzk-Gw-qEc.title" = "Sensitivity";
+
+/* Class = "UILabel"; text = "Speech"; ObjectID = "Sjm-h5-qQs"; */
+"Sjm-h5-qQs.text" = "Speech";
+
+/* Class = "UILabel"; text = "Units"; ObjectID = "UC8-cH-Lgy"; */
+"UC8-cH-Lgy.text" = "Units";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "WVa-Gy-DTL"; */
+"WVa-Gy-DTL.title" = "Settings";
+
+/* Class = "UILabel"; text = "F.A.Q."; ObjectID = "XtX-Fr-eQ5"; */
+"XtX-Fr-eQ5.text" = "F.A.Q.";
+
+/* Class = "UILabel"; text = "Sensitivity"; ObjectID = "Xz6-dj-M53"; */
+"Xz6-dj-M53.text" = "Sensitivity";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "aSb-tX-vVi"; */
+"aSb-tX-vVi.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "caB-Qn-VJ4"; */
+"caB-Qn-VJ4.text" = "About";
+
+/* Class = "UITableViewSection"; headerTitle = "Weather"; ObjectID = "eXQ-XD-lQr"; */
+"eXQ-XD-lQr.headerTitle" = "Weather";
+
+/* Class = "UILabel"; text = " 60°F "; ObjectID = "fJd-ZD-pd0"; */
+"fJd-ZD-pd0.text" = " 60°F ";
+
+/* Class = "UILabel"; text = "Work Address"; ObjectID = "jKW-Gt-lEf"; */
+"jKW-Gt-lEf.text" = "Work Address";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "mKH-pQ-W7x"; */
+"mKH-pQ-W7x.title" = "Done";
+
+/* Class = "UITableViewController"; title = "Units"; ObjectID = "vn1-zU-dgk"; */
+"vn1-zU-dgk.title" = "Units";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "yy3-Ov-hOn"; */
+"yy3-Ov-hOn.text" = "Title";

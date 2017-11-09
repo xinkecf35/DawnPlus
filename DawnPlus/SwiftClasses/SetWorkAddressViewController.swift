@@ -137,10 +137,9 @@ class SetWorkAddressViewController:UIViewController {
         confirmAddressView.layer.masksToBounds = true;
         view.addSubview(confirmAddressView)
         //Autolayout constraints
-//        let confirmHeight = 128.0
         confirmAddressView.snp.makeConstraints({(make) -> Void in
             let edgeOffset = 10
-            let confirmHeight = 128
+            let confirmHeight = 108
             if #available(iOS 11, *) {
                 let safeArea = view.safeAreaLayoutGuide
                 make.height.equalTo(confirmHeight)
@@ -157,27 +156,25 @@ class SetWorkAddressViewController:UIViewController {
         })
         confirmAddressView.backgroundColor = UIColor(hue: 0.14, saturation: 0.94, brightness: 0.89, alpha: 1.0)
         let buttonWidth = (view.frame.width-32)/2
-        let buttonHeight = 44.0
-//        let leftFrame = CGRect(x: 0.0, y: confirmHeight - buttonHeight, width: Double(buttonWidth), height: buttonHeight)
-//        let rightFrame = CGRect(x: Double(buttonWidth), y: confirmHeight - buttonHeight, width: Double(buttonWidth), height: buttonHeight)
+        let buttonHeight = 48.0
+        let buttonFont = UIFont(name: "Raleway-Medium", size: 18.0)
         //Defining Okay Button
         let okayButton = UIButton(type: .custom)
-//        okayButton.frame = leftFrame
         okayButton.setTitle("OK", for:.normal)
+        okayButton.titleLabel?.font = buttonFont
         okayButton.backgroundColor = UIColor(hue: 0.22, saturation: 0.76, brightness: 0.75, alpha: 1.0)
         okayButton.layer.cornerRadius = 10
         confirmAddressView.addSubview(okayButton)
         //Defining Cancel Button
         let cancelButton = UIButton(type: .custom)
-//        cancelButton.frame = rightFrame
         cancelButton.layer.cornerRadius = 10
         cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.titleLabel?.font = buttonFont
         cancelButton.backgroundColor = UIColor(hue: 0.0, saturation: 0.85, brightness: 0.86, alpha: 1.0)
         confirmAddressView.addSubview(okayButton)
         confirmAddressView.addSubview(cancelButton)
         //Auto Layout Constraints for buttons
         let edgeOffset = 4
-//        let width = confirmAddressView.frame.width/2
         cancelButton.snp.makeConstraints({(make) -> Void in
             make.width.equalTo(buttonWidth)
             make.right.equalTo(confirmAddressView.snp.right).offset(-edgeOffset)
@@ -192,6 +189,24 @@ class SetWorkAddressViewController:UIViewController {
             make.height.equalTo(buttonHeight)
         })
         okayButton.setNeedsLayout()
+        //Defining Label with short form address
+        let addressLabel = UILabel()
+        addressLabel.text = shortAddress
+        addressLabel.textColor = UIColor(hue: 0.0, saturation: 0.0, brightness: 1.0, alpha: 1.0)
+        addressLabel.numberOfLines = 1
+        addressLabel.adjustsFontSizeToFitWidth = true
+        addressLabel.textAlignment = NSTextAlignment.center
+        addressLabel.font = UIFont(name: "Raleway-Medium", size: 20)
+        confirmAddressView.addSubview(addressLabel)
+        //Address Label Constraints
+        addressLabel.snp.makeConstraints({(make) -> Void in
+            let textOffset = 3 * edgeOffset
+            make.left.equalTo(confirmAddressView.snp.left).offset(textOffset)
+            make.right.equalTo(confirmAddressView.snp.right).offset(-textOffset)
+            make.height.equalTo(28)
+            make.bottom.equalTo(okayButton.snp.top).offset(-textOffset)
+        })
+        addressLabel.setNeedsLayout()
         confirmAddressView.layoutSubviews()
         //Adding Target-Action for ViewController
         okayButton.addTarget(self, action: #selector(returnToSettingsandSaveAddress), for: UIControlEvents.touchDown)
@@ -200,7 +215,7 @@ class SetWorkAddressViewController:UIViewController {
         confirmAddressView.isUserInteractionEnabled = true
         view.addSubview(confirmAddressView)
         confirmAddressView.setNeedsLayout()
-        debugPrint(okayButton.frame)
+        debugPrint(addressLabel.frame)
     }
 }
 extension SetWorkAddressViewController:UISearchBarDelegate {
