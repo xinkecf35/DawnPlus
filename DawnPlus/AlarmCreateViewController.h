@@ -13,9 +13,8 @@
 #import "AlarmObject+CoreDataProperties.h"
 
 
-@interface AlarmCreateViewController : UIViewController
+@interface AlarmCreateViewController : UIViewController <UITableViewDelegate, AlarmDataDelegate>
 
 @property (strong, nonatomic) CoreDataController *coreDataManager;
-
 
 @end
