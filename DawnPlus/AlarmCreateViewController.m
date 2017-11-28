@@ -53,6 +53,8 @@
     UIStoryboard *alarmViews = [UIStoryboard storyboardWithName:@"AlarmViews" bundle:nil];
     tableOptionsVC = [alarmViews instantiateViewControllerWithIdentifier:@"AlarmEditTableVIew"];
     [tableOptionsVC.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self addChildViewController:tableOptionsVC];
+    [tableOptionsVC didMoveToParentViewController:self];
     [self.view addSubview:tableOptionsVC.tableView];
     UIView *embeddedTableView = tableOptionsVC.tableView;
     [embeddedTableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
@@ -71,6 +73,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
 */
 
 @end
