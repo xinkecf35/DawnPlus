@@ -41,10 +41,13 @@
         UILayoutGuide *safeArea = self.view.safeAreaLayoutGuide;
         [timePicker.centerXAnchor constraintLessThanOrEqualToAnchor:safeArea.centerXAnchor].active = YES;
         [timePicker.topAnchor constraintGreaterThanOrEqualToAnchor:safeArea.topAnchor constant:25.0].active = YES;
-        [timePicker.widthAnchor constraintLessThanOrEqualToAnchor:safeArea.widthAnchor];
+        [timePicker.leadingAnchor constraintEqualToAnchor:safeArea.leadingAnchor].active = YES;
+        [timePicker.trailingAnchor constraintEqualToAnchor:safeArea.trailingAnchor].active = YES;
     } else {
         [timePicker.centerXAnchor constraintEqualToAnchor: self.view.centerXAnchor].active = YES;
         [timePicker.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:25.0].active = YES;
+        [timePicker.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+        [timePicker.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
     }
     [timePicker setNeedsLayout];
     NSLog(@"timePicker subview complete");
@@ -60,7 +63,14 @@
     [embeddedTableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [embeddedTableView.topAnchor constraintEqualToAnchor:timePicker.bottomAnchor constant:10].active = YES;
     [embeddedTableView.heightAnchor constraintEqualToConstant:132].active = YES;
-    [embeddedTableView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
+    if (@available(iOS 11, *)) {
+        UILayoutGuide *safeArea = self.view.safeAreaLayoutGuide;
+        [embeddedTableView.leadingAnchor constraintEqualToAnchor:safeArea.leadingAnchor].active = YES;
+        [embeddedTableView.trailingAnchor constraintEqualToAnchor:safeArea.trailingAnchor].active = YES;
+    } else {
+        [embeddedTableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+        [embeddedTableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    }
     [embeddedTableView setNeedsLayout];
     NSLog(@"alarmTableView subview complete");
 }
