@@ -16,5 +16,8 @@
 @interface AlarmCreateViewController : UIViewController <UITableViewDelegate, AlarmDataDelegate>
 
 @property (strong, nonatomic) CoreDataController *coreDataManager;
+@property (strong,nonatomic) UIDatePicker *timePicker;
+@property (strong, nonatomic) NSArray *daysToRepeat;
+@property (strong, nonatomic) AddAlarmTableViewController *tableOptionsVC;
 
 @end

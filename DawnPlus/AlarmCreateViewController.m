@@ -10,10 +10,6 @@
 
 @interface AlarmCreateViewController ()
 
-@property (strong,nonatomic) UIDatePicker *timePicker;
-@property (strong, nonatomic) NSArray *daysToRepeat;
-@property (strong, nonatomic) AddAlarmTableViewController *tableOptionsVC;
-
 @end
 
 @implementation AlarmCreateViewController
@@ -55,6 +51,7 @@
 -(void) initAlarmTableOptionsView {
     UIStoryboard *alarmViews = [UIStoryboard storyboardWithName:@"AlarmViews" bundle:nil];
     tableOptionsVC = [alarmViews instantiateViewControllerWithIdentifier:@"AlarmEditTableVIew"];
+    //tableOptionsVC.alarmDelegate = self;
     [tableOptionsVC.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self addChildViewController:tableOptionsVC];
     [tableOptionsVC didMoveToParentViewController:self];
