@@ -14,12 +14,15 @@
 
 @implementation AlarmCreateViewController
 
-@synthesize timePicker, daysToRepeat, tableOptionsVC, selectedDays, selectedTime, soundAsset, enabled, notificationID, alarmName;
+@synthesize timePicker, daysToRepeat,coreDataManager, tableOptionsVC, selectedDays, selectedTime, soundAsset, enabled, notificationID, alarmName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initTimePickerView];
     [self initAlarmTableOptionsView];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(saveToCoreData)];
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
     [self.view layoutSubviews];
 }
 
@@ -51,7 +54,7 @@
 -(void) initAlarmTableOptionsView {
     UIStoryboard *alarmViews = [UIStoryboard storyboardWithName:@"AlarmViews" bundle:nil];
     tableOptionsVC = [alarmViews instantiateViewControllerWithIdentifier:@"AlarmEditTableVIew"];
-    //tableOptionsVC.alarmDelegate = self;
+    tableOptionsVC.alarmDelegate = self;
     [tableOptionsVC.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self addChildViewController:tableOptionsVC];
     [tableOptionsVC didMoveToParentViewController:self];
@@ -72,6 +75,18 @@
     NSLog(@"alarmTableView subview complete");
 }
 
+-(void) saveToCoreData {
+    AlarmObject *alarm = [NSEntityDescription insertNewObjectForEntityForName:@"AlarmObject" inManagedObjectContext:coreDataManager.managedObjectContext];
+    alarm.alarmTime = selectedTime;
+    alarm.soundAsset = soundAsset;
+    alarm.dayToRepeat = selectedDays;
+    alarm.enabled = YES;
+    alarm.label = alarmName;
+    alarm.notificationID = [[NSUUID UUID] UUIDString];
+    NSLog(@"Alarm being saved with %@",alarm);
+    NSLog(@"message saveToCoreData passed");
+    [self.navigationController popViewControllerAnimated:true];
+}
 /*
 #pragma mark - Navigation
 
