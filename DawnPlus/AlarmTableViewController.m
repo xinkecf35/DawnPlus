@@ -8,6 +8,13 @@
 
 #import "AlarmTableViewController.h"
 
+@interface AlarmTableViewController() <MGSwipeTableCellDelegate>
+
+-(void) editSelectedAlarm;
+-(void) deleteSelectedAlarm;
+
+@end
+
 @implementation AlarmTableViewController
 
 @synthesize alarmTableView,coreDataManager;
@@ -54,14 +61,8 @@
     time.dateStyle = NSDateFormatterNoStyle;
     time.timeStyle = NSDateFormatterShortStyle;
     cell.detailTextLabel.text = [time stringFromDate:alarm.alarmTime];
-    //MGSwipeTableCell Setup
+    //Setting Delegate
     cell.delegate = self;
-    UIColor *deleteColor = [UIColor colorWithHue:0.0 saturation:0.85 brightness:0.86 alpha:1.0];
-    MGSwipeButton *deleteButton = [MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:deleteColor];
-    UIColor *editColor = [UIColor colorWithHue:0.142 saturation:0.94 brightness:0.89 alpha:1.0];
-    MGSwipeButton *editButton = [MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:editColor];
-    cell.rightButtons = @[editButton,deleteButton];
-    cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
     
     return cell;
 }
@@ -71,6 +72,32 @@
         AddAlarmViewController *addAlarmVC = segue.destinationViewController;
         addAlarmVC.coreDataManager = self.coreDataManager;
     }
+}
+//MGSwipeTableCellDelegate and related methods
+-(NSArray *)swipeTableCell:(MGSwipeTableCell *) cell swipeButtonsForDirection:(MGSwipeDirection)direction swipeSettings:(nonnull MGSwipeSettings *)swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings *)expansionSettings {
+    
+    swipeSettings.transition = MGSwipeTransitionBorder;
+    swipeSettings.keepButtonsSwiped = YES;
+
+    if(direction == MGSwipeDirectionRightToLeft) {
+        UIColor *deleteColor = [UIColor colorWithHue:0.0 saturation:0.85 brightness:0.86 alpha:1.0];
+        MGSwipeButton *deleteButton = [MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:deleteColor];
+        UIColor *editColor = [UIColor colorWithHue:0.142 saturation:0.94 brightness:0.89 alpha:1.0];
+        MGSwipeButton *editButton = [MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:editColor];
+        
+        return @[deleteButton, editButton];
+    }
+
+    
+    return nil;
+}
+
+-(void)editSelectedAlarm {
+    
+}
+
+-(void)deleteSelectedAlarm {
+    
 }
 //NSFetchResultsControllerDelegates
 -(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
