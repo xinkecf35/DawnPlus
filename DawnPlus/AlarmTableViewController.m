@@ -10,9 +10,6 @@
 
 @interface AlarmTableViewController() <MGSwipeTableCellDelegate>
 
--(void) editSelectedAlarm;
--(void) deleteSelectedAlarm;
-
 @end
 
 @implementation AlarmTableViewController
@@ -91,14 +88,17 @@
     
     return nil;
 }
-
--(void)editSelectedAlarm {
-    
+-(BOOL)swipeTableCell:(MGSwipeTableCell *) cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
+    NSIndexPath *selectedAlarmIndexPath = [self.alarmTableView indexPathForCell:cell];
+    AlarmObject *selectedAlarm = [self.alarmResultsController objectAtIndexPath:selectedAlarmIndexPath];
+    if(index == 0) {
+        [coreDataManager.managedObjectContext deleteObject:selectedAlarm];
+    } else {
+        NSLog(@"Edit button hit");
+    }
+    return NO;
 }
 
--(void)deleteSelectedAlarm {
-    
-}
 //NSFetchResultsControllerDelegates
 -(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
