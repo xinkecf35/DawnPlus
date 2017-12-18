@@ -22,7 +22,6 @@
     [self initAlarmTableOptionsView];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(saveToCoreData)];
     self.navigationItem.rightBarButtonItem = saveButton;
-    
     [self.view layoutSubviews];
 }
 
@@ -30,12 +29,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) initTimePickerView {
+-(void)initTimePickerView {
     timePicker = [[UIDatePicker alloc] init];
     timePicker.datePickerMode = UIDatePickerModeTime;
     [timePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
     //Adding timePicker to view
     [self.view addSubview:timePicker];
+    //Setting Constraints
     if (@available(iOS 11, *)) {
         UILayoutGuide *safeArea = self.view.safeAreaLayoutGuide;
         [timePicker.centerXAnchor constraintLessThanOrEqualToAnchor:safeArea.centerXAnchor].active = YES;
@@ -49,9 +49,12 @@
         [timePicker.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
     }
     [timePicker setNeedsLayout];
+    [timePicker addTarget:self action:@selector(updateSelectedTime) forControlEvents:UIControlEventValueChanged];
+    //Provide non-null default for alarm
+    selectedTime = timePicker.date;
     NSLog(@"timePicker subview complete");
 }
--(void) initAlarmTableOptionsView {
+-(void)initAlarmTableOptionsView {
     UIStoryboard *alarmViews = [UIStoryboard storyboardWithName:@"AlarmViews" bundle:nil];
     tableOptionsVC = [alarmViews instantiateViewControllerWithIdentifier:@"AlarmEditTableVIew"];
     tableOptionsVC.alarmDelegate = self;
@@ -74,8 +77,12 @@
     [embeddedTableView setNeedsLayout];
     NSLog(@"alarmTableView subview complete");
 }
+-(void)updateSelectedTime {
+    selectedTime = timePicker.date;
+    NSLog(@"selectedTime is now: %@", selectedTime);
+}
 
--(void) saveToCoreData {
+-(void)saveToCoreData {
     AlarmObject *alarm = [NSEntityDescription insertNewObjectForEntityForName:@"AlarmObject" inManagedObjectContext:coreDataManager.managedObjectContext];
     alarm.alarmTime = selectedTime;
     alarm.soundAsset = soundAsset;
