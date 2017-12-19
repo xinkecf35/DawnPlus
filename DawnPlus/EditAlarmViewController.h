@@ -2,20 +2,14 @@
 //  EditAlarmViewController.h
 //  DawnPlus
 //
-//  Created by Xinke Chen on 2017-09-04.
+//  Created by Xinke Chen on 2017-12-18.
 //  Copyright © 2017 Xinke Chen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "CoreDataController.h"
-#import "AlarmObject+CoreDataClass.h"
-#import "AlarmDataDelegate.h"
+#import "AlarmCreateViewController.h"
 
-#import "AddAlarmTableViewController.h"
+@interface EditAlarmViewController : AlarmCreateViewController
 
-@interface EditAlarmViewController : UIViewController <AlarmDataDelegate, UITableViewDelegate> {
-    AddAlarmTableViewController *embeddedVC;
-}
+@property (strong, nonnull) AlarmObject *selectedAlarm;
 
 @end
