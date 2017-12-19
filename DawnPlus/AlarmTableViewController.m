@@ -67,7 +67,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"AddAlarmSegue"]) {
         AddAlarmViewController *addAlarmVC = segue.destinationViewController;
-        addAlarmVC.coreDataManager = self.coreDataManager;
+        addAlarmVC.coreDataManager = coreDataManager;
     }
 }
 //MGSwipeTableCellDelegate and related methods
@@ -94,7 +94,10 @@
     if(index == 0) {
         [coreDataManager.managedObjectContext deleteObject:selectedAlarm];
     } else {
-        NSLog(@"Edit button hit");
+        EditAlarmViewController *editAlarmVC = [EditAlarmViewController new];
+        editAlarmVC.coreDataManager = coreDataManager;
+        editAlarmVC.selectedAlarm = selectedAlarm;
+        [self.navigationController pushViewController:editAlarmVC animated:true];
     }
     return NO;
 }

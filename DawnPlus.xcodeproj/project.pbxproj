@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F25780C1FE8595F00819777 /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25780B1FE8595F00819777 /* EditAlarmViewController.m */; };
 		8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */; };
 		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
 		A90A6D73596A85DE3B728851 /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */; };
@@ -47,7 +48,6 @@
 		D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */; };
 		D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DCA8211D6DEEDC0025CB0D /* Main.storyboard */; };
 		D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8F6E31D6D11BE000098FB /* Assets.xcassets */; };
-		D0E9049C1F5E4EC90029948E /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E9049B1F5E4EC90029948E /* EditAlarmViewController.m */; };
 		D0EDA1561CF3CA3C0036293B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1551CF3CA3C0036293B /* main.m */; };
 		D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1581CF3CA3C0036293B /* AppDelegate.m */; };
 		D0EDA1621CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA1601CF3CA3C0036293B /* DawnPlusDataModel.xcdatamodeld */; };
@@ -72,6 +72,8 @@
 		094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
 		380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F25780A1FE8595F00819777 /* EditAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditAlarmViewController.h; sourceTree = "<group>"; };
+		8F25780B1FE8595F00819777 /* EditAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditAlarmViewController.m; sourceTree = "<group>"; };
 		8F7F26021FCDC2EB0065A40B /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmCreateViewController.h; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		D0DCA81F1D6DEEA20025CB0D /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
 		D0DCA8221D6DEEDC0025CB0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0E8F6E31D6D11BE000098FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D0E9049A1F5E4EC90029948E /* EditAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditAlarmViewController.h; sourceTree = "<group>"; };
-		D0E9049B1F5E4EC90029948E /* EditAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditAlarmViewController.m; sourceTree = "<group>"; };
 		D0EDA1511CF3CA3C0036293B /* DawnPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DawnPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA1551CF3CA3C0036293B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EDA1571CF3CA3C0036293B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -297,8 +297,8 @@
 				8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */,
 				8F7F26021FCDC2EB0065A40B /* AddAlarmViewController.h */,
 				8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */,
-				D0E9049A1F5E4EC90029948E /* EditAlarmViewController.h */,
-				D0E9049B1F5E4EC90029948E /* EditAlarmViewController.m */,
+				8F25780A1FE8595F00819777 /* EditAlarmViewController.h */,
+				8F25780B1FE8595F00819777 /* EditAlarmViewController.m */,
 				D021B2891F2DA1C6002F2289 /* AddAlarmTableViewController.h */,
 				D021B28A1F2DA224002F2289 /* AddAlarmTableViewController.m */,
 				D0B86E051F2DA719005FFCD8 /* ToneTableViewController.h */,
@@ -622,7 +622,6 @@
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */,
-				D0E9049C1F5E4EC90029948E /* EditAlarmViewController.m in Sources */,
 				D07069CB1F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m in Sources */,
 				D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */,
 				8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */,
@@ -630,6 +629,7 @@
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */,
 				D0C8821E1ED1642D00D8198E /* CoreDataController.m in Sources */,
+				8F25780C1FE8595F00819777 /* EditAlarmViewController.m in Sources */,
 				D6B3E7631F08C0A600177470 /* AddressResultsViewController.swift in Sources */,
 				D0D2CC201F08896B00A19E77 /* SetWorkAddressViewController.swift in Sources */,
 				D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */,

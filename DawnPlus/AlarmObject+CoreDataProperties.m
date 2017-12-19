@@ -11,7 +11,7 @@
 
 @implementation AlarmObject (CoreDataProperties)
 
-+ (NSFetchRequest<AlarmObject *> *)fetchRequest {
++(NSFetchRequest<AlarmObject *> *)fetchRequest {
 	return [[NSFetchRequest alloc] initWithEntityName:@"AlarmObject"];
 }
 
@@ -23,3 +23,24 @@
 @dynamic soundAsset;
 
 @end
+
+//@implementation DaysToRepeatArray
+//
+//+(Class)transformedValueClass {
+//    return [NSArray class];
+//}
+//
+//+(BOOL)allowsReverseTransformation {
+//    return YES;
+//}
+//
+//-(id)transformedValue:(id)value {
+//    return [NSKeyedArchiver archivedDataWithRootObject:value];
+//}
+//
+//-(id)reverseTransformedValue:(id)value {
+//    return [NSKeyedUnarchiver unarchiveObjectWithData:value];
+//}
+//
+//@end
+

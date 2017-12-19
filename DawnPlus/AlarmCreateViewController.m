@@ -8,7 +8,7 @@
 
 #import "AlarmCreateViewController.h"
 
-@interface AlarmCreateViewController ()
+@interface AlarmCreateViewController () 
 
 @end
 
@@ -18,18 +18,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initTimePickerView];
-    [self initAlarmTableOptionsView];
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(saveToCoreData)];
+    saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveToCoreData)];
     self.navigationItem.rightBarButtonItem = saveButton;
     [self.view layoutSubviews];
+}
+
+- (void)loadView {
+    [super loadView];
+    [self initTimePickerView];
+    [self initAlarmTableOptionsView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)initTimePickerView {
+
+
+- (void)initTimePickerView {
     timePicker = [[UIDatePicker alloc] init];
     timePicker.datePickerMode = UIDatePickerModeTime;
     [timePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -54,7 +60,7 @@
     selectedTime = timePicker.date;
     NSLog(@"timePicker subview complete");
 }
--(void)initAlarmTableOptionsView {
+- (void)initAlarmTableOptionsView {
     UIStoryboard *alarmViews = [UIStoryboard storyboardWithName:@"AlarmViews" bundle:nil];
     tableOptionsVC = [alarmViews instantiateViewControllerWithIdentifier:@"AlarmEditTableVIew"];
     tableOptionsVC.alarmDelegate = self;
@@ -77,12 +83,12 @@
     [embeddedTableView setNeedsLayout];
     NSLog(@"alarmTableView subview complete");
 }
--(void)updateSelectedTime {
+- (void)updateSelectedTime {
     selectedTime = timePicker.date;
     NSLog(@"selectedTime is now: %@", selectedTime);
 }
 
--(void)saveToCoreData {
+- (void)saveToCoreData {
     AlarmObject *alarm = [NSEntityDescription insertNewObjectForEntityForName:@"AlarmObject" inManagedObjectContext:coreDataManager.managedObjectContext];
     alarm.alarmTime = selectedTime;
     alarm.soundAsset = soundAsset;

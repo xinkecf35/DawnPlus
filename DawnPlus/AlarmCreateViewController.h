@@ -13,10 +13,12 @@
 #import "AlarmObject+CoreDataProperties.h"
 
 
-@interface AlarmCreateViewController : UIViewController <UITableViewDelegate, AlarmDataDelegate>
+@interface AlarmCreateViewController : UIViewController <UITableViewDelegate, AlarmDataDelegate> {
+    UIBarButtonItem *saveButton;
+}
 
 @property (strong, nonatomic) CoreDataController *coreDataManager;
-@property (strong,nonatomic) UIDatePicker *timePicker;
+@property (strong, nonatomic) UIDatePicker *timePicker;
 @property (strong, nonatomic) NSArray *daysToRepeat;
 @property (strong, nonatomic) AddAlarmTableViewController *tableOptionsVC;
 

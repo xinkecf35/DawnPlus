@@ -10,6 +10,7 @@
 #import "CoreDataController.h"
 #import "AlarmObject+CoreDataClass.h"
 #import "AddAlarmViewController.h"
+#import "EditAlarmViewController.h"
 #import "MGSwipeTableCell.h"
 #import "MGSwipeButton.h"
 
