@@ -15,19 +15,17 @@
 @implementation EditAlarmViewController
 
 @synthesize selectedAlarm;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self fetchFromCoreData];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    saveButton.title = @"Done";
+    saveButton.title = @"Save";
     saveButton.action = @selector(saveToCoreData);
-    [self fetchFromCoreData];
     [self.timePicker setDate:self.selectedTime];
     self.view.backgroundColor = [UIColor whiteColor];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,14 +38,22 @@
     self.alarmName = selectedAlarm.label;
     self.soundAsset = selectedAlarm.soundAsset;
     self.selectedTime = selectedAlarm.alarmTime;
+    self.tableOptionsVC.previousRepeatArray = self.selectedDays;
+    self.tableOptionsVC.previousSoundAsset = self.soundAsset;
+    self.tableOptionsVC.previousLabel = self.alarmName;
 }
 
 - (void)saveToCoreData {
     //Maybe use KVC to prevent unnesscary changes
     selectedAlarm.dayToRepeat = self.selectedDays;
+    NSLog(@"%@",super.selectedDays);
     selectedAlarm.soundAsset = self.soundAsset;
     selectedAlarm.alarmTime = self.selectedTime;
     selectedAlarm.label = self.alarmName;
+    NSError *saveError = nil;
+    BOOL save = [self.coreDataManager.managedObjectContext save:&saveError];
+    NSLog(@"%d",save );
+    NSLog(@"Error data: %@", saveError);
     NSLog(@"Alarm is now: %@",selectedAlarm);
     [self.navigationController popViewControllerAnimated:true];
 }

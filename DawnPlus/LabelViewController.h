@@ -12,7 +12,7 @@
 @interface LabelViewController : UIViewController <UITextFieldDelegate> {
     NSString *alarmLabel;
 }
-
+@property (strong, nonatomic) NSString *previousLabel;
 @property (weak, nonatomic) IBOutlet UITextField *labelTextField;
 @property (weak, nonatomic) id <AlarmDataDelegate> alarmDelegate;
 
