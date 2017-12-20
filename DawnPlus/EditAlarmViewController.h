@@ -8,7 +8,7 @@
 
 #import "AlarmCreateViewController.h"
 
-@interface EditAlarmViewController : AlarmCreateViewController
+@interface EditAlarmViewController : AlarmCreateViewController <AlarmDataDelegate>
 
 @property (strong, nonnull) AlarmObject *selectedAlarm;
 

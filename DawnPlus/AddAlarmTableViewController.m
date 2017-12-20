@@ -11,6 +11,8 @@
 
 @implementation AddAlarmTableViewController
 
+@synthesize previousLabel, previousSoundAsset, previousRepeatArray,alarmDelegate;
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if([cell.reuseIdentifier isEqualToString:@"mediaCell"]) {
@@ -33,7 +35,7 @@
 }
 -(void)launchTonePickerController {
     ToneTableViewController *toneVC = [[ToneTableViewController alloc] init];
-    toneVC.alarmDelegate = self.alarmDelegate;
+    toneVC.alarmDelegate = alarmDelegate;
     [self.navigationController pushViewController:toneVC animated:true];
     
 }
@@ -60,11 +62,17 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"repeatSegue"]) {
         DayTableViewController *daysViewController = segue.destinationViewController;
-        daysViewController.alarmDelegate = self.alarmDelegate;
+        daysViewController.alarmDelegate = alarmDelegate;
+        if(previousRepeatArray != nil) {
+            daysViewController.previousSelection = previousRepeatArray;
+        }
     }
     else if([segue.identifier isEqualToString:@"labelSegue"]) {
         LabelViewController *labelViewController = segue.destinationViewController;
-        labelViewController.alarmDelegate = self.alarmDelegate;
+        labelViewController.alarmDelegate = alarmDelegate;
+        if(previousLabel != nil) {
+            labelViewController.previousLabel = previousLabel;
+        }
     }
 }
 @end

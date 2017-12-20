@@ -14,6 +14,8 @@
     int selectedDays[7];
 }
 
+@property (strong, nonatomic) NSArray *previousSelection;
 @property (weak, nonatomic) id <AlarmDataDelegate> alarmDelegate;
+
 
 @end

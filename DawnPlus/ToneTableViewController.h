@@ -14,6 +14,7 @@
     NSDictionary *tonesList;
 }
 
+@property (strong, nonatomic) NSString *previousSelection;
 @property (weak, nonatomic) id <AlarmDataDelegate> alarmDelegate;
 
 @end

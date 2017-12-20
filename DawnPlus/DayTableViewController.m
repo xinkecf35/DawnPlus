@@ -10,23 +10,31 @@
 
 @implementation DayTableViewController
 
-@synthesize alarmDelegate;
+@synthesize alarmDelegate,previousSelection;
 
--(void)viewDidLoad {
-    [super viewDidLoad];
-    
-   
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    if(previousSelection != nil) {
+        for(int i = 0; i < [previousSelection count]; i++) {
+            if([[previousSelection objectAtIndex:i] integerValue] == 1) {
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                selectedDays[i] = 1;
+            }
+        }
+    }
 }
--(void)viewWillDisappear:(BOOL)animated {
+
+- (void)viewWillDisappear:(BOOL)animated {
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     for(int i = 0; i < 7; i++) {
         [tempArray addObject:[NSNumber numberWithInt:selectedDays[i]]];
     }
-    alarmDelegate.selectedDays = tempArray;
-    NSLog(@"Saved the following array %@", tempArray);
+    [alarmDelegate setSelectedDays:tempArray];
+    NSLog(@"Saved the following array %@", alarmDelegate.selectedDays);
     
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:false];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if(cell.accessoryType == UITableViewCellAccessoryNone) {

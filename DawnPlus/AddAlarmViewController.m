@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    super.tableOptionsVC.alarmDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {

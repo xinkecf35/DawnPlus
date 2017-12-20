@@ -14,5 +14,8 @@
 @interface AddAlarmTableViewController: UITableViewController <MPMediaPickerControllerDelegate>
 
 @property (weak, nonatomic) id <AlarmDataDelegate> alarmDelegate;
+@property (strong, nonatomic) NSString *previousSoundAsset;
+@property (strong, nonatomic) NSString *previousLabel;
+@property (strong, nonatomic) NSArray *previousRepeatArray;
 
 @end
