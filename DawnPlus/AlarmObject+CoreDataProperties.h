@@ -1,9 +1,8 @@
 //
 //  AlarmObject+CoreDataProperties.h
-//  DawnPlus
+//  
 //
-//  Created by Xinke Chen on 2017-08-31.
-//  Copyright © 2017 Xinke Chen. All rights reserved.
+//  Created by Xinke Chen on 2017-12-21.
 //
 //
 
@@ -22,11 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *label;
 @property (nullable, nonatomic, copy) NSString *notificationID;
 @property (nullable, nonatomic, copy) NSString *soundAsset;
+@property (nonatomic) BOOL appTones;
 
 @end
-
-//@interface DaysToRepeatArray: NSValueTransformer
-//
-//@end
 
 NS_ASSUME_NONNULL_END

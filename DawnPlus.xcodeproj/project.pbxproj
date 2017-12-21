@@ -10,6 +10,7 @@
 		8F25780C1FE8595F00819777 /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25780B1FE8595F00819777 /* EditAlarmViewController.m */; };
 		8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */; };
 		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
+		8FDD4A721FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */; };
 		A90A6D73596A85DE3B728851 /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
@@ -25,7 +26,6 @@
 		D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03D957C1EE20DF30079247C /* AlarmViews.storyboard */; };
 		D042E9251F253D3C00C1691A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D042E9241F253D2300C1691A /* QuartzCore.framework */; };
 		D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D07069C71F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m */; };
-		D07069CB1F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D07069C91F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m */; };
 		D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996001D24B38C003010C8 /* Raleway-Bold.ttf */; };
 		D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */; };
 		D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996061D24B38C003010C8 /* Raleway-Italic.ttf */; };
@@ -78,6 +78,8 @@
 		8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmCreateViewController.h; sourceTree = "<group>"; };
 		8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmCreateViewController.m; sourceTree = "<group>"; };
+		8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AlarmObject+CoreDataProperties.m"; path = "/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.m"; sourceTree = "<absolute>"; };
+		8FDD4A711FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AlarmObject+CoreDataProperties.h"; path = "/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.h"; sourceTree = "<absolute>"; };
 		BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
@@ -104,8 +106,6 @@
 		D042E9241F253D2300C1691A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D07069C61F36C48A00BFDD2F /* AlarmObject+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlarmObject+CoreDataClass.h"; sourceTree = "<group>"; };
 		D07069C71F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AlarmObject+CoreDataClass.m"; sourceTree = "<group>"; };
-		D07069C81F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlarmObject+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D07069C91F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AlarmObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D07996001D24B38C003010C8 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		D07996011D24B38C003010C8 /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D07996061D24B38C003010C8 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
@@ -231,8 +231,8 @@
 			children = (
 				D07069C61F36C48A00BFDD2F /* AlarmObject+CoreDataClass.h */,
 				D07069C71F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m */,
-				D07069C81F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.h */,
-				D07069C91F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m */,
+				8FDD4A711FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.h */,
+				8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */,
 				D02394E91E49454F0011C410 /* GeocodeFetch.h */,
 				D02394F51E494A260011C410 /* GeocodeFetch.m */,
 				D0A0180C1CFA783900E8EECB /* LocationFetch.h */,
@@ -617,12 +617,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D02394F91E494B590011C410 /* TrafficFetch.m in Sources */,
+				8FDD4A721FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m in Sources */,
 				8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */,
 				D0EDA1591CF3CA3C0036293B /* AppDelegate.m in Sources */,
 				D028424F1DDEB9C800B3BB87 /* SensitivityViewController.swift in Sources */,
 				D02394EE1E4945660011C410 /* WeatherFetch.m in Sources */,
 				D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */,
-				D07069CB1F36C48A00BFDD2F /* AlarmObject+CoreDataProperties.m in Sources */,
 				D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */,
 				8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,

@@ -131,7 +131,7 @@
                 NSLog(@"For no incidents setting checkmark");
             } else {
                 [trafficInfo setImage:[UIImage imageNamed:@"error"] forState:UIControlStateNormal];
-                NSLog(@"Error on GET request, status: %ld",trafficUpdate.status);
+                NSLog(@"Error on GET request, status: %ld",(long)trafficUpdate.status);
             }
             break;
         case 0:

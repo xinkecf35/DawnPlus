@@ -40,11 +40,11 @@
                 if (JSONError) {
                     NSLog(@"JSON serialization screwed up for some reason");
                 } else {
-                    NSLog(@"Success on serialization, status: %ld", status);
+                    NSLog(@"Success on serialization, status: %ld", (long)status);
                 }
                 [self didChangeValueForKey:@"trafficData"];
             } else {
-                NSLog(@"Request failed, following HTTP status code: %ld", status);
+                NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)status);
             }
         } else {
             NSLog(@"Error on data task for TrafficFetch %@",error);

@@ -14,7 +14,7 @@
 
 @implementation AlarmCreateViewController
 
-@synthesize timePicker, daysToRepeat,coreDataManager, tableOptionsVC, selectedDays, selectedTime, soundAsset, enabled, notificationID, alarmName;
+@synthesize timePicker, daysToRepeat,coreDataManager, tableOptionsVC, selectedDays, selectedTime, soundAsset, enabled, notificationID, appTones, alarmName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -92,6 +92,11 @@
     AlarmObject *alarm = [NSEntityDescription insertNewObjectForEntityForName:@"AlarmObject" inManagedObjectContext:coreDataManager.managedObjectContext];
     alarm.alarmTime = selectedTime;
     alarm.soundAsset = soundAsset;
+    if(appTones == nil) {
+        alarm.appTones = NO;
+    } else {
+        alarm.appTones = [appTones boolValue];
+    }
     alarm.dayToRepeat = selectedDays;
     alarm.enabled = YES;
     alarm.label = alarmName;

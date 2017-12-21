@@ -14,6 +14,7 @@
 @property NSString *alarmName;
 @property NSString *soundAsset;
 @property NSNumber *enabled;
+@property NSNumber *appTones;
 @property NSDate *selectedTime;
 @property NSNumber *notificationID;
 
