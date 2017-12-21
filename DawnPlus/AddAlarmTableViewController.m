@@ -9,11 +9,27 @@
 #import "AddAlarmTableViewController.h"
 #import "ToneTableViewController.h"
 
+@interface AddAlarmTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *mediaCell;
+
+@end
+
 @implementation AddAlarmTableViewController
 
-@synthesize previousLabel, previousSoundAsset, previousRepeatArray,alarmDelegate;
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+@synthesize previousLabel, previousSoundAsset, previousRepeatArray,alarmDelegate,mediaCell;
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
+    if(previousSoundAsset != nil) {
+        mediaCell.detailTextLabel.text = previousSoundAsset;
+    } else {
+        mediaCell.detailTextLabel.text = @" ";
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if([cell.reuseIdentifier isEqualToString:@"mediaCell"]) {
         UIAlertController *selectTypeAlertController = [UIAlertController alertControllerWithTitle:@"Select Media From" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -33,13 +49,13 @@
         
     }
 }
--(void)launchTonePickerController {
+- (void)launchTonePickerController {
     ToneTableViewController *toneVC = [[ToneTableViewController alloc] init];
     toneVC.alarmDelegate = alarmDelegate;
     [self.navigationController pushViewController:toneVC animated:true];
     
 }
--(void)launchMediaPickerController {
+- (void)launchMediaPickerController {
     NSLog(@"Launching MPMediaPickerController");
     MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
     mediaPicker.delegate = self;
@@ -49,17 +65,21 @@
 }
 
 //MPMediaPickerDelegate methods
--(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker {
+- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker {
     [self dismissViewControllerAnimated:true completion:^ {
         NSLog(@"MPMediaPickerController dismissed");
     }];
 }
--(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
+- (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
     MPMediaItem *selectedTrack = [[mediaItemCollection items] objectAtIndex:0];
-    self.alarmDelegate.alarmName = selectedTrack.title;
-    NSLog(@"%@ selected",selectedTrack.title);
+    alarmDelegate.soundAsset = selectedTrack.title;
+    mediaCell.detailTextLabel.text = alarmDelegate.soundAsset;
+    alarmDelegate.appTones = [[NSNumber alloc] initWithBool:NO];
+    [self dismissViewControllerAnimated:true completion:^ {
+        NSLog(@"MPMediaPickerController dismissed with %@", alarmDelegate.soundAsset);
+    }];
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"repeatSegue"]) {
         DayTableViewController *daysViewController = segue.destinationViewController;
         daysViewController.alarmDelegate = alarmDelegate;

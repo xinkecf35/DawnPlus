@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:DawnPlus.xcodeproj">
    </FileRef>
    <FileRef

@@ -46,10 +46,14 @@
 - (void)saveToCoreData {
     //Maybe use KVC to prevent unnesscary changes
     selectedAlarm.dayToRepeat = self.selectedDays;
-    NSLog(@"%@",super.selectedDays);
     selectedAlarm.soundAsset = self.soundAsset;
     selectedAlarm.alarmTime = self.selectedTime;
     selectedAlarm.label = self.alarmName;
+    if(self.appTones == nil) {
+        selectedAlarm.appTones = NO;
+    } else {
+        selectedAlarm.appTones = [self.appTones boolValue];
+    }
     NSError *saveError = nil;
     BOOL save = [self.coreDataManager.managedObjectContext save:&saveError];
     NSLog(@"%d",save );

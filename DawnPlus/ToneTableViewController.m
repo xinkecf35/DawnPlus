@@ -52,7 +52,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *desiredFile = [tonesList objectForKey:cell.textLabel.text];
-    NSLog(@"%@", desiredFile);
+    _alarmDelegate.appTones = [[NSNumber alloc] initWithBool:YES];
     _alarmDelegate.soundAsset = desiredFile;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
