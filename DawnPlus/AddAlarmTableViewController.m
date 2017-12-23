@@ -77,6 +77,9 @@
     alarmDelegate.appTones = [[NSNumber alloc] initWithBool:NO];
     [self dismissViewControllerAnimated:true completion:^ {
         NSLog(@"MPMediaPickerController dismissed with %@", alarmDelegate.soundAsset);
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self.tableView reloadData];
+        });
     }];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

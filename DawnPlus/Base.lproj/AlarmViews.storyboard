@@ -362,6 +362,9 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="135"/>
+                    <connections>
+                        <outlet property="mediaCell" destination="bFk-yA-kLJ" id="5Jq-Ub-05I"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHU-CU-ejt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
