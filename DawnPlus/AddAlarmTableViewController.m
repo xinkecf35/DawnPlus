@@ -11,22 +11,31 @@
 
 @interface AddAlarmTableViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *mediaCell;
+@property (weak, nonatomic) IBOutlet UILabel *mediaCellLabel;
 
 @end
 
 @implementation AddAlarmTableViewController
 
 
-@synthesize previousLabel, previousSoundAsset, previousRepeatArray,alarmDelegate,mediaCell;
+@synthesize previousLabel, previousSoundAsset, previousRepeatArray,alarmDelegate,mediaCellLabel;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:NO];
-    if(previousSoundAsset != nil) {
-        mediaCell.detailTextLabel.text = previousSoundAsset;
-    } else {
-        mediaCell.detailTextLabel.text = @" ";
-    }
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        if(previousSoundAsset != nil) {
+            mediaCellLabel.text = previousSoundAsset;
+        } else {
+            mediaCellLabel.text = @" ";
+        }
+    });
+}
+
+- (void)viewDidLoad {
+    self.tableView.delegate = self;
+    self.tableView.estimatedRowHeight = 44;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,6 +64,7 @@
     [self.navigationController pushViewController:toneVC animated:true];
     
 }
+
 - (void)launchMediaPickerController {
     NSLog(@"Launching MPMediaPickerController");
     MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
@@ -73,12 +83,11 @@
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
     MPMediaItem *selectedTrack = [[mediaItemCollection items] objectAtIndex:0];
     alarmDelegate.soundAsset = selectedTrack.title;
-    mediaCell.detailTextLabel.text = alarmDelegate.soundAsset;
     alarmDelegate.appTones = [[NSNumber alloc] initWithBool:NO];
     [self dismissViewControllerAnimated:true completion:^ {
-        NSLog(@"MPMediaPickerController dismissed with %@", alarmDelegate.soundAsset);
         dispatch_async(dispatch_get_main_queue(), ^ {
-            [self.tableView reloadData];
+            mediaCellLabel.text = alarmDelegate.soundAsset;
+            NSLog(@"MPMediaPickerController dismissed with %@", alarmDelegate.soundAsset);
         });
     }];
 }
