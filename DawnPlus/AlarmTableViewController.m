@@ -51,13 +51,13 @@
     return [sectionInfo numberOfObjects];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
+    AlarmTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
     AlarmObject *alarm = [self.alarmResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = alarm.label;
     NSDateFormatter *time = [[NSDateFormatter alloc] init];
     time.dateStyle = NSDateFormatterNoStyle;
     time.timeStyle = NSDateFormatterShortStyle;
-    cell.detailTextLabel.text = [time stringFromDate:alarm.alarmTime];
+    cell.alarmTimeLabel.text = [time stringFromDate:alarm.alarmTime];
+    cell.alarmNameLabel.text = alarm.label;
     //Setting Delegate
     cell.delegate = self;
     
@@ -78,10 +78,12 @@
 
     if(direction == MGSwipeDirectionRightToLeft) {
         UIColor *deleteColor = [UIColor colorWithHue:0.0 saturation:0.85 brightness:0.86 alpha:1.0];
+        UIFont *raleway = [UIFont fontWithName:@"Raleway" size:17.0];
         MGSwipeButton *deleteButton = [MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:deleteColor];
+        deleteButton.titleLabel.font = raleway;
         UIColor *editColor = [UIColor colorWithHue:0.142 saturation:0.94 brightness:0.89 alpha:1.0];
         MGSwipeButton *editButton = [MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:editColor];
-        
+        editButton.titleLabel.font = raleway;
         return @[deleteButton, editButton];
     }
 

@@ -19,34 +19,50 @@
         <scene sceneID="EYX-6P-GsU">
             <objects>
                 <tableViewController id="Qgu-qJ-Zz6" customClass="AlarmTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VTs-al-CWD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="VTs-al-CWD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="alarmCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" textLabel="8nr-3A-L01" detailTextLabel="xAm-jD-G2E" style="IBUITableViewCellStyleSubtitle" id="QKI-Na-Ym0" customClass="MGSwipeTableCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="center" restorationIdentifier="alarmCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="84" id="QKI-Na-Ym0" customClass="AlarmTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="alarmView" tableViewCell="QKI-Na-Ym0" id="Oww-kf-BJw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8nr-3A-L01">
-                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:30 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-6w-dDJ">
+                                            <rect key="frame" x="16" y="4" width="131" height="43"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="36"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xAm-jD-G2E">
-                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Saturday Alarm" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-vy-9ee">
+                                            <rect key="frame" x="16" y="57" width="157" height="21"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhH-Dq-BJh">
+                                            <rect key="frame" x="306" y="26" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="changeAlarmEnable:" destination="QKI-Na-Ym0" eventType="valueChanged" id="L20-Lw-uOf"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="C0d-vy-9ee" secondAttribute="bottom" constant="6" id="4Uy-vL-MbN"/>
+                                        <constraint firstItem="EhH-Dq-BJh" firstAttribute="centerY" secondItem="Oww-kf-BJw" secondAttribute="centerY" id="C7K-mV-jrx"/>
+                                        <constraint firstItem="FlV-6w-dDJ" firstAttribute="top" secondItem="Oww-kf-BJw" secondAttribute="top" constant="4" id="HgQ-WE-meA"/>
+                                        <constraint firstItem="FlV-6w-dDJ" firstAttribute="leading" secondItem="Oww-kf-BJw" secondAttribute="leading" constant="16" id="O1e-ym-sLa"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="EhH-Dq-BJh" secondAttribute="trailing" constant="4" id="WLX-xB-eSL"/>
+                                        <constraint firstItem="C0d-vy-9ee" firstAttribute="leading" secondItem="FlV-6w-dDJ" secondAttribute="leading" id="xAz-1e-5gk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="alarmNameLabel" destination="C0d-vy-9ee" id="vba-k4-sr7"/>
+                                    <outlet property="alarmTimeLabel" destination="FlV-6w-dDJ" id="4t4-ry-thd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -74,7 +90,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlV-nn-KeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bXR-kr-lFQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="681" y="1112"/>
+            <point key="canvasLocation" x="537" y="1114"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="6wE-id-dBx">
@@ -92,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7N-wP-ozf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1602" y="47"/>
+            <point key="canvasLocation" x="1439" y="1114"/>
         </scene>
         <!--Repeat-->
         <scene sceneID="Kyx-8q-wl9">
@@ -258,7 +274,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KtC-cm-V9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3724" y="-185"/>
+            <point key="canvasLocation" x="3108" y="717"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qP0-Cj-dBi">
@@ -374,7 +390,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHU-CU-ejt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863" y="111"/>
+            <point key="canvasLocation" x="2249" y="1013"/>
         </scene>
         <!--Label-->
         <scene sceneID="hcJ-bq-kgo">
@@ -425,7 +441,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar2-Dw-akR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tKT-dG-5Kd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3748" y="430"/>
+            <point key="canvasLocation" x="3132" y="1332"/>
         </scene>
     </scenes>
 </document>
