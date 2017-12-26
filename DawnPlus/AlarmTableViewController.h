@@ -11,7 +11,7 @@
 #import "AlarmObject+CoreDataClass.h"
 #import "AddAlarmViewController.h"
 #import "EditAlarmViewController.h"
-#import "MGSwipeTableCell.h"
+#import "AlarmTableViewCell.h"
 #import "MGSwipeButton.h"
 
 @import UIKit;

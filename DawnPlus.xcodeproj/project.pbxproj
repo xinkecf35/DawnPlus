@@ -11,6 +11,7 @@
 		8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */; };
 		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
 		8FDD4A721FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */; };
+		8FE5C9151FF2136800080D20 /* AlarmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */; };
 		A90A6D73596A85DE3B728851 /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
@@ -80,6 +81,8 @@
 		8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmCreateViewController.m; sourceTree = "<group>"; };
 		8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AlarmObject+CoreDataProperties.m"; path = "/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.m"; sourceTree = "<absolute>"; };
 		8FDD4A711FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AlarmObject+CoreDataProperties.h"; path = "/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.h"; sourceTree = "<absolute>"; };
+		8FE5C9131FF2136800080D20 /* AlarmTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewCell.h; sourceTree = "<group>"; };
+		8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewCell.m; sourceTree = "<group>"; };
 		BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */,
 				D01ED5B21ECC2B0000AA436C /* AlarmTableViewController.h */,
 				D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */,
+				8FE5C9131FF2136800080D20 /* AlarmTableViewCell.h */,
+				8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */,
 				D0D911A11EEE61EB008A2CF8 /* AlarmControlClasses */,
 			);
 			name = Control;
@@ -625,6 +630,7 @@
 				D021B28B1F2DA225002F2289 /* AddAlarmTableViewController.m in Sources */,
 				D07069CA1F36C48A00BFDD2F /* AlarmObject+CoreDataClass.m in Sources */,
 				8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */,
+				8FE5C9151FF2136800080D20 /* AlarmTableViewCell.m in Sources */,
 				D0DCA8201D6DEEA20025CB0D /* ClockViewController.m in Sources */,
 				D02394F61E494A260011C410 /* GeocodeFetch.m in Sources */,
 				D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */,
