@@ -22,5 +22,6 @@
 }
 
 - (IBAction)changeAlarmEnable:(UISwitch *)sender {
+    _alarm.enabled = _enableSwitch.on;
 }
 @end

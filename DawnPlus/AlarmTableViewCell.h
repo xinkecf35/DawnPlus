@@ -7,11 +7,14 @@
 //
 
 #import <MGSwipeTableCell/MGSwipeTableCell.h>
+#import "AlarmObject+CoreDataProperties.h"
 
 @interface AlarmTableViewCell : MGSwipeTableCell
 
 @property (weak, nonatomic) IBOutlet UILabel *alarmTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *alarmNameLabel;
+@property (strong, nonatomic) AlarmObject *alarm;
+@property (weak, nonatomic) IBOutlet UISwitch *enableSwitch;
 - (IBAction)changeAlarmEnable:(UISwitch *)sender;
 
 @end
