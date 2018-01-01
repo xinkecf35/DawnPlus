@@ -62,6 +62,7 @@
                                 <connections>
                                     <outlet property="alarmNameLabel" destination="C0d-vy-9ee" id="vba-k4-sr7"/>
                                     <outlet property="alarmTimeLabel" destination="FlV-6w-dDJ" id="4t4-ry-thd"/>
+                                    <outlet property="enableSwitch" destination="EhH-Dq-BJh" id="rfn-a7-UM5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

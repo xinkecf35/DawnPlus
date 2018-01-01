@@ -53,6 +53,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AlarmTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
     AlarmObject *alarm = [self.alarmResultsController objectAtIndexPath:indexPath];
+    cell.alarm = alarm;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        cell.enableSwitch.on = alarm.enabled;
+    });
     NSDateFormatter *time = [[NSDateFormatter alloc] init];
     time.dateStyle = NSDateFormatterNoStyle;
     time.timeStyle = NSDateFormatterShortStyle;
