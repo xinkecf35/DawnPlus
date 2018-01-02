@@ -41,8 +41,8 @@
                     NSLog(@"JSON serialization screwed up for some reason");
                 } else {
                     NSLog(@"Success on serialization, status: %ld", (long)status);
+                    [self didChangeValueForKey:@"trafficData"];
                 }
-                [self didChangeValueForKey:@"trafficData"];
             } else {
                 NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)status);
             }

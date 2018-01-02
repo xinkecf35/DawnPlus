@@ -10,9 +10,7 @@
 
 @interface TrafficFetch : NSObject
 {
-    NSData *trafficJSON;
     NSURLSession *session;
-   
 }
 
 @property (readonly) NSMutableDictionary *trafficData;

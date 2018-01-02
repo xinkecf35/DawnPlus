@@ -44,13 +44,13 @@ NSString *sensitivityKey = @"sensitivityCheckedCells";
 }
 
 -(void)testURLGeneration {
-    NSString *goodURLString = @"https://traffic.cit.api.here.com/traffic/6.2/incidents.json?app_code=s90vON9VRub7bojMcAC-Zg&app_id=J4k08i80f9ocJqcBmXPi&type=accident,congestion,disabledvehicle,roadhazard,weather,construction,masstransit,misc,othernews,plannedevent&bbox=39.000000,-74.000000;40.000000,-75.000000";
+    NSString *goodURLString = @"https://traffic.cit.api.here.com/traffic/6.2/incidents.json?app_code=SvmUX0d3scSSRHkCfKl_Xw&app_id=SGYkx5GuiLHKROvjPKZm&type=accident,congestion,disabledvehicle,roadhazard,weather,construction,masstransit,misc,othernews,plannedevent&bbox=39.000000,-74.000000;40.000000,-75.000000";
     NSURL *goodURL = [NSURL URLWithString:goodURLString];
     NSDictionary *mockCoordinates = @{
-                                  @"lowerLatitude": [NSNumber numberWithDouble:40.0],
-                                  @"lowerLongitude": [NSNumber numberWithDouble:-75.0],
-                                  @"upperLatitude": [NSNumber numberWithDouble:39.0],
-                                  @"upperLongitude": [NSNumber numberWithDouble:-74.0]
+                                  @"lowerLatitude": [NSNumber numberWithDouble:40.000000],
+                                  @"lowerLongitude": [NSNumber numberWithDouble:-75.000000],
+                                  @"upperLatitude": [NSNumber numberWithDouble:39.000000],
+                                  @"upperLongitude": [NSNumber numberWithDouble:-74.000000]
                                   };
     trafficTest.coordinates = mockCoordinates;
     NSURL *testURL = [trafficTest generateURL:mockUserDefaults];
