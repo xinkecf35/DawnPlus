@@ -11,7 +11,16 @@
 
 @implementation WeatherFetch
 
-@synthesize currentCondition,currentTemperature,precipitationProbability, isFarenheit,defaults;
+@synthesize weatherData,currentCondition,currentTemperature,precipitationProbability,isFarenheit,status,defaults;
+
+-(id)init {
+    self = [super init];
+    if(self) {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:config];
+    }
+    return self;
+}
 
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
@@ -20,6 +29,8 @@
     {
         currentLatitude = latitude;
         currentLongitude = longitude;
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:config];
     }
     return self;
 }
@@ -31,30 +42,40 @@
     NSLog(@"%@ Lat: %0.6f, Long: %0.6f",self,currentLatitude,currentLongitude);
 }
 
--(void)sendWeatherRequest
+-(NSURLSessionDataTask *)sendWeatherRequest
 {
     //Setting desired units from NSUserDefaults
     isFarenheit = [defaults objectForKey:@"isFarenheit"];
     NSString *units = @"us";
-    if([isFarenheit boolValue] == false)
-    {
-        units = @"si";
-    }
-    
-    NSError *weatherError = nil;
+    if([isFarenheit boolValue] == false) units = @"si";
     //Setting darksky.net url
-    NSString *weatherURL = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f?units=%@",DARK_SKY_KEY,currentLatitude,currentLongitude,units];
-    //JSON GET request
-    weatherJSON = [NSData dataWithContentsOfURL:[NSURL URLWithString:weatherURL]];
-    if(weatherJSON.length > 0)
-    {
-        weatherData = [NSJSONSerialization JSONObjectWithData:weatherJSON options:kNilOptions error:&weatherError];
-        NSLog(@"Weather Request Sent; json recieved for Lat: %0.6f, Long:%0.6f",currentLatitude,currentLongitude);
-    }
-    else
-    {
-        NSLog(@"WeatherFetch is unable to fetch weather data");
-    }
+    NSString *requestURLString = [NSString stringWithFormat:@"https://api.darksky.net/forecast/%@/%0.6f,%0.6f?units=%@",DARK_SKY_KEY,currentLatitude,currentLongitude,units];
+    NSURL *weatherURL = [NSURL URLWithString:requestURLString];
+    //JSON GET request with NSURLSession
+    NSURLSessionDataTask *requestTask = [session dataTaskWithURL:weatherURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            status = httpResponse.statusCode;
+            if([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                NSError *JSONError;
+                [self willChangeValueForKey:@"weatherData"];
+                weatherData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
+                if (JSONError) {
+                    NSLog(@"JSON serialization screwed up for some reason");
+                } else {
+                    NSLog(@"Success on serialization, status: %ld", (long)status);
+                    [self didChangeValueForKey:@"weatherData"];
+                }
+            } else {
+                NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)status);
+            }
+        } else {
+            NSLog(@"Error on data task for WeatherFetch %@",error);
+        }
+    }];
+    NSLog(@"Requesttask is %@",requestTask);
+    [requestTask resume];
+    return requestTask;
 }
 -(void)setWeatherParameters
 {

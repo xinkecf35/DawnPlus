@@ -12,18 +12,19 @@
 @interface WeatherFetch : NSObject {
     double currentLongitude;
     double currentLatitude;
-    NSData *weatherJSON;
-    NSMutableDictionary *weatherData;
+    NSURLSession *session;
 }
 
 @property (nonatomic) NSUserDefaults *defaults;
+@property (nonatomic, readonly) NSMutableDictionary *weatherData;
 @property (nonatomic, readonly) NSString *currentTemperature;
 @property (nonatomic, readonly) NSString *currentCondition;
 @property (nonatomic, readonly) NSString *precipitationProbability;
 @property (nonatomic, readonly) NSNumber *isFarenheit;
+@property (nonatomic, readonly) NSInteger status;
 
 -(void)setWeatherLocation: (double)latitude : (double)longitude;
--(void)sendWeatherRequest;
+-(NSURLSessionDataTask *)sendWeatherRequest;
 -(void)setWeatherParameters;
 -(id)initWithLocation: (double)latitude : (double)longitude;
 
