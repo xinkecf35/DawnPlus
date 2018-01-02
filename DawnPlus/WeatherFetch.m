@@ -73,7 +73,6 @@
             NSLog(@"Error on data task for WeatherFetch %@",error);
         }
     }];
-    NSLog(@"Requesttask is %@",requestTask);
     [requestTask resume];
     return requestTask;
 }
