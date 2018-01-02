@@ -34,7 +34,9 @@
     trafficUpdate = [[TrafficFetch alloc] init];
     weatherUpdate.defaults= [NSUserDefaults standardUserDefaults];
     trafficUpdate.userDefaults = [NSUserDefaults standardUserDefaults];
+    //adding KVO observers
     [trafficUpdate addObserver:self forKeyPath:@"trafficData" options:NSKeyValueObservingOptionNew context:nil];
+    [weatherUpdate addObserver:self forKeyPath:@"weatherData" options:NSKeyValueObservingOptionNew context:nil];
     geocodeService = [[GeocodeFetch alloc]init];
     //Run Geocode Methods
     NSDictionary *workCoordinates = [defaults dictionaryForKey:@"workLocation"];
@@ -73,11 +75,17 @@
         geocodeService.currentLongitude = longitude;
         trafficUpdate.coordinates = [geocodeService boundingBoxCalculations];
         [self updateServices];
-    } else if ([keyPath isEqualToString:@"trafficData"]) {
+    } else if([keyPath isEqualToString:@"trafficData"]) {
         NSLog(@"%@ observer has received message for trafficData",self);
         [trafficUpdate addTrafficIncidents];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateTrafficLabels];
+        });
+    } else if([keyPath isEqualToString:@"weatherData"]) {
+        NSLog(@"%@ observer has received message for weatherData",self);
+        [weatherUpdate setWeatherParameters];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateWeatherLabels];
         });
     }
 }
@@ -91,7 +99,6 @@
 }
 -(void) updateServices {
     [weatherUpdate sendWeatherRequest];
-    [weatherUpdate setWeatherParameters];
     //Run Geocode Methods
     NSDictionary *workCoordinates = [defaults dictionaryForKey:@"workLocation"];
     if(![workCoordinates isEqual:[NSNull null]]) {
@@ -103,10 +110,6 @@
     //From Geocode to TrafficFetch coordinates
     trafficUpdate.coordinates = [geocodeService boundingBoxCalculations];
     [trafficUpdate sendTrafficRequest];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self updateWeatherLabels];
-        
-    });
 }
 -(void) updateWeatherLabels
 {
