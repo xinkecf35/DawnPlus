@@ -16,10 +16,11 @@
     NSMutableDictionary *weatherData;
 }
 
-@property NSString *currentTemperature;
-@property NSString *currentCondition;
-@property NSString *precipitationProbability;
-@property NSNumber *isFarenheit;
+@property (nonatomic) NSUserDefaults *defaults;
+@property (nonatomic, readonly) NSString *currentTemperature;
+@property (nonatomic, readonly) NSString *currentCondition;
+@property (nonatomic, readonly) NSString *precipitationProbability;
+@property (nonatomic, readonly) NSNumber *isFarenheit;
 
 -(void)setWeatherLocation: (double)latitude : (double)longitude;
 -(void)sendWeatherRequest;
