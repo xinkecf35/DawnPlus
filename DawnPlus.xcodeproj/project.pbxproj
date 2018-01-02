@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F21211F1FFB5B9F00CAD0FF /* WeatherFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F21211E1FFB5B9F00CAD0FF /* WeatherFetchTest.m */; };
 		8F25780C1FE8595F00819777 /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25780B1FE8595F00819777 /* EditAlarmViewController.m */; };
 		8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */; };
 		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
@@ -73,6 +74,7 @@
 		094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
 		380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F21211E1FFB5B9F00CAD0FF /* WeatherFetchTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherFetchTest.m; sourceTree = "<group>"; };
 		8F25780A1FE8595F00819777 /* EditAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditAlarmViewController.h; sourceTree = "<group>"; };
 		8F25780B1FE8595F00819777 /* EditAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditAlarmViewController.m; sourceTree = "<group>"; };
 		8F7F26021FCDC2EB0065A40B /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
@@ -199,8 +201,6 @@
 				D028424C1DDEB8AA00B3BB87 /* NavigationControlClasses */,
 				D01ED5B21ECC2B0000AA436C /* AlarmTableViewController.h */,
 				D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */,
-				8FE5C9131FF2136800080D20 /* AlarmTableViewCell.h */,
-				8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */,
 				D0D911A11EEE61EB008A2CF8 /* AlarmControlClasses */,
 			);
 			name = Control;
@@ -290,6 +290,7 @@
 			children = (
 				D0C5F18D1EEE5F97005897CD /* DawnPlusTests.m */,
 				D0238D741F40A4B700F55054 /* TrafficFetchTests.m */,
+				8F21211E1FFB5B9F00CAD0FF /* WeatherFetchTest.m */,
 				D0C5F18F1EEE5F97005897CD /* Info.plist */,
 			);
 			path = DawnPlusTests;
@@ -298,6 +299,8 @@
 		D0D911A11EEE61EB008A2CF8 /* AlarmControlClasses */ = {
 			isa = PBXGroup;
 			children = (
+				8FE5C9131FF2136800080D20 /* AlarmTableViewCell.h */,
+				8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */,
 				8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */,
 				8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */,
 				8F7F26021FCDC2EB0065A40B /* AddAlarmViewController.h */,
@@ -614,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0238D751F40A4B700F55054 /* TrafficFetchTests.m in Sources */,
+				8F21211F1FFB5B9F00CAD0FF /* WeatherFetchTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

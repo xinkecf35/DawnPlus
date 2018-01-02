@@ -11,7 +11,7 @@
 
 @implementation WeatherFetch
 
-@synthesize currentCondition,currentTemperature,isFarenheit;
+@synthesize currentCondition,currentTemperature,precipitationProbability, isFarenheit,defaults;
 
 -(id)initWithLocation: (double)latitude : (double)longitude
 {
@@ -34,7 +34,6 @@
 -(void)sendWeatherRequest
 {
     //Setting desired units from NSUserDefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     isFarenheit = [defaults objectForKey:@"isFarenheit"];
     NSString *units = @"us";
     if([isFarenheit boolValue] == false)
@@ -65,21 +64,21 @@
         NSDictionary *currentWeather = [weatherData objectForKey:@"currently"];
         double temperature = [[currentWeather objectForKey:@"temperature"] doubleValue];
         int roundedTemperature = (int)ceil(temperature);
-        self.currentTemperature = [NSString stringWithFormat:@"%i",roundedTemperature];
+        currentTemperature = [NSString stringWithFormat:@"%i",roundedTemperature];
         //Checking and Setting weather condition
         NSArray *weatherConditions = @[@"clear-day",@"clear-night",@"rain",@"snow",@"sleet",@"wind",@"fog",@"cloudy",@"partly-cloudy-day",@"partly-cloudy-night"];
         for (NSString *item in weatherConditions)
         {
             if([item isEqualToString:[currentWeather objectForKey:@"icon"]])
             {
-                self.currentCondition = [currentWeather objectForKey:@"icon"];
+                currentCondition = [currentWeather objectForKey:@"icon"];
             }
         }
         //Turn double into percentage
         NSNumber *precipitation = [weatherData objectForKey:@"precipProbability"];
         double precip = [precipitation doubleValue];
         precip *= 100;
-        self.precipitationProbability = [NSString stringWithFormat:@"%0.0f %%",precip];
+        precipitationProbability = [NSString stringWithFormat:@"%0.0f %%",precip];
         
         NSLog(@"%@ Weather Parameters for %0.6f,%0.6f Temperature: %@, Condition:%@ Precipitation: %@", self,currentLatitude,currentLongitude,self.currentTemperature, self.currentCondition,self.precipitationProbability);
     }

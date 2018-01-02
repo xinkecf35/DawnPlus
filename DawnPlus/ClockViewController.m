@@ -32,6 +32,7 @@
     //Instantiating  weatherUpdate, trafficUpdate, and geocodeService
     weatherUpdate = [[WeatherFetch alloc] initWithLocation:latitude :longitude];
     trafficUpdate = [[TrafficFetch alloc] init];
+    weatherUpdate.defaults= [NSUserDefaults standardUserDefaults];
     trafficUpdate.userDefaults = [NSUserDefaults standardUserDefaults];
     [trafficUpdate addObserver:self forKeyPath:@"trafficData" options:NSKeyValueObservingOptionNew context:nil];
     geocodeService = [[GeocodeFetch alloc]init];
