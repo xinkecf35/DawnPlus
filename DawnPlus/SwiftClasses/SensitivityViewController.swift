@@ -13,7 +13,7 @@ class SensitivityViewController: UITableViewController {
     //Constants and Default values
     let trafficOptions : [String] = ["Accident","Congestion",
                                      "Road Hazard","Construction",
-                                     "Mass Transit", "Other"]
+                                     "Closures/Detours", "Weather"]
     let checkedCellsConstant : String = "sensitivityCheckedCells"
     let defaults : UserDefaults = UserDefaults.standard
     var checkedCells:[Int] = [0,0,0,0,0,0]

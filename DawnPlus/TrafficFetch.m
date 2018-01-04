@@ -143,23 +143,28 @@
 -(NSURL *)generateURL:(NSUserDefaults *)defaults {
     NSURLComponents *trafficURL = [[NSURLComponents alloc] init];
     trafficURL.scheme = @"https";
-    trafficURL.host = @"traffic.cit.api.here.com";
-    trafficURL.path = @"/traffic/6.2/incidents.json";
-    NSString *type = [NSString  stringWithString:[self generateFilters:defaults]];
-    NSString *boundingBox = nil;
+    trafficURL.host = @"api.tomtom.com";
+    //Creating awkward path according to TomTom APIs
     if(coordinates) {
-        boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f;%0.6f,%0.6f",
+        NSNumber *versionNumber = [NSNumber numberWithInt:4];
+        NSString *style = @"s3";
+        NSString *boundingBox = [NSString stringWithFormat:@"%0.6f,%0.6f,%0.6f,%0.6f",
                        [[coordinates objectForKey:@"upperLatitude"] doubleValue],
                        [[coordinates objectForKey:@"upperLongitude"] doubleValue],
                        [[coordinates objectForKey:@"lowerLatitude"] doubleValue],
                        [[coordinates objectForKey:@"lowerLongitude"] doubleValue]];
+        NSNumber *zoom = [NSNumber numberWithInt:11];
+        NSString *URLPath = [NSString stringWithFormat:@"/traffic/services/%@/incidentDetails/%@/%@/%@/-1/json",
+                             versionNumber,style,boundingBox,zoom];
+        trafficURL.path = URLPath;
+        NSLog(@"%@",URLPath);
     } else {
         return nil;
     }
-    NSDictionary *queryParameters = @{@"bbox":boundingBox,
-                                      @"app_id":HERE_APP_ID,
-                                      @"app_code":HERE_APP_CODE,
-                                      @"type":type};
+    NSDictionary *queryParameters = @{@"key":TOMTOM_KEY,
+                                      @"expandCluster":@"true",
+                                      @"projection":@"EPSG4326"
+                                      };
     NSMutableArray *queryItems = [NSMutableArray array];
     for(NSString *key in queryParameters) {
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParameters[key]]];

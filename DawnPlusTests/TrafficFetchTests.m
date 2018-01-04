@@ -44,7 +44,8 @@ NSString *sensitivityKey = @"sensitivityCheckedCells";
 }
 
 -(void)testURLGeneration {
-    NSString *goodURLString = @"https://traffic.cit.api.here.com/traffic/6.2/incidents.json?app_code=SvmUX0d3scSSRHkCfKl_Xw&app_id=SGYkx5GuiLHKROvjPKZm&type=accident,congestion,disabledvehicle,roadhazard,weather,construction,masstransit,misc,othernews,plannedevent&bbox=39.000000,-74.000000;40.000000,-75.000000";
+//    NSString *goodURLString = @"https://traffic.cit.api.here.com/traffic/6.2/incidents.json?app_code=SvmUX0d3scSSRHkCfKl_Xw&app_id=SGYkx5GuiLHKROvjPKZm&type=accident,congestion,disabledvehicle,roadhazard,weather,construction,masstransit,misc,othernews,plannedevent&bbox=39.000000,-74.000000;40.000000,-75.000000";
+    NSString *goodURLString = @"https://api.tomtom.com/traffic/services/4/incidentDetails/s3/39.000000,-74.000000,40.000000,-75.000000/11/-1/json?key=lrIONC7C1b2wkoUdFGmmYqsMgrIhEQeA&expandCluster=true&projection=EPSG4326";
     NSURL *goodURL = [NSURL URLWithString:goodURLString];
     NSDictionary *mockCoordinates = @{
                                   @"lowerLatitude": [NSNumber numberWithDouble:40.000000],
