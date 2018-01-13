@@ -13,6 +13,7 @@
 
 @property (readwrite) NSMutableDictionary *trafficData;
 @property (readwrite) NSInteger status;
+-(NSDictionary *) intersectionsForIncident:(NSDictionary *)incident;
 
 @end
 
@@ -53,34 +54,65 @@
     [requestTask resume];
     return requestTask;
 }
+//Need to write documentation on how this works
 
 -(NSInteger) addTrafficIncidents {
     if(trafficData == nil) {
         return  -1;
     }
-    if([trafficData objectForKey:@"TRAFFIC_ITEMS"] != nil) {
-        NSDictionary *data = [trafficData objectForKey:@"TRAFFIC_ITEMS"];
-        NSArray *rawItems = [NSArray arrayWithArray:[data objectForKey:@"TRAFFIC_ITEM"]];
+    if([trafficData objectForKey:@"tm"] != nil) {
+        NSDictionary *data = [trafficData objectForKey:@"tm"];
+        NSArray *rawItems = [NSArray arrayWithArray:[data objectForKey:@"poi"]];
         NSMutableArray *filteredItems = [[NSMutableArray alloc] init];
+        //Enumerating through incidents
         for (NSDictionary *item in rawItems) {
             NSMutableDictionary *incident = [[NSMutableDictionary alloc] init];
-            [incident setObject:[item objectForKey:@"TRAFFIC_ITEM_TYPE_DESC"] forKey:@"type"];
-            [incident setObject:[item objectForKey:@"CRITICALITY"] forKey:@"criticality"];
-            [incident setObject:[[[item objectForKey:@"LOCATION"] objectForKey:@"GEOLOC"] objectForKey:@"ORIGIN"] forKey:@"location"];
-            [incident setObject:[item objectForKey:@"TRAFFIC_ITEM_DESCRIPTION"] forKey:@"descriptions"];
-            [incident setObject:[item objectForKey:@"TRAFFIC_ITEM_DETAIL"] forKey:@"detail"];
-            //NSLog(@"%@ added incident %@",self, incident);
+            //Setting clusteredIncidents
+            if([[item objectForKey:@"cs"] intValue] == 0) {
+                [incident setObject:[item objectForKey:@"d"] forKey:@"detail"];
+                [incident setObject:@[] forKey:@"clusteredIncidents"];
+                //[incident setObject:[self intersectionsForIncident:item] forKey:@"intersections"];
+            } else {
+                NSMutableArray *detailIncidents = [[NSMutableArray alloc] init];
+                for (NSDictionary *detailItem in [item objectForKey:@"cpoi"]) {
+                    NSMutableDictionary *detailIncident = [[NSMutableDictionary alloc] init];
+                    [detailIncident setObject:[detailItem objectForKey:@"ic"] forKey:@"type"];
+                    [detailIncident setObject:[detailItem objectForKey:@"d"] forKey:@"detail"];
+                    [detailIncident setObject:[detailItem objectForKey:@"ty"] forKey:@"criticality"];
+                    [detailIncident setObject:[detailItem objectForKey:@"p"] forKey:@"location"];
+                    //[detailIncident setObject:[self intersectionsForIncident:detailItem] forKey:@"intersections"];
+                    [detailIncidents addObject:detailIncident];
+                }
+                [incident setObject:@"Multiple Items" forKey:@"detail"];
+                [incident setObject:[detailIncidents copy] forKey:@"clusteredIncidents"];
+                [incident setObject:@{} forKey:@"intersections"];
+            }
+            [incident setObject:[item objectForKey:@"ic"] forKey:@"type"]; //Setting type
+            [incident setObject:[item objectForKey:@"ty"] forKey:@"criticality"]; //Setting severity
+            [incident setObject:[item objectForKey:@"p"] forKey:@"location"]; //Setting location
             [filteredItems addObject:incident];
         }
         trafficIncidents = [filteredItems copy];
+        NSLog(@"trafficIncidents:\n %@",trafficIncidents);
         return [filteredItems count];
     } else {
         return 0;
     }
     return -1;
 }
+//Returns road labels of traffic incidents for non-nil dictionary of correct format
+-(NSDictionary *)intersectionsForIncident:(NSDictionary *)incident {
+    if(incident) {
+        return @{
+                 @"road" : [incident objectForKey:@"r"],
+                 @"start": [incident objectForKey:@"f"],
+                 @"stop" : [incident objectForKey:@"t"]
+        };
+    }
+    return nil;
+}
 //Generate Severity based on greated number of certain incident type
-//0 for critical, 1 for major, 2 for minor, 3 for lowImpat
+//0 for critical, 1 for major, 2 for minor, 3 for lowImpact
 -(NSInteger)rankOverallSeverity {
     if ([trafficIncidents count] > 0) {
         int criticalValue, minorValue, majorValue, lowImpactValue;

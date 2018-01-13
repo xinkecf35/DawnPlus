@@ -72,8 +72,9 @@ NSString *sensitivityKey = @"sensitivityCheckedCells";
     XCTAssertNotNil([trafficTest sendTrafficRequest], @"Data should be succesufully created");
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         XCTAssertNotNil(trafficTest.trafficData, @"Data is not nil");
-        XCTAssertNotNil([trafficTest.trafficData objectForKey:@"TRAFFIC_ITEMS"],@"Correct Response has been given");
+        XCTAssertNotNil([trafficTest.trafficData objectForKey:@"tm"],@"Correct Response has been given");
         [expectation fulfill];
+        NSLog(@"Data is:\n %@",trafficTest.trafficData);
     });
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 
