@@ -71,7 +71,7 @@
             if([[item objectForKey:@"cs"] intValue] == 0) {
                 [incident setObject:[item objectForKey:@"d"] forKey:@"detail"];
                 [incident setObject:@[] forKey:@"clusteredIncidents"];
-                //[incident setObject:[self intersectionsForIncident:item] forKey:@"intersections"];
+                [incident setObject:[self intersectionsForIncident:item] forKey:@"intersections"];
             } else {
                 NSMutableArray *detailIncidents = [[NSMutableArray alloc] init];
                 for (NSDictionary *detailItem in [item objectForKey:@"cpoi"]) {
@@ -80,7 +80,7 @@
                     [detailIncident setObject:[detailItem objectForKey:@"d"] forKey:@"detail"];
                     [detailIncident setObject:[detailItem objectForKey:@"ty"] forKey:@"criticality"];
                     [detailIncident setObject:[detailItem objectForKey:@"p"] forKey:@"location"];
-                    //[detailIncident setObject:[self intersectionsForIncident:detailItem] forKey:@"intersections"];
+                    [detailIncident setObject:[self intersectionsForIncident:detailItem] forKey:@"intersections"];
                     [detailIncidents addObject:detailIncident];
                 }
                 [incident setObject:@"Multiple Items" forKey:@"detail"];
@@ -91,6 +91,7 @@
             [incident setObject:[item objectForKey:@"ty"] forKey:@"criticality"]; //Setting severity
             [incident setObject:[item objectForKey:@"p"] forKey:@"location"]; //Setting location
             [filteredItems addObject:incident];
+
         }
         trafficIncidents = [filteredItems copy];
         NSLog(@"trafficIncidents:\n %@",trafficIncidents);
@@ -103,13 +104,17 @@
 //Returns road labels of traffic incidents for non-nil dictionary of correct format
 -(NSDictionary *)intersectionsForIncident:(NSDictionary *)incident {
     if(incident) {
-        return @{
-                 @"road" : [incident objectForKey:@"r"],
-                 @"start": [incident objectForKey:@"f"],
-                 @"stop" : [incident objectForKey:@"t"]
-        };
+        NSMutableDictionary *intersection = [[NSMutableDictionary alloc] init];
+        if([incident objectForKey:@"f"]) {
+            [intersection setObject:[incident objectForKey:@"f"] forKey:@"start"];
+            [intersection setObject:[incident objectForKey:@"t"] forKey:@"stop"];
+        }
+        if([incident objectForKey:@"r"]) {
+            [intersection setObject:[incident objectForKey:@"r"] forKey:@"road"];
+        }
+        return [intersection copy];
     }
-    return nil;
+    return @{};
 }
 //Generate Severity based on greated number of certain incident type
 //0 for critical, 1 for major, 2 for minor, 3 for lowImpact
