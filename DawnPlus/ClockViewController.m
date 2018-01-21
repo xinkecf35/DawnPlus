@@ -142,15 +142,15 @@
             [trafficInfo setImage:[UIImage imageNamed:@"caution-red"] forState:UIControlStateNormal];
             NSLog(@"For critical ranking setting caution-red");
             break;
-        case 1:
+        case 3:
             [trafficInfo setImage:[UIImage imageNamed:@"caution-red"] forState:UIControlStateNormal];
-            NSLog(@"For major ranking setting caution-red");
+            NSLog(@"For critical ranking setting caution-red");
             break;
         case 2:
             [trafficInfo setImage:[UIImage imageNamed:@"caution"] forState:UIControlStateNormal];
             NSLog(@"For minor ranking setting caution");
             break;
-        case 3:
+        case 1:
             [trafficInfo setImage:[UIImage imageNamed:@"check-mark"] forState:UIControlStateNormal];
             NSLog(@"For lowImpact ranking setting checkmark");
             break;

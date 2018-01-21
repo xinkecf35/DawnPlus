@@ -41,7 +41,8 @@
     currentLongitude = longitude;
     NSLog(@"%@ Lat: %0.6f, Long: %0.6f",self,currentLatitude,currentLongitude);
 }
-
+// Adds NSURLSessionTask to NSURLSession to retrieve incidents from Dark Sky
+// Returns NSURLSessionTask to verify data task is added
 -(NSURLSessionDataTask *)sendWeatherRequest
 {
     //Setting desired units from NSUserDefaults
@@ -76,6 +77,7 @@
     [requestTask resume];
     return requestTask;
 }
+// Set basic parameters; set temperature, precipitationProbability, currentCondition
 -(void)setWeatherParameters
 {
     if([weatherData count] > 0)
