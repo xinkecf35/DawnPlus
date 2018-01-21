@@ -28,6 +28,8 @@
     }
     return self;
 }
+// Adds NSURLSessionTask to NSURLSession to retrieve incidents from TomTom
+// Returns NSURLSessionTask to verify data task is added
 -(NSURLSessionTask *)sendTrafficRequest {
     NSURL *requestURL = [self generateURL:userDefaults];
     NSURLSessionDataTask *requestTask = [session dataTaskWithURL:requestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -54,8 +56,12 @@
     [requestTask resume];
     return requestTask;
 }
-//Need to write documentation on how this works
-
+/* Filtering through TomTom JSON response and adding relevant data
+ * returns -1 if response is nil
+ * Contains keys: criticality, detail, intersections, location, type, clusteredIncidents
+ * clusteredIncidents may be empty if response from TomTom is cluster type
+ * incidents in clusdteredIncidents contains all the above keys excluding clusteredIncidents
+ */
 -(NSInteger) addTrafficIncidents {
     if(trafficData == nil) {
         return  -1;
@@ -116,9 +122,10 @@
     }
     return @{};
 }
-//Generate Severity based on greated number of certain incident type
-//0 for unknown, 1 for minor, 2 for moderate, 3 for major and undefined (critical)
-//Refer to TomTom Traffic incident response for more info
+/* Generate Severity based on greated number of certain incident type
+ * 0 for unknown, 1 for minor, 2 for moderate, 3 for major and undefined (critical)
+ * Refer to TomTom Traffic incident response for more info
+ */
 -(NSInteger)rankOverallSeverity {
     if ([trafficIncidents count] > 0) {
         int criticalValue, minorValue, moderateValue, unknownValue;
@@ -145,6 +152,7 @@
                     break;
             }
         }
+        //identifying largest value and returning index as code
         int values[4] = {unknownValue, minorValue, moderateValue, criticalValue};
         int code, largestValue;
         largestValue = code = 0;
