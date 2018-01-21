@@ -100,7 +100,7 @@
 
         }
         trafficIncidents = [filteredItems copy];
-        NSLog(@"trafficIncidents:\n %@",trafficIncidents);
+//        NSLog(@"trafficIncidents:\n %@",trafficIncidents);
         return [filteredItems count];
     } else {
         return 0;
