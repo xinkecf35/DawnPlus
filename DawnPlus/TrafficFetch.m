@@ -117,40 +117,42 @@
     return @{};
 }
 //Generate Severity based on greated number of certain incident type
-//0 for critical, 1 for major, 2 for minor, 3 for lowImpact
+//0 for unknown, 1 for minor, 2 for moderate, 3 for major and undefined (critical)
+//Refer to TomTom Traffic incident response for more info
 -(NSInteger)rankOverallSeverity {
     if ([trafficIncidents count] > 0) {
-        int criticalValue, minorValue, majorValue, lowImpactValue;
-        criticalValue = minorValue = majorValue = lowImpactValue = 0;
+        int criticalValue, minorValue, moderateValue, unknownValue;
+        criticalValue = minorValue = moderateValue = unknownValue = 0;
         for (NSDictionary *incident in trafficIncidents) {
-            NSDictionary *criticality = [incident objectForKey:@"criticality"];
-            NSInteger criticalID = [[criticality objectForKey:@"ID"] integerValue];
+            NSInteger criticalID = [[incident objectForKey:@"criticality"] integerValue];
             switch (criticalID) {
                 case 0:
-                    criticalValue++;
+                    unknownValue++;
                     break;
                 case 1:
-                    majorValue++;
-                    break;
-                case 2:
                     minorValue++;
                     break;
+                case 2:
+                    moderateValue++;
+                    break;
                 case 3:
-                    lowImpactValue++;
+                    criticalValue++;
+                    break;
+                case 4:
+                    criticalValue++;
                     break;
                 default:
                     break;
             }
         }
-        int criticalValues[4] ={criticalValue, majorValue, minorValue, lowImpactValue};
-        int i, code, largestValue;
-        i = largestValue = code = 0;
-        while(i < 4) {
-            if(criticalValues[i] > largestValue) {
-                largestValue = criticalValues[i];
+        int values[4] = {unknownValue, minorValue, moderateValue, criticalValue};
+        int code, largestValue;
+        largestValue = code = 0;
+        for (int i = 0; i < 4; i++) {
+            if (values[i] >= largestValue) {
+                largestValue = values[i];
                 code = i;
             }
-            i++;
         }
         return code;
     }

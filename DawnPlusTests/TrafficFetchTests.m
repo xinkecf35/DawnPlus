@@ -98,39 +98,39 @@ NSString *sensitivityKey = @"sensitivityCheckedCells";
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 -(void)testRankOverallSeverity {
-    NSDictionary *criticalDict = @{@"criticality":@{@"ID":@"0",@"DESCRIPTION":@"critical"}};
-    NSDictionary *majorDict = @{@"criticality":@{@"ID":@"1",@"DESCRIPTION":@"major"}};
-    NSDictionary *minorDict = @{@"criticality":@{@"ID":@"2",@"DESCRIPTION":@"minor"}};
-    NSDictionary *lowImpactDict = @{@"criticality":@{@"ID":@"3",@"DESCRIPTION":@"lowImpact"}};
+    NSDictionary *unknownDict = @{@"criticality":@"0"};
+    NSDictionary *minorValueDict = @{@"criticality":@"1"};
+    NSDictionary *moderateValueDict = @{@"criticality":@"2"};
+    NSDictionary *criticalValueDict = @{@"criticality":@"3"};
     XCTAssertTrue([trafficTest addTrafficIncidents] == -1, @"Should return -1 with no incidents due to nil");
     NSMutableArray *mockIncidents = [[NSMutableArray alloc] init];
     trafficTest.trafficIncidents = mockIncidents;
     XCTAssertTrue([trafficTest rankOverallSeverity] == -1, @"Should return -1 with no incidents inserted");
-    [mockIncidents addObject:criticalDict];
-    XCTAssertTrue([trafficTest rankOverallSeverity] == 0, @"Should return 0 with critical being the largest value");
-    [mockIncidents addObject:majorDict];
-    XCTAssertTrue([trafficTest rankOverallSeverity] == 0, @"Should still return 0 with critical and major incidents added");
-    [mockIncidents removeObject:criticalDict];
-    XCTAssertTrue([trafficTest rankOverallSeverity] == 1, @"Should return 1 with major being the largest value");
-    [mockIncidents addObject:minorDict];
-    [mockIncidents removeObject:majorDict];
-    XCTAssertTrue([trafficTest rankOverallSeverity] == 2, @"Should return 2 with minor being the largest value");
-    [mockIncidents addObject:lowImpactDict];
-    [mockIncidents removeObject:minorDict];
-    XCTAssertTrue([trafficTest rankOverallSeverity] == 3, @"Should return 3 with lowImpact being the largest value");
+    [mockIncidents addObject:unknownDict];
+    XCTAssertTrue([trafficTest rankOverallSeverity] == 0, @"Should return 0 with unknown being the largest value");
+    [mockIncidents addObject:minorValueDict];
+    XCTAssertTrue([trafficTest rankOverallSeverity] == 1, @"Should  return 1 with unknown and minor incidents added");
+    [mockIncidents removeObject:unknownDict];
+    XCTAssertTrue([trafficTest rankOverallSeverity] == 1, @"Should return 1 with minor being the largest value");
+    [mockIncidents addObject:moderateValueDict];
+    [mockIncidents removeObject:minorValueDict];
+    XCTAssertTrue([trafficTest rankOverallSeverity] == 2, @"Should return 2 with moderate being the largest value");
+    [mockIncidents addObject:criticalValueDict];
+    [mockIncidents removeObject:moderateValueDict];
+    XCTAssertTrue([trafficTest rankOverallSeverity] == 3, @"Should return 3 with critical being the largest value");
     [mockIncidents removeAllObjects];
     int i = 0;
     while (i < 2) {
-        [mockIncidents addObject:criticalDict];
+        [mockIncidents addObject:unknownDict];
         i++;
     }
     i = 0;
     while (i < 3) {
-        [mockIncidents addObject:majorDict];
+        [mockIncidents addObject:minorValueDict];
         i++;
     }
-    [mockIncidents addObject:minorDict];
-    [mockIncidents addObject:lowImpactDict];
+    [mockIncidents addObject:moderateValueDict];
+    [mockIncidents addObject:criticalValueDict];
     XCTAssertTrue([trafficTest rankOverallSeverity] == 1, @"Should return 2 with major having most incidents");
     
 }
