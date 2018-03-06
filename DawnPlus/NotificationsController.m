@@ -14,4 +14,20 @@
 
 @implementation NotificationsController
 
+- (void)initializeNotificationSupport {
+    
+}
+
+- (void)scheduleAlarmNotification: (NSDate *)time {
+    
+}
+
+- (void)handleForeGroundNotification {
+    
+}
+
+- (void)handleBackGroundNotification {
+    
+}
+
 @end
