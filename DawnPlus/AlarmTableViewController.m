@@ -21,7 +21,7 @@
 }
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
-    [coreDataManager save];
+    [coreDataManager.managedObjectContext save:nil];
 }
 
 -(void)initializeAlarmResultsController {
