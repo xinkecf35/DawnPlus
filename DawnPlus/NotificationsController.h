@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UserNotifications/UserNotifications.h>
 
-@interface NotificationsController : NSObject
+@interface NotificationsController : NSObject <UNUserNotificationCenterDelegate>
+
+@property (nonatomic, nonnull, readonly) UNUserNotificationCenter *center;
 
 - (void)initializeNotificationSupport;
-- (void)scheduleAlarmNotification: (NSDate *)time;
+- (void)scheduleAlarmNotification: (NSDate * _Nonnull)time;
 - (void)handleForeGroundNotification;
 - (void)handleBackGroundNotification;
 
