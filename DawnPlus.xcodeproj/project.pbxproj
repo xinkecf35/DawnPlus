@@ -390,7 +390,6 @@
 				D03A2ED91F3EBA7F00794BE6 /* Frameworks */,
 				D03A2EDA1F3EBA7F00794BE6 /* Resources */,
 				D15C70B7FDB1A32AFA468552 /* [CP] Embed Pods Frameworks */,
-				AFA1227F8AEF3468B56420B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,7 +410,6 @@
 				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
 				D0EDA14F1CF3CA3C0036293B /* Resources */,
 				842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */,
-				EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,28 +540,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFA1227F8AEF3468B56420B5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B22965A5F045DEFBDCC45551 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -598,21 +574,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE7535625D1D99E6BBB90D06 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
