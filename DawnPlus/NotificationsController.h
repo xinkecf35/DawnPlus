@@ -13,7 +13,7 @@
 
 @property (nonatomic, nonnull, readonly) UNUserNotificationCenter *center;
 
-- (void)initializeNotificationSupport;
+- (id)init;
 - (void)scheduleAlarmNotification: (NSDate * _Nonnull)time;
 - (void)handleForeGroundNotification;
 - (void)handleBackGroundNotification;

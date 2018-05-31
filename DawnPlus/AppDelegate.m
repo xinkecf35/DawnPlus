@@ -9,10 +9,13 @@
 #import "AppDelegate.h"
 #import "CoreDataController.h"
 #import "ClockViewController.h"
+#import "NotificationsController.h"
 
 @interface AppDelegate ()
 
 @property (strong, readwrite) CoreDataController *persistenceController;
+@property (strong, readwrite) NotificationsController *notificationController;
+
 - (void)completeUserInterface;
 
 @end
@@ -26,6 +29,7 @@
     [self setPersistenceController:[[CoreDataController alloc] initWithCallback:^{
         [self completeUserInterface];
     }]];
+    [self setNotificationController:[[NotificationsController alloc] init]];
     //Registering default values for keys
     NSDictionary *defaults = @{
                                @"isFarenheit": [NSNumber numberWithBool:true],
