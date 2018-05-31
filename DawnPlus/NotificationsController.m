@@ -19,7 +19,8 @@
 
 @synthesize center, isBackgroundAlarmsAllowed;
 
-- (void)initializeNotificationSupport {
+- (id)init {
+    self = [super init];
     center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
     [center requestAuthorizationWithOptions: (UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
@@ -28,11 +29,12 @@
             NSLog(@"Error in obtaining authorization for notifications");
         }
         if(granted == YES) {
-            
+            isBackgroundAlarmsAllowed = YES;
         } else {
-            //Reports to user that this authorization needs to happen for alarms to work
+            isBackgroundAlarmsAllowed = NO;
         }
     }];
+    return self;
 }
 
 - (void)scheduleAlarmNotification: (NSDate *)time {
@@ -44,6 +46,20 @@
 }
 
 - (void)handleBackGroundNotification {
+    
+}
+
+// User Notification Delegate Methods
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)(void))completionHandler {
+    
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+       willPresentNotification:(UNNotification *)notification
+         withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     
 }
 

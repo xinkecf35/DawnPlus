@@ -10,11 +10,13 @@
 #import <CoreData/CoreData.h>
 
 @class CoreDataController;
+@class NotificationsController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, readonly) CoreDataController *persistenceController;
+@property (strong, readonly) NotificationsController *notificationController;
 
 @end
 
