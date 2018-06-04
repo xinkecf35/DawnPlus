@@ -71,9 +71,10 @@
 - (void)completeUserInterface {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-    ClockViewController *initalVC = [storyboard instantiateInitialViewController];
-    initalVC.coreDataManager = _persistenceController;
-    _window.rootViewController = initalVC;
+    ClockViewController *initialVC = [storyboard instantiateInitialViewController];
+    initialVC.coreDataManager = _persistenceController;
+    initialVC.notificationManager = _notificationController;
+    _window.rootViewController = initialVC;
     NSLog(@"completeUserInterface method finished");
 }
      
