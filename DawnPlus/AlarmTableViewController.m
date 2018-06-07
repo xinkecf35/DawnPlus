@@ -10,11 +10,13 @@
 
 @interface AlarmTableViewController() <MGSwipeTableCellDelegate>
 
+@property (strong, nonatomic) NSMutableArray *alarmStack;
+
 @end
 
 @implementation AlarmTableViewController
 
-@synthesize alarmTableView,coreDataManager;
+@synthesize alarmTableView,coreDataManager,alarmStack,notificationManager;
 
 -(void)viewDidLoad {
     [self initializeAlarmResultsController];
@@ -22,9 +24,14 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
     [coreDataManager.managedObjectContext save:nil];
+    for (AlarmObject *alarm in alarmStack) {
+        [notificationManager scheduleNotificationForAlarm:alarm];
+        
+    }
 }
 
 -(void)initializeAlarmResultsController {
+    alarmStack = [[NSMutableArray alloc] init];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
     NSSortDescriptor *labelSort = [NSSortDescriptor sortDescriptorWithKey:@"label" ascending:YES];
     request.sortDescriptors = @[labelSort];
@@ -108,7 +115,7 @@
     return NO;
 }
 
-//NSFetchResultsControllerDelegates
+// NSFetchResultsControllerDelegate Methods
 -(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
@@ -132,12 +139,15 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [alarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeDelete:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [alarmStack removeObject:anObject];
             break;
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [alarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeMove:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

@@ -46,6 +46,7 @@
         // Notifications not available
         return;
     }
+    NSLog(@"Attempting to schedule alarm: %@", alarm);
     // Creating content for notifications
     UNMutableNotificationContent *alarmContent = [[UNMutableNotificationContent alloc] init];
     alarmContent.title = alarm.label;
@@ -60,8 +61,9 @@
     // adding request
     [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
         if(error != nil) {
-            NSLog(@"Error in scheduling local notificationa: %@", error);
+            NSLog(@"Error in scheduling local notifications: %@", error);
         }
+        
     }];
 }
 
@@ -93,7 +95,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    
+    NSLog(@"Handling notification with ID: %@",notification.request.identifier);
 }
 
 @end
