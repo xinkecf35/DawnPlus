@@ -18,13 +18,13 @@
 @implementation AddAlarmTableViewController
 
 
-@synthesize previousLabel, previousSoundAsset, previousRepeatArray,alarmDelegate,mediaCellLabel;
+@synthesize currentSoundAsset,alarmDelegate,mediaCellLabel;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:NO];
     dispatch_async(dispatch_get_main_queue(), ^ {
-        if(previousSoundAsset != nil) {
-            mediaCellLabel.text = previousSoundAsset;
+        if(currentSoundAsset != nil) {
+            mediaCellLabel.text = currentSoundAsset;
         } else {
             mediaCellLabel.text = @" ";
         }
@@ -95,15 +95,15 @@
     if([segue.identifier isEqualToString:@"repeatSegue"]) {
         DayTableViewController *daysViewController = segue.destinationViewController;
         daysViewController.alarmDelegate = alarmDelegate;
-        if(previousRepeatArray != nil) {
-            daysViewController.previousSelection = previousRepeatArray;
+        if(alarmDelegate.selectedDays != nil) {
+            daysViewController.currentSelection = alarmDelegate.selectedDays;
         }
     }
     else if([segue.identifier isEqualToString:@"labelSegue"]) {
         LabelViewController *labelViewController = segue.destinationViewController;
         labelViewController.alarmDelegate = alarmDelegate;
-        if(previousLabel != nil) {
-            labelViewController.previousLabel = previousLabel;
+        if(alarmDelegate.alarmName != nil) {
+            labelViewController.currentLabel = alarmDelegate.alarmName;
         }
     }
 }

@@ -10,13 +10,13 @@
 
 @implementation DayTableViewController
 
-@synthesize alarmDelegate,previousSelection;
+@synthesize alarmDelegate,currentSelection;
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    if(previousSelection != nil) {
-        for(int i = 0; i < [previousSelection count]; i++) {
-            if([[previousSelection objectAtIndex:i] integerValue] == 1) {
+    if(currentSelection != nil) {
+        for(int i = 0; i < [currentSelection count]; i++) {
+            if([[currentSelection objectAtIndex:i] integerValue] == 1) {
                 UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 selectedDays[i] = 1;
@@ -30,9 +30,7 @@
     for(int i = 0; i < 7; i++) {
         [tempArray addObject:[NSNumber numberWithInt:selectedDays[i]]];
     }
-    [alarmDelegate setSelectedDays:tempArray];
-    NSLog(@"Saved the following array %@", alarmDelegate.selectedDays);
-    
+    alarmDelegate.selectedDays = tempArray;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:false];
