@@ -10,7 +10,7 @@
 
 @implementation LabelViewController
 
-@synthesize labelTextField,alarmDelegate,previousLabel;
+@synthesize labelTextField,alarmDelegate,currentLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -19,9 +19,9 @@
     day.dateFormat = @"EEEE";
     NSString *dayLabel = [NSString stringWithFormat:@"My %@ Alarm", [day stringFromDate:date]];
     labelTextField.placeholder = dayLabel;
-    if(previousLabel != nil) {
+    if(currentLabel != nil) {
         labelTextField.placeholder = nil;
-        labelTextField.text = previousLabel;
+        labelTextField.text = currentLabel;
     }
 }
 

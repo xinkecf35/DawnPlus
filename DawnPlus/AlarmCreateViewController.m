@@ -39,9 +39,9 @@
     timePicker = [[UIDatePicker alloc] init];
     timePicker.datePickerMode = UIDatePickerModeTime;
     [timePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
-    //Adding timePicker to view
+    // Adding timePicker to view
     [self.view addSubview:timePicker];
-    //Setting Constraints
+    // Setting Constraints
     if (@available(iOS 11, *)) {
         UILayoutGuide *safeArea = self.view.safeAreaLayoutGuide;
         [timePicker.centerXAnchor constraintLessThanOrEqualToAnchor:safeArea.centerXAnchor].active = YES;
@@ -56,9 +56,9 @@
     }
     [timePicker setNeedsLayout];
     [timePicker addTarget:self action:@selector(updateSelectedTime) forControlEvents:UIControlEventValueChanged];
-    //Provide non-null default for alarm
+    // Provide non-null default for alarm
     selectedTime = timePicker.date;
-    NSLog(@"timePicker subview complete");
+    //NSLog(@"timePicker subview complete");
 }
 - (void)initAlarmTableOptionsView {
     UIStoryboard *alarmViews = [UIStoryboard storyboardWithName:@"AlarmViews" bundle:nil];
@@ -85,7 +85,6 @@
 }
 - (void)updateSelectedTime {
     selectedTime = timePicker.date;
-    NSLog(@"selectedTime is now: %@", selectedTime);
 }
 
 - (void)saveToCoreData {

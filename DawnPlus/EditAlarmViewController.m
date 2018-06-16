@@ -38,9 +38,7 @@
     self.alarmName = selectedAlarm.label;
     self.soundAsset = selectedAlarm.soundAsset;
     self.selectedTime = selectedAlarm.alarmTime;
-    self.tableOptionsVC.previousRepeatArray = self.selectedDays;
-    self.tableOptionsVC.previousSoundAsset = self.soundAsset;
-    self.tableOptionsVC.previousLabel = self.alarmName;
+    self.tableOptionsVC.currentSoundAsset = self.soundAsset;
 }
 
 - (void)saveToCoreData {
