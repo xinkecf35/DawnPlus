@@ -54,8 +54,8 @@
     }
     NSError *saveError = nil;
     BOOL save = [self.coreDataManager.managedObjectContext save:&saveError];
-    NSLog(@"%d",save );
-    NSLog(@"Error data: %@", saveError);
+//    NSLog(@"%d",save );
+//    NSLog(@"Error data: %@", saveError);
     NSLog(@"Alarm is now: %@",selectedAlarm);
     [self.navigationController popViewControllerAnimated:true];
 }

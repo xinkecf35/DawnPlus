@@ -18,10 +18,11 @@
 
 @synthesize alarmTableView,coreDataManager,alarmStack,notificationManager;
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [self initializeAlarmResultsController];
 }
--(void)viewDidDisappear:(BOOL)animated {
+
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
     [coreDataManager.managedObjectContext save:nil];
     for (AlarmObject *alarm in alarmStack) {
@@ -30,7 +31,7 @@
     }
 }
 
--(void)initializeAlarmResultsController {
+- (void)initializeAlarmResultsController {
     alarmStack = [[NSMutableArray alloc] init];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
     NSSortDescriptor *labelSort = [NSSortDescriptor sortDescriptorWithKey:@"label" ascending:YES];
@@ -49,15 +50,17 @@
 }
 
 //TableDataSource Methods
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
    
     return [[[self alarmResultsController] sections] count];
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self alarmResultsController] sections][section];
     return [sectionInfo numberOfObjects];
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AlarmTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
     AlarmObject *alarm = [self.alarmResultsController objectAtIndexPath:indexPath];
     cell.alarm = alarm;
@@ -71,18 +74,28 @@
     cell.alarmNameLabel.text = alarm.label;
     //Setting Delegate
     cell.delegate = self;
-    
     return cell;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"AddAlarmSegue"]) {
         AddAlarmViewController *addAlarmVC = segue.destinationViewController;
         addAlarmVC.coreDataManager = coreDataManager;
     }
 }
-//MGSwipeTableCellDelegate and related methods
--(NSArray *)swipeTableCell:(MGSwipeTableCell *) cell swipeButtonsForDirection:(MGSwipeDirection)direction swipeSettings:(nonnull MGSwipeSettings *)swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings *)expansionSettings {
+
+// UITableViewDelegate methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AlarmObject *selectedAlarm = [self.alarmResultsController objectAtIndexPath:indexPath];
+    EditAlarmViewController *editAlarmVC = [EditAlarmViewController new];
+    editAlarmVC.coreDataManager = coreDataManager;
+    editAlarmVC.selectedAlarm = selectedAlarm;
+    [self.navigationController pushViewController:editAlarmVC animated:YES];
+    
+}
+
+// MGSwipeTableCellDelegate and related methods
+- (NSArray *)swipeTableCell:(MGSwipeTableCell *) cell swipeButtonsForDirection:(MGSwipeDirection)direction swipeSettings:(nonnull MGSwipeSettings *)swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings *)expansionSettings {
     
     swipeSettings.transition = MGSwipeTransitionBorder;
     swipeSettings.keepButtonsSwiped = YES;
@@ -101,7 +114,7 @@
     
     return nil;
 }
--(BOOL)swipeTableCell:(MGSwipeTableCell *) cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
+- (BOOL)swipeTableCell:(MGSwipeTableCell *) cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
     NSIndexPath *selectedAlarmIndexPath = [self.alarmTableView indexPathForCell:cell];
     AlarmObject *selectedAlarm = [self.alarmResultsController objectAtIndexPath:selectedAlarmIndexPath];
     if(index == 0) {
@@ -116,13 +129,13 @@
 }
 
 // NSFetchResultsControllerDelegate Methods
--(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
--(void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
--(void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [[self tableView] insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
@@ -135,7 +148,7 @@
             break;
     }
 }
--(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
