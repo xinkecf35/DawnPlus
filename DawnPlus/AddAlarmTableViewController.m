@@ -33,9 +33,6 @@
 
 - (void)viewDidLoad {
     self.tableView.delegate = self;
-    self.tableView.estimatedRowHeight = 44;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,6 +55,14 @@
         
     }
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return 44.0;
+}
+
 - (void)launchTonePickerController {
     ToneTableViewController *toneVC = [[ToneTableViewController alloc] init];
     toneVC.alarmDelegate = alarmDelegate;
