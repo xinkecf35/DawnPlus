@@ -85,7 +85,7 @@ class SetWorkAddressViewController:UIViewController {
     }
     func displayResultsController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        resultsController = storyboard.instantiateViewController(withIdentifier: "AddressResultsTable") as! AddressResultsViewController
+        resultsController = (storyboard.instantiateViewController(withIdentifier: "AddressResultsTable") as! AddressResultsViewController)
         addChildViewController(resultsController)
         view.addSubview(resultsController.view)
         if #available(iOS 11, *) {

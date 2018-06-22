@@ -37,6 +37,9 @@
 }
 
 - (void)scheduleNotificationForAlarm:(AlarmObject *)alarm {
+    if(alarm.enabled == NO) {
+        return;
+    }
     [center getNotificationSettingsWithCompletionHandler:^ (UNNotificationSettings *settings) {
         if(settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
             isBackgroundAlarmsAllowed = YES;
@@ -67,6 +70,15 @@
     }];
 }
 
+- (void)cancelNotificationForAlarms:(NSArray *)alarms {
+    // This might be a tad too slow
+    NSMutableArray *identifiers = [[NSMutableArray alloc] init];
+    for (AlarmObject *alarm in alarms) {
+        [identifiers addObject:alarm.notificationID];
+    }
+    [center removeDeliveredNotificationsWithIdentifiers:identifiers];
+}
+
 
 - (void)handleForeGroundNotification {
     
@@ -80,8 +92,8 @@
     if(!date) {
         return nil;
     }
-    NSCalendar * calender = [NSCalendar currentCalendar];
-    return [calender components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+    NSCalendar * calendar = [NSCalendar currentCalendar];
+    return [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
 }
 
 // User Notification Delegate Methods
