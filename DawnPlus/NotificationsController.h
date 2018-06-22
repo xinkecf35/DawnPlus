@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
 #import "AlarmObject+CoreDataProperties.h"
+#import "CoreDataController.h"
 @interface NotificationsController : NSObject <UNUserNotificationCenterDelegate>
 
 @property (nonatomic, nonnull, readonly) UNUserNotificationCenter *center;
+@property (nonatomic, nonnull, readwrite) CoreDataController *coreDataManager;
 
 - (id)init;
+- (id)initWithCoreDataController:(CoreDataController *)coreDataController;
 - (void)scheduleNotificationForAlarm:(AlarmObject *)alarm;
 - (void)cancelNotificationForAlarms:(NSArray *)alarms;
 - (void)handleForeGroundNotification;
