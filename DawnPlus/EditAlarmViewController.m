@@ -52,8 +52,8 @@
     } else {
         selectedAlarm.appTones = [self.appTones boolValue];
     }
-    NSError *saveError = nil;
-    BOOL save = [self.coreDataManager.managedObjectContext save:&saveError];
+//    NSError *saveError = nil;
+//    BOOL save = [self.coreDataManager.managedObjectContext save:&saveError];
 //    NSLog(@"%d",save );
 //    NSLog(@"Error data: %@", saveError);
     NSLog(@"Alarm is now: %@",selectedAlarm);

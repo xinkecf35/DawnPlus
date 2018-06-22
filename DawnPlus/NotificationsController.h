@@ -15,6 +15,7 @@
 
 - (id)init;
 - (void)scheduleNotificationForAlarm:(AlarmObject *)alarm;
+- (void)cancelNotificationForAlarms:(NSArray *)alarms;
 - (void)handleForeGroundNotification;
 - (void)handleBackGroundNotification;
 

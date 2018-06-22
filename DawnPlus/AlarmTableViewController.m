@@ -10,13 +10,13 @@
 
 @interface AlarmTableViewController() <MGSwipeTableCellDelegate>
 
-@property (strong, nonatomic) NSMutableArray *alarmStack;
+@property (strong, nonatomic) NSMutableArray *addAlarmStack;
+@property (strong, nonatomic) NSMutableArray *removeAlarmStack;
 
 @end
-
 @implementation AlarmTableViewController
 
-@synthesize alarmTableView,coreDataManager,alarmStack,notificationManager;
+@synthesize alarmTableView,coreDataManager,addAlarmStack,removeAlarmStack,notificationManager;
 
 - (void)viewDidLoad {
     [self initializeAlarmResultsController];
@@ -25,14 +25,19 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
     [coreDataManager.managedObjectContext save:nil];
-    for (AlarmObject *alarm in alarmStack) {
-        [notificationManager scheduleNotificationForAlarm:alarm];
-        
-    }
+    dispatch_queue_t scheduleQueue = dispatch_queue_create("scheduleQueue", NULL);
+    dispatch_async(scheduleQueue, ^{
+        for (AlarmObject *alarm in addAlarmStack) {
+            [notificationManager scheduleNotificationForAlarm:alarm];
+        }
+        if(removeAlarmStack != nil) {
+            [notificationManager cancelNotificationForAlarms:removeAlarmStack];
+        }
+    });
 }
 
 - (void)initializeAlarmResultsController {
-    alarmStack = [[NSMutableArray alloc] init];
+    addAlarmStack = [[NSMutableArray alloc] init];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
     NSSortDescriptor *labelSort = [NSSortDescriptor sortDescriptorWithKey:@"label" ascending:YES];
     request.sortDescriptors = @[labelSort];
@@ -152,15 +157,19 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [alarmStack addObject:anObject];
+            [addAlarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeDelete:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [alarmStack removeObject:anObject];
+            [addAlarmStack removeObject:anObject];
+            if(removeAlarmStack == nil) {
+                removeAlarmStack = [[NSMutableArray alloc] init];
+            }
+            [removeAlarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [alarmStack addObject:anObject];
+            [addAlarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeMove:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
