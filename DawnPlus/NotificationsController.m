@@ -17,23 +17,35 @@
 
 @implementation NotificationsController
 
-@synthesize center, isBackgroundAlarmsAllowed;
+@synthesize center, isBackgroundAlarmsAllowed, coreDataManager;
 
 - (id)init {
     self = [super init];
+    coreDataManager = nil;
+    [self initializeNotificationsSupport];
+    return self;
+}
+
+- (id)initWithCoreDataController:(CoreDataController *)coreDataController {
+    self = [super init];
+    coreDataManager = coreDataController;
+    [self initializeNotificationsSupport];
+    return self;
+}
+
+- (void)initializeNotificationsSupport {
     isBackgroundAlarmsAllowed = NO;
     center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
     [center requestAuthorizationWithOptions: (UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
                           completionHandler:^ (BOOL granted, NSError * _Nullable error){
-        if (error) {
-            NSLog(@"Error in obtaining authorization for notifications %@",error);
-        }
-        if(granted == YES) {
-            isBackgroundAlarmsAllowed = YES;
-        }
+                              if (error) {
+                                  NSLog(@"Error in obtaining authorization for notifications %@",error);
+                              }
+                              if(granted == YES) {
+                                  isBackgroundAlarmsAllowed = YES;
+                              }
     }];
-    return self;
 }
 
 - (void)scheduleNotificationForAlarm:(AlarmObject *)alarm {
@@ -74,6 +86,7 @@
     // This might be a tad too slow
     NSMutableArray *identifiers = [[NSMutableArray alloc] init];
     for (AlarmObject *alarm in alarms) {
+        NSLog(@"%@",alarm.notificationID);
         [identifiers addObject:alarm.notificationID];
     }
     [center removeDeliveredNotificationsWithIdentifiers:identifiers];

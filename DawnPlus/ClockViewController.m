@@ -179,7 +179,6 @@
     if([segue.identifier isEqualToString:@"AlarmViewSegue"]) {
         AlarmTableViewController *alarmVC = [[[segue destinationViewController] childViewControllers] objectAtIndex:0];
         alarmVC.coreDataManager = self.coreDataManager;
-        alarmVC.notificationManager = self.notificationManager;
     }
 }
 

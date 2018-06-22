@@ -22,7 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *alarmTableView;
 @property (strong, nonatomic) CoreDataController *coreDataManager;
-@property (strong, nonatomic) NotificationsController *notificationManager;
 @property (strong, nonatomic) NSFetchedResultsController *alarmResultsController;
 
 //@property NSArray *alarms;

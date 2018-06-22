@@ -25,15 +25,6 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
     [coreDataManager.managedObjectContext save:nil];
-    dispatch_queue_t scheduleQueue = dispatch_queue_create("scheduleQueue", NULL);
-    dispatch_async(scheduleQueue, ^{
-        for (AlarmObject *alarm in addAlarmStack) {
-            [notificationManager scheduleNotificationForAlarm:alarm];
-        }
-        if(removeAlarmStack != nil) {
-            [notificationManager cancelNotificationForAlarms:removeAlarmStack];
-        }
-    });
 }
 
 - (void)initializeAlarmResultsController {
@@ -157,19 +148,12 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [addAlarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeDelete:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [addAlarmStack removeObject:anObject];
-            if(removeAlarmStack == nil) {
-                removeAlarmStack = [[NSMutableArray alloc] init];
-            }
-            [removeAlarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [addAlarmStack addObject:anObject];
             break;
         case NSFetchedResultsChangeMove:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
