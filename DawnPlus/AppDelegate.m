@@ -29,7 +29,7 @@
     [self setPersistenceController:[[CoreDataController alloc] initWithCallback:^{
         [self completeUserInterface];
     }]];
-    [self setNotificationController:[[NotificationsController alloc] init]];
+    [self setNotificationController:[[NotificationsController alloc] initWithCoreDataController:_persistenceController]];
     //Registering default values for keys
     NSDictionary *defaults = @{
                                @"isFarenheit": [NSNumber numberWithBool:true],
