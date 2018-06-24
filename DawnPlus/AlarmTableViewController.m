@@ -108,9 +108,9 @@
         return @[deleteButton, editButton];
     }
 
-    
     return nil;
 }
+
 - (BOOL)swipeTableCell:(MGSwipeTableCell *) cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
     NSIndexPath *selectedAlarmIndexPath = [self.alarmTableView indexPathForCell:cell];
     AlarmObject *selectedAlarm = [self.alarmResultsController objectAtIndexPath:selectedAlarmIndexPath];
