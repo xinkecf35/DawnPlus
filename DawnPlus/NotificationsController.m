@@ -78,25 +78,32 @@
         // Notifications not available
         return;
     }
-    NSLog(@"Attempting to schedule alarm: %@", alarm);
     // Creating content for notifications
     UNMutableNotificationContent *alarmContent = [[UNMutableNotificationContent alloc] init];
     alarmContent.title = alarm.label;
-    alarmContent.body = @"This is a placeholder until conditions are shimed in";
+    alarmContent.body = @"Wake up!";
     // Replace once notifications are working
     alarmContent.sound = [UNNotificationSound defaultSound];
-    // Creating notification trigger
-    NSDateComponents *alarmDate = [self getAlarmDateComponents:alarm.alarmTime:alarm.dayToRepeat];
-    UNCalendarNotificationTrigger *alarmTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmDate repeats:NO];
-    // Creating notification request
-    UNNotificationRequest *alarmRequest = [UNNotificationRequest requestWithIdentifier:@"" content:alarmContent trigger:alarmTrigger];
-    // adding request
-    [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
-        if(error != nil) {
-            NSLog(@"Error in scheduling local notifications: %@", error);
+    // Add notifcations for each day of the week as needed
+    for(int weekday = 0; weekday < [alarm.dayToRepeat count]; weekday++) {
+        NSNumber *day = [alarm.dayToRepeat objectAtIndex:weekday];
+        if([day boolValue] == NO) {
+            continue;
         }
-        
-    }];
+        // Creating notification trigger
+        NSDateComponents *alarmDate = [self getAlarmDateComponents:alarm.alarmTime:weekday];
+        UNCalendarNotificationTrigger *alarmTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmDate repeats:YES];
+        // Creating notification request
+        UNNotificationRequest *alarmRequest = [UNNotificationRequest requestWithIdentifier:[alarm.notificationIDs objectAtIndex:weekday]
+                                                                                   content:alarmContent trigger:alarmTrigger];
+        // adding request
+        [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
+            if(error != nil) {
+                NSLog(@"Error in scheduling local notifications: %@", error);
+            }
+            NSLog(@"Scheduling Request succeeeded with: %@",alarmRequest);
+        }];
+    }
 }
 
 - (void)cancelNotificationForAlarms:(NSArray *)alarms {
@@ -112,12 +119,14 @@
     
 }
 
-- (NSDateComponents *)getAlarmDateComponents:(NSDate *)date :(NSArray *)weekdays {
+- (NSDateComponents *)getAlarmDateComponents:(NSDate *)date :(NSInteger)weekday{
     if(!date) {
         return nil;
     }
     NSCalendar * calendar = [NSCalendar currentCalendar];
-    return [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+    NSDateComponents *triggerDate = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+    triggerDate.weekday = weekday + 1; // Plus one offset as weekday in NSDateComponents starts at 1
+    return triggerDate;
 }
 
 // User Notification Delegate Methods
