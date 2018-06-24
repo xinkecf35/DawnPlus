@@ -17,8 +17,8 @@
 
 - (id)init;
 - (id)initWithCoreDataController:(CoreDataController *)coreDataController;
-- (void)scheduleNotificationForAlarm:(AlarmObject *)alarm;
-- (void)cancelNotificationForAlarms:(NSArray *)alarms;
+- (void)scheduleNotificationsForAlarms;
+- (void)cancelPendingNotifications;
 - (void)handleForeGroundNotification;
 - (void)handleBackGroundNotification;
 

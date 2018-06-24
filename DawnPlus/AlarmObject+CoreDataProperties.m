@@ -2,7 +2,7 @@
 //  AlarmObject+CoreDataProperties.m
 //  
 //
-//  Created by Xinke Chen on 2017-12-21.
+//  Created by Xinke Chen on 2018-06-24.
 //
 //
 
@@ -11,15 +11,15 @@
 @implementation AlarmObject (CoreDataProperties)
 
 + (NSFetchRequest<AlarmObject *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"AlarmObject"];
+	return [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
 }
 
 @dynamic alarmTime;
+@dynamic appTones;
 @dynamic dayToRepeat;
 @dynamic enabled;
 @dynamic label;
-@dynamic notificationID;
+@dynamic notificationIDs;
 @dynamic soundAsset;
-@dynamic appTones;
 
 @end

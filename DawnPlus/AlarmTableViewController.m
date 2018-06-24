@@ -16,7 +16,7 @@
 @end
 @implementation AlarmTableViewController
 
-@synthesize alarmTableView,coreDataManager,addAlarmStack,removeAlarmStack,notificationManager;
+@synthesize alarmTableView,coreDataManager,addAlarmStack,removeAlarmStack,notifcationsManager;
 
 - (void)viewDidLoad {
     [self initializeAlarmResultsController];
@@ -25,6 +25,7 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
     [coreDataManager.managedObjectContext save:nil];
+    [notifcationsManager scheduleNotificationsForAlarms];
 }
 
 - (void)initializeAlarmResultsController {

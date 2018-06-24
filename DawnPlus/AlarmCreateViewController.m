@@ -99,7 +99,7 @@
     alarm.dayToRepeat = selectedDays;
     alarm.enabled = YES;
     alarm.label = alarmName;
-    alarm.notificationID = [[NSUUID UUID] UUIDString];
+    alarm.notificationIDs = [alarm generateNotificationIDs];
     NSLog(@"Alarm being saved with %@",alarm);
     NSLog(@"message saveToCoreData passed");
     [self.navigationController popViewControllerAnimated:true];

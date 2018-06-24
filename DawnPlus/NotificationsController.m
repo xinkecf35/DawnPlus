@@ -48,10 +48,27 @@
     }];
 }
 
-- (void)scheduleNotificationForAlarm:(AlarmObject *)alarm {
-    if(alarm.enabled == NO) {
-        return;
+- (void)scheduleNotificationsForAlarms {
+    // Fetch Alarm Objects
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"enabled = %@", @YES];
+    request.predicate = predicate;
+    NSError *error = nil;
+    NSArray *alarms = [coreDataManager.managedObjectContext executeFetchRequest:request error:&error];
+    if(!error) {
+        NSLog(@"%@",error);
     }
+    for (AlarmObject *alarm in alarms) {
+        [self scheduleNotificationForAlarm:alarm];
+    }
+    
+}
+
+- (void)cancelPendingNotifications {
+    
+}
+
+- (void)scheduleNotificationForAlarm:(AlarmObject *)alarm {
     [center getNotificationSettingsWithCompletionHandler:^ (UNNotificationSettings *settings) {
         if(settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
             isBackgroundAlarmsAllowed = YES;
@@ -69,10 +86,10 @@
     // Replace once notifications are working
     alarmContent.sound = [UNNotificationSound defaultSound];
     // Creating notification trigger
-    NSDateComponents *alarmDate = [self getAlarmDateComponents:alarm.alarmTime];
-    UNCalendarNotificationTrigger *alarmTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmDate repeats:YES];
+    NSDateComponents *alarmDate = [self getAlarmDateComponents:alarm.alarmTime:alarm.dayToRepeat];
+    UNCalendarNotificationTrigger *alarmTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmDate repeats:NO];
     // Creating notification request
-    UNNotificationRequest *alarmRequest = [UNNotificationRequest requestWithIdentifier:alarm.notificationID content:alarmContent trigger:alarmTrigger];
+    UNNotificationRequest *alarmRequest = [UNNotificationRequest requestWithIdentifier:@"" content:alarmContent trigger:alarmTrigger];
     // adding request
     [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
         if(error != nil) {
@@ -83,13 +100,7 @@
 }
 
 - (void)cancelNotificationForAlarms:(NSArray *)alarms {
-    // This might be a tad too slow
-    NSMutableArray *identifiers = [[NSMutableArray alloc] init];
-    for (AlarmObject *alarm in alarms) {
-        NSLog(@"%@",alarm.notificationID);
-        [identifiers addObject:alarm.notificationID];
-    }
-    [center removeDeliveredNotificationsWithIdentifiers:identifiers];
+   
 }
 
 
@@ -101,7 +112,7 @@
     
 }
 
-- (NSDateComponents *)getAlarmDateComponents:(NSDate *)date {
+- (NSDateComponents *)getAlarmDateComponents:(NSDate *)date :(NSArray *)weekdays {
     if(!date) {
         return nil;
     }

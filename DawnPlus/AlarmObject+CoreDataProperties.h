@@ -2,7 +2,7 @@
 //  AlarmObject+CoreDataProperties.h
 //  
 //
-//  Created by Xinke Chen on 2017-12-21.
+//  Created by Xinke Chen on 2018-06-24.
 //
 //
 
@@ -16,12 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<AlarmObject *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSDate *alarmTime;
+@property (nonatomic) BOOL appTones;
 @property (nullable, nonatomic, retain) NSArray *dayToRepeat;
 @property (nonatomic) BOOL enabled;
 @property (nullable, nonatomic, copy) NSString *label;
-@property (nullable, nonatomic, copy) NSString *notificationID;
+@property (nullable, nonatomic, retain) NSArray *notificationIDs;
 @property (nullable, nonatomic, copy) NSString *soundAsset;
-@property (nonatomic) BOOL appTones;
 
 @end
 
