@@ -156,7 +156,7 @@
         case NSFetchedResultsChangeDelete: {
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             AlarmObject *alarm = anObject;
-            [removeAlarmStack addObject:alarm.label];
+            [removeAlarmStack addObject:alarm.notificationIDs];
             break;
         }
         case NSFetchedResultsChangeUpdate:
