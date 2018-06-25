@@ -68,23 +68,8 @@
     if(alarms == nil || alarms.count == 0) {
         return;
     }
-    for (NSString *alarmLabel in alarms) {
-        [self cancelNotificationsForAlarmLabel:alarmLabel];
-        NSLog(@"Removed otifications for alarm with label: %@", alarmLabel);
-    }
-}
-
-- (void)cancelNotificationsForAlarmLabel:(NSString *)alarmLabel {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"label = %@", alarmLabel];
-    request.predicate = predicate;
-    NSError *predicateError = nil;
-    NSArray *alarms = [coreDataManager.managedObjectContext executeFetchRequest:request error:&predicateError];
-    if(predicateError) {
-        NSLog(@"%@",predicateError);
-    }
-    for (AlarmObject *alarm in alarms) {
-        [center removePendingNotificationRequestsWithIdentifiers:alarm.notificationIDs];
+    for (NSArray *identifers in alarms) {
+        [center removePendingNotificationRequestsWithIdentifiers:identifers];
     }
 }
 
