@@ -55,7 +55,7 @@
     request.predicate = predicate;
     NSError *error = nil;
     NSArray *alarms = [coreDataManager.managedObjectContext executeFetchRequest:request error:&error];
-    if(!error) {
+    if(error != nil) {
         NSLog(@"%@",error);
     }
     for (AlarmObject *alarm in alarms) {
@@ -64,8 +64,28 @@
     
 }
 
-- (void)cancelPendingNotifications {
-    
+- (void)cancelPendingNotificationsForAlarms:(NSArray *)alarms {
+    if(alarms == nil || alarms.count == 0) {
+        return;
+    }
+    for (NSString *alarmLabel in alarms) {
+        [self cancelNotificationsForAlarmLabel:alarmLabel];
+        NSLog(@"Removed otifications for alarm with label: %@", alarmLabel);
+    }
+}
+
+- (void)cancelNotificationsForAlarmLabel:(NSString *)alarmLabel {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"label = %@", alarmLabel];
+    request.predicate = predicate;
+    NSError *predicateError = nil;
+    NSArray *alarms = [coreDataManager.managedObjectContext executeFetchRequest:request error:&predicateError];
+    if(predicateError) {
+        NSLog(@"%@",predicateError);
+    }
+    for (AlarmObject *alarm in alarms) {
+        [center removePendingNotificationRequestsWithIdentifiers:alarm.notificationIDs];
+    }
 }
 
 - (void)scheduleNotificationForAlarm:(AlarmObject *)alarm {
@@ -98,18 +118,13 @@
                                                                                    content:alarmContent trigger:alarmTrigger];
         // adding request
         [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
-            if(error != nil) {
+            if(error) {
                 NSLog(@"Error in scheduling local notifications: %@", error);
             }
-            NSLog(@"Scheduling Request succeeeded with: %@",alarmRequest);
+            // NSLog(@"Scheduling Request succeeeded with: %@",alarmRequest);
         }];
     }
 }
-
-- (void)cancelNotificationForAlarms:(NSArray *)alarms {
-   
-}
-
 
 - (void)handleForeGroundNotification {
     
