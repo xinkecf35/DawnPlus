@@ -159,9 +159,14 @@
             [removeAlarmStack addObject:alarm.notificationIDs];
             break;
         }
-        case NSFetchedResultsChangeUpdate:
+        case NSFetchedResultsChangeUpdate: {
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            AlarmObject *alarm = anObject;
+            if(alarm.enabled == NO) {
+                [removeAlarmStack addObject:alarm.notificationIDs];
+            }
             break;
+        }
         case NSFetchedResultsChangeMove:
             [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
