@@ -15,6 +15,10 @@
 
 @end
 
+static NSString *ALARM_CATEGORY = @"DawnPlusAlarmCategory";
+static NSString *ALARM_CATEGORY_ACTION_SNOOZE = @"Snooze";
+static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
+
 @implementation NotificationsController
 
 @synthesize center, isBackgroundAlarmsAllowed, coreDataManager;
@@ -37,6 +41,10 @@
     isBackgroundAlarmsAllowed = NO;
     center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
+    static dispatch_once_t createCategoriesToken;
+    dispatch_once(&createCategoriesToken, ^{
+        [self configureNotificationCategories];
+    });
     [center requestAuthorizationWithOptions: (UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
                           completionHandler:^ (BOOL granted, NSError * _Nullable error){
                               if (error) {
@@ -47,6 +55,23 @@
                               }
     }];
 }
+
+- (void)configureNotificationCategories {
+    UNNotificationAction *snoozeAction = [UNNotificationAction actionWithIdentifier:ALARM_CATEGORY_ACTION_SNOOZE
+                                                                              title:@"Snooze"
+                                                                            options:UNNotificationActionOptionNone];
+    UNNotificationAction *wakeAction = [UNNotificationAction actionWithIdentifier:ALARM_CATEGORY_ACTION_WAKE
+                                                                            title:@"Wake Up"
+                                                                          options:UNNotificationActionOptionForeground];
+    
+    UNNotificationCategory *alarmCategory = [UNNotificationCategory categoryWithIdentifier:ALARM_CATEGORY
+                                                                                   actions:@[snoozeAction, wakeAction]
+                                                                         intentIdentifiers:@[]
+                                                                                   options:UNNotificationCategoryOptionNone];
+    NSSet *categories = [NSSet setWithObject:alarmCategory];
+    [center setNotificationCategories:categories];
+}
+
 
 - (void)scheduleNotificationsForAlarms {
     // Fetch Alarm Objects
@@ -61,7 +86,6 @@
     for (AlarmObject *alarm in alarms) {
         [self scheduleNotificationForAlarm:alarm];
     }
-    
 }
 
 - (void)cancelPendingNotificationsForAlarms:(NSArray *)alarms {
@@ -87,8 +111,9 @@
     UNMutableNotificationContent *alarmContent = [[UNMutableNotificationContent alloc] init];
     alarmContent.title = alarm.label;
     alarmContent.body = @"Wake up!";
-    // Replace once notifications are working
-    alarmContent.sound = [UNNotificationSound defaultSound];
+    alarmContent.categoryIdentifier = ALARM_CATEGORY;
+    // Make the following more dynamic; implementing notification sound ramping
+    alarmContent.sound = [UNNotificationSound soundNamed:@"alarm.aif"];
     // Add notifcations for each day of the week as needed
     for(int weekday = 0; weekday < [alarm.dayToRepeat count]; weekday++) {
         NSNumber *day = [alarm.dayToRepeat objectAtIndex:weekday];
@@ -134,7 +159,19 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler {
-    
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    NSString *requestCategoryIdentifer = response.notification.request.content.categoryIdentifier;
+    if ([requestCategoryIdentifer isEqualToString:ALARM_CATEGORY]) {
+        NSString *actionIdentifer  = response.actionIdentifier;
+        if ([actionIdentifer isEqualToString:ALARM_CATEGORY_ACTION_SNOOZE]) {
+            
+        } else if ([actionIdentifer isEqualToString:ALARM_CATEGORY_ACTION_WAKE]) {
+            
+        } else if ([actionIdentifer isEqualToString:UNNotificationDefaultActionIdentifier] ||
+                   [actionIdentifer isEqualToString:UNNotificationDismissActionIdentifier]){
+            
+        }
+    }
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center

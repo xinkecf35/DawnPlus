@@ -11,6 +11,10 @@
 		8F25780C1FE8595F00819777 /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25780B1FE8595F00819777 /* EditAlarmViewController.m */; };
 		8F37D9F2204E28CB007BA93D /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37D9F1204E28CB007BA93D /* NotificationsController.m */; };
 		8F37D9F3204E28CB007BA93D /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37D9F1204E28CB007BA93D /* NotificationsController.m */; };
+		8F4D310D2110FE80007A9931 /* alarm.aif in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D31092110FE7F007A9931 /* alarm.aif */; };
+		8F4D310E2110FE80007A9931 /* droneRamp.aif in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D310A2110FE7F007A9931 /* droneRamp.aif */; };
+		8F4D310F2110FE80007A9931 /* alarmRamp.aif in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D310B2110FE7F007A9931 /* alarmRamp.aif */; };
+		8F4D31102110FE80007A9931 /* drone.aif in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D310C2110FE80007A9931 /* drone.aif */; };
 		8F7F26041FCDC2EB0065A40B /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */; };
 		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
 		8FDD4A721FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */; };
@@ -38,7 +42,6 @@
 		D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D07996091D24B38C003010C8 /* Raleway-Medium.ttf */; };
 		D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */; };
 		D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */; };
-		D07F79801F271A91005464D1 /* drone.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D07F797F1F271A90005464D1 /* drone.m4a */; };
 		D07F79831F272E6B005464D1 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07F79821F272E6B005464D1 /* LabelViewController.m */; };
 		D08861901DE00CE0006C7F64 /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */; };
 		D0A0180E1CFA787400E8EECB /* LocationFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A0180D1CFA787400E8EECB /* LocationFetch.m */; };
@@ -81,6 +84,10 @@
 		8F25780B1FE8595F00819777 /* EditAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditAlarmViewController.m; sourceTree = "<group>"; };
 		8F37D9F0204E27FB007BA93D /* NotificationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsController.h; sourceTree = "<group>"; };
 		8F37D9F1204E28CB007BA93D /* NotificationsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsController.m; sourceTree = "<group>"; };
+		8F4D31092110FE7F007A9931 /* alarm.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = alarm.aif; path = DawnPlus/Sounds/alarm.aif; sourceTree = "<group>"; };
+		8F4D310A2110FE7F007A9931 /* droneRamp.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = droneRamp.aif; path = DawnPlus/Sounds/droneRamp.aif; sourceTree = "<group>"; };
+		8F4D310B2110FE7F007A9931 /* alarmRamp.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = alarmRamp.aif; path = DawnPlus/Sounds/alarmRamp.aif; sourceTree = "<group>"; };
+		8F4D310C2110FE80007A9931 /* drone.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = drone.aif; path = DawnPlus/Sounds/drone.aif; sourceTree = "<group>"; };
 		8F7F26021FCDC2EB0065A40B /* AddAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmCreateViewController.h; sourceTree = "<group>"; };
@@ -107,7 +114,6 @@
 		D02394F71E494ADE0011C410 /* TrafficFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficFetch.h; sourceTree = "<group>"; };
 		D02394F81E494B590011C410 /* TrafficFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficFetch.m; sourceTree = "<group>"; };
 		D028424E1DDEB9C800B3BB87 /* SensitivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensitivityViewController.swift; path = SwiftClasses/SensitivityViewController.swift; sourceTree = "<group>"; };
-		D03461A31EF3BF6F00905B4D /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = DawnPlus/Tones/alarm.mp3; sourceTree = "<group>"; };
 		D034B1751EEE4F9C008757A6 /* DawnPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DawnPlus.entitlements; sourceTree = "<group>"; };
 		D0382A811CF4101C00905259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D03A2EDC1F3EBA7F00794BE6 /* DawnPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +129,6 @@
 		D07996091D24B38C003010C8 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		D079960A1D24B38C003010C8 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D079960B1D24B38C003010C8 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		D07F797F1F271A90005464D1 /* drone.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = drone.m4a; path = DawnPlus/Tones/drone.m4a; sourceTree = "<group>"; };
 		D07F79811F272E6B005464D1 /* LabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
 		D07F79821F272E6B005464D1 /* LabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
 		D088618F1DE00CE0006C7F64 /* UnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitsViewController.swift; path = SwiftClasses/UnitsViewController.swift; sourceTree = "<group>"; };
@@ -280,13 +285,15 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		D07F797E1F271A73005464D1 /* Tones */ = {
+		D07F797E1F271A73005464D1 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				D07F797F1F271A90005464D1 /* drone.m4a */,
-				D03461A31EF3BF6F00905B4D /* alarm.mp3 */,
+				8F4D31092110FE7F007A9931 /* alarm.aif */,
+				8F4D310B2110FE7F007A9931 /* alarmRamp.aif */,
+				8F4D310C2110FE80007A9931 /* drone.aif */,
+				8F4D310A2110FE7F007A9931 /* droneRamp.aif */,
 			);
-			name = Tones;
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		D0C5F18C1EEE5F97005897CD /* DawnPlusTests */ = {
@@ -326,7 +333,7 @@
 		D0EDA1481CF3CA3C0036293B = {
 			isa = PBXGroup;
 			children = (
-				D07F797E1F271A73005464D1 /* Tones */,
+				D07F797E1F271A73005464D1 /* Sounds */,
 				D0AEDB471D21D205009475E9 /* Philadelphia - Home.gpx */,
 				D0382A811CF4101C00905259 /* CoreLocation.framework */,
 				D0EDA1531CF3CA3C0036293B /* DawnPlus */,
@@ -439,6 +446,9 @@
 						DevelopmentTeam = D72NW9AP4N;
 						LastSwiftMigration = 0900;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -483,20 +493,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4D310F2110FE80007A9931 /* alarmRamp.aif in Resources */,
 				D079961B1D24B38C003010C8 /* Raleway-Medium.ttf in Resources */,
 				D07996121D24B38C003010C8 /* Raleway-Bold.ttf in Resources */,
+				8F4D310D2110FE80007A9931 /* alarm.aif in Resources */,
 				D079961A1D24B38C003010C8 /* Raleway-LightItalic.ttf in Resources */,
 				D0DCA8231D6DEEDC0025CB0D /* Main.storyboard in Resources */,
 				D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */,
 				D03D957E1EE20DF30079247C /* AlarmViews.storyboard in Resources */,
+				8F4D310E2110FE80007A9931 /* droneRamp.aif in Resources */,
 				D07996191D24B38C003010C8 /* Raleway-Light.ttf in Resources */,
 				D07996131D24B38C003010C8 /* Raleway-BoldItalic.ttf in Resources */,
 				D07996181D24B38C003010C8 /* Raleway-Italic.ttf in Resources */,
+				8F4D31102110FE80007A9931 /* drone.aif in Resources */,
 				D079961D1D24B38C003010C8 /* Raleway-Regular.ttf in Resources */,
 				D0AEDB481D21D205009475E9 /* Philadelphia - Home.gpx in Resources */,
 				D0E8F6E41D6D11BE000098FB /* Assets.xcassets in Resources */,
 				D079961C1D24B38C003010C8 /* Raleway-MediumItalic.ttf in Resources */,
-				D07F79801F271A91005464D1 /* drone.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
