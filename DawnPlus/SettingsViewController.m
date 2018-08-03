@@ -29,10 +29,7 @@
     [defaults synchronize];
     [super viewWillDisappear:true];
 }
-- (void)viewDidUnload {
-    [super viewDidUnload];
 
-}
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     UIView *customSelectionView = [[UIView alloc] init];
@@ -43,8 +40,8 @@
 //Handle Gentle Wake
 -(void) toggleGentleWake {
     dispatch_async(dispatch_get_main_queue(), ^ {
-        [defaults setBool:gentleWakeSwitch.isOn forKey:@"isGentleWake"];
-        NSLog(@"Set isGentleWake in defaults to %@", [defaults valueForKey:@"isGentleWake"]);
+        [self->defaults setBool:self->gentleWakeSwitch.isOn forKey:@"isGentleWake"];
+        NSLog(@"Set isGentleWake in defaults to %@", [self->defaults valueForKey:@"isGentleWake"]);
     });
 }
 //Dismiss View Controller

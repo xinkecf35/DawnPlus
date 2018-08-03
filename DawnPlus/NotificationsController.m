@@ -51,7 +51,7 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
                                   NSLog(@"Error in obtaining authorization for notifications %@",error);
                               }
                               if(granted == YES) {
-                                  isBackgroundAlarmsAllowed = YES;
+                                  self.isBackgroundAlarmsAllowed = YES;
                               }
     }];
 }
@@ -100,7 +100,7 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
 - (void)scheduleNotificationForAlarm:(AlarmObject *)alarm {
     [center getNotificationSettingsWithCompletionHandler:^ (UNNotificationSettings *settings) {
         if(settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
-            isBackgroundAlarmsAllowed = YES;
+            self.isBackgroundAlarmsAllowed = YES;
         }
     }];
     if(isBackgroundAlarmsAllowed == NO) {
@@ -112,20 +112,24 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
     alarmContent.title = alarm.label;
     alarmContent.body = @"Wake up!";
     alarmContent.categoryIdentifier = ALARM_CATEGORY;
+    // Make userInfo dictionary
     // Make the following more dynamic; implementing notification sound ramping
     alarmContent.sound = [UNNotificationSound soundNamed:@"alarm.aif"];
-    // Add notifcations for each day of the week as needed
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    // Add notifications for each day of the week as needed
     for(int weekday = 0; weekday < [alarm.dayToRepeat count]; weekday++) {
         NSNumber *day = [alarm.dayToRepeat objectAtIndex:weekday];
         if([day boolValue] == NO) {
             continue;
         }
         // Creating notification trigger
+        [userInfo setObject:[alarm.notificationIDs objectAtIndex:weekday] forKey:@"identifer"];
         NSDateComponents *alarmDate = [self getAlarmDateComponents:alarm.alarmTime:weekday];
         UNCalendarNotificationTrigger *alarmTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmDate repeats:YES];
         // Creating notification request
         UNNotificationRequest *alarmRequest = [UNNotificationRequest requestWithIdentifier:[alarm.notificationIDs objectAtIndex:weekday]
-                                                                                   content:alarmContent trigger:alarmTrigger];
+                                                                                   content:alarmContent
+                                                                                   trigger:alarmTrigger];
         // adding request
         [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
             if(error) {

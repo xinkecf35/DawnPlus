@@ -35,19 +35,19 @@
     NSURLSessionDataTask *requestTask = [session dataTaskWithURL:requestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil) {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-            status = httpResponse.statusCode;
+            self.status = httpResponse.statusCode;
             if([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 [self willChangeValueForKey:@"trafficData"];
                 NSError *JSONError;
-                trafficData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
+                self.trafficData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
                 if (JSONError) {
                     NSLog(@"JSON serialization screwed up for some reason");
                 } else {
-                    NSLog(@"Success on serialization, status: %ld", (long)status);
+                    NSLog(@"Success on serialization, status: %ld", (long)self.status);
                     [self didChangeValueForKey:@"trafficData"];
                 }
             } else {
-                NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)status);
+                NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)self.status);
             }
         } else {
             NSLog(@"Error on data task for TrafficFetch %@",error);

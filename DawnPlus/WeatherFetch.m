@@ -9,6 +9,17 @@
 #import "WeatherFetch.h"
 #import "constants.m"
 
+@interface WeatherFetch()
+
+    @property (readwrite) NSMutableDictionary *weatherData;
+    @property (readwrite) NSString *currentTemperature;
+    @property (readwrite) NSString *currentCondition;
+    @property (readwrite) NSString *precipitationProbability;
+    @property (readwrite) NSNumber *isFarenheit;
+    @property (readwrite) NSInteger status;
+
+@end
+
 @implementation WeatherFetch
 
 @synthesize weatherData,currentCondition,currentTemperature,precipitationProbability,isFarenheit,status,defaults;
@@ -56,19 +67,19 @@
     NSURLSessionDataTask *requestTask = [session dataTaskWithURL:weatherURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil) {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-            status = httpResponse.statusCode;
+            self.status = httpResponse.statusCode;
             if([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 NSError *JSONError;
                 [self willChangeValueForKey:@"weatherData"];
-                weatherData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
+                self.weatherData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
                 if (JSONError) {
                     NSLog(@"JSON serialization screwed up for some reason");
                 } else {
-                    NSLog(@"Success on serialization, status: %ld", (long)status);
+                    NSLog(@"Success on serialization, status: %ld", (long)self.status);
                     [self didChangeValueForKey:@"weatherData"];
                 }
             } else {
-                NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)status);
+                NSLog(@"Request failed, following HTTP status code: %ld(long)", (long)self.status);
             }
         } else {
             NSLog(@"Error on data task for WeatherFetch %@",error);

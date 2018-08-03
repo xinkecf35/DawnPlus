@@ -26,8 +26,8 @@
     [coreDataManager.managedObjectContext save:nil];
     dispatch_queue_t schedule_queue = dispatch_queue_create("schedule_queue", NULL);
     dispatch_async(schedule_queue, ^ {
-        [notifcationsManager scheduleNotificationsForAlarms];
-        [notifcationsManager cancelPendingNotificationsForAlarms:removeAlarmStack];
+        [self->notifcationsManager scheduleNotificationsForAlarms];
+        [self->notifcationsManager cancelPendingNotificationsForAlarms:self->removeAlarmStack];
     });
 }
 

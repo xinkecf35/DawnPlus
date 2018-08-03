@@ -23,10 +23,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:NO];
     dispatch_async(dispatch_get_main_queue(), ^ {
-        if(currentSoundAsset != nil) {
-            mediaCellLabel.text = currentSoundAsset;
+        if(self.currentSoundAsset != nil) {
+           self->mediaCellLabel.text = self->currentSoundAsset;
         } else {
-            mediaCellLabel.text = @" ";
+            self->mediaCellLabel.text = @" ";
         }
     });
 }
@@ -91,8 +91,8 @@
     alarmDelegate.appTones = [[NSNumber alloc] initWithBool:NO];
     [self dismissViewControllerAnimated:true completion:^ {
         dispatch_async(dispatch_get_main_queue(), ^ {
-            mediaCellLabel.text = alarmDelegate.soundAsset;
-            NSLog(@"MPMediaPickerController dismissed with %@", alarmDelegate.soundAsset);
+            self.mediaCellLabel.text = self.alarmDelegate.soundAsset;
+            NSLog(@"MPMediaPickerController dismissed with %@", self.alarmDelegate.soundAsset);
         });
     }];
 }
