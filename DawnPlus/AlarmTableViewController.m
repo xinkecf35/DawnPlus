@@ -24,12 +24,8 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:true];
     [coreDataManager.managedObjectContext save:nil];
-    dispatch_queue_t schedule_queue = dispatch_queue_create("schedule_queue", NULL);
-    dispatch_async(schedule_queue, ^ {
-        [self->notifcationsManager scheduleNotificationsForAlarms];
-        [self->notifcationsManager cancelPendingNotificationsForAlarms:self->removeAlarmStack];
-    });
 }
+
 
 - (void)initializeAlarmResultsController {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"AlarmObject"];
@@ -78,9 +74,15 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"AddAlarmSegue"]) {
+    if ([segue.identifier isEqualToString:@"AddAlarmSegue"]) {
         AddAlarmViewController *addAlarmVC = segue.destinationViewController;
         addAlarmVC.coreDataManager = coreDataManager;
+    } else if ([segue.identifier isEqualToString:@"unwindToClockView"]) {
+        dispatch_queue_t schedule_queue = dispatch_queue_create("schedule_queue", NULL);
+        dispatch_async(schedule_queue, ^ {
+            [self->notifcationsManager scheduleNotificationsForAlarms];
+            [self->notifcationsManager cancelPendingNotificationsForAlarms:self->removeAlarmStack];
+        });
     }
 }
 

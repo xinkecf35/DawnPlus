@@ -92,8 +92,8 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
     if(alarms == nil || alarms.count == 0) {
         return;
     }
-    for (NSArray *identifers in alarms) {
-        [center removePendingNotificationRequestsWithIdentifiers:identifers];
+    for (NSArray *identifiers in alarms) {
+        [center removePendingNotificationRequestsWithIdentifiers:identifiers];
     }
 }
 
@@ -123,7 +123,9 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
             continue;
         }
         // Creating notification trigger
-        [userInfo setObject:[alarm.notificationIDs objectAtIndex:weekday] forKey:@"identifer"];
+        [userInfo setObject:[alarm.notificationIDs objectAtIndex:weekday] forKey:@"identifier"];
+        [userInfo setObject:alarm.alarmTime forKey:@"fireDate"];
+        alarmContent.userInfo = userInfo;
         NSDateComponents *alarmDate = [self getAlarmDateComponents:alarm.alarmTime:weekday];
         UNCalendarNotificationTrigger *alarmTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:alarmDate repeats:YES];
         // Creating notification request
@@ -132,7 +134,7 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
                                                                                    trigger:alarmTrigger];
         // adding request
         [center addNotificationRequest:alarmRequest withCompletionHandler:^ (NSError *error) {
-            if(error) {
+            if (error) {
                 NSLog(@"Error in scheduling local notifications: %@", error);
             }
             // NSLog(@"Scheduling Request succeeeded with: %@",alarmRequest);
@@ -141,10 +143,6 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
 }
 
 - (void)handleForeGroundNotification {
-    
-}
-
-- (void)handleBackGroundNotification {
     
 }
 
@@ -164,15 +162,28 @@ static NSString *ALARM_CATEGORY_ACTION_WAKE = @"Wake";
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler {
     NSDictionary *userInfo = response.notification.request.content.userInfo;
-    NSString *requestCategoryIdentifer = response.notification.request.content.categoryIdentifier;
-    if ([requestCategoryIdentifer isEqualToString:ALARM_CATEGORY]) {
-        NSString *actionIdentifer  = response.actionIdentifier;
-        if ([actionIdentifer isEqualToString:ALARM_CATEGORY_ACTION_SNOOZE]) {
+    NSString *requestCategoryIdentifier = response.notification.request.content.categoryIdentifier;
+    if ([requestCategoryIdentifier isEqualToString:ALARM_CATEGORY]) {
+        NSString *actionIdentifier  = response.actionIdentifier;
+        if ([actionIdentifier isEqualToString:ALARM_CATEGORY_ACTION_SNOOZE]) {
+            NSString *notificationID = [userInfo objectForKey:@"identifier"];
+//            NSDate *originalFireDate = [userInfo objectForKey:@"fireDate"];
+//            NSDate *snoozeFireDate = [originalFireDate dateByAddingTimeInterval:540]; // 540 = 9 minutes in seconds
+            UNTimeIntervalNotificationTrigger *snoozeTrigger = [UNTimeIntervalNotificationTrigger
+                                                                triggerWithTimeInterval:540
+                                                                repeats:NO];
+            UNNotificationRequest *snoozeRequest = [UNNotificationRequest requestWithIdentifier:notificationID
+                                                                                        content:response.notification.request.content
+                                                                                        trigger:snoozeTrigger];
+            [center addNotificationRequest:snoozeRequest withCompletionHandler:^ (NSError *error) {
+                if (error) {
+                    NSLog(@"Error in scheduling snooze notificaiotions: %@", error);
+                }
+            }];
             
-        } else if ([actionIdentifer isEqualToString:ALARM_CATEGORY_ACTION_WAKE]) {
+        } else if ([actionIdentifier isEqualToString:ALARM_CATEGORY_ACTION_WAKE]) {
             
-        } else if ([actionIdentifer isEqualToString:UNNotificationDefaultActionIdentifier] ||
-                   [actionIdentifer isEqualToString:UNNotificationDismissActionIdentifier]){
+        } else if ([actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]){
             
         }
     }
@@ -182,6 +193,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     NSLog(@"Handling notification with ID: %@",notification.request.identifier);
+    completionHandler(UNNotificationPresentationOptionNone);
 }
 
 @end

@@ -75,7 +75,8 @@
                     <navigationItem key="navigationItem" title="Alarms" id="9m1-lg-8RL">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="dNJ-xA-b1R">
                             <connections>
-                                <segue destination="bXR-kr-lFQ" kind="unwind" unwindAction="unwindToClockView:" id="MZx-gE-1gN"/>
+                                <action selector="dismissAlarmTableView:" destination="Qgu-qJ-Zz6" id="nee-mU-juW"/>
+                                <segue destination="bXR-kr-lFQ" kind="unwind" identifier="unwindToClockView" unwindAction="unwindToClockView:" id="MZx-gE-1gN"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="ufE-j9-A4N">

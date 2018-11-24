@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NotificationsController *notifcationsManager;
 @property (strong, nonatomic) NSFetchedResultsController *alarmResultsController;
 
+
 //@property NSArray *alarms;
 
 @end

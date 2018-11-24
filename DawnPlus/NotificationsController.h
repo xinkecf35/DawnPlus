@@ -15,11 +15,10 @@
 @property (nonatomic, nonnull, readonly) UNUserNotificationCenter *center;
 @property (nonatomic, nonnull, readwrite) CoreDataController *coreDataManager;
 
-- (id)init;
 - (id)initWithCoreDataController:(CoreDataController *)coreDataController;
 - (void)scheduleNotificationsForAlarms;
 - (void)cancelPendingNotificationsForAlarms:(NSArray *)alarms;
-- (void)handleForeGroundNotification;
-- (void)handleBackGroundNotification;
+- (void)scheduleNotificationsForBackground;
+- (void)scheduleNotificationForAppTermination;
 
 @end
