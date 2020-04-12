@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DCF45A3D68F02175301ABAC /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF2A2F82B8BD104BBF89719 /* Pods_DawnPlusTests.framework */; };
+		74BDA9E7D482A4F96798BCC2 /* Pods_DawnPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D2D8BE066FD64246EA93FA /* Pods_DawnPlus.framework */; };
 		8F21211F1FFB5B9F00CAD0FF /* WeatherFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F21211E1FFB5B9F00CAD0FF /* WeatherFetchTest.m */; };
 		8F25780C1FE8595F00819777 /* EditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25780B1FE8595F00819777 /* EditAlarmViewController.m */; };
 		8F37D9F2204E28CB007BA93D /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37D9F1204E28CB007BA93D /* NotificationsController.m */; };
@@ -19,7 +21,6 @@
 		8F957F671F80CF6500958A81 /* AlarmCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */; };
 		8FDD4A721FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */; };
 		8FE5C9151FF2136800080D20 /* AlarmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */; };
-		A90A6D73596A85DE3B728851 /* Pods_DawnPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */; };
 		D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01553821ECEAF7600ACF012 /* CoreData.framework */; };
 		D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016AA4F1E9A11FC004B387B /* MapKit.framework */; };
 		D01ED5B41ECC2B1B00AA436C /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01ED5B31ECC2B1B00AA436C /* AlarmTableViewController.m */; };
@@ -61,7 +62,6 @@
 		D0EDA1671CF3CA3C0036293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EDA1651CF3CA3C0036293B /* LaunchScreen.storyboard */; };
 		D0F0673B1E492CBA0014AAB3 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0673A1E492CBA0014AAB3 /* constants.m */; };
 		D6B3E7631F08C0A600177470 /* AddressResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */; };
-		ED1B7C5CA3DDF62ED80B1E77 /* Pods_DawnPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,10 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.debug.xcconfig"; sourceTree = "<group>"; };
-		094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
-		380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		067421B80BD9135803D481FE /* Pods-DawnPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.debug.xcconfig"; path = "Target Support Files/Pods-DawnPlus/Pods-DawnPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		221D65B6647E80D6571D9413 /* Pods-DawnPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlus.release.xcconfig"; path = "Target Support Files/Pods-DawnPlus/Pods-DawnPlus.release.xcconfig"; sourceTree = "<group>"; };
+		7FF2A2F82B8BD104BBF89719 /* Pods_DawnPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B95C24BF471F78E6F9E8A36 /* Pods-DawnPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.release.xcconfig"; path = "Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F21211E1FFB5B9F00CAD0FF /* WeatherFetchTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherFetchTest.m; sourceTree = "<group>"; };
 		8F25780A1FE8595F00819777 /* EditAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditAlarmViewController.h; sourceTree = "<group>"; };
 		8F25780B1FE8595F00819777 /* EditAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditAlarmViewController.m; sourceTree = "<group>"; };
@@ -92,11 +92,12 @@
 		8F7F26031FCDC2EB0065A40B /* AddAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		8F957F651F80CF6500958A81 /* AlarmCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmCreateViewController.h; sourceTree = "<group>"; };
 		8F957F661F80CF6500958A81 /* AlarmCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmCreateViewController.m; sourceTree = "<group>"; };
-		8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AlarmObject+CoreDataProperties.m"; path = "/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.m"; sourceTree = "<absolute>"; };
-		8FDD4A711FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AlarmObject+CoreDataProperties.h"; path = "/Users/xinkechen/Dropbox/Programming/Objective-C/DawnPlus/DawnPlus/AlarmObject+CoreDataProperties.h"; sourceTree = "<absolute>"; };
+		8FDD4A701FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AlarmObject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		8FDD4A711FEB8D4A005A62F0 /* AlarmObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlarmObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		8FE5C9131FF2136800080D20 /* AlarmTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewCell.h; sourceTree = "<group>"; };
 		8FE5C9141FF2136800080D20 /* AlarmTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewCell.m; sourceTree = "<group>"; };
-		BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5FA35F15C3B7FDF646ECF7C /* Pods-DawnPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8D2D8BE066FD64246EA93FA /* Pods_DawnPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DawnPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00916B61D73444A009999F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D00E2FCA1ED1613C00E18CE4 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		D01553821ECEAF7600ACF012 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -160,7 +161,6 @@
 		D0F0673A1E492CBA0014AAB3 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		D0FCE0701EF4A23D001FC549 /* DawnPlus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DawnPlus-Bridging-Header.h"; path = "DawnPlus/DawnPlus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D6B3E7621F08C0A600177470 /* AddressResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressResultsViewController.swift; path = SwiftClasses/AddressResultsViewController.swift; sourceTree = "<group>"; };
-		F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DawnPlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0238D771F40E5AC00F55054 /* OCMock.framework in Frameworks */,
-				A90A6D73596A85DE3B728851 /* Pods_DawnPlusTests.framework in Frameworks */,
+				4DCF45A3D68F02175301ABAC /* Pods_DawnPlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,22 +182,22 @@
 				D0382A821CF4101C00905259 /* CoreLocation.framework in Frameworks */,
 				D01553831ECEAF7600ACF012 /* CoreData.framework in Frameworks */,
 				D016AA511E9A120A004B387B /* MapKit.framework in Frameworks */,
-				ED1B7C5CA3DDF62ED80B1E77 /* Pods_DawnPlus.framework in Frameworks */,
+				74BDA9E7D482A4F96798BCC2 /* Pods_DawnPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A38F69A2D6FEC633814B62DC /* Pods */ = {
+		8E909FCEA430E0888D4B9A46 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */,
-				094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */,
-				BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */,
-				F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */,
+				067421B80BD9135803D481FE /* Pods-DawnPlus.debug.xcconfig */,
+				221D65B6647E80D6571D9413 /* Pods-DawnPlus.release.xcconfig */,
+				A5FA35F15C3B7FDF646ECF7C /* Pods-DawnPlusTests.debug.xcconfig */,
+				8B95C24BF471F78E6F9E8A36 /* Pods-DawnPlusTests.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		D00916B51D734427009999F2 /* Control */ = {
@@ -223,8 +223,8 @@
 				D0C5F1951EEE6063005897CD /* MediaPlayer.framework */,
 				D01553821ECEAF7600ACF012 /* CoreData.framework */,
 				D016AA4F1E9A11FC004B387B /* MapKit.framework */,
-				380BA9E65B84D02788722253 /* Pods_DawnPlus.framework */,
-				48E21018B32667E60329AE39 /* Pods_DawnPlusTests.framework */,
+				A8D2D8BE066FD64246EA93FA /* Pods_DawnPlus.framework */,
+				7FF2A2F82B8BD104BBF89719 /* Pods_DawnPlusTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				D0C5F18C1EEE5F97005897CD /* DawnPlusTests */,
 				D0EDA1521CF3CA3C0036293B /* Products */,
 				D016AA4C1E9A1168004B387B /* Frameworks */,
-				A38F69A2D6FEC633814B62DC /* Pods */,
+				8E909FCEA430E0888D4B9A46 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -392,11 +392,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D03A2EE31F3EBA7F00794BE6 /* Build configuration list for PBXNativeTarget "DawnPlusTests" */;
 			buildPhases = (
-				B22965A5F045DEFBDCC45551 /* [CP] Check Pods Manifest.lock */,
+				092DABFA92860B93A20BF43B /* [CP] Check Pods Manifest.lock */,
 				D03A2ED81F3EBA7F00794BE6 /* Sources */,
 				D03A2ED91F3EBA7F00794BE6 /* Frameworks */,
 				D03A2EDA1F3EBA7F00794BE6 /* Resources */,
-				D15C70B7FDB1A32AFA468552 /* [CP] Embed Pods Frameworks */,
+				21F156FC5958EBCB0FB201BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,11 +412,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0EDA1811CF3CA3C0036293B /* Build configuration list for PBXNativeTarget "DawnPlus" */;
 			buildPhases = (
-				8DF72CFA954144FF447AFB80 /* [CP] Check Pods Manifest.lock */,
+				C97699D30FF5EB71DE41F4A7 /* [CP] Check Pods Manifest.lock */,
 				D0EDA14D1CF3CA3C0036293B /* Sources */,
 				D0EDA14E1CF3CA3C0036293B /* Frameworks */,
 				D0EDA14F1CF3CA3C0036293B /* Resources */,
-				842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */,
+				AC33284228AFFA91D4D4B762 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,7 +433,7 @@
 		D0EDA1491CF3CA3C0036293B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Xinke Chen";
 				TargetAttributes = {
 					D03A2EDB1F3EBA7F00794BE6 = {
@@ -444,7 +444,7 @@
 					D0EDA1501CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D72NW9AP4N;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -467,6 +467,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -516,13 +517,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		842915BA4FC702A0E22E5D4A /* [CP] Embed Pods Frameworks */ = {
+		092DABFA92860B93A20BF43B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DawnPlusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21F156FC5958EBCB0FB201BD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC33284228AFFA91D4D4B762 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -535,61 +576,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DawnPlus/Pods-DawnPlus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8DF72CFA954144FF447AFB80 /* [CP] Check Pods Manifest.lock */ = {
+		C97699D30FF5EB71DE41F4A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DawnPlus-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B22965A5F045DEFBDCC45551 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DawnPlusTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D15C70B7FDB1A32AFA468552 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DawnPlusTests/Pods-DawnPlusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -679,7 +688,7 @@
 /* Begin XCBuildConfiguration section */
 		D03A2EE41F3EBA7F00794BE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBC7E14EA2CC235A76E274DD /* Pods-DawnPlusTests.debug.xcconfig */;
+			baseConfigurationReference = A5FA35F15C3B7FDF646ECF7C /* Pods-DawnPlusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -702,7 +711,7 @@
 		};
 		D03A2EE51F3EBA7F00794BE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F79859B7BC08E922923294B8 /* Pods-DawnPlusTests.release.xcconfig */;
+			baseConfigurationReference = 8B95C24BF471F78E6F9E8A36 /* Pods-DawnPlusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -727,6 +736,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -786,6 +796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -838,7 +849,7 @@
 		};
 		D0EDA1821CF3CA3C0036293B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07F37AAAC1333761D7004950 /* Pods-DawnPlus.debug.xcconfig */;
+			baseConfigurationReference = 067421B80BD9135803D481FE /* Pods-DawnPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -857,14 +868,14 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D0EDA1831CF3CA3C0036293B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 094E5EF7DBD16DC71E9FCF0F /* Pods-DawnPlus.release.xcconfig */;
+			baseConfigurationReference = 221D65B6647E80D6571D9413 /* Pods-DawnPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -882,7 +893,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME)-Swift.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
