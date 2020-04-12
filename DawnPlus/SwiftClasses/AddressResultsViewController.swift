@@ -60,7 +60,7 @@ class AddressResultsViewController:UITableViewController {
         guard let requestRegion = mapView?.region, let input = searchPhrase  else {
             return
         }
-        let request = MKLocalSearchRequest()
+        let request = MKLocalSearch.Request()
         request.region = requestRegion
         request.naturalLanguageQuery = input
         let search = MKLocalSearch(request: request)

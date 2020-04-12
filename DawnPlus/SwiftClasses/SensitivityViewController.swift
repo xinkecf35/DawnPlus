@@ -30,7 +30,7 @@ class SensitivityViewController: UITableViewController {
             if(element == 1) {
                 let selectedRow = IndexPath.init(row: index, section: 0)
                 let selectedCell = tableView.cellForRow(at: selectedRow)
-                selectedCell?.accessoryType = UITableViewCellAccessoryType.checkmark;
+                selectedCell?.accessoryType = UITableViewCell.AccessoryType.checkmark;
             }
             
         }
@@ -69,12 +69,12 @@ class SensitivityViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: false)
         
-        if(tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.none) {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        if(tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none) {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             checkedCells[indexPath.row] = 1
         }
         else{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             checkedCells[indexPath.row] = 0
         }
     }

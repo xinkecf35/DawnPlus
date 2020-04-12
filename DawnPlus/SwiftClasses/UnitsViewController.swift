@@ -33,7 +33,7 @@ class UnitsViewController: UITableViewController {
             currentUnit = 1
         }
         let storedSelection = IndexPath.init(row: currentUnit, section: 0)
-        tableView.cellForRow(at: storedSelection)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        tableView.cellForRow(at: storedSelection)?.accessoryType = UITableViewCell.AccessoryType.checkmark
         
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,12 +79,12 @@ class UnitsViewController: UITableViewController {
         let newCell = tableView.cellForRow(at: indexPath)
         let oldCell = tableView.cellForRow(at: oldSelection)
         
-        if(newCell?.accessoryType == UITableViewCellAccessoryType.none) {
-            newCell?.accessoryType = UITableViewCellAccessoryType.checkmark
+        if(newCell?.accessoryType == UITableViewCell.AccessoryType.none) {
+            newCell?.accessoryType = UITableViewCell.AccessoryType.checkmark
             currentUnit = indexPath.row
         }
-        if(oldCell?.accessoryType == UITableViewCellAccessoryType.checkmark) {
-            oldCell?.accessoryType = UITableViewCellAccessoryType.none
+        if(oldCell?.accessoryType == UITableViewCell.AccessoryType.checkmark) {
+            oldCell?.accessoryType = UITableViewCell.AccessoryType.none
         }
     }
     

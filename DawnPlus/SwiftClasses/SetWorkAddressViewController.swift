@@ -58,7 +58,7 @@ class SetWorkAddressViewController:UIViewController {
     func configureSearchView() {
         let frame = CGRect(x: 20, y: 40, width: 200, height: 44)
         searchBar.frame = frame
-        searchBar.searchBarStyle = UISearchBarStyle.prominent
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
         searchBar.isTranslucent = true
         searchBar.delegate = self
         searchBar.placeholder = "Search for your Work"
@@ -86,7 +86,7 @@ class SetWorkAddressViewController:UIViewController {
     func displayResultsController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         resultsController = (storyboard.instantiateViewController(withIdentifier: "AddressResultsTable") as! AddressResultsViewController)
-        addChildViewController(resultsController)
+        addChild(resultsController)
         view.addSubview(resultsController.view)
         if #available(iOS 11, *) {
             resultsController.view.snp.makeConstraints({(make) -> Void in
@@ -105,15 +105,15 @@ class SetWorkAddressViewController:UIViewController {
             })
         }
         resultsController.view.setNeedsLayout()
-        resultsController.didMove(toParentViewController: self)
+        resultsController.didMove(toParent: self)
         resultsController.mapView = mapView
         resultsController.mapSearchDelegate = self
         view.layoutSubviews()
     }
     func dismissResultsController() {
-        resultsController.willMove(toParentViewController: nil)
+        resultsController.willMove(toParent: nil)
         resultsController.view.removeFromSuperview()
-        resultsController.removeFromParentViewController()
+        resultsController.removeFromParent()
     }
     @objc func returnToSettingsandSaveAddress() {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
@@ -209,8 +209,8 @@ class SetWorkAddressViewController:UIViewController {
         addressLabel.setNeedsLayout()
         confirmAddressView.layoutSubviews()
         //Adding Target-Action for ViewController
-        okayButton.addTarget(self, action: #selector(returnToSettingsandSaveAddress), for: UIControlEvents.touchDown)
-        cancelButton.addTarget(self, action: #selector(returnToSettingsWithoutSaving), for: UIControlEvents.touchDown)
+        okayButton.addTarget(self, action: #selector(returnToSettingsandSaveAddress), for: UIControl.Event.touchDown)
+        cancelButton.addTarget(self, action: #selector(returnToSettingsWithoutSaving), for: UIControl.Event.touchDown)
         //Adding View into SuperView
         confirmAddressView.isUserInteractionEnabled = true
         view.addSubview(confirmAddressView)
@@ -256,7 +256,7 @@ extension SetWorkAddressViewController: addressMapSearch {
         }
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        let region = MKCoordinateRegion.init(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated:true)
         configureConfirmAddressView()
         view.layoutSubviews()
