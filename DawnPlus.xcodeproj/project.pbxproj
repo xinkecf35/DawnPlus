@@ -444,7 +444,7 @@
 					D0EDA1501CF3CA3C0036293B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D72NW9AP4N;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1140;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -464,10 +464,9 @@
 			};
 			buildConfigurationList = D0EDA14C1CF3CA3C0036293B /* Build configuration list for PBXProject "DawnPlus" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -788,7 +787,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "./DawnPlus/DawnPlus-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "-Swift.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -842,7 +841,7 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -869,7 +868,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -895,7 +894,7 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME)-Swift.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

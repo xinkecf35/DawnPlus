@@ -2,13 +2,13 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - MGSwipeTableCell (1.6.11)
   - OCMock (3.6)
-  - SnapKit (4.2.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.8.1)
   - MGSwipeTableCell (~> 1.6.6)
   - OCMock (~> 3.4)
-  - SnapKit (~> 4.0)
+  - SnapKit (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -21,8 +21,8 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   OCMock: 5ea90566be239f179ba766fd9fbae5885040b992
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 04ae624d4c048f28b77c2b74b7d6c1016b8ef581
+PODFILE CHECKSUM: ea19ea2a38bfc9072af59b4c7b8131a2df879351
 
 COCOAPODS: 1.9.1
